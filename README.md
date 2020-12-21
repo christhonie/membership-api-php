@@ -129,7 +129,8 @@ Class | Method | HTTP request | Description
 *MembershipResourceApi* | [**createMembershipUsingPOST**](docs/Api/MembershipResourceApi.md#createmembershipusingpost) | **POST** /api/memberships | createMembership
 *MembershipResourceApi* | [**deleteMembershipUsingDELETE**](docs/Api/MembershipResourceApi.md#deletemembershipusingdelete) | **DELETE** /api/memberships/{id} | deleteMembership
 *MembershipResourceApi* | [**getAllMembershipsUsingGET**](docs/Api/MembershipResourceApi.md#getallmembershipsusingget) | **GET** /api/memberships | getAllMemberships
-*MembershipResourceApi* | [**getMembershipStatusUsingGET**](docs/Api/MembershipResourceApi.md#getmembershipstatususingget) | **GET** /api/membershipStatus/{membershipId} | getMembershipStatus
+*MembershipResourceApi* | [**getLinkedMembersUsingGET**](docs/Api/MembershipResourceApi.md#getlinkedmembersusingget) | **GET** /api/linkedMembers/{mainMemberId} | getLinkedMembers
+*MembershipResourceApi* | [**getMembershipStatusUsingGET**](docs/Api/MembershipResourceApi.md#getmembershipstatususingget) | **GET** /api/membershipStatus/{externalPersonId} | getMembershipStatus
 *MembershipResourceApi* | [**getMembershipUsingGET**](docs/Api/MembershipResourceApi.md#getmembershipusingget) | **GET** /api/memberships/{id} | getMembership
 *MembershipResourceApi* | [**updateMembershipUsingPUT**](docs/Api/MembershipResourceApi.md#updatemembershipusingput) | **PUT** /api/memberships | updateMembership
 *MembershipTypeResourceApi* | [**countMembershipTypesUsingGET**](docs/Api/MembershipTypeResourceApi.md#countmembershiptypesusingget) | **GET** /api/membership-types/count | countMembershipTypes
@@ -179,6 +180,7 @@ Class | Method | HTTP request | Description
  - [MembershipCriteriaDTO](docs/Model/MembershipCriteriaDTO.md)
  - [MembershipDTO](docs/Model/MembershipDTO.md)
  - [MembershipPeriodDTO](docs/Model/MembershipPeriodDTO.md)
+ - [MembershipStatusDTO](docs/Model/MembershipStatusDTO.md)
  - [MembershipTypeDTO](docs/Model/MembershipTypeDTO.md)
  - [NumberTypeDTO](docs/Model/NumberTypeDTO.md)
  - [OrderDTO](docs/Model/OrderDTO.md)

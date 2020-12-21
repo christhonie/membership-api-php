@@ -8,7 +8,8 @@ Method | HTTP request | Description
 [**createMembershipUsingPOST**](MembershipResourceApi.md#createMembershipUsingPOST) | **POST** /api/memberships | createMembership
 [**deleteMembershipUsingDELETE**](MembershipResourceApi.md#deleteMembershipUsingDELETE) | **DELETE** /api/memberships/{id} | deleteMembership
 [**getAllMembershipsUsingGET**](MembershipResourceApi.md#getAllMembershipsUsingGET) | **GET** /api/memberships | getAllMemberships
-[**getMembershipStatusUsingGET**](MembershipResourceApi.md#getMembershipStatusUsingGET) | **GET** /api/membershipStatus/{membershipId} | getMembershipStatus
+[**getLinkedMembersUsingGET**](MembershipResourceApi.md#getLinkedMembersUsingGET) | **GET** /api/linkedMembers/{mainMemberId} | getLinkedMembers
+[**getMembershipStatusUsingGET**](MembershipResourceApi.md#getMembershipStatusUsingGET) | **GET** /api/membershipStatus/{externalPersonId} | getMembershipStatus
 [**getMembershipUsingGET**](MembershipResourceApi.md#getMembershipUsingGET) | **GET** /api/memberships/{id} | getMembership
 [**updateMembershipUsingPUT**](MembershipResourceApi.md#updateMembershipUsingPUT) | **PUT** /api/memberships | updateMembership
 
@@ -538,8 +539,55 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
+# **getLinkedMembersUsingGET**
+> \Idealogic\MembershipAPI\Model\MembershipStatusDTO[] getLinkedMembersUsingGET($main_member_id)
+
+getLinkedMembers
+
+### Example
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+$apiInstance = new Idealogic\MembershipAPI\Api\MembershipResourceApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client()
+);
+$main_member_id = 789; // int | mainMemberId
+
+try {
+    $result = $apiInstance->getLinkedMembersUsingGET($main_member_id);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling MembershipResourceApi->getLinkedMembersUsingGET: ', $e->getMessage(), PHP_EOL;
+}
+?>
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **main_member_id** | **int**| mainMemberId |
+
+### Return type
+
+[**\Idealogic\MembershipAPI\Model\MembershipStatusDTO[]**](../Model/MembershipStatusDTO.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: */*
+
+[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
+
 # **getMembershipStatusUsingGET**
-> \Idealogic\MembershipAPI\Model\OptionalOfMembershipStatusDTO getMembershipStatusUsingGET($membership_id)
+> \Idealogic\MembershipAPI\Model\MembershipStatusDTO getMembershipStatusUsingGET($external_person_id)
 
 getMembershipStatus
 
@@ -553,10 +601,10 @@ $apiInstance = new Idealogic\MembershipAPI\Api\MembershipResourceApi(
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
-$membership_id = 789; // int | membershipId
+$external_person_id = 789; // int | externalPersonId
 
 try {
-    $result = $apiInstance->getMembershipStatusUsingGET($membership_id);
+    $result = $apiInstance->getMembershipStatusUsingGET($external_person_id);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling MembershipResourceApi->getMembershipStatusUsingGET: ', $e->getMessage(), PHP_EOL;
@@ -568,11 +616,11 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **membership_id** | **int**| membershipId |
+ **external_person_id** | **int**| externalPersonId |
 
 ### Return type
 
-[**\Idealogic\MembershipAPI\Model\OptionalOfMembershipStatusDTO**](../Model/OptionalOfMembershipStatusDTO.md)
+[**\Idealogic\MembershipAPI\Model\MembershipStatusDTO**](../Model/MembershipStatusDTO.md)
 
 ### Authorization
 

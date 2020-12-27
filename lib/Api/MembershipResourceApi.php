@@ -132,11 +132,13 @@ class MembershipResourceApi
      * @param  int $order_id_less_than_or_equal order_id_less_than_or_equal (optional)
      * @param  int $order_id_not_equals order_id_not_equals (optional)
      * @param  bool $order_id_specified order_id_specified (optional)
-     * @param  string $person_id_contains person_id_contains (optional)
-     * @param  string $person_id_does_not_contain person_id_does_not_contain (optional)
-     * @param  string $person_id_equals person_id_equals (optional)
-     * @param  string[] $person_id_in person_id_in (optional)
-     * @param  string $person_id_not_equals person_id_not_equals (optional)
+     * @param  int $person_id_equals person_id_equals (optional)
+     * @param  int $person_id_greater_than person_id_greater_than (optional)
+     * @param  int $person_id_greater_than_or_equal person_id_greater_than_or_equal (optional)
+     * @param  int[] $person_id_in person_id_in (optional)
+     * @param  int $person_id_less_than person_id_less_than (optional)
+     * @param  int $person_id_less_than_or_equal person_id_less_than_or_equal (optional)
+     * @param  int $person_id_not_equals person_id_not_equals (optional)
      * @param  bool $person_id_specified person_id_specified (optional)
      * @param  string $status_equals status_equals (optional)
      * @param  string[] $status_in status_in (optional)
@@ -181,9 +183,9 @@ class MembershipResourceApi
      * @throws \InvalidArgumentException
      * @return int
      */
-    public function countMembershipsUsingGET($criteria_id_equals = null, $criteria_id_greater_than = null, $criteria_id_greater_than_or_equal = null, $criteria_id_in = null, $criteria_id_less_than = null, $criteria_id_less_than_or_equal = null, $criteria_id_not_equals = null, $criteria_id_specified = null, $id_equals = null, $id_greater_than = null, $id_greater_than_or_equal = null, $id_in = null, $id_less_than = null, $id_less_than_or_equal = null, $id_not_equals = null, $id_specified = null, $membership_period_id_equals = null, $membership_period_id_greater_than = null, $membership_period_id_greater_than_or_equal = null, $membership_period_id_in = null, $membership_period_id_less_than = null, $membership_period_id_less_than_or_equal = null, $membership_period_id_not_equals = null, $membership_period_id_specified = null, $number_id_equals = null, $number_id_greater_than = null, $number_id_greater_than_or_equal = null, $number_id_in = null, $number_id_less_than = null, $number_id_less_than_or_equal = null, $number_id_not_equals = null, $number_id_specified = null, $order_id_equals = null, $order_id_greater_than = null, $order_id_greater_than_or_equal = null, $order_id_in = null, $order_id_less_than = null, $order_id_less_than_or_equal = null, $order_id_not_equals = null, $order_id_specified = null, $person_id_contains = null, $person_id_does_not_contain = null, $person_id_equals = null, $person_id_in = null, $person_id_not_equals = null, $person_id_specified = null, $status_equals = null, $status_in = null, $status_not_equals = null, $status_specified = null, $valid_from_equals = null, $valid_from_greater_than = null, $valid_from_greater_than_or_equal = null, $valid_from_in_0_chronology_calendar_type = null, $valid_from_in_0_chronology_id = null, $valid_from_in_0_day_of_month = null, $valid_from_in_0_day_of_week = null, $valid_from_in_0_day_of_year = null, $valid_from_in_0_era_value = null, $valid_from_in_0_leap_year = null, $valid_from_in_0_month = null, $valid_from_in_0_month_value = null, $valid_from_in_0_year = null, $valid_from_less_than = null, $valid_from_less_than_or_equal = null, $valid_from_not_equals = null, $valid_from_specified = null, $valid_to_equals = null, $valid_to_greater_than = null, $valid_to_greater_than_or_equal = null, $valid_to_in_0_chronology_calendar_type = null, $valid_to_in_0_chronology_id = null, $valid_to_in_0_day_of_month = null, $valid_to_in_0_day_of_week = null, $valid_to_in_0_day_of_year = null, $valid_to_in_0_era_value = null, $valid_to_in_0_leap_year = null, $valid_to_in_0_month = null, $valid_to_in_0_month_value = null, $valid_to_in_0_year = null, $valid_to_less_than = null, $valid_to_less_than_or_equal = null, $valid_to_not_equals = null, $valid_to_specified = null)
+    public function countMembershipsUsingGET($criteria_id_equals = null, $criteria_id_greater_than = null, $criteria_id_greater_than_or_equal = null, $criteria_id_in = null, $criteria_id_less_than = null, $criteria_id_less_than_or_equal = null, $criteria_id_not_equals = null, $criteria_id_specified = null, $id_equals = null, $id_greater_than = null, $id_greater_than_or_equal = null, $id_in = null, $id_less_than = null, $id_less_than_or_equal = null, $id_not_equals = null, $id_specified = null, $membership_period_id_equals = null, $membership_period_id_greater_than = null, $membership_period_id_greater_than_or_equal = null, $membership_period_id_in = null, $membership_period_id_less_than = null, $membership_period_id_less_than_or_equal = null, $membership_period_id_not_equals = null, $membership_period_id_specified = null, $number_id_equals = null, $number_id_greater_than = null, $number_id_greater_than_or_equal = null, $number_id_in = null, $number_id_less_than = null, $number_id_less_than_or_equal = null, $number_id_not_equals = null, $number_id_specified = null, $order_id_equals = null, $order_id_greater_than = null, $order_id_greater_than_or_equal = null, $order_id_in = null, $order_id_less_than = null, $order_id_less_than_or_equal = null, $order_id_not_equals = null, $order_id_specified = null, $person_id_equals = null, $person_id_greater_than = null, $person_id_greater_than_or_equal = null, $person_id_in = null, $person_id_less_than = null, $person_id_less_than_or_equal = null, $person_id_not_equals = null, $person_id_specified = null, $status_equals = null, $status_in = null, $status_not_equals = null, $status_specified = null, $valid_from_equals = null, $valid_from_greater_than = null, $valid_from_greater_than_or_equal = null, $valid_from_in_0_chronology_calendar_type = null, $valid_from_in_0_chronology_id = null, $valid_from_in_0_day_of_month = null, $valid_from_in_0_day_of_week = null, $valid_from_in_0_day_of_year = null, $valid_from_in_0_era_value = null, $valid_from_in_0_leap_year = null, $valid_from_in_0_month = null, $valid_from_in_0_month_value = null, $valid_from_in_0_year = null, $valid_from_less_than = null, $valid_from_less_than_or_equal = null, $valid_from_not_equals = null, $valid_from_specified = null, $valid_to_equals = null, $valid_to_greater_than = null, $valid_to_greater_than_or_equal = null, $valid_to_in_0_chronology_calendar_type = null, $valid_to_in_0_chronology_id = null, $valid_to_in_0_day_of_month = null, $valid_to_in_0_day_of_week = null, $valid_to_in_0_day_of_year = null, $valid_to_in_0_era_value = null, $valid_to_in_0_leap_year = null, $valid_to_in_0_month = null, $valid_to_in_0_month_value = null, $valid_to_in_0_year = null, $valid_to_less_than = null, $valid_to_less_than_or_equal = null, $valid_to_not_equals = null, $valid_to_specified = null)
     {
-        list($response) = $this->countMembershipsUsingGETWithHttpInfo($criteria_id_equals, $criteria_id_greater_than, $criteria_id_greater_than_or_equal, $criteria_id_in, $criteria_id_less_than, $criteria_id_less_than_or_equal, $criteria_id_not_equals, $criteria_id_specified, $id_equals, $id_greater_than, $id_greater_than_or_equal, $id_in, $id_less_than, $id_less_than_or_equal, $id_not_equals, $id_specified, $membership_period_id_equals, $membership_period_id_greater_than, $membership_period_id_greater_than_or_equal, $membership_period_id_in, $membership_period_id_less_than, $membership_period_id_less_than_or_equal, $membership_period_id_not_equals, $membership_period_id_specified, $number_id_equals, $number_id_greater_than, $number_id_greater_than_or_equal, $number_id_in, $number_id_less_than, $number_id_less_than_or_equal, $number_id_not_equals, $number_id_specified, $order_id_equals, $order_id_greater_than, $order_id_greater_than_or_equal, $order_id_in, $order_id_less_than, $order_id_less_than_or_equal, $order_id_not_equals, $order_id_specified, $person_id_contains, $person_id_does_not_contain, $person_id_equals, $person_id_in, $person_id_not_equals, $person_id_specified, $status_equals, $status_in, $status_not_equals, $status_specified, $valid_from_equals, $valid_from_greater_than, $valid_from_greater_than_or_equal, $valid_from_in_0_chronology_calendar_type, $valid_from_in_0_chronology_id, $valid_from_in_0_day_of_month, $valid_from_in_0_day_of_week, $valid_from_in_0_day_of_year, $valid_from_in_0_era_value, $valid_from_in_0_leap_year, $valid_from_in_0_month, $valid_from_in_0_month_value, $valid_from_in_0_year, $valid_from_less_than, $valid_from_less_than_or_equal, $valid_from_not_equals, $valid_from_specified, $valid_to_equals, $valid_to_greater_than, $valid_to_greater_than_or_equal, $valid_to_in_0_chronology_calendar_type, $valid_to_in_0_chronology_id, $valid_to_in_0_day_of_month, $valid_to_in_0_day_of_week, $valid_to_in_0_day_of_year, $valid_to_in_0_era_value, $valid_to_in_0_leap_year, $valid_to_in_0_month, $valid_to_in_0_month_value, $valid_to_in_0_year, $valid_to_less_than, $valid_to_less_than_or_equal, $valid_to_not_equals, $valid_to_specified);
+        list($response) = $this->countMembershipsUsingGETWithHttpInfo($criteria_id_equals, $criteria_id_greater_than, $criteria_id_greater_than_or_equal, $criteria_id_in, $criteria_id_less_than, $criteria_id_less_than_or_equal, $criteria_id_not_equals, $criteria_id_specified, $id_equals, $id_greater_than, $id_greater_than_or_equal, $id_in, $id_less_than, $id_less_than_or_equal, $id_not_equals, $id_specified, $membership_period_id_equals, $membership_period_id_greater_than, $membership_period_id_greater_than_or_equal, $membership_period_id_in, $membership_period_id_less_than, $membership_period_id_less_than_or_equal, $membership_period_id_not_equals, $membership_period_id_specified, $number_id_equals, $number_id_greater_than, $number_id_greater_than_or_equal, $number_id_in, $number_id_less_than, $number_id_less_than_or_equal, $number_id_not_equals, $number_id_specified, $order_id_equals, $order_id_greater_than, $order_id_greater_than_or_equal, $order_id_in, $order_id_less_than, $order_id_less_than_or_equal, $order_id_not_equals, $order_id_specified, $person_id_equals, $person_id_greater_than, $person_id_greater_than_or_equal, $person_id_in, $person_id_less_than, $person_id_less_than_or_equal, $person_id_not_equals, $person_id_specified, $status_equals, $status_in, $status_not_equals, $status_specified, $valid_from_equals, $valid_from_greater_than, $valid_from_greater_than_or_equal, $valid_from_in_0_chronology_calendar_type, $valid_from_in_0_chronology_id, $valid_from_in_0_day_of_month, $valid_from_in_0_day_of_week, $valid_from_in_0_day_of_year, $valid_from_in_0_era_value, $valid_from_in_0_leap_year, $valid_from_in_0_month, $valid_from_in_0_month_value, $valid_from_in_0_year, $valid_from_less_than, $valid_from_less_than_or_equal, $valid_from_not_equals, $valid_from_specified, $valid_to_equals, $valid_to_greater_than, $valid_to_greater_than_or_equal, $valid_to_in_0_chronology_calendar_type, $valid_to_in_0_chronology_id, $valid_to_in_0_day_of_month, $valid_to_in_0_day_of_week, $valid_to_in_0_day_of_year, $valid_to_in_0_era_value, $valid_to_in_0_leap_year, $valid_to_in_0_month, $valid_to_in_0_month_value, $valid_to_in_0_year, $valid_to_less_than, $valid_to_less_than_or_equal, $valid_to_not_equals, $valid_to_specified);
         return $response;
     }
 
@@ -232,11 +234,13 @@ class MembershipResourceApi
      * @param  int $order_id_less_than_or_equal (optional)
      * @param  int $order_id_not_equals (optional)
      * @param  bool $order_id_specified (optional)
-     * @param  string $person_id_contains (optional)
-     * @param  string $person_id_does_not_contain (optional)
-     * @param  string $person_id_equals (optional)
-     * @param  string[] $person_id_in (optional)
-     * @param  string $person_id_not_equals (optional)
+     * @param  int $person_id_equals (optional)
+     * @param  int $person_id_greater_than (optional)
+     * @param  int $person_id_greater_than_or_equal (optional)
+     * @param  int[] $person_id_in (optional)
+     * @param  int $person_id_less_than (optional)
+     * @param  int $person_id_less_than_or_equal (optional)
+     * @param  int $person_id_not_equals (optional)
      * @param  bool $person_id_specified (optional)
      * @param  string $status_equals (optional)
      * @param  string[] $status_in (optional)
@@ -281,10 +285,10 @@ class MembershipResourceApi
      * @throws \InvalidArgumentException
      * @return array of int, HTTP status code, HTTP response headers (array of strings)
      */
-    public function countMembershipsUsingGETWithHttpInfo($criteria_id_equals = null, $criteria_id_greater_than = null, $criteria_id_greater_than_or_equal = null, $criteria_id_in = null, $criteria_id_less_than = null, $criteria_id_less_than_or_equal = null, $criteria_id_not_equals = null, $criteria_id_specified = null, $id_equals = null, $id_greater_than = null, $id_greater_than_or_equal = null, $id_in = null, $id_less_than = null, $id_less_than_or_equal = null, $id_not_equals = null, $id_specified = null, $membership_period_id_equals = null, $membership_period_id_greater_than = null, $membership_period_id_greater_than_or_equal = null, $membership_period_id_in = null, $membership_period_id_less_than = null, $membership_period_id_less_than_or_equal = null, $membership_period_id_not_equals = null, $membership_period_id_specified = null, $number_id_equals = null, $number_id_greater_than = null, $number_id_greater_than_or_equal = null, $number_id_in = null, $number_id_less_than = null, $number_id_less_than_or_equal = null, $number_id_not_equals = null, $number_id_specified = null, $order_id_equals = null, $order_id_greater_than = null, $order_id_greater_than_or_equal = null, $order_id_in = null, $order_id_less_than = null, $order_id_less_than_or_equal = null, $order_id_not_equals = null, $order_id_specified = null, $person_id_contains = null, $person_id_does_not_contain = null, $person_id_equals = null, $person_id_in = null, $person_id_not_equals = null, $person_id_specified = null, $status_equals = null, $status_in = null, $status_not_equals = null, $status_specified = null, $valid_from_equals = null, $valid_from_greater_than = null, $valid_from_greater_than_or_equal = null, $valid_from_in_0_chronology_calendar_type = null, $valid_from_in_0_chronology_id = null, $valid_from_in_0_day_of_month = null, $valid_from_in_0_day_of_week = null, $valid_from_in_0_day_of_year = null, $valid_from_in_0_era_value = null, $valid_from_in_0_leap_year = null, $valid_from_in_0_month = null, $valid_from_in_0_month_value = null, $valid_from_in_0_year = null, $valid_from_less_than = null, $valid_from_less_than_or_equal = null, $valid_from_not_equals = null, $valid_from_specified = null, $valid_to_equals = null, $valid_to_greater_than = null, $valid_to_greater_than_or_equal = null, $valid_to_in_0_chronology_calendar_type = null, $valid_to_in_0_chronology_id = null, $valid_to_in_0_day_of_month = null, $valid_to_in_0_day_of_week = null, $valid_to_in_0_day_of_year = null, $valid_to_in_0_era_value = null, $valid_to_in_0_leap_year = null, $valid_to_in_0_month = null, $valid_to_in_0_month_value = null, $valid_to_in_0_year = null, $valid_to_less_than = null, $valid_to_less_than_or_equal = null, $valid_to_not_equals = null, $valid_to_specified = null)
+    public function countMembershipsUsingGETWithHttpInfo($criteria_id_equals = null, $criteria_id_greater_than = null, $criteria_id_greater_than_or_equal = null, $criteria_id_in = null, $criteria_id_less_than = null, $criteria_id_less_than_or_equal = null, $criteria_id_not_equals = null, $criteria_id_specified = null, $id_equals = null, $id_greater_than = null, $id_greater_than_or_equal = null, $id_in = null, $id_less_than = null, $id_less_than_or_equal = null, $id_not_equals = null, $id_specified = null, $membership_period_id_equals = null, $membership_period_id_greater_than = null, $membership_period_id_greater_than_or_equal = null, $membership_period_id_in = null, $membership_period_id_less_than = null, $membership_period_id_less_than_or_equal = null, $membership_period_id_not_equals = null, $membership_period_id_specified = null, $number_id_equals = null, $number_id_greater_than = null, $number_id_greater_than_or_equal = null, $number_id_in = null, $number_id_less_than = null, $number_id_less_than_or_equal = null, $number_id_not_equals = null, $number_id_specified = null, $order_id_equals = null, $order_id_greater_than = null, $order_id_greater_than_or_equal = null, $order_id_in = null, $order_id_less_than = null, $order_id_less_than_or_equal = null, $order_id_not_equals = null, $order_id_specified = null, $person_id_equals = null, $person_id_greater_than = null, $person_id_greater_than_or_equal = null, $person_id_in = null, $person_id_less_than = null, $person_id_less_than_or_equal = null, $person_id_not_equals = null, $person_id_specified = null, $status_equals = null, $status_in = null, $status_not_equals = null, $status_specified = null, $valid_from_equals = null, $valid_from_greater_than = null, $valid_from_greater_than_or_equal = null, $valid_from_in_0_chronology_calendar_type = null, $valid_from_in_0_chronology_id = null, $valid_from_in_0_day_of_month = null, $valid_from_in_0_day_of_week = null, $valid_from_in_0_day_of_year = null, $valid_from_in_0_era_value = null, $valid_from_in_0_leap_year = null, $valid_from_in_0_month = null, $valid_from_in_0_month_value = null, $valid_from_in_0_year = null, $valid_from_less_than = null, $valid_from_less_than_or_equal = null, $valid_from_not_equals = null, $valid_from_specified = null, $valid_to_equals = null, $valid_to_greater_than = null, $valid_to_greater_than_or_equal = null, $valid_to_in_0_chronology_calendar_type = null, $valid_to_in_0_chronology_id = null, $valid_to_in_0_day_of_month = null, $valid_to_in_0_day_of_week = null, $valid_to_in_0_day_of_year = null, $valid_to_in_0_era_value = null, $valid_to_in_0_leap_year = null, $valid_to_in_0_month = null, $valid_to_in_0_month_value = null, $valid_to_in_0_year = null, $valid_to_less_than = null, $valid_to_less_than_or_equal = null, $valid_to_not_equals = null, $valid_to_specified = null)
     {
         $returnType = 'int';
-        $request = $this->countMembershipsUsingGETRequest($criteria_id_equals, $criteria_id_greater_than, $criteria_id_greater_than_or_equal, $criteria_id_in, $criteria_id_less_than, $criteria_id_less_than_or_equal, $criteria_id_not_equals, $criteria_id_specified, $id_equals, $id_greater_than, $id_greater_than_or_equal, $id_in, $id_less_than, $id_less_than_or_equal, $id_not_equals, $id_specified, $membership_period_id_equals, $membership_period_id_greater_than, $membership_period_id_greater_than_or_equal, $membership_period_id_in, $membership_period_id_less_than, $membership_period_id_less_than_or_equal, $membership_period_id_not_equals, $membership_period_id_specified, $number_id_equals, $number_id_greater_than, $number_id_greater_than_or_equal, $number_id_in, $number_id_less_than, $number_id_less_than_or_equal, $number_id_not_equals, $number_id_specified, $order_id_equals, $order_id_greater_than, $order_id_greater_than_or_equal, $order_id_in, $order_id_less_than, $order_id_less_than_or_equal, $order_id_not_equals, $order_id_specified, $person_id_contains, $person_id_does_not_contain, $person_id_equals, $person_id_in, $person_id_not_equals, $person_id_specified, $status_equals, $status_in, $status_not_equals, $status_specified, $valid_from_equals, $valid_from_greater_than, $valid_from_greater_than_or_equal, $valid_from_in_0_chronology_calendar_type, $valid_from_in_0_chronology_id, $valid_from_in_0_day_of_month, $valid_from_in_0_day_of_week, $valid_from_in_0_day_of_year, $valid_from_in_0_era_value, $valid_from_in_0_leap_year, $valid_from_in_0_month, $valid_from_in_0_month_value, $valid_from_in_0_year, $valid_from_less_than, $valid_from_less_than_or_equal, $valid_from_not_equals, $valid_from_specified, $valid_to_equals, $valid_to_greater_than, $valid_to_greater_than_or_equal, $valid_to_in_0_chronology_calendar_type, $valid_to_in_0_chronology_id, $valid_to_in_0_day_of_month, $valid_to_in_0_day_of_week, $valid_to_in_0_day_of_year, $valid_to_in_0_era_value, $valid_to_in_0_leap_year, $valid_to_in_0_month, $valid_to_in_0_month_value, $valid_to_in_0_year, $valid_to_less_than, $valid_to_less_than_or_equal, $valid_to_not_equals, $valid_to_specified);
+        $request = $this->countMembershipsUsingGETRequest($criteria_id_equals, $criteria_id_greater_than, $criteria_id_greater_than_or_equal, $criteria_id_in, $criteria_id_less_than, $criteria_id_less_than_or_equal, $criteria_id_not_equals, $criteria_id_specified, $id_equals, $id_greater_than, $id_greater_than_or_equal, $id_in, $id_less_than, $id_less_than_or_equal, $id_not_equals, $id_specified, $membership_period_id_equals, $membership_period_id_greater_than, $membership_period_id_greater_than_or_equal, $membership_period_id_in, $membership_period_id_less_than, $membership_period_id_less_than_or_equal, $membership_period_id_not_equals, $membership_period_id_specified, $number_id_equals, $number_id_greater_than, $number_id_greater_than_or_equal, $number_id_in, $number_id_less_than, $number_id_less_than_or_equal, $number_id_not_equals, $number_id_specified, $order_id_equals, $order_id_greater_than, $order_id_greater_than_or_equal, $order_id_in, $order_id_less_than, $order_id_less_than_or_equal, $order_id_not_equals, $order_id_specified, $person_id_equals, $person_id_greater_than, $person_id_greater_than_or_equal, $person_id_in, $person_id_less_than, $person_id_less_than_or_equal, $person_id_not_equals, $person_id_specified, $status_equals, $status_in, $status_not_equals, $status_specified, $valid_from_equals, $valid_from_greater_than, $valid_from_greater_than_or_equal, $valid_from_in_0_chronology_calendar_type, $valid_from_in_0_chronology_id, $valid_from_in_0_day_of_month, $valid_from_in_0_day_of_week, $valid_from_in_0_day_of_year, $valid_from_in_0_era_value, $valid_from_in_0_leap_year, $valid_from_in_0_month, $valid_from_in_0_month_value, $valid_from_in_0_year, $valid_from_less_than, $valid_from_less_than_or_equal, $valid_from_not_equals, $valid_from_specified, $valid_to_equals, $valid_to_greater_than, $valid_to_greater_than_or_equal, $valid_to_in_0_chronology_calendar_type, $valid_to_in_0_chronology_id, $valid_to_in_0_day_of_month, $valid_to_in_0_day_of_week, $valid_to_in_0_day_of_year, $valid_to_in_0_era_value, $valid_to_in_0_leap_year, $valid_to_in_0_month, $valid_to_in_0_month_value, $valid_to_in_0_year, $valid_to_less_than, $valid_to_less_than_or_equal, $valid_to_not_equals, $valid_to_specified);
 
         try {
             $options = $this->createHttpClientOption();
@@ -390,11 +394,13 @@ class MembershipResourceApi
      * @param  int $order_id_less_than_or_equal (optional)
      * @param  int $order_id_not_equals (optional)
      * @param  bool $order_id_specified (optional)
-     * @param  string $person_id_contains (optional)
-     * @param  string $person_id_does_not_contain (optional)
-     * @param  string $person_id_equals (optional)
-     * @param  string[] $person_id_in (optional)
-     * @param  string $person_id_not_equals (optional)
+     * @param  int $person_id_equals (optional)
+     * @param  int $person_id_greater_than (optional)
+     * @param  int $person_id_greater_than_or_equal (optional)
+     * @param  int[] $person_id_in (optional)
+     * @param  int $person_id_less_than (optional)
+     * @param  int $person_id_less_than_or_equal (optional)
+     * @param  int $person_id_not_equals (optional)
      * @param  bool $person_id_specified (optional)
      * @param  string $status_equals (optional)
      * @param  string[] $status_in (optional)
@@ -438,9 +444,9 @@ class MembershipResourceApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function countMembershipsUsingGETAsync($criteria_id_equals = null, $criteria_id_greater_than = null, $criteria_id_greater_than_or_equal = null, $criteria_id_in = null, $criteria_id_less_than = null, $criteria_id_less_than_or_equal = null, $criteria_id_not_equals = null, $criteria_id_specified = null, $id_equals = null, $id_greater_than = null, $id_greater_than_or_equal = null, $id_in = null, $id_less_than = null, $id_less_than_or_equal = null, $id_not_equals = null, $id_specified = null, $membership_period_id_equals = null, $membership_period_id_greater_than = null, $membership_period_id_greater_than_or_equal = null, $membership_period_id_in = null, $membership_period_id_less_than = null, $membership_period_id_less_than_or_equal = null, $membership_period_id_not_equals = null, $membership_period_id_specified = null, $number_id_equals = null, $number_id_greater_than = null, $number_id_greater_than_or_equal = null, $number_id_in = null, $number_id_less_than = null, $number_id_less_than_or_equal = null, $number_id_not_equals = null, $number_id_specified = null, $order_id_equals = null, $order_id_greater_than = null, $order_id_greater_than_or_equal = null, $order_id_in = null, $order_id_less_than = null, $order_id_less_than_or_equal = null, $order_id_not_equals = null, $order_id_specified = null, $person_id_contains = null, $person_id_does_not_contain = null, $person_id_equals = null, $person_id_in = null, $person_id_not_equals = null, $person_id_specified = null, $status_equals = null, $status_in = null, $status_not_equals = null, $status_specified = null, $valid_from_equals = null, $valid_from_greater_than = null, $valid_from_greater_than_or_equal = null, $valid_from_in_0_chronology_calendar_type = null, $valid_from_in_0_chronology_id = null, $valid_from_in_0_day_of_month = null, $valid_from_in_0_day_of_week = null, $valid_from_in_0_day_of_year = null, $valid_from_in_0_era_value = null, $valid_from_in_0_leap_year = null, $valid_from_in_0_month = null, $valid_from_in_0_month_value = null, $valid_from_in_0_year = null, $valid_from_less_than = null, $valid_from_less_than_or_equal = null, $valid_from_not_equals = null, $valid_from_specified = null, $valid_to_equals = null, $valid_to_greater_than = null, $valid_to_greater_than_or_equal = null, $valid_to_in_0_chronology_calendar_type = null, $valid_to_in_0_chronology_id = null, $valid_to_in_0_day_of_month = null, $valid_to_in_0_day_of_week = null, $valid_to_in_0_day_of_year = null, $valid_to_in_0_era_value = null, $valid_to_in_0_leap_year = null, $valid_to_in_0_month = null, $valid_to_in_0_month_value = null, $valid_to_in_0_year = null, $valid_to_less_than = null, $valid_to_less_than_or_equal = null, $valid_to_not_equals = null, $valid_to_specified = null)
+    public function countMembershipsUsingGETAsync($criteria_id_equals = null, $criteria_id_greater_than = null, $criteria_id_greater_than_or_equal = null, $criteria_id_in = null, $criteria_id_less_than = null, $criteria_id_less_than_or_equal = null, $criteria_id_not_equals = null, $criteria_id_specified = null, $id_equals = null, $id_greater_than = null, $id_greater_than_or_equal = null, $id_in = null, $id_less_than = null, $id_less_than_or_equal = null, $id_not_equals = null, $id_specified = null, $membership_period_id_equals = null, $membership_period_id_greater_than = null, $membership_period_id_greater_than_or_equal = null, $membership_period_id_in = null, $membership_period_id_less_than = null, $membership_period_id_less_than_or_equal = null, $membership_period_id_not_equals = null, $membership_period_id_specified = null, $number_id_equals = null, $number_id_greater_than = null, $number_id_greater_than_or_equal = null, $number_id_in = null, $number_id_less_than = null, $number_id_less_than_or_equal = null, $number_id_not_equals = null, $number_id_specified = null, $order_id_equals = null, $order_id_greater_than = null, $order_id_greater_than_or_equal = null, $order_id_in = null, $order_id_less_than = null, $order_id_less_than_or_equal = null, $order_id_not_equals = null, $order_id_specified = null, $person_id_equals = null, $person_id_greater_than = null, $person_id_greater_than_or_equal = null, $person_id_in = null, $person_id_less_than = null, $person_id_less_than_or_equal = null, $person_id_not_equals = null, $person_id_specified = null, $status_equals = null, $status_in = null, $status_not_equals = null, $status_specified = null, $valid_from_equals = null, $valid_from_greater_than = null, $valid_from_greater_than_or_equal = null, $valid_from_in_0_chronology_calendar_type = null, $valid_from_in_0_chronology_id = null, $valid_from_in_0_day_of_month = null, $valid_from_in_0_day_of_week = null, $valid_from_in_0_day_of_year = null, $valid_from_in_0_era_value = null, $valid_from_in_0_leap_year = null, $valid_from_in_0_month = null, $valid_from_in_0_month_value = null, $valid_from_in_0_year = null, $valid_from_less_than = null, $valid_from_less_than_or_equal = null, $valid_from_not_equals = null, $valid_from_specified = null, $valid_to_equals = null, $valid_to_greater_than = null, $valid_to_greater_than_or_equal = null, $valid_to_in_0_chronology_calendar_type = null, $valid_to_in_0_chronology_id = null, $valid_to_in_0_day_of_month = null, $valid_to_in_0_day_of_week = null, $valid_to_in_0_day_of_year = null, $valid_to_in_0_era_value = null, $valid_to_in_0_leap_year = null, $valid_to_in_0_month = null, $valid_to_in_0_month_value = null, $valid_to_in_0_year = null, $valid_to_less_than = null, $valid_to_less_than_or_equal = null, $valid_to_not_equals = null, $valid_to_specified = null)
     {
-        return $this->countMembershipsUsingGETAsyncWithHttpInfo($criteria_id_equals, $criteria_id_greater_than, $criteria_id_greater_than_or_equal, $criteria_id_in, $criteria_id_less_than, $criteria_id_less_than_or_equal, $criteria_id_not_equals, $criteria_id_specified, $id_equals, $id_greater_than, $id_greater_than_or_equal, $id_in, $id_less_than, $id_less_than_or_equal, $id_not_equals, $id_specified, $membership_period_id_equals, $membership_period_id_greater_than, $membership_period_id_greater_than_or_equal, $membership_period_id_in, $membership_period_id_less_than, $membership_period_id_less_than_or_equal, $membership_period_id_not_equals, $membership_period_id_specified, $number_id_equals, $number_id_greater_than, $number_id_greater_than_or_equal, $number_id_in, $number_id_less_than, $number_id_less_than_or_equal, $number_id_not_equals, $number_id_specified, $order_id_equals, $order_id_greater_than, $order_id_greater_than_or_equal, $order_id_in, $order_id_less_than, $order_id_less_than_or_equal, $order_id_not_equals, $order_id_specified, $person_id_contains, $person_id_does_not_contain, $person_id_equals, $person_id_in, $person_id_not_equals, $person_id_specified, $status_equals, $status_in, $status_not_equals, $status_specified, $valid_from_equals, $valid_from_greater_than, $valid_from_greater_than_or_equal, $valid_from_in_0_chronology_calendar_type, $valid_from_in_0_chronology_id, $valid_from_in_0_day_of_month, $valid_from_in_0_day_of_week, $valid_from_in_0_day_of_year, $valid_from_in_0_era_value, $valid_from_in_0_leap_year, $valid_from_in_0_month, $valid_from_in_0_month_value, $valid_from_in_0_year, $valid_from_less_than, $valid_from_less_than_or_equal, $valid_from_not_equals, $valid_from_specified, $valid_to_equals, $valid_to_greater_than, $valid_to_greater_than_or_equal, $valid_to_in_0_chronology_calendar_type, $valid_to_in_0_chronology_id, $valid_to_in_0_day_of_month, $valid_to_in_0_day_of_week, $valid_to_in_0_day_of_year, $valid_to_in_0_era_value, $valid_to_in_0_leap_year, $valid_to_in_0_month, $valid_to_in_0_month_value, $valid_to_in_0_year, $valid_to_less_than, $valid_to_less_than_or_equal, $valid_to_not_equals, $valid_to_specified)
+        return $this->countMembershipsUsingGETAsyncWithHttpInfo($criteria_id_equals, $criteria_id_greater_than, $criteria_id_greater_than_or_equal, $criteria_id_in, $criteria_id_less_than, $criteria_id_less_than_or_equal, $criteria_id_not_equals, $criteria_id_specified, $id_equals, $id_greater_than, $id_greater_than_or_equal, $id_in, $id_less_than, $id_less_than_or_equal, $id_not_equals, $id_specified, $membership_period_id_equals, $membership_period_id_greater_than, $membership_period_id_greater_than_or_equal, $membership_period_id_in, $membership_period_id_less_than, $membership_period_id_less_than_or_equal, $membership_period_id_not_equals, $membership_period_id_specified, $number_id_equals, $number_id_greater_than, $number_id_greater_than_or_equal, $number_id_in, $number_id_less_than, $number_id_less_than_or_equal, $number_id_not_equals, $number_id_specified, $order_id_equals, $order_id_greater_than, $order_id_greater_than_or_equal, $order_id_in, $order_id_less_than, $order_id_less_than_or_equal, $order_id_not_equals, $order_id_specified, $person_id_equals, $person_id_greater_than, $person_id_greater_than_or_equal, $person_id_in, $person_id_less_than, $person_id_less_than_or_equal, $person_id_not_equals, $person_id_specified, $status_equals, $status_in, $status_not_equals, $status_specified, $valid_from_equals, $valid_from_greater_than, $valid_from_greater_than_or_equal, $valid_from_in_0_chronology_calendar_type, $valid_from_in_0_chronology_id, $valid_from_in_0_day_of_month, $valid_from_in_0_day_of_week, $valid_from_in_0_day_of_year, $valid_from_in_0_era_value, $valid_from_in_0_leap_year, $valid_from_in_0_month, $valid_from_in_0_month_value, $valid_from_in_0_year, $valid_from_less_than, $valid_from_less_than_or_equal, $valid_from_not_equals, $valid_from_specified, $valid_to_equals, $valid_to_greater_than, $valid_to_greater_than_or_equal, $valid_to_in_0_chronology_calendar_type, $valid_to_in_0_chronology_id, $valid_to_in_0_day_of_month, $valid_to_in_0_day_of_week, $valid_to_in_0_day_of_year, $valid_to_in_0_era_value, $valid_to_in_0_leap_year, $valid_to_in_0_month, $valid_to_in_0_month_value, $valid_to_in_0_year, $valid_to_less_than, $valid_to_less_than_or_equal, $valid_to_not_equals, $valid_to_specified)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -493,11 +499,13 @@ class MembershipResourceApi
      * @param  int $order_id_less_than_or_equal (optional)
      * @param  int $order_id_not_equals (optional)
      * @param  bool $order_id_specified (optional)
-     * @param  string $person_id_contains (optional)
-     * @param  string $person_id_does_not_contain (optional)
-     * @param  string $person_id_equals (optional)
-     * @param  string[] $person_id_in (optional)
-     * @param  string $person_id_not_equals (optional)
+     * @param  int $person_id_equals (optional)
+     * @param  int $person_id_greater_than (optional)
+     * @param  int $person_id_greater_than_or_equal (optional)
+     * @param  int[] $person_id_in (optional)
+     * @param  int $person_id_less_than (optional)
+     * @param  int $person_id_less_than_or_equal (optional)
+     * @param  int $person_id_not_equals (optional)
      * @param  bool $person_id_specified (optional)
      * @param  string $status_equals (optional)
      * @param  string[] $status_in (optional)
@@ -541,10 +549,10 @@ class MembershipResourceApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function countMembershipsUsingGETAsyncWithHttpInfo($criteria_id_equals = null, $criteria_id_greater_than = null, $criteria_id_greater_than_or_equal = null, $criteria_id_in = null, $criteria_id_less_than = null, $criteria_id_less_than_or_equal = null, $criteria_id_not_equals = null, $criteria_id_specified = null, $id_equals = null, $id_greater_than = null, $id_greater_than_or_equal = null, $id_in = null, $id_less_than = null, $id_less_than_or_equal = null, $id_not_equals = null, $id_specified = null, $membership_period_id_equals = null, $membership_period_id_greater_than = null, $membership_period_id_greater_than_or_equal = null, $membership_period_id_in = null, $membership_period_id_less_than = null, $membership_period_id_less_than_or_equal = null, $membership_period_id_not_equals = null, $membership_period_id_specified = null, $number_id_equals = null, $number_id_greater_than = null, $number_id_greater_than_or_equal = null, $number_id_in = null, $number_id_less_than = null, $number_id_less_than_or_equal = null, $number_id_not_equals = null, $number_id_specified = null, $order_id_equals = null, $order_id_greater_than = null, $order_id_greater_than_or_equal = null, $order_id_in = null, $order_id_less_than = null, $order_id_less_than_or_equal = null, $order_id_not_equals = null, $order_id_specified = null, $person_id_contains = null, $person_id_does_not_contain = null, $person_id_equals = null, $person_id_in = null, $person_id_not_equals = null, $person_id_specified = null, $status_equals = null, $status_in = null, $status_not_equals = null, $status_specified = null, $valid_from_equals = null, $valid_from_greater_than = null, $valid_from_greater_than_or_equal = null, $valid_from_in_0_chronology_calendar_type = null, $valid_from_in_0_chronology_id = null, $valid_from_in_0_day_of_month = null, $valid_from_in_0_day_of_week = null, $valid_from_in_0_day_of_year = null, $valid_from_in_0_era_value = null, $valid_from_in_0_leap_year = null, $valid_from_in_0_month = null, $valid_from_in_0_month_value = null, $valid_from_in_0_year = null, $valid_from_less_than = null, $valid_from_less_than_or_equal = null, $valid_from_not_equals = null, $valid_from_specified = null, $valid_to_equals = null, $valid_to_greater_than = null, $valid_to_greater_than_or_equal = null, $valid_to_in_0_chronology_calendar_type = null, $valid_to_in_0_chronology_id = null, $valid_to_in_0_day_of_month = null, $valid_to_in_0_day_of_week = null, $valid_to_in_0_day_of_year = null, $valid_to_in_0_era_value = null, $valid_to_in_0_leap_year = null, $valid_to_in_0_month = null, $valid_to_in_0_month_value = null, $valid_to_in_0_year = null, $valid_to_less_than = null, $valid_to_less_than_or_equal = null, $valid_to_not_equals = null, $valid_to_specified = null)
+    public function countMembershipsUsingGETAsyncWithHttpInfo($criteria_id_equals = null, $criteria_id_greater_than = null, $criteria_id_greater_than_or_equal = null, $criteria_id_in = null, $criteria_id_less_than = null, $criteria_id_less_than_or_equal = null, $criteria_id_not_equals = null, $criteria_id_specified = null, $id_equals = null, $id_greater_than = null, $id_greater_than_or_equal = null, $id_in = null, $id_less_than = null, $id_less_than_or_equal = null, $id_not_equals = null, $id_specified = null, $membership_period_id_equals = null, $membership_period_id_greater_than = null, $membership_period_id_greater_than_or_equal = null, $membership_period_id_in = null, $membership_period_id_less_than = null, $membership_period_id_less_than_or_equal = null, $membership_period_id_not_equals = null, $membership_period_id_specified = null, $number_id_equals = null, $number_id_greater_than = null, $number_id_greater_than_or_equal = null, $number_id_in = null, $number_id_less_than = null, $number_id_less_than_or_equal = null, $number_id_not_equals = null, $number_id_specified = null, $order_id_equals = null, $order_id_greater_than = null, $order_id_greater_than_or_equal = null, $order_id_in = null, $order_id_less_than = null, $order_id_less_than_or_equal = null, $order_id_not_equals = null, $order_id_specified = null, $person_id_equals = null, $person_id_greater_than = null, $person_id_greater_than_or_equal = null, $person_id_in = null, $person_id_less_than = null, $person_id_less_than_or_equal = null, $person_id_not_equals = null, $person_id_specified = null, $status_equals = null, $status_in = null, $status_not_equals = null, $status_specified = null, $valid_from_equals = null, $valid_from_greater_than = null, $valid_from_greater_than_or_equal = null, $valid_from_in_0_chronology_calendar_type = null, $valid_from_in_0_chronology_id = null, $valid_from_in_0_day_of_month = null, $valid_from_in_0_day_of_week = null, $valid_from_in_0_day_of_year = null, $valid_from_in_0_era_value = null, $valid_from_in_0_leap_year = null, $valid_from_in_0_month = null, $valid_from_in_0_month_value = null, $valid_from_in_0_year = null, $valid_from_less_than = null, $valid_from_less_than_or_equal = null, $valid_from_not_equals = null, $valid_from_specified = null, $valid_to_equals = null, $valid_to_greater_than = null, $valid_to_greater_than_or_equal = null, $valid_to_in_0_chronology_calendar_type = null, $valid_to_in_0_chronology_id = null, $valid_to_in_0_day_of_month = null, $valid_to_in_0_day_of_week = null, $valid_to_in_0_day_of_year = null, $valid_to_in_0_era_value = null, $valid_to_in_0_leap_year = null, $valid_to_in_0_month = null, $valid_to_in_0_month_value = null, $valid_to_in_0_year = null, $valid_to_less_than = null, $valid_to_less_than_or_equal = null, $valid_to_not_equals = null, $valid_to_specified = null)
     {
         $returnType = 'int';
-        $request = $this->countMembershipsUsingGETRequest($criteria_id_equals, $criteria_id_greater_than, $criteria_id_greater_than_or_equal, $criteria_id_in, $criteria_id_less_than, $criteria_id_less_than_or_equal, $criteria_id_not_equals, $criteria_id_specified, $id_equals, $id_greater_than, $id_greater_than_or_equal, $id_in, $id_less_than, $id_less_than_or_equal, $id_not_equals, $id_specified, $membership_period_id_equals, $membership_period_id_greater_than, $membership_period_id_greater_than_or_equal, $membership_period_id_in, $membership_period_id_less_than, $membership_period_id_less_than_or_equal, $membership_period_id_not_equals, $membership_period_id_specified, $number_id_equals, $number_id_greater_than, $number_id_greater_than_or_equal, $number_id_in, $number_id_less_than, $number_id_less_than_or_equal, $number_id_not_equals, $number_id_specified, $order_id_equals, $order_id_greater_than, $order_id_greater_than_or_equal, $order_id_in, $order_id_less_than, $order_id_less_than_or_equal, $order_id_not_equals, $order_id_specified, $person_id_contains, $person_id_does_not_contain, $person_id_equals, $person_id_in, $person_id_not_equals, $person_id_specified, $status_equals, $status_in, $status_not_equals, $status_specified, $valid_from_equals, $valid_from_greater_than, $valid_from_greater_than_or_equal, $valid_from_in_0_chronology_calendar_type, $valid_from_in_0_chronology_id, $valid_from_in_0_day_of_month, $valid_from_in_0_day_of_week, $valid_from_in_0_day_of_year, $valid_from_in_0_era_value, $valid_from_in_0_leap_year, $valid_from_in_0_month, $valid_from_in_0_month_value, $valid_from_in_0_year, $valid_from_less_than, $valid_from_less_than_or_equal, $valid_from_not_equals, $valid_from_specified, $valid_to_equals, $valid_to_greater_than, $valid_to_greater_than_or_equal, $valid_to_in_0_chronology_calendar_type, $valid_to_in_0_chronology_id, $valid_to_in_0_day_of_month, $valid_to_in_0_day_of_week, $valid_to_in_0_day_of_year, $valid_to_in_0_era_value, $valid_to_in_0_leap_year, $valid_to_in_0_month, $valid_to_in_0_month_value, $valid_to_in_0_year, $valid_to_less_than, $valid_to_less_than_or_equal, $valid_to_not_equals, $valid_to_specified);
+        $request = $this->countMembershipsUsingGETRequest($criteria_id_equals, $criteria_id_greater_than, $criteria_id_greater_than_or_equal, $criteria_id_in, $criteria_id_less_than, $criteria_id_less_than_or_equal, $criteria_id_not_equals, $criteria_id_specified, $id_equals, $id_greater_than, $id_greater_than_or_equal, $id_in, $id_less_than, $id_less_than_or_equal, $id_not_equals, $id_specified, $membership_period_id_equals, $membership_period_id_greater_than, $membership_period_id_greater_than_or_equal, $membership_period_id_in, $membership_period_id_less_than, $membership_period_id_less_than_or_equal, $membership_period_id_not_equals, $membership_period_id_specified, $number_id_equals, $number_id_greater_than, $number_id_greater_than_or_equal, $number_id_in, $number_id_less_than, $number_id_less_than_or_equal, $number_id_not_equals, $number_id_specified, $order_id_equals, $order_id_greater_than, $order_id_greater_than_or_equal, $order_id_in, $order_id_less_than, $order_id_less_than_or_equal, $order_id_not_equals, $order_id_specified, $person_id_equals, $person_id_greater_than, $person_id_greater_than_or_equal, $person_id_in, $person_id_less_than, $person_id_less_than_or_equal, $person_id_not_equals, $person_id_specified, $status_equals, $status_in, $status_not_equals, $status_specified, $valid_from_equals, $valid_from_greater_than, $valid_from_greater_than_or_equal, $valid_from_in_0_chronology_calendar_type, $valid_from_in_0_chronology_id, $valid_from_in_0_day_of_month, $valid_from_in_0_day_of_week, $valid_from_in_0_day_of_year, $valid_from_in_0_era_value, $valid_from_in_0_leap_year, $valid_from_in_0_month, $valid_from_in_0_month_value, $valid_from_in_0_year, $valid_from_less_than, $valid_from_less_than_or_equal, $valid_from_not_equals, $valid_from_specified, $valid_to_equals, $valid_to_greater_than, $valid_to_greater_than_or_equal, $valid_to_in_0_chronology_calendar_type, $valid_to_in_0_chronology_id, $valid_to_in_0_day_of_month, $valid_to_in_0_day_of_week, $valid_to_in_0_day_of_year, $valid_to_in_0_era_value, $valid_to_in_0_leap_year, $valid_to_in_0_month, $valid_to_in_0_month_value, $valid_to_in_0_year, $valid_to_less_than, $valid_to_less_than_or_equal, $valid_to_not_equals, $valid_to_specified);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -626,11 +634,13 @@ class MembershipResourceApi
      * @param  int $order_id_less_than_or_equal (optional)
      * @param  int $order_id_not_equals (optional)
      * @param  bool $order_id_specified (optional)
-     * @param  string $person_id_contains (optional)
-     * @param  string $person_id_does_not_contain (optional)
-     * @param  string $person_id_equals (optional)
-     * @param  string[] $person_id_in (optional)
-     * @param  string $person_id_not_equals (optional)
+     * @param  int $person_id_equals (optional)
+     * @param  int $person_id_greater_than (optional)
+     * @param  int $person_id_greater_than_or_equal (optional)
+     * @param  int[] $person_id_in (optional)
+     * @param  int $person_id_less_than (optional)
+     * @param  int $person_id_less_than_or_equal (optional)
+     * @param  int $person_id_not_equals (optional)
      * @param  bool $person_id_specified (optional)
      * @param  string $status_equals (optional)
      * @param  string[] $status_in (optional)
@@ -674,7 +684,7 @@ class MembershipResourceApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function countMembershipsUsingGETRequest($criteria_id_equals = null, $criteria_id_greater_than = null, $criteria_id_greater_than_or_equal = null, $criteria_id_in = null, $criteria_id_less_than = null, $criteria_id_less_than_or_equal = null, $criteria_id_not_equals = null, $criteria_id_specified = null, $id_equals = null, $id_greater_than = null, $id_greater_than_or_equal = null, $id_in = null, $id_less_than = null, $id_less_than_or_equal = null, $id_not_equals = null, $id_specified = null, $membership_period_id_equals = null, $membership_period_id_greater_than = null, $membership_period_id_greater_than_or_equal = null, $membership_period_id_in = null, $membership_period_id_less_than = null, $membership_period_id_less_than_or_equal = null, $membership_period_id_not_equals = null, $membership_period_id_specified = null, $number_id_equals = null, $number_id_greater_than = null, $number_id_greater_than_or_equal = null, $number_id_in = null, $number_id_less_than = null, $number_id_less_than_or_equal = null, $number_id_not_equals = null, $number_id_specified = null, $order_id_equals = null, $order_id_greater_than = null, $order_id_greater_than_or_equal = null, $order_id_in = null, $order_id_less_than = null, $order_id_less_than_or_equal = null, $order_id_not_equals = null, $order_id_specified = null, $person_id_contains = null, $person_id_does_not_contain = null, $person_id_equals = null, $person_id_in = null, $person_id_not_equals = null, $person_id_specified = null, $status_equals = null, $status_in = null, $status_not_equals = null, $status_specified = null, $valid_from_equals = null, $valid_from_greater_than = null, $valid_from_greater_than_or_equal = null, $valid_from_in_0_chronology_calendar_type = null, $valid_from_in_0_chronology_id = null, $valid_from_in_0_day_of_month = null, $valid_from_in_0_day_of_week = null, $valid_from_in_0_day_of_year = null, $valid_from_in_0_era_value = null, $valid_from_in_0_leap_year = null, $valid_from_in_0_month = null, $valid_from_in_0_month_value = null, $valid_from_in_0_year = null, $valid_from_less_than = null, $valid_from_less_than_or_equal = null, $valid_from_not_equals = null, $valid_from_specified = null, $valid_to_equals = null, $valid_to_greater_than = null, $valid_to_greater_than_or_equal = null, $valid_to_in_0_chronology_calendar_type = null, $valid_to_in_0_chronology_id = null, $valid_to_in_0_day_of_month = null, $valid_to_in_0_day_of_week = null, $valid_to_in_0_day_of_year = null, $valid_to_in_0_era_value = null, $valid_to_in_0_leap_year = null, $valid_to_in_0_month = null, $valid_to_in_0_month_value = null, $valid_to_in_0_year = null, $valid_to_less_than = null, $valid_to_less_than_or_equal = null, $valid_to_not_equals = null, $valid_to_specified = null)
+    protected function countMembershipsUsingGETRequest($criteria_id_equals = null, $criteria_id_greater_than = null, $criteria_id_greater_than_or_equal = null, $criteria_id_in = null, $criteria_id_less_than = null, $criteria_id_less_than_or_equal = null, $criteria_id_not_equals = null, $criteria_id_specified = null, $id_equals = null, $id_greater_than = null, $id_greater_than_or_equal = null, $id_in = null, $id_less_than = null, $id_less_than_or_equal = null, $id_not_equals = null, $id_specified = null, $membership_period_id_equals = null, $membership_period_id_greater_than = null, $membership_period_id_greater_than_or_equal = null, $membership_period_id_in = null, $membership_period_id_less_than = null, $membership_period_id_less_than_or_equal = null, $membership_period_id_not_equals = null, $membership_period_id_specified = null, $number_id_equals = null, $number_id_greater_than = null, $number_id_greater_than_or_equal = null, $number_id_in = null, $number_id_less_than = null, $number_id_less_than_or_equal = null, $number_id_not_equals = null, $number_id_specified = null, $order_id_equals = null, $order_id_greater_than = null, $order_id_greater_than_or_equal = null, $order_id_in = null, $order_id_less_than = null, $order_id_less_than_or_equal = null, $order_id_not_equals = null, $order_id_specified = null, $person_id_equals = null, $person_id_greater_than = null, $person_id_greater_than_or_equal = null, $person_id_in = null, $person_id_less_than = null, $person_id_less_than_or_equal = null, $person_id_not_equals = null, $person_id_specified = null, $status_equals = null, $status_in = null, $status_not_equals = null, $status_specified = null, $valid_from_equals = null, $valid_from_greater_than = null, $valid_from_greater_than_or_equal = null, $valid_from_in_0_chronology_calendar_type = null, $valid_from_in_0_chronology_id = null, $valid_from_in_0_day_of_month = null, $valid_from_in_0_day_of_week = null, $valid_from_in_0_day_of_year = null, $valid_from_in_0_era_value = null, $valid_from_in_0_leap_year = null, $valid_from_in_0_month = null, $valid_from_in_0_month_value = null, $valid_from_in_0_year = null, $valid_from_less_than = null, $valid_from_less_than_or_equal = null, $valid_from_not_equals = null, $valid_from_specified = null, $valid_to_equals = null, $valid_to_greater_than = null, $valid_to_greater_than_or_equal = null, $valid_to_in_0_chronology_calendar_type = null, $valid_to_in_0_chronology_id = null, $valid_to_in_0_day_of_month = null, $valid_to_in_0_day_of_week = null, $valid_to_in_0_day_of_year = null, $valid_to_in_0_era_value = null, $valid_to_in_0_leap_year = null, $valid_to_in_0_month = null, $valid_to_in_0_month_value = null, $valid_to_in_0_year = null, $valid_to_less_than = null, $valid_to_less_than_or_equal = null, $valid_to_not_equals = null, $valid_to_specified = null)
     {
 
         $resourcePath = '/api/memberships/count';
@@ -860,16 +870,16 @@ class MembershipResourceApi
             $queryParams['orderId.specified'] = ObjectSerializer::toQueryValue($order_id_specified);
         }
         // query params
-        if ($person_id_contains !== null) {
-            $queryParams['personId.contains'] = ObjectSerializer::toQueryValue($person_id_contains);
-        }
-        // query params
-        if ($person_id_does_not_contain !== null) {
-            $queryParams['personId.doesNotContain'] = ObjectSerializer::toQueryValue($person_id_does_not_contain);
-        }
-        // query params
         if ($person_id_equals !== null) {
             $queryParams['personId.equals'] = ObjectSerializer::toQueryValue($person_id_equals);
+        }
+        // query params
+        if ($person_id_greater_than !== null) {
+            $queryParams['personId.greaterThan'] = ObjectSerializer::toQueryValue($person_id_greater_than);
+        }
+        // query params
+        if ($person_id_greater_than_or_equal !== null) {
+            $queryParams['personId.greaterThanOrEqual'] = ObjectSerializer::toQueryValue($person_id_greater_than_or_equal);
         }
         // query params
         if (is_array($person_id_in)) {
@@ -877,6 +887,14 @@ class MembershipResourceApi
         } else
         if ($person_id_in !== null) {
             $queryParams['personId.in'] = ObjectSerializer::toQueryValue($person_id_in);
+        }
+        // query params
+        if ($person_id_less_than !== null) {
+            $queryParams['personId.lessThan'] = ObjectSerializer::toQueryValue($person_id_less_than);
+        }
+        // query params
+        if ($person_id_less_than_or_equal !== null) {
+            $queryParams['personId.lessThanOrEqual'] = ObjectSerializer::toQueryValue($person_id_less_than_or_equal);
         }
         // query params
         if ($person_id_not_equals !== null) {
@@ -1656,11 +1674,13 @@ class MembershipResourceApi
      * @param  int $order_id_not_equals order_id_not_equals (optional)
      * @param  bool $order_id_specified order_id_specified (optional)
      * @param  int $page Page number of the requested page (optional)
-     * @param  string $person_id_contains person_id_contains (optional)
-     * @param  string $person_id_does_not_contain person_id_does_not_contain (optional)
-     * @param  string $person_id_equals person_id_equals (optional)
-     * @param  string[] $person_id_in person_id_in (optional)
-     * @param  string $person_id_not_equals person_id_not_equals (optional)
+     * @param  int $person_id_equals person_id_equals (optional)
+     * @param  int $person_id_greater_than person_id_greater_than (optional)
+     * @param  int $person_id_greater_than_or_equal person_id_greater_than_or_equal (optional)
+     * @param  int[] $person_id_in person_id_in (optional)
+     * @param  int $person_id_less_than person_id_less_than (optional)
+     * @param  int $person_id_less_than_or_equal person_id_less_than_or_equal (optional)
+     * @param  int $person_id_not_equals person_id_not_equals (optional)
      * @param  bool $person_id_specified person_id_specified (optional)
      * @param  int $size Size of a page (optional)
      * @param  string[] $sort Sorting criteria in the format: property(,asc|desc). Default sort order is ascending. Multiple sort criteria are supported. (optional)
@@ -1707,9 +1727,9 @@ class MembershipResourceApi
      * @throws \InvalidArgumentException
      * @return \Idealogic\MembershipAPI\Model\MembershipDTO[]
      */
-    public function getAllMembershipsUsingGET($criteria_id_equals = null, $criteria_id_greater_than = null, $criteria_id_greater_than_or_equal = null, $criteria_id_in = null, $criteria_id_less_than = null, $criteria_id_less_than_or_equal = null, $criteria_id_not_equals = null, $criteria_id_specified = null, $id_equals = null, $id_greater_than = null, $id_greater_than_or_equal = null, $id_in = null, $id_less_than = null, $id_less_than_or_equal = null, $id_not_equals = null, $id_specified = null, $membership_period_id_equals = null, $membership_period_id_greater_than = null, $membership_period_id_greater_than_or_equal = null, $membership_period_id_in = null, $membership_period_id_less_than = null, $membership_period_id_less_than_or_equal = null, $membership_period_id_not_equals = null, $membership_period_id_specified = null, $number_id_equals = null, $number_id_greater_than = null, $number_id_greater_than_or_equal = null, $number_id_in = null, $number_id_less_than = null, $number_id_less_than_or_equal = null, $number_id_not_equals = null, $number_id_specified = null, $order_id_equals = null, $order_id_greater_than = null, $order_id_greater_than_or_equal = null, $order_id_in = null, $order_id_less_than = null, $order_id_less_than_or_equal = null, $order_id_not_equals = null, $order_id_specified = null, $page = null, $person_id_contains = null, $person_id_does_not_contain = null, $person_id_equals = null, $person_id_in = null, $person_id_not_equals = null, $person_id_specified = null, $size = null, $sort = null, $status_equals = null, $status_in = null, $status_not_equals = null, $status_specified = null, $valid_from_equals = null, $valid_from_greater_than = null, $valid_from_greater_than_or_equal = null, $valid_from_in_0_chronology_calendar_type = null, $valid_from_in_0_chronology_id = null, $valid_from_in_0_day_of_month = null, $valid_from_in_0_day_of_week = null, $valid_from_in_0_day_of_year = null, $valid_from_in_0_era_value = null, $valid_from_in_0_leap_year = null, $valid_from_in_0_month = null, $valid_from_in_0_month_value = null, $valid_from_in_0_year = null, $valid_from_less_than = null, $valid_from_less_than_or_equal = null, $valid_from_not_equals = null, $valid_from_specified = null, $valid_to_equals = null, $valid_to_greater_than = null, $valid_to_greater_than_or_equal = null, $valid_to_in_0_chronology_calendar_type = null, $valid_to_in_0_chronology_id = null, $valid_to_in_0_day_of_month = null, $valid_to_in_0_day_of_week = null, $valid_to_in_0_day_of_year = null, $valid_to_in_0_era_value = null, $valid_to_in_0_leap_year = null, $valid_to_in_0_month = null, $valid_to_in_0_month_value = null, $valid_to_in_0_year = null, $valid_to_less_than = null, $valid_to_less_than_or_equal = null, $valid_to_not_equals = null, $valid_to_specified = null)
+    public function getAllMembershipsUsingGET($criteria_id_equals = null, $criteria_id_greater_than = null, $criteria_id_greater_than_or_equal = null, $criteria_id_in = null, $criteria_id_less_than = null, $criteria_id_less_than_or_equal = null, $criteria_id_not_equals = null, $criteria_id_specified = null, $id_equals = null, $id_greater_than = null, $id_greater_than_or_equal = null, $id_in = null, $id_less_than = null, $id_less_than_or_equal = null, $id_not_equals = null, $id_specified = null, $membership_period_id_equals = null, $membership_period_id_greater_than = null, $membership_period_id_greater_than_or_equal = null, $membership_period_id_in = null, $membership_period_id_less_than = null, $membership_period_id_less_than_or_equal = null, $membership_period_id_not_equals = null, $membership_period_id_specified = null, $number_id_equals = null, $number_id_greater_than = null, $number_id_greater_than_or_equal = null, $number_id_in = null, $number_id_less_than = null, $number_id_less_than_or_equal = null, $number_id_not_equals = null, $number_id_specified = null, $order_id_equals = null, $order_id_greater_than = null, $order_id_greater_than_or_equal = null, $order_id_in = null, $order_id_less_than = null, $order_id_less_than_or_equal = null, $order_id_not_equals = null, $order_id_specified = null, $page = null, $person_id_equals = null, $person_id_greater_than = null, $person_id_greater_than_or_equal = null, $person_id_in = null, $person_id_less_than = null, $person_id_less_than_or_equal = null, $person_id_not_equals = null, $person_id_specified = null, $size = null, $sort = null, $status_equals = null, $status_in = null, $status_not_equals = null, $status_specified = null, $valid_from_equals = null, $valid_from_greater_than = null, $valid_from_greater_than_or_equal = null, $valid_from_in_0_chronology_calendar_type = null, $valid_from_in_0_chronology_id = null, $valid_from_in_0_day_of_month = null, $valid_from_in_0_day_of_week = null, $valid_from_in_0_day_of_year = null, $valid_from_in_0_era_value = null, $valid_from_in_0_leap_year = null, $valid_from_in_0_month = null, $valid_from_in_0_month_value = null, $valid_from_in_0_year = null, $valid_from_less_than = null, $valid_from_less_than_or_equal = null, $valid_from_not_equals = null, $valid_from_specified = null, $valid_to_equals = null, $valid_to_greater_than = null, $valid_to_greater_than_or_equal = null, $valid_to_in_0_chronology_calendar_type = null, $valid_to_in_0_chronology_id = null, $valid_to_in_0_day_of_month = null, $valid_to_in_0_day_of_week = null, $valid_to_in_0_day_of_year = null, $valid_to_in_0_era_value = null, $valid_to_in_0_leap_year = null, $valid_to_in_0_month = null, $valid_to_in_0_month_value = null, $valid_to_in_0_year = null, $valid_to_less_than = null, $valid_to_less_than_or_equal = null, $valid_to_not_equals = null, $valid_to_specified = null)
     {
-        list($response) = $this->getAllMembershipsUsingGETWithHttpInfo($criteria_id_equals, $criteria_id_greater_than, $criteria_id_greater_than_or_equal, $criteria_id_in, $criteria_id_less_than, $criteria_id_less_than_or_equal, $criteria_id_not_equals, $criteria_id_specified, $id_equals, $id_greater_than, $id_greater_than_or_equal, $id_in, $id_less_than, $id_less_than_or_equal, $id_not_equals, $id_specified, $membership_period_id_equals, $membership_period_id_greater_than, $membership_period_id_greater_than_or_equal, $membership_period_id_in, $membership_period_id_less_than, $membership_period_id_less_than_or_equal, $membership_period_id_not_equals, $membership_period_id_specified, $number_id_equals, $number_id_greater_than, $number_id_greater_than_or_equal, $number_id_in, $number_id_less_than, $number_id_less_than_or_equal, $number_id_not_equals, $number_id_specified, $order_id_equals, $order_id_greater_than, $order_id_greater_than_or_equal, $order_id_in, $order_id_less_than, $order_id_less_than_or_equal, $order_id_not_equals, $order_id_specified, $page, $person_id_contains, $person_id_does_not_contain, $person_id_equals, $person_id_in, $person_id_not_equals, $person_id_specified, $size, $sort, $status_equals, $status_in, $status_not_equals, $status_specified, $valid_from_equals, $valid_from_greater_than, $valid_from_greater_than_or_equal, $valid_from_in_0_chronology_calendar_type, $valid_from_in_0_chronology_id, $valid_from_in_0_day_of_month, $valid_from_in_0_day_of_week, $valid_from_in_0_day_of_year, $valid_from_in_0_era_value, $valid_from_in_0_leap_year, $valid_from_in_0_month, $valid_from_in_0_month_value, $valid_from_in_0_year, $valid_from_less_than, $valid_from_less_than_or_equal, $valid_from_not_equals, $valid_from_specified, $valid_to_equals, $valid_to_greater_than, $valid_to_greater_than_or_equal, $valid_to_in_0_chronology_calendar_type, $valid_to_in_0_chronology_id, $valid_to_in_0_day_of_month, $valid_to_in_0_day_of_week, $valid_to_in_0_day_of_year, $valid_to_in_0_era_value, $valid_to_in_0_leap_year, $valid_to_in_0_month, $valid_to_in_0_month_value, $valid_to_in_0_year, $valid_to_less_than, $valid_to_less_than_or_equal, $valid_to_not_equals, $valid_to_specified);
+        list($response) = $this->getAllMembershipsUsingGETWithHttpInfo($criteria_id_equals, $criteria_id_greater_than, $criteria_id_greater_than_or_equal, $criteria_id_in, $criteria_id_less_than, $criteria_id_less_than_or_equal, $criteria_id_not_equals, $criteria_id_specified, $id_equals, $id_greater_than, $id_greater_than_or_equal, $id_in, $id_less_than, $id_less_than_or_equal, $id_not_equals, $id_specified, $membership_period_id_equals, $membership_period_id_greater_than, $membership_period_id_greater_than_or_equal, $membership_period_id_in, $membership_period_id_less_than, $membership_period_id_less_than_or_equal, $membership_period_id_not_equals, $membership_period_id_specified, $number_id_equals, $number_id_greater_than, $number_id_greater_than_or_equal, $number_id_in, $number_id_less_than, $number_id_less_than_or_equal, $number_id_not_equals, $number_id_specified, $order_id_equals, $order_id_greater_than, $order_id_greater_than_or_equal, $order_id_in, $order_id_less_than, $order_id_less_than_or_equal, $order_id_not_equals, $order_id_specified, $page, $person_id_equals, $person_id_greater_than, $person_id_greater_than_or_equal, $person_id_in, $person_id_less_than, $person_id_less_than_or_equal, $person_id_not_equals, $person_id_specified, $size, $sort, $status_equals, $status_in, $status_not_equals, $status_specified, $valid_from_equals, $valid_from_greater_than, $valid_from_greater_than_or_equal, $valid_from_in_0_chronology_calendar_type, $valid_from_in_0_chronology_id, $valid_from_in_0_day_of_month, $valid_from_in_0_day_of_week, $valid_from_in_0_day_of_year, $valid_from_in_0_era_value, $valid_from_in_0_leap_year, $valid_from_in_0_month, $valid_from_in_0_month_value, $valid_from_in_0_year, $valid_from_less_than, $valid_from_less_than_or_equal, $valid_from_not_equals, $valid_from_specified, $valid_to_equals, $valid_to_greater_than, $valid_to_greater_than_or_equal, $valid_to_in_0_chronology_calendar_type, $valid_to_in_0_chronology_id, $valid_to_in_0_day_of_month, $valid_to_in_0_day_of_week, $valid_to_in_0_day_of_year, $valid_to_in_0_era_value, $valid_to_in_0_leap_year, $valid_to_in_0_month, $valid_to_in_0_month_value, $valid_to_in_0_year, $valid_to_less_than, $valid_to_less_than_or_equal, $valid_to_not_equals, $valid_to_specified);
         return $response;
     }
 
@@ -1759,11 +1779,13 @@ class MembershipResourceApi
      * @param  int $order_id_not_equals (optional)
      * @param  bool $order_id_specified (optional)
      * @param  int $page Page number of the requested page (optional)
-     * @param  string $person_id_contains (optional)
-     * @param  string $person_id_does_not_contain (optional)
-     * @param  string $person_id_equals (optional)
-     * @param  string[] $person_id_in (optional)
-     * @param  string $person_id_not_equals (optional)
+     * @param  int $person_id_equals (optional)
+     * @param  int $person_id_greater_than (optional)
+     * @param  int $person_id_greater_than_or_equal (optional)
+     * @param  int[] $person_id_in (optional)
+     * @param  int $person_id_less_than (optional)
+     * @param  int $person_id_less_than_or_equal (optional)
+     * @param  int $person_id_not_equals (optional)
      * @param  bool $person_id_specified (optional)
      * @param  int $size Size of a page (optional)
      * @param  string[] $sort Sorting criteria in the format: property(,asc|desc). Default sort order is ascending. Multiple sort criteria are supported. (optional)
@@ -1810,10 +1832,10 @@ class MembershipResourceApi
      * @throws \InvalidArgumentException
      * @return array of \Idealogic\MembershipAPI\Model\MembershipDTO[], HTTP status code, HTTP response headers (array of strings)
      */
-    public function getAllMembershipsUsingGETWithHttpInfo($criteria_id_equals = null, $criteria_id_greater_than = null, $criteria_id_greater_than_or_equal = null, $criteria_id_in = null, $criteria_id_less_than = null, $criteria_id_less_than_or_equal = null, $criteria_id_not_equals = null, $criteria_id_specified = null, $id_equals = null, $id_greater_than = null, $id_greater_than_or_equal = null, $id_in = null, $id_less_than = null, $id_less_than_or_equal = null, $id_not_equals = null, $id_specified = null, $membership_period_id_equals = null, $membership_period_id_greater_than = null, $membership_period_id_greater_than_or_equal = null, $membership_period_id_in = null, $membership_period_id_less_than = null, $membership_period_id_less_than_or_equal = null, $membership_period_id_not_equals = null, $membership_period_id_specified = null, $number_id_equals = null, $number_id_greater_than = null, $number_id_greater_than_or_equal = null, $number_id_in = null, $number_id_less_than = null, $number_id_less_than_or_equal = null, $number_id_not_equals = null, $number_id_specified = null, $order_id_equals = null, $order_id_greater_than = null, $order_id_greater_than_or_equal = null, $order_id_in = null, $order_id_less_than = null, $order_id_less_than_or_equal = null, $order_id_not_equals = null, $order_id_specified = null, $page = null, $person_id_contains = null, $person_id_does_not_contain = null, $person_id_equals = null, $person_id_in = null, $person_id_not_equals = null, $person_id_specified = null, $size = null, $sort = null, $status_equals = null, $status_in = null, $status_not_equals = null, $status_specified = null, $valid_from_equals = null, $valid_from_greater_than = null, $valid_from_greater_than_or_equal = null, $valid_from_in_0_chronology_calendar_type = null, $valid_from_in_0_chronology_id = null, $valid_from_in_0_day_of_month = null, $valid_from_in_0_day_of_week = null, $valid_from_in_0_day_of_year = null, $valid_from_in_0_era_value = null, $valid_from_in_0_leap_year = null, $valid_from_in_0_month = null, $valid_from_in_0_month_value = null, $valid_from_in_0_year = null, $valid_from_less_than = null, $valid_from_less_than_or_equal = null, $valid_from_not_equals = null, $valid_from_specified = null, $valid_to_equals = null, $valid_to_greater_than = null, $valid_to_greater_than_or_equal = null, $valid_to_in_0_chronology_calendar_type = null, $valid_to_in_0_chronology_id = null, $valid_to_in_0_day_of_month = null, $valid_to_in_0_day_of_week = null, $valid_to_in_0_day_of_year = null, $valid_to_in_0_era_value = null, $valid_to_in_0_leap_year = null, $valid_to_in_0_month = null, $valid_to_in_0_month_value = null, $valid_to_in_0_year = null, $valid_to_less_than = null, $valid_to_less_than_or_equal = null, $valid_to_not_equals = null, $valid_to_specified = null)
+    public function getAllMembershipsUsingGETWithHttpInfo($criteria_id_equals = null, $criteria_id_greater_than = null, $criteria_id_greater_than_or_equal = null, $criteria_id_in = null, $criteria_id_less_than = null, $criteria_id_less_than_or_equal = null, $criteria_id_not_equals = null, $criteria_id_specified = null, $id_equals = null, $id_greater_than = null, $id_greater_than_or_equal = null, $id_in = null, $id_less_than = null, $id_less_than_or_equal = null, $id_not_equals = null, $id_specified = null, $membership_period_id_equals = null, $membership_period_id_greater_than = null, $membership_period_id_greater_than_or_equal = null, $membership_period_id_in = null, $membership_period_id_less_than = null, $membership_period_id_less_than_or_equal = null, $membership_period_id_not_equals = null, $membership_period_id_specified = null, $number_id_equals = null, $number_id_greater_than = null, $number_id_greater_than_or_equal = null, $number_id_in = null, $number_id_less_than = null, $number_id_less_than_or_equal = null, $number_id_not_equals = null, $number_id_specified = null, $order_id_equals = null, $order_id_greater_than = null, $order_id_greater_than_or_equal = null, $order_id_in = null, $order_id_less_than = null, $order_id_less_than_or_equal = null, $order_id_not_equals = null, $order_id_specified = null, $page = null, $person_id_equals = null, $person_id_greater_than = null, $person_id_greater_than_or_equal = null, $person_id_in = null, $person_id_less_than = null, $person_id_less_than_or_equal = null, $person_id_not_equals = null, $person_id_specified = null, $size = null, $sort = null, $status_equals = null, $status_in = null, $status_not_equals = null, $status_specified = null, $valid_from_equals = null, $valid_from_greater_than = null, $valid_from_greater_than_or_equal = null, $valid_from_in_0_chronology_calendar_type = null, $valid_from_in_0_chronology_id = null, $valid_from_in_0_day_of_month = null, $valid_from_in_0_day_of_week = null, $valid_from_in_0_day_of_year = null, $valid_from_in_0_era_value = null, $valid_from_in_0_leap_year = null, $valid_from_in_0_month = null, $valid_from_in_0_month_value = null, $valid_from_in_0_year = null, $valid_from_less_than = null, $valid_from_less_than_or_equal = null, $valid_from_not_equals = null, $valid_from_specified = null, $valid_to_equals = null, $valid_to_greater_than = null, $valid_to_greater_than_or_equal = null, $valid_to_in_0_chronology_calendar_type = null, $valid_to_in_0_chronology_id = null, $valid_to_in_0_day_of_month = null, $valid_to_in_0_day_of_week = null, $valid_to_in_0_day_of_year = null, $valid_to_in_0_era_value = null, $valid_to_in_0_leap_year = null, $valid_to_in_0_month = null, $valid_to_in_0_month_value = null, $valid_to_in_0_year = null, $valid_to_less_than = null, $valid_to_less_than_or_equal = null, $valid_to_not_equals = null, $valid_to_specified = null)
     {
         $returnType = '\Idealogic\MembershipAPI\Model\MembershipDTO[]';
-        $request = $this->getAllMembershipsUsingGETRequest($criteria_id_equals, $criteria_id_greater_than, $criteria_id_greater_than_or_equal, $criteria_id_in, $criteria_id_less_than, $criteria_id_less_than_or_equal, $criteria_id_not_equals, $criteria_id_specified, $id_equals, $id_greater_than, $id_greater_than_or_equal, $id_in, $id_less_than, $id_less_than_or_equal, $id_not_equals, $id_specified, $membership_period_id_equals, $membership_period_id_greater_than, $membership_period_id_greater_than_or_equal, $membership_period_id_in, $membership_period_id_less_than, $membership_period_id_less_than_or_equal, $membership_period_id_not_equals, $membership_period_id_specified, $number_id_equals, $number_id_greater_than, $number_id_greater_than_or_equal, $number_id_in, $number_id_less_than, $number_id_less_than_or_equal, $number_id_not_equals, $number_id_specified, $order_id_equals, $order_id_greater_than, $order_id_greater_than_or_equal, $order_id_in, $order_id_less_than, $order_id_less_than_or_equal, $order_id_not_equals, $order_id_specified, $page, $person_id_contains, $person_id_does_not_contain, $person_id_equals, $person_id_in, $person_id_not_equals, $person_id_specified, $size, $sort, $status_equals, $status_in, $status_not_equals, $status_specified, $valid_from_equals, $valid_from_greater_than, $valid_from_greater_than_or_equal, $valid_from_in_0_chronology_calendar_type, $valid_from_in_0_chronology_id, $valid_from_in_0_day_of_month, $valid_from_in_0_day_of_week, $valid_from_in_0_day_of_year, $valid_from_in_0_era_value, $valid_from_in_0_leap_year, $valid_from_in_0_month, $valid_from_in_0_month_value, $valid_from_in_0_year, $valid_from_less_than, $valid_from_less_than_or_equal, $valid_from_not_equals, $valid_from_specified, $valid_to_equals, $valid_to_greater_than, $valid_to_greater_than_or_equal, $valid_to_in_0_chronology_calendar_type, $valid_to_in_0_chronology_id, $valid_to_in_0_day_of_month, $valid_to_in_0_day_of_week, $valid_to_in_0_day_of_year, $valid_to_in_0_era_value, $valid_to_in_0_leap_year, $valid_to_in_0_month, $valid_to_in_0_month_value, $valid_to_in_0_year, $valid_to_less_than, $valid_to_less_than_or_equal, $valid_to_not_equals, $valid_to_specified);
+        $request = $this->getAllMembershipsUsingGETRequest($criteria_id_equals, $criteria_id_greater_than, $criteria_id_greater_than_or_equal, $criteria_id_in, $criteria_id_less_than, $criteria_id_less_than_or_equal, $criteria_id_not_equals, $criteria_id_specified, $id_equals, $id_greater_than, $id_greater_than_or_equal, $id_in, $id_less_than, $id_less_than_or_equal, $id_not_equals, $id_specified, $membership_period_id_equals, $membership_period_id_greater_than, $membership_period_id_greater_than_or_equal, $membership_period_id_in, $membership_period_id_less_than, $membership_period_id_less_than_or_equal, $membership_period_id_not_equals, $membership_period_id_specified, $number_id_equals, $number_id_greater_than, $number_id_greater_than_or_equal, $number_id_in, $number_id_less_than, $number_id_less_than_or_equal, $number_id_not_equals, $number_id_specified, $order_id_equals, $order_id_greater_than, $order_id_greater_than_or_equal, $order_id_in, $order_id_less_than, $order_id_less_than_or_equal, $order_id_not_equals, $order_id_specified, $page, $person_id_equals, $person_id_greater_than, $person_id_greater_than_or_equal, $person_id_in, $person_id_less_than, $person_id_less_than_or_equal, $person_id_not_equals, $person_id_specified, $size, $sort, $status_equals, $status_in, $status_not_equals, $status_specified, $valid_from_equals, $valid_from_greater_than, $valid_from_greater_than_or_equal, $valid_from_in_0_chronology_calendar_type, $valid_from_in_0_chronology_id, $valid_from_in_0_day_of_month, $valid_from_in_0_day_of_week, $valid_from_in_0_day_of_year, $valid_from_in_0_era_value, $valid_from_in_0_leap_year, $valid_from_in_0_month, $valid_from_in_0_month_value, $valid_from_in_0_year, $valid_from_less_than, $valid_from_less_than_or_equal, $valid_from_not_equals, $valid_from_specified, $valid_to_equals, $valid_to_greater_than, $valid_to_greater_than_or_equal, $valid_to_in_0_chronology_calendar_type, $valid_to_in_0_chronology_id, $valid_to_in_0_day_of_month, $valid_to_in_0_day_of_week, $valid_to_in_0_day_of_year, $valid_to_in_0_era_value, $valid_to_in_0_leap_year, $valid_to_in_0_month, $valid_to_in_0_month_value, $valid_to_in_0_year, $valid_to_less_than, $valid_to_less_than_or_equal, $valid_to_not_equals, $valid_to_specified);
 
         try {
             $options = $this->createHttpClientOption();
@@ -1920,11 +1942,13 @@ class MembershipResourceApi
      * @param  int $order_id_not_equals (optional)
      * @param  bool $order_id_specified (optional)
      * @param  int $page Page number of the requested page (optional)
-     * @param  string $person_id_contains (optional)
-     * @param  string $person_id_does_not_contain (optional)
-     * @param  string $person_id_equals (optional)
-     * @param  string[] $person_id_in (optional)
-     * @param  string $person_id_not_equals (optional)
+     * @param  int $person_id_equals (optional)
+     * @param  int $person_id_greater_than (optional)
+     * @param  int $person_id_greater_than_or_equal (optional)
+     * @param  int[] $person_id_in (optional)
+     * @param  int $person_id_less_than (optional)
+     * @param  int $person_id_less_than_or_equal (optional)
+     * @param  int $person_id_not_equals (optional)
      * @param  bool $person_id_specified (optional)
      * @param  int $size Size of a page (optional)
      * @param  string[] $sort Sorting criteria in the format: property(,asc|desc). Default sort order is ascending. Multiple sort criteria are supported. (optional)
@@ -1970,9 +1994,9 @@ class MembershipResourceApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getAllMembershipsUsingGETAsync($criteria_id_equals = null, $criteria_id_greater_than = null, $criteria_id_greater_than_or_equal = null, $criteria_id_in = null, $criteria_id_less_than = null, $criteria_id_less_than_or_equal = null, $criteria_id_not_equals = null, $criteria_id_specified = null, $id_equals = null, $id_greater_than = null, $id_greater_than_or_equal = null, $id_in = null, $id_less_than = null, $id_less_than_or_equal = null, $id_not_equals = null, $id_specified = null, $membership_period_id_equals = null, $membership_period_id_greater_than = null, $membership_period_id_greater_than_or_equal = null, $membership_period_id_in = null, $membership_period_id_less_than = null, $membership_period_id_less_than_or_equal = null, $membership_period_id_not_equals = null, $membership_period_id_specified = null, $number_id_equals = null, $number_id_greater_than = null, $number_id_greater_than_or_equal = null, $number_id_in = null, $number_id_less_than = null, $number_id_less_than_or_equal = null, $number_id_not_equals = null, $number_id_specified = null, $order_id_equals = null, $order_id_greater_than = null, $order_id_greater_than_or_equal = null, $order_id_in = null, $order_id_less_than = null, $order_id_less_than_or_equal = null, $order_id_not_equals = null, $order_id_specified = null, $page = null, $person_id_contains = null, $person_id_does_not_contain = null, $person_id_equals = null, $person_id_in = null, $person_id_not_equals = null, $person_id_specified = null, $size = null, $sort = null, $status_equals = null, $status_in = null, $status_not_equals = null, $status_specified = null, $valid_from_equals = null, $valid_from_greater_than = null, $valid_from_greater_than_or_equal = null, $valid_from_in_0_chronology_calendar_type = null, $valid_from_in_0_chronology_id = null, $valid_from_in_0_day_of_month = null, $valid_from_in_0_day_of_week = null, $valid_from_in_0_day_of_year = null, $valid_from_in_0_era_value = null, $valid_from_in_0_leap_year = null, $valid_from_in_0_month = null, $valid_from_in_0_month_value = null, $valid_from_in_0_year = null, $valid_from_less_than = null, $valid_from_less_than_or_equal = null, $valid_from_not_equals = null, $valid_from_specified = null, $valid_to_equals = null, $valid_to_greater_than = null, $valid_to_greater_than_or_equal = null, $valid_to_in_0_chronology_calendar_type = null, $valid_to_in_0_chronology_id = null, $valid_to_in_0_day_of_month = null, $valid_to_in_0_day_of_week = null, $valid_to_in_0_day_of_year = null, $valid_to_in_0_era_value = null, $valid_to_in_0_leap_year = null, $valid_to_in_0_month = null, $valid_to_in_0_month_value = null, $valid_to_in_0_year = null, $valid_to_less_than = null, $valid_to_less_than_or_equal = null, $valid_to_not_equals = null, $valid_to_specified = null)
+    public function getAllMembershipsUsingGETAsync($criteria_id_equals = null, $criteria_id_greater_than = null, $criteria_id_greater_than_or_equal = null, $criteria_id_in = null, $criteria_id_less_than = null, $criteria_id_less_than_or_equal = null, $criteria_id_not_equals = null, $criteria_id_specified = null, $id_equals = null, $id_greater_than = null, $id_greater_than_or_equal = null, $id_in = null, $id_less_than = null, $id_less_than_or_equal = null, $id_not_equals = null, $id_specified = null, $membership_period_id_equals = null, $membership_period_id_greater_than = null, $membership_period_id_greater_than_or_equal = null, $membership_period_id_in = null, $membership_period_id_less_than = null, $membership_period_id_less_than_or_equal = null, $membership_period_id_not_equals = null, $membership_period_id_specified = null, $number_id_equals = null, $number_id_greater_than = null, $number_id_greater_than_or_equal = null, $number_id_in = null, $number_id_less_than = null, $number_id_less_than_or_equal = null, $number_id_not_equals = null, $number_id_specified = null, $order_id_equals = null, $order_id_greater_than = null, $order_id_greater_than_or_equal = null, $order_id_in = null, $order_id_less_than = null, $order_id_less_than_or_equal = null, $order_id_not_equals = null, $order_id_specified = null, $page = null, $person_id_equals = null, $person_id_greater_than = null, $person_id_greater_than_or_equal = null, $person_id_in = null, $person_id_less_than = null, $person_id_less_than_or_equal = null, $person_id_not_equals = null, $person_id_specified = null, $size = null, $sort = null, $status_equals = null, $status_in = null, $status_not_equals = null, $status_specified = null, $valid_from_equals = null, $valid_from_greater_than = null, $valid_from_greater_than_or_equal = null, $valid_from_in_0_chronology_calendar_type = null, $valid_from_in_0_chronology_id = null, $valid_from_in_0_day_of_month = null, $valid_from_in_0_day_of_week = null, $valid_from_in_0_day_of_year = null, $valid_from_in_0_era_value = null, $valid_from_in_0_leap_year = null, $valid_from_in_0_month = null, $valid_from_in_0_month_value = null, $valid_from_in_0_year = null, $valid_from_less_than = null, $valid_from_less_than_or_equal = null, $valid_from_not_equals = null, $valid_from_specified = null, $valid_to_equals = null, $valid_to_greater_than = null, $valid_to_greater_than_or_equal = null, $valid_to_in_0_chronology_calendar_type = null, $valid_to_in_0_chronology_id = null, $valid_to_in_0_day_of_month = null, $valid_to_in_0_day_of_week = null, $valid_to_in_0_day_of_year = null, $valid_to_in_0_era_value = null, $valid_to_in_0_leap_year = null, $valid_to_in_0_month = null, $valid_to_in_0_month_value = null, $valid_to_in_0_year = null, $valid_to_less_than = null, $valid_to_less_than_or_equal = null, $valid_to_not_equals = null, $valid_to_specified = null)
     {
-        return $this->getAllMembershipsUsingGETAsyncWithHttpInfo($criteria_id_equals, $criteria_id_greater_than, $criteria_id_greater_than_or_equal, $criteria_id_in, $criteria_id_less_than, $criteria_id_less_than_or_equal, $criteria_id_not_equals, $criteria_id_specified, $id_equals, $id_greater_than, $id_greater_than_or_equal, $id_in, $id_less_than, $id_less_than_or_equal, $id_not_equals, $id_specified, $membership_period_id_equals, $membership_period_id_greater_than, $membership_period_id_greater_than_or_equal, $membership_period_id_in, $membership_period_id_less_than, $membership_period_id_less_than_or_equal, $membership_period_id_not_equals, $membership_period_id_specified, $number_id_equals, $number_id_greater_than, $number_id_greater_than_or_equal, $number_id_in, $number_id_less_than, $number_id_less_than_or_equal, $number_id_not_equals, $number_id_specified, $order_id_equals, $order_id_greater_than, $order_id_greater_than_or_equal, $order_id_in, $order_id_less_than, $order_id_less_than_or_equal, $order_id_not_equals, $order_id_specified, $page, $person_id_contains, $person_id_does_not_contain, $person_id_equals, $person_id_in, $person_id_not_equals, $person_id_specified, $size, $sort, $status_equals, $status_in, $status_not_equals, $status_specified, $valid_from_equals, $valid_from_greater_than, $valid_from_greater_than_or_equal, $valid_from_in_0_chronology_calendar_type, $valid_from_in_0_chronology_id, $valid_from_in_0_day_of_month, $valid_from_in_0_day_of_week, $valid_from_in_0_day_of_year, $valid_from_in_0_era_value, $valid_from_in_0_leap_year, $valid_from_in_0_month, $valid_from_in_0_month_value, $valid_from_in_0_year, $valid_from_less_than, $valid_from_less_than_or_equal, $valid_from_not_equals, $valid_from_specified, $valid_to_equals, $valid_to_greater_than, $valid_to_greater_than_or_equal, $valid_to_in_0_chronology_calendar_type, $valid_to_in_0_chronology_id, $valid_to_in_0_day_of_month, $valid_to_in_0_day_of_week, $valid_to_in_0_day_of_year, $valid_to_in_0_era_value, $valid_to_in_0_leap_year, $valid_to_in_0_month, $valid_to_in_0_month_value, $valid_to_in_0_year, $valid_to_less_than, $valid_to_less_than_or_equal, $valid_to_not_equals, $valid_to_specified)
+        return $this->getAllMembershipsUsingGETAsyncWithHttpInfo($criteria_id_equals, $criteria_id_greater_than, $criteria_id_greater_than_or_equal, $criteria_id_in, $criteria_id_less_than, $criteria_id_less_than_or_equal, $criteria_id_not_equals, $criteria_id_specified, $id_equals, $id_greater_than, $id_greater_than_or_equal, $id_in, $id_less_than, $id_less_than_or_equal, $id_not_equals, $id_specified, $membership_period_id_equals, $membership_period_id_greater_than, $membership_period_id_greater_than_or_equal, $membership_period_id_in, $membership_period_id_less_than, $membership_period_id_less_than_or_equal, $membership_period_id_not_equals, $membership_period_id_specified, $number_id_equals, $number_id_greater_than, $number_id_greater_than_or_equal, $number_id_in, $number_id_less_than, $number_id_less_than_or_equal, $number_id_not_equals, $number_id_specified, $order_id_equals, $order_id_greater_than, $order_id_greater_than_or_equal, $order_id_in, $order_id_less_than, $order_id_less_than_or_equal, $order_id_not_equals, $order_id_specified, $page, $person_id_equals, $person_id_greater_than, $person_id_greater_than_or_equal, $person_id_in, $person_id_less_than, $person_id_less_than_or_equal, $person_id_not_equals, $person_id_specified, $size, $sort, $status_equals, $status_in, $status_not_equals, $status_specified, $valid_from_equals, $valid_from_greater_than, $valid_from_greater_than_or_equal, $valid_from_in_0_chronology_calendar_type, $valid_from_in_0_chronology_id, $valid_from_in_0_day_of_month, $valid_from_in_0_day_of_week, $valid_from_in_0_day_of_year, $valid_from_in_0_era_value, $valid_from_in_0_leap_year, $valid_from_in_0_month, $valid_from_in_0_month_value, $valid_from_in_0_year, $valid_from_less_than, $valid_from_less_than_or_equal, $valid_from_not_equals, $valid_from_specified, $valid_to_equals, $valid_to_greater_than, $valid_to_greater_than_or_equal, $valid_to_in_0_chronology_calendar_type, $valid_to_in_0_chronology_id, $valid_to_in_0_day_of_month, $valid_to_in_0_day_of_week, $valid_to_in_0_day_of_year, $valid_to_in_0_era_value, $valid_to_in_0_leap_year, $valid_to_in_0_month, $valid_to_in_0_month_value, $valid_to_in_0_year, $valid_to_less_than, $valid_to_less_than_or_equal, $valid_to_not_equals, $valid_to_specified)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -2026,11 +2050,13 @@ class MembershipResourceApi
      * @param  int $order_id_not_equals (optional)
      * @param  bool $order_id_specified (optional)
      * @param  int $page Page number of the requested page (optional)
-     * @param  string $person_id_contains (optional)
-     * @param  string $person_id_does_not_contain (optional)
-     * @param  string $person_id_equals (optional)
-     * @param  string[] $person_id_in (optional)
-     * @param  string $person_id_not_equals (optional)
+     * @param  int $person_id_equals (optional)
+     * @param  int $person_id_greater_than (optional)
+     * @param  int $person_id_greater_than_or_equal (optional)
+     * @param  int[] $person_id_in (optional)
+     * @param  int $person_id_less_than (optional)
+     * @param  int $person_id_less_than_or_equal (optional)
+     * @param  int $person_id_not_equals (optional)
      * @param  bool $person_id_specified (optional)
      * @param  int $size Size of a page (optional)
      * @param  string[] $sort Sorting criteria in the format: property(,asc|desc). Default sort order is ascending. Multiple sort criteria are supported. (optional)
@@ -2076,10 +2102,10 @@ class MembershipResourceApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getAllMembershipsUsingGETAsyncWithHttpInfo($criteria_id_equals = null, $criteria_id_greater_than = null, $criteria_id_greater_than_or_equal = null, $criteria_id_in = null, $criteria_id_less_than = null, $criteria_id_less_than_or_equal = null, $criteria_id_not_equals = null, $criteria_id_specified = null, $id_equals = null, $id_greater_than = null, $id_greater_than_or_equal = null, $id_in = null, $id_less_than = null, $id_less_than_or_equal = null, $id_not_equals = null, $id_specified = null, $membership_period_id_equals = null, $membership_period_id_greater_than = null, $membership_period_id_greater_than_or_equal = null, $membership_period_id_in = null, $membership_period_id_less_than = null, $membership_period_id_less_than_or_equal = null, $membership_period_id_not_equals = null, $membership_period_id_specified = null, $number_id_equals = null, $number_id_greater_than = null, $number_id_greater_than_or_equal = null, $number_id_in = null, $number_id_less_than = null, $number_id_less_than_or_equal = null, $number_id_not_equals = null, $number_id_specified = null, $order_id_equals = null, $order_id_greater_than = null, $order_id_greater_than_or_equal = null, $order_id_in = null, $order_id_less_than = null, $order_id_less_than_or_equal = null, $order_id_not_equals = null, $order_id_specified = null, $page = null, $person_id_contains = null, $person_id_does_not_contain = null, $person_id_equals = null, $person_id_in = null, $person_id_not_equals = null, $person_id_specified = null, $size = null, $sort = null, $status_equals = null, $status_in = null, $status_not_equals = null, $status_specified = null, $valid_from_equals = null, $valid_from_greater_than = null, $valid_from_greater_than_or_equal = null, $valid_from_in_0_chronology_calendar_type = null, $valid_from_in_0_chronology_id = null, $valid_from_in_0_day_of_month = null, $valid_from_in_0_day_of_week = null, $valid_from_in_0_day_of_year = null, $valid_from_in_0_era_value = null, $valid_from_in_0_leap_year = null, $valid_from_in_0_month = null, $valid_from_in_0_month_value = null, $valid_from_in_0_year = null, $valid_from_less_than = null, $valid_from_less_than_or_equal = null, $valid_from_not_equals = null, $valid_from_specified = null, $valid_to_equals = null, $valid_to_greater_than = null, $valid_to_greater_than_or_equal = null, $valid_to_in_0_chronology_calendar_type = null, $valid_to_in_0_chronology_id = null, $valid_to_in_0_day_of_month = null, $valid_to_in_0_day_of_week = null, $valid_to_in_0_day_of_year = null, $valid_to_in_0_era_value = null, $valid_to_in_0_leap_year = null, $valid_to_in_0_month = null, $valid_to_in_0_month_value = null, $valid_to_in_0_year = null, $valid_to_less_than = null, $valid_to_less_than_or_equal = null, $valid_to_not_equals = null, $valid_to_specified = null)
+    public function getAllMembershipsUsingGETAsyncWithHttpInfo($criteria_id_equals = null, $criteria_id_greater_than = null, $criteria_id_greater_than_or_equal = null, $criteria_id_in = null, $criteria_id_less_than = null, $criteria_id_less_than_or_equal = null, $criteria_id_not_equals = null, $criteria_id_specified = null, $id_equals = null, $id_greater_than = null, $id_greater_than_or_equal = null, $id_in = null, $id_less_than = null, $id_less_than_or_equal = null, $id_not_equals = null, $id_specified = null, $membership_period_id_equals = null, $membership_period_id_greater_than = null, $membership_period_id_greater_than_or_equal = null, $membership_period_id_in = null, $membership_period_id_less_than = null, $membership_period_id_less_than_or_equal = null, $membership_period_id_not_equals = null, $membership_period_id_specified = null, $number_id_equals = null, $number_id_greater_than = null, $number_id_greater_than_or_equal = null, $number_id_in = null, $number_id_less_than = null, $number_id_less_than_or_equal = null, $number_id_not_equals = null, $number_id_specified = null, $order_id_equals = null, $order_id_greater_than = null, $order_id_greater_than_or_equal = null, $order_id_in = null, $order_id_less_than = null, $order_id_less_than_or_equal = null, $order_id_not_equals = null, $order_id_specified = null, $page = null, $person_id_equals = null, $person_id_greater_than = null, $person_id_greater_than_or_equal = null, $person_id_in = null, $person_id_less_than = null, $person_id_less_than_or_equal = null, $person_id_not_equals = null, $person_id_specified = null, $size = null, $sort = null, $status_equals = null, $status_in = null, $status_not_equals = null, $status_specified = null, $valid_from_equals = null, $valid_from_greater_than = null, $valid_from_greater_than_or_equal = null, $valid_from_in_0_chronology_calendar_type = null, $valid_from_in_0_chronology_id = null, $valid_from_in_0_day_of_month = null, $valid_from_in_0_day_of_week = null, $valid_from_in_0_day_of_year = null, $valid_from_in_0_era_value = null, $valid_from_in_0_leap_year = null, $valid_from_in_0_month = null, $valid_from_in_0_month_value = null, $valid_from_in_0_year = null, $valid_from_less_than = null, $valid_from_less_than_or_equal = null, $valid_from_not_equals = null, $valid_from_specified = null, $valid_to_equals = null, $valid_to_greater_than = null, $valid_to_greater_than_or_equal = null, $valid_to_in_0_chronology_calendar_type = null, $valid_to_in_0_chronology_id = null, $valid_to_in_0_day_of_month = null, $valid_to_in_0_day_of_week = null, $valid_to_in_0_day_of_year = null, $valid_to_in_0_era_value = null, $valid_to_in_0_leap_year = null, $valid_to_in_0_month = null, $valid_to_in_0_month_value = null, $valid_to_in_0_year = null, $valid_to_less_than = null, $valid_to_less_than_or_equal = null, $valid_to_not_equals = null, $valid_to_specified = null)
     {
         $returnType = '\Idealogic\MembershipAPI\Model\MembershipDTO[]';
-        $request = $this->getAllMembershipsUsingGETRequest($criteria_id_equals, $criteria_id_greater_than, $criteria_id_greater_than_or_equal, $criteria_id_in, $criteria_id_less_than, $criteria_id_less_than_or_equal, $criteria_id_not_equals, $criteria_id_specified, $id_equals, $id_greater_than, $id_greater_than_or_equal, $id_in, $id_less_than, $id_less_than_or_equal, $id_not_equals, $id_specified, $membership_period_id_equals, $membership_period_id_greater_than, $membership_period_id_greater_than_or_equal, $membership_period_id_in, $membership_period_id_less_than, $membership_period_id_less_than_or_equal, $membership_period_id_not_equals, $membership_period_id_specified, $number_id_equals, $number_id_greater_than, $number_id_greater_than_or_equal, $number_id_in, $number_id_less_than, $number_id_less_than_or_equal, $number_id_not_equals, $number_id_specified, $order_id_equals, $order_id_greater_than, $order_id_greater_than_or_equal, $order_id_in, $order_id_less_than, $order_id_less_than_or_equal, $order_id_not_equals, $order_id_specified, $page, $person_id_contains, $person_id_does_not_contain, $person_id_equals, $person_id_in, $person_id_not_equals, $person_id_specified, $size, $sort, $status_equals, $status_in, $status_not_equals, $status_specified, $valid_from_equals, $valid_from_greater_than, $valid_from_greater_than_or_equal, $valid_from_in_0_chronology_calendar_type, $valid_from_in_0_chronology_id, $valid_from_in_0_day_of_month, $valid_from_in_0_day_of_week, $valid_from_in_0_day_of_year, $valid_from_in_0_era_value, $valid_from_in_0_leap_year, $valid_from_in_0_month, $valid_from_in_0_month_value, $valid_from_in_0_year, $valid_from_less_than, $valid_from_less_than_or_equal, $valid_from_not_equals, $valid_from_specified, $valid_to_equals, $valid_to_greater_than, $valid_to_greater_than_or_equal, $valid_to_in_0_chronology_calendar_type, $valid_to_in_0_chronology_id, $valid_to_in_0_day_of_month, $valid_to_in_0_day_of_week, $valid_to_in_0_day_of_year, $valid_to_in_0_era_value, $valid_to_in_0_leap_year, $valid_to_in_0_month, $valid_to_in_0_month_value, $valid_to_in_0_year, $valid_to_less_than, $valid_to_less_than_or_equal, $valid_to_not_equals, $valid_to_specified);
+        $request = $this->getAllMembershipsUsingGETRequest($criteria_id_equals, $criteria_id_greater_than, $criteria_id_greater_than_or_equal, $criteria_id_in, $criteria_id_less_than, $criteria_id_less_than_or_equal, $criteria_id_not_equals, $criteria_id_specified, $id_equals, $id_greater_than, $id_greater_than_or_equal, $id_in, $id_less_than, $id_less_than_or_equal, $id_not_equals, $id_specified, $membership_period_id_equals, $membership_period_id_greater_than, $membership_period_id_greater_than_or_equal, $membership_period_id_in, $membership_period_id_less_than, $membership_period_id_less_than_or_equal, $membership_period_id_not_equals, $membership_period_id_specified, $number_id_equals, $number_id_greater_than, $number_id_greater_than_or_equal, $number_id_in, $number_id_less_than, $number_id_less_than_or_equal, $number_id_not_equals, $number_id_specified, $order_id_equals, $order_id_greater_than, $order_id_greater_than_or_equal, $order_id_in, $order_id_less_than, $order_id_less_than_or_equal, $order_id_not_equals, $order_id_specified, $page, $person_id_equals, $person_id_greater_than, $person_id_greater_than_or_equal, $person_id_in, $person_id_less_than, $person_id_less_than_or_equal, $person_id_not_equals, $person_id_specified, $size, $sort, $status_equals, $status_in, $status_not_equals, $status_specified, $valid_from_equals, $valid_from_greater_than, $valid_from_greater_than_or_equal, $valid_from_in_0_chronology_calendar_type, $valid_from_in_0_chronology_id, $valid_from_in_0_day_of_month, $valid_from_in_0_day_of_week, $valid_from_in_0_day_of_year, $valid_from_in_0_era_value, $valid_from_in_0_leap_year, $valid_from_in_0_month, $valid_from_in_0_month_value, $valid_from_in_0_year, $valid_from_less_than, $valid_from_less_than_or_equal, $valid_from_not_equals, $valid_from_specified, $valid_to_equals, $valid_to_greater_than, $valid_to_greater_than_or_equal, $valid_to_in_0_chronology_calendar_type, $valid_to_in_0_chronology_id, $valid_to_in_0_day_of_month, $valid_to_in_0_day_of_week, $valid_to_in_0_day_of_year, $valid_to_in_0_era_value, $valid_to_in_0_leap_year, $valid_to_in_0_month, $valid_to_in_0_month_value, $valid_to_in_0_year, $valid_to_less_than, $valid_to_less_than_or_equal, $valid_to_not_equals, $valid_to_specified);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -2162,11 +2188,13 @@ class MembershipResourceApi
      * @param  int $order_id_not_equals (optional)
      * @param  bool $order_id_specified (optional)
      * @param  int $page Page number of the requested page (optional)
-     * @param  string $person_id_contains (optional)
-     * @param  string $person_id_does_not_contain (optional)
-     * @param  string $person_id_equals (optional)
-     * @param  string[] $person_id_in (optional)
-     * @param  string $person_id_not_equals (optional)
+     * @param  int $person_id_equals (optional)
+     * @param  int $person_id_greater_than (optional)
+     * @param  int $person_id_greater_than_or_equal (optional)
+     * @param  int[] $person_id_in (optional)
+     * @param  int $person_id_less_than (optional)
+     * @param  int $person_id_less_than_or_equal (optional)
+     * @param  int $person_id_not_equals (optional)
      * @param  bool $person_id_specified (optional)
      * @param  int $size Size of a page (optional)
      * @param  string[] $sort Sorting criteria in the format: property(,asc|desc). Default sort order is ascending. Multiple sort criteria are supported. (optional)
@@ -2212,7 +2240,7 @@ class MembershipResourceApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function getAllMembershipsUsingGETRequest($criteria_id_equals = null, $criteria_id_greater_than = null, $criteria_id_greater_than_or_equal = null, $criteria_id_in = null, $criteria_id_less_than = null, $criteria_id_less_than_or_equal = null, $criteria_id_not_equals = null, $criteria_id_specified = null, $id_equals = null, $id_greater_than = null, $id_greater_than_or_equal = null, $id_in = null, $id_less_than = null, $id_less_than_or_equal = null, $id_not_equals = null, $id_specified = null, $membership_period_id_equals = null, $membership_period_id_greater_than = null, $membership_period_id_greater_than_or_equal = null, $membership_period_id_in = null, $membership_period_id_less_than = null, $membership_period_id_less_than_or_equal = null, $membership_period_id_not_equals = null, $membership_period_id_specified = null, $number_id_equals = null, $number_id_greater_than = null, $number_id_greater_than_or_equal = null, $number_id_in = null, $number_id_less_than = null, $number_id_less_than_or_equal = null, $number_id_not_equals = null, $number_id_specified = null, $order_id_equals = null, $order_id_greater_than = null, $order_id_greater_than_or_equal = null, $order_id_in = null, $order_id_less_than = null, $order_id_less_than_or_equal = null, $order_id_not_equals = null, $order_id_specified = null, $page = null, $person_id_contains = null, $person_id_does_not_contain = null, $person_id_equals = null, $person_id_in = null, $person_id_not_equals = null, $person_id_specified = null, $size = null, $sort = null, $status_equals = null, $status_in = null, $status_not_equals = null, $status_specified = null, $valid_from_equals = null, $valid_from_greater_than = null, $valid_from_greater_than_or_equal = null, $valid_from_in_0_chronology_calendar_type = null, $valid_from_in_0_chronology_id = null, $valid_from_in_0_day_of_month = null, $valid_from_in_0_day_of_week = null, $valid_from_in_0_day_of_year = null, $valid_from_in_0_era_value = null, $valid_from_in_0_leap_year = null, $valid_from_in_0_month = null, $valid_from_in_0_month_value = null, $valid_from_in_0_year = null, $valid_from_less_than = null, $valid_from_less_than_or_equal = null, $valid_from_not_equals = null, $valid_from_specified = null, $valid_to_equals = null, $valid_to_greater_than = null, $valid_to_greater_than_or_equal = null, $valid_to_in_0_chronology_calendar_type = null, $valid_to_in_0_chronology_id = null, $valid_to_in_0_day_of_month = null, $valid_to_in_0_day_of_week = null, $valid_to_in_0_day_of_year = null, $valid_to_in_0_era_value = null, $valid_to_in_0_leap_year = null, $valid_to_in_0_month = null, $valid_to_in_0_month_value = null, $valid_to_in_0_year = null, $valid_to_less_than = null, $valid_to_less_than_or_equal = null, $valid_to_not_equals = null, $valid_to_specified = null)
+    protected function getAllMembershipsUsingGETRequest($criteria_id_equals = null, $criteria_id_greater_than = null, $criteria_id_greater_than_or_equal = null, $criteria_id_in = null, $criteria_id_less_than = null, $criteria_id_less_than_or_equal = null, $criteria_id_not_equals = null, $criteria_id_specified = null, $id_equals = null, $id_greater_than = null, $id_greater_than_or_equal = null, $id_in = null, $id_less_than = null, $id_less_than_or_equal = null, $id_not_equals = null, $id_specified = null, $membership_period_id_equals = null, $membership_period_id_greater_than = null, $membership_period_id_greater_than_or_equal = null, $membership_period_id_in = null, $membership_period_id_less_than = null, $membership_period_id_less_than_or_equal = null, $membership_period_id_not_equals = null, $membership_period_id_specified = null, $number_id_equals = null, $number_id_greater_than = null, $number_id_greater_than_or_equal = null, $number_id_in = null, $number_id_less_than = null, $number_id_less_than_or_equal = null, $number_id_not_equals = null, $number_id_specified = null, $order_id_equals = null, $order_id_greater_than = null, $order_id_greater_than_or_equal = null, $order_id_in = null, $order_id_less_than = null, $order_id_less_than_or_equal = null, $order_id_not_equals = null, $order_id_specified = null, $page = null, $person_id_equals = null, $person_id_greater_than = null, $person_id_greater_than_or_equal = null, $person_id_in = null, $person_id_less_than = null, $person_id_less_than_or_equal = null, $person_id_not_equals = null, $person_id_specified = null, $size = null, $sort = null, $status_equals = null, $status_in = null, $status_not_equals = null, $status_specified = null, $valid_from_equals = null, $valid_from_greater_than = null, $valid_from_greater_than_or_equal = null, $valid_from_in_0_chronology_calendar_type = null, $valid_from_in_0_chronology_id = null, $valid_from_in_0_day_of_month = null, $valid_from_in_0_day_of_week = null, $valid_from_in_0_day_of_year = null, $valid_from_in_0_era_value = null, $valid_from_in_0_leap_year = null, $valid_from_in_0_month = null, $valid_from_in_0_month_value = null, $valid_from_in_0_year = null, $valid_from_less_than = null, $valid_from_less_than_or_equal = null, $valid_from_not_equals = null, $valid_from_specified = null, $valid_to_equals = null, $valid_to_greater_than = null, $valid_to_greater_than_or_equal = null, $valid_to_in_0_chronology_calendar_type = null, $valid_to_in_0_chronology_id = null, $valid_to_in_0_day_of_month = null, $valid_to_in_0_day_of_week = null, $valid_to_in_0_day_of_year = null, $valid_to_in_0_era_value = null, $valid_to_in_0_leap_year = null, $valid_to_in_0_month = null, $valid_to_in_0_month_value = null, $valid_to_in_0_year = null, $valid_to_less_than = null, $valid_to_less_than_or_equal = null, $valid_to_not_equals = null, $valid_to_specified = null)
     {
 
         $resourcePath = '/api/memberships';
@@ -2402,16 +2430,16 @@ class MembershipResourceApi
             $queryParams['page'] = ObjectSerializer::toQueryValue($page);
         }
         // query params
-        if ($person_id_contains !== null) {
-            $queryParams['personId.contains'] = ObjectSerializer::toQueryValue($person_id_contains);
-        }
-        // query params
-        if ($person_id_does_not_contain !== null) {
-            $queryParams['personId.doesNotContain'] = ObjectSerializer::toQueryValue($person_id_does_not_contain);
-        }
-        // query params
         if ($person_id_equals !== null) {
             $queryParams['personId.equals'] = ObjectSerializer::toQueryValue($person_id_equals);
+        }
+        // query params
+        if ($person_id_greater_than !== null) {
+            $queryParams['personId.greaterThan'] = ObjectSerializer::toQueryValue($person_id_greater_than);
+        }
+        // query params
+        if ($person_id_greater_than_or_equal !== null) {
+            $queryParams['personId.greaterThanOrEqual'] = ObjectSerializer::toQueryValue($person_id_greater_than_or_equal);
         }
         // query params
         if (is_array($person_id_in)) {
@@ -2419,6 +2447,14 @@ class MembershipResourceApi
         } else
         if ($person_id_in !== null) {
             $queryParams['personId.in'] = ObjectSerializer::toQueryValue($person_id_in);
+        }
+        // query params
+        if ($person_id_less_than !== null) {
+            $queryParams['personId.lessThan'] = ObjectSerializer::toQueryValue($person_id_less_than);
+        }
+        // query params
+        if ($person_id_less_than_or_equal !== null) {
+            $queryParams['personId.lessThanOrEqual'] = ObjectSerializer::toQueryValue($person_id_less_than_or_equal);
         }
         // query params
         if ($person_id_not_equals !== null) {
@@ -2672,15 +2708,16 @@ class MembershipResourceApi
      *
      * getLinkedMembers
      *
-     * @param  int $main_member_id mainMemberId (required)
+     * @param  int $external_person_id externalPersonId (required)
+     * @param  string $membership_type_name membershipTypeName (optional)
      *
      * @throws \Idealogic\MembershipAPI\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \Idealogic\MembershipAPI\Model\MembershipStatusDTO[]
      */
-    public function getLinkedMembersUsingGET($main_member_id)
+    public function getLinkedMembersUsingGET($external_person_id, $membership_type_name = null)
     {
-        list($response) = $this->getLinkedMembersUsingGETWithHttpInfo($main_member_id);
+        list($response) = $this->getLinkedMembersUsingGETWithHttpInfo($external_person_id, $membership_type_name);
         return $response;
     }
 
@@ -2689,16 +2726,17 @@ class MembershipResourceApi
      *
      * getLinkedMembers
      *
-     * @param  int $main_member_id mainMemberId (required)
+     * @param  int $external_person_id externalPersonId (required)
+     * @param  string $membership_type_name membershipTypeName (optional)
      *
      * @throws \Idealogic\MembershipAPI\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Idealogic\MembershipAPI\Model\MembershipStatusDTO[], HTTP status code, HTTP response headers (array of strings)
      */
-    public function getLinkedMembersUsingGETWithHttpInfo($main_member_id)
+    public function getLinkedMembersUsingGETWithHttpInfo($external_person_id, $membership_type_name = null)
     {
         $returnType = '\Idealogic\MembershipAPI\Model\MembershipStatusDTO[]';
-        $request = $this->getLinkedMembersUsingGETRequest($main_member_id);
+        $request = $this->getLinkedMembersUsingGETRequest($external_person_id, $membership_type_name);
 
         try {
             $options = $this->createHttpClientOption();
@@ -2764,14 +2802,15 @@ class MembershipResourceApi
      *
      * getLinkedMembers
      *
-     * @param  int $main_member_id mainMemberId (required)
+     * @param  int $external_person_id externalPersonId (required)
+     * @param  string $membership_type_name membershipTypeName (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getLinkedMembersUsingGETAsync($main_member_id)
+    public function getLinkedMembersUsingGETAsync($external_person_id, $membership_type_name = null)
     {
-        return $this->getLinkedMembersUsingGETAsyncWithHttpInfo($main_member_id)
+        return $this->getLinkedMembersUsingGETAsyncWithHttpInfo($external_person_id, $membership_type_name)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -2784,15 +2823,16 @@ class MembershipResourceApi
      *
      * getLinkedMembers
      *
-     * @param  int $main_member_id mainMemberId (required)
+     * @param  int $external_person_id externalPersonId (required)
+     * @param  string $membership_type_name membershipTypeName (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getLinkedMembersUsingGETAsyncWithHttpInfo($main_member_id)
+    public function getLinkedMembersUsingGETAsyncWithHttpInfo($external_person_id, $membership_type_name = null)
     {
         $returnType = '\Idealogic\MembershipAPI\Model\MembershipStatusDTO[]';
-        $request = $this->getLinkedMembersUsingGETRequest($main_member_id);
+        $request = $this->getLinkedMembersUsingGETRequest($external_person_id, $membership_type_name);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -2834,33 +2874,38 @@ class MembershipResourceApi
     /**
      * Create request for operation 'getLinkedMembersUsingGET'
      *
-     * @param  int $main_member_id mainMemberId (required)
+     * @param  int $external_person_id externalPersonId (required)
+     * @param  string $membership_type_name membershipTypeName (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function getLinkedMembersUsingGETRequest($main_member_id)
+    protected function getLinkedMembersUsingGETRequest($external_person_id, $membership_type_name = null)
     {
-        // verify the required parameter 'main_member_id' is set
-        if ($main_member_id === null || (is_array($main_member_id) && count($main_member_id) === 0)) {
+        // verify the required parameter 'external_person_id' is set
+        if ($external_person_id === null || (is_array($external_person_id) && count($external_person_id) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $main_member_id when calling getLinkedMembersUsingGET'
+                'Missing the required parameter $external_person_id when calling getLinkedMembersUsingGET'
             );
         }
 
-        $resourcePath = '/api/linkedMembers/{mainMemberId}';
+        $resourcePath = '/api/memberships/linkedStatus/{externalPersonId}';
         $formParams = [];
         $queryParams = [];
         $headerParams = [];
         $httpBody = '';
         $multipart = false;
 
+        // query params
+        if ($membership_type_name !== null) {
+            $queryParams['membershipTypeName'] = ObjectSerializer::toQueryValue($membership_type_name);
+        }
 
         // path params
-        if ($main_member_id !== null) {
+        if ($external_person_id !== null) {
             $resourcePath = str_replace(
-                '{' . 'mainMemberId' . '}',
-                ObjectSerializer::toPathValue($main_member_id),
+                '{' . 'externalPersonId' . '}',
+                ObjectSerializer::toPathValue($external_person_id),
                 $resourcePath
             );
         }
@@ -2937,9 +2982,9 @@ class MembershipResourceApi
     }
 
     /**
-     * Operation getMembershipStatusUsingGET
+     * Operation getMainMemberUsingGET
      *
-     * getMembershipStatus
+     * getMainMember
      *
      * @param  int $external_person_id externalPersonId (required)
      *
@@ -2947,16 +2992,16 @@ class MembershipResourceApi
      * @throws \InvalidArgumentException
      * @return \Idealogic\MembershipAPI\Model\MembershipStatusDTO
      */
-    public function getMembershipStatusUsingGET($external_person_id)
+    public function getMainMemberUsingGET($external_person_id)
     {
-        list($response) = $this->getMembershipStatusUsingGETWithHttpInfo($external_person_id);
+        list($response) = $this->getMainMemberUsingGETWithHttpInfo($external_person_id);
         return $response;
     }
 
     /**
-     * Operation getMembershipStatusUsingGETWithHttpInfo
+     * Operation getMainMemberUsingGETWithHttpInfo
      *
-     * getMembershipStatus
+     * getMainMember
      *
      * @param  int $external_person_id externalPersonId (required)
      *
@@ -2964,10 +3009,10 @@ class MembershipResourceApi
      * @throws \InvalidArgumentException
      * @return array of \Idealogic\MembershipAPI\Model\MembershipStatusDTO, HTTP status code, HTTP response headers (array of strings)
      */
-    public function getMembershipStatusUsingGETWithHttpInfo($external_person_id)
+    public function getMainMemberUsingGETWithHttpInfo($external_person_id)
     {
         $returnType = '\Idealogic\MembershipAPI\Model\MembershipStatusDTO';
-        $request = $this->getMembershipStatusUsingGETRequest($external_person_id);
+        $request = $this->getMainMemberUsingGETRequest($external_person_id);
 
         try {
             $options = $this->createHttpClientOption();
@@ -3029,18 +3074,18 @@ class MembershipResourceApi
     }
 
     /**
-     * Operation getMembershipStatusUsingGETAsync
+     * Operation getMainMemberUsingGETAsync
      *
-     * getMembershipStatus
+     * getMainMember
      *
      * @param  int $external_person_id externalPersonId (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getMembershipStatusUsingGETAsync($external_person_id)
+    public function getMainMemberUsingGETAsync($external_person_id)
     {
-        return $this->getMembershipStatusUsingGETAsyncWithHttpInfo($external_person_id)
+        return $this->getMainMemberUsingGETAsyncWithHttpInfo($external_person_id)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -3049,19 +3094,19 @@ class MembershipResourceApi
     }
 
     /**
-     * Operation getMembershipStatusUsingGETAsyncWithHttpInfo
+     * Operation getMainMemberUsingGETAsyncWithHttpInfo
      *
-     * getMembershipStatus
+     * getMainMember
      *
      * @param  int $external_person_id externalPersonId (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getMembershipStatusUsingGETAsyncWithHttpInfo($external_person_id)
+    public function getMainMemberUsingGETAsyncWithHttpInfo($external_person_id)
     {
         $returnType = '\Idealogic\MembershipAPI\Model\MembershipStatusDTO';
-        $request = $this->getMembershipStatusUsingGETRequest($external_person_id);
+        $request = $this->getMainMemberUsingGETRequest($external_person_id);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -3101,23 +3146,23 @@ class MembershipResourceApi
     }
 
     /**
-     * Create request for operation 'getMembershipStatusUsingGET'
+     * Create request for operation 'getMainMemberUsingGET'
      *
      * @param  int $external_person_id externalPersonId (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function getMembershipStatusUsingGETRequest($external_person_id)
+    protected function getMainMemberUsingGETRequest($external_person_id)
     {
         // verify the required parameter 'external_person_id' is set
         if ($external_person_id === null || (is_array($external_person_id) && count($external_person_id) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $external_person_id when calling getMembershipStatusUsingGET'
+                'Missing the required parameter $external_person_id when calling getMainMemberUsingGET'
             );
         }
 
-        $resourcePath = '/api/membershipStatus/{externalPersonId}';
+        $resourcePath = '/api/memberships/status/{externalPersonId}';
         $formParams = [];
         $queryParams = [];
         $headerParams = [];

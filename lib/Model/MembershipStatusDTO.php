@@ -62,6 +62,7 @@ class MembershipStatusDTO implements ModelInterface, ArrayAccess
         'membership_id' => 'int',
         'membership_number' => 'string',
         'membership_status' => 'string',
+        'membership_type_name' => 'string',
         'message' => 'string',
         'name' => 'string',
         'order_id' => 'int',
@@ -83,6 +84,7 @@ class MembershipStatusDTO implements ModelInterface, ArrayAccess
         'membership_id' => 'int64',
         'membership_number' => null,
         'membership_status' => null,
+        'membership_type_name' => null,
         'message' => null,
         'name' => null,
         'order_id' => 'int64',
@@ -125,6 +127,7 @@ class MembershipStatusDTO implements ModelInterface, ArrayAccess
         'membership_id' => 'membershipId',
         'membership_number' => 'membershipNumber',
         'membership_status' => 'membershipStatus',
+        'membership_type_name' => 'membershipTypeName',
         'message' => 'message',
         'name' => 'name',
         'order_id' => 'orderId',
@@ -146,6 +149,7 @@ class MembershipStatusDTO implements ModelInterface, ArrayAccess
         'membership_id' => 'setMembershipId',
         'membership_number' => 'setMembershipNumber',
         'membership_status' => 'setMembershipStatus',
+        'membership_type_name' => 'setMembershipTypeName',
         'message' => 'setMessage',
         'name' => 'setName',
         'order_id' => 'setOrderId',
@@ -167,6 +171,7 @@ class MembershipStatusDTO implements ModelInterface, ArrayAccess
         'membership_id' => 'getMembershipId',
         'membership_number' => 'getMembershipNumber',
         'membership_status' => 'getMembershipStatus',
+        'membership_type_name' => 'getMembershipTypeName',
         'message' => 'getMessage',
         'name' => 'getName',
         'order_id' => 'getOrderId',
@@ -280,6 +285,7 @@ class MembershipStatusDTO implements ModelInterface, ArrayAccess
         $this->container['membership_id'] = isset($data['membership_id']) ? $data['membership_id'] : null;
         $this->container['membership_number'] = isset($data['membership_number']) ? $data['membership_number'] : null;
         $this->container['membership_status'] = isset($data['membership_status']) ? $data['membership_status'] : null;
+        $this->container['membership_type_name'] = isset($data['membership_type_name']) ? $data['membership_type_name'] : null;
         $this->container['message'] = isset($data['message']) ? $data['message'] : null;
         $this->container['name'] = isset($data['name']) ? $data['name'] : null;
         $this->container['order_id'] = isset($data['order_id']) ? $data['order_id'] : null;
@@ -455,6 +461,30 @@ class MembershipStatusDTO implements ModelInterface, ArrayAccess
             );
         }
         $this->container['membership_status'] = $membership_status;
+
+        return $this;
+    }
+
+    /**
+     * Gets membership_type_name
+     *
+     * @return string
+     */
+    public function getMembershipTypeName()
+    {
+        return $this->container['membership_type_name'];
+    }
+
+    /**
+     * Sets membership_type_name
+     *
+     * @param string $membership_type_name membership_type_name
+     *
+     * @return $this
+     */
+    public function setMembershipTypeName($membership_type_name)
+    {
+        $this->container['membership_type_name'] = $membership_type_name;
 
         return $this;
     }

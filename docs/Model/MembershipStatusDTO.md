@@ -8,6 +8,7 @@ Name | Type | Description | Notes
 **membership_id** | **int** |  | [optional] 
 **membership_number** | **string** |  | [optional] 
 **membership_status** | **string** |  | [optional] 
+**membership_type_name** | **string** |  | [optional] 
 **message** | **string** |  | [optional] 
 **name** | **string** |  | [optional] 
 **order_id** | **int** |  | [optional] 

@@ -70,7 +70,7 @@ class PersonDTO implements ModelInterface, ArrayAccess
         'first_name' => 'string',
         'gender' => 'string',
         'id' => 'int',
-        'identity_country_id' => 'int',
+        'identity_country_code' => 'string',
         'identity_country_name' => 'string',
         'identity_number' => 'string',
         'identity_type' => 'string',
@@ -81,7 +81,7 @@ class PersonDTO implements ModelInterface, ArrayAccess
         'medical_conditions' => 'string',
         'medication' => 'string',
         'name' => 'string',
-        'nationality_id' => 'int',
+        'nationality_code' => 'string',
         'nationality_name' => 'string',
         'parent_contact_email' => 'string',
         'parent_contact_name' => 'string',
@@ -90,7 +90,8 @@ class PersonDTO implements ModelInterface, ArrayAccess
         'parent_type' => 'string',
         'scheme_name' => 'string',
         'scheme_policy_number' => 'string',
-        'scheme_principal' => 'string'
+        'scheme_principal' => 'string',
+        'user_id' => 'string'
     ];
 
     /**
@@ -112,7 +113,7 @@ class PersonDTO implements ModelInterface, ArrayAccess
         'first_name' => null,
         'gender' => null,
         'id' => 'int64',
-        'identity_country_id' => 'int32',
+        'identity_country_code' => null,
         'identity_country_name' => null,
         'identity_number' => null,
         'identity_type' => null,
@@ -123,7 +124,7 @@ class PersonDTO implements ModelInterface, ArrayAccess
         'medical_conditions' => null,
         'medication' => null,
         'name' => null,
-        'nationality_id' => 'int32',
+        'nationality_code' => null,
         'nationality_name' => null,
         'parent_contact_email' => null,
         'parent_contact_name' => null,
@@ -132,7 +133,8 @@ class PersonDTO implements ModelInterface, ArrayAccess
         'parent_type' => null,
         'scheme_name' => null,
         'scheme_policy_number' => null,
-        'scheme_principal' => null
+        'scheme_principal' => null,
+        'user_id' => null
     ];
 
     /**
@@ -175,7 +177,7 @@ class PersonDTO implements ModelInterface, ArrayAccess
         'first_name' => 'firstName',
         'gender' => 'gender',
         'id' => 'id',
-        'identity_country_id' => 'identityCountryId',
+        'identity_country_code' => 'identityCountryCode',
         'identity_country_name' => 'identityCountryName',
         'identity_number' => 'identityNumber',
         'identity_type' => 'identityType',
@@ -186,7 +188,7 @@ class PersonDTO implements ModelInterface, ArrayAccess
         'medical_conditions' => 'medicalConditions',
         'medication' => 'medication',
         'name' => 'name',
-        'nationality_id' => 'nationalityId',
+        'nationality_code' => 'nationalityCode',
         'nationality_name' => 'nationalityName',
         'parent_contact_email' => 'parentContactEmail',
         'parent_contact_name' => 'parentContactName',
@@ -195,7 +197,8 @@ class PersonDTO implements ModelInterface, ArrayAccess
         'parent_type' => 'parentType',
         'scheme_name' => 'schemeName',
         'scheme_policy_number' => 'schemePolicyNumber',
-        'scheme_principal' => 'schemePrincipal'
+        'scheme_principal' => 'schemePrincipal',
+        'user_id' => 'userId'
     ];
 
     /**
@@ -217,7 +220,7 @@ class PersonDTO implements ModelInterface, ArrayAccess
         'first_name' => 'setFirstName',
         'gender' => 'setGender',
         'id' => 'setId',
-        'identity_country_id' => 'setIdentityCountryId',
+        'identity_country_code' => 'setIdentityCountryCode',
         'identity_country_name' => 'setIdentityCountryName',
         'identity_number' => 'setIdentityNumber',
         'identity_type' => 'setIdentityType',
@@ -228,7 +231,7 @@ class PersonDTO implements ModelInterface, ArrayAccess
         'medical_conditions' => 'setMedicalConditions',
         'medication' => 'setMedication',
         'name' => 'setName',
-        'nationality_id' => 'setNationalityId',
+        'nationality_code' => 'setNationalityCode',
         'nationality_name' => 'setNationalityName',
         'parent_contact_email' => 'setParentContactEmail',
         'parent_contact_name' => 'setParentContactName',
@@ -237,7 +240,8 @@ class PersonDTO implements ModelInterface, ArrayAccess
         'parent_type' => 'setParentType',
         'scheme_name' => 'setSchemeName',
         'scheme_policy_number' => 'setSchemePolicyNumber',
-        'scheme_principal' => 'setSchemePrincipal'
+        'scheme_principal' => 'setSchemePrincipal',
+        'user_id' => 'setUserId'
     ];
 
     /**
@@ -259,7 +263,7 @@ class PersonDTO implements ModelInterface, ArrayAccess
         'first_name' => 'getFirstName',
         'gender' => 'getGender',
         'id' => 'getId',
-        'identity_country_id' => 'getIdentityCountryId',
+        'identity_country_code' => 'getIdentityCountryCode',
         'identity_country_name' => 'getIdentityCountryName',
         'identity_number' => 'getIdentityNumber',
         'identity_type' => 'getIdentityType',
@@ -270,7 +274,7 @@ class PersonDTO implements ModelInterface, ArrayAccess
         'medical_conditions' => 'getMedicalConditions',
         'medication' => 'getMedication',
         'name' => 'getName',
-        'nationality_id' => 'getNationalityId',
+        'nationality_code' => 'getNationalityCode',
         'nationality_name' => 'getNationalityName',
         'parent_contact_email' => 'getParentContactEmail',
         'parent_contact_name' => 'getParentContactName',
@@ -279,7 +283,8 @@ class PersonDTO implements ModelInterface, ArrayAccess
         'parent_type' => 'getParentType',
         'scheme_name' => 'getSchemeName',
         'scheme_policy_number' => 'getSchemePolicyNumber',
-        'scheme_principal' => 'getSchemePrincipal'
+        'scheme_principal' => 'getSchemePrincipal',
+        'user_id' => 'getUserId'
     ];
 
     /**
@@ -389,7 +394,7 @@ class PersonDTO implements ModelInterface, ArrayAccess
         $this->container['first_name'] = isset($data['first_name']) ? $data['first_name'] : null;
         $this->container['gender'] = isset($data['gender']) ? $data['gender'] : null;
         $this->container['id'] = isset($data['id']) ? $data['id'] : null;
-        $this->container['identity_country_id'] = isset($data['identity_country_id']) ? $data['identity_country_id'] : null;
+        $this->container['identity_country_code'] = isset($data['identity_country_code']) ? $data['identity_country_code'] : null;
         $this->container['identity_country_name'] = isset($data['identity_country_name']) ? $data['identity_country_name'] : null;
         $this->container['identity_number'] = isset($data['identity_number']) ? $data['identity_number'] : null;
         $this->container['identity_type'] = isset($data['identity_type']) ? $data['identity_type'] : null;
@@ -400,7 +405,7 @@ class PersonDTO implements ModelInterface, ArrayAccess
         $this->container['medical_conditions'] = isset($data['medical_conditions']) ? $data['medical_conditions'] : null;
         $this->container['medication'] = isset($data['medication']) ? $data['medication'] : null;
         $this->container['name'] = isset($data['name']) ? $data['name'] : null;
-        $this->container['nationality_id'] = isset($data['nationality_id']) ? $data['nationality_id'] : null;
+        $this->container['nationality_code'] = isset($data['nationality_code']) ? $data['nationality_code'] : null;
         $this->container['nationality_name'] = isset($data['nationality_name']) ? $data['nationality_name'] : null;
         $this->container['parent_contact_email'] = isset($data['parent_contact_email']) ? $data['parent_contact_email'] : null;
         $this->container['parent_contact_name'] = isset($data['parent_contact_name']) ? $data['parent_contact_name'] : null;
@@ -410,6 +415,7 @@ class PersonDTO implements ModelInterface, ArrayAccess
         $this->container['scheme_name'] = isset($data['scheme_name']) ? $data['scheme_name'] : null;
         $this->container['scheme_policy_number'] = isset($data['scheme_policy_number']) ? $data['scheme_policy_number'] : null;
         $this->container['scheme_principal'] = isset($data['scheme_principal']) ? $data['scheme_principal'] : null;
+        $this->container['user_id'] = isset($data['user_id']) ? $data['user_id'] : null;
     }
 
     /**
@@ -783,25 +789,25 @@ class PersonDTO implements ModelInterface, ArrayAccess
     }
 
     /**
-     * Gets identity_country_id
+     * Gets identity_country_code
      *
-     * @return int
+     * @return string
      */
-    public function getIdentityCountryId()
+    public function getIdentityCountryCode()
     {
-        return $this->container['identity_country_id'];
+        return $this->container['identity_country_code'];
     }
 
     /**
-     * Sets identity_country_id
+     * Sets identity_country_code
      *
-     * @param int $identity_country_id identity_country_id
+     * @param string $identity_country_code identity_country_code
      *
      * @return $this
      */
-    public function setIdentityCountryId($identity_country_id)
+    public function setIdentityCountryCode($identity_country_code)
     {
-        $this->container['identity_country_id'] = $identity_country_id;
+        $this->container['identity_country_code'] = $identity_country_code;
 
         return $this;
     }
@@ -1056,25 +1062,25 @@ class PersonDTO implements ModelInterface, ArrayAccess
     }
 
     /**
-     * Gets nationality_id
+     * Gets nationality_code
      *
-     * @return int
+     * @return string
      */
-    public function getNationalityId()
+    public function getNationalityCode()
     {
-        return $this->container['nationality_id'];
+        return $this->container['nationality_code'];
     }
 
     /**
-     * Sets nationality_id
+     * Sets nationality_code
      *
-     * @param int $nationality_id nationality_id
+     * @param string $nationality_code nationality_code
      *
      * @return $this
      */
-    public function setNationalityId($nationality_id)
+    public function setNationalityCode($nationality_code)
     {
-        $this->container['nationality_id'] = $nationality_id;
+        $this->container['nationality_code'] = $nationality_code;
 
         return $this;
     }
@@ -1291,6 +1297,30 @@ class PersonDTO implements ModelInterface, ArrayAccess
     public function setSchemePrincipal($scheme_principal)
     {
         $this->container['scheme_principal'] = $scheme_principal;
+
+        return $this;
+    }
+
+    /**
+     * Gets user_id
+     *
+     * @return string
+     */
+    public function getUserId()
+    {
+        return $this->container['user_id'];
+    }
+
+    /**
+     * Sets user_id
+     *
+     * @param string $user_id user_id
+     *
+     * @return $this
+     */
+    public function setUserId($user_id)
+    {
+        $this->container['user_id'] = $user_id;
 
         return $this;
     }

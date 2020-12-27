@@ -16,7 +16,7 @@ Name | Type | Description | Notes
 **first_name** | **string** |  | 
 **gender** | **string** |  | 
 **id** | **int** |  | [optional] 
-**identity_country_id** | **int** |  | [optional] 
+**identity_country_code** | **string** |  | [optional] 
 **identity_country_name** | **string** |  | [optional] 
 **identity_number** | **string** |  | [optional] 
 **identity_type** | **string** |  | [optional] 
@@ -27,7 +27,7 @@ Name | Type | Description | Notes
 **medical_conditions** | **string** |  | [optional] 
 **medication** | **string** |  | [optional] 
 **name** | **string** |  | [optional] 
-**nationality_id** | **int** |  | [optional] 
+**nationality_code** | **string** |  | [optional] 
 **nationality_name** | **string** |  | [optional] 
 **parent_contact_email** | **string** |  | [optional] 
 **parent_contact_name** | **string** |  | [optional] 
@@ -37,6 +37,7 @@ Name | Type | Description | Notes
 **scheme_name** | **string** |  | [optional] 
 **scheme_policy_number** | **string** |  | [optional] 
 **scheme_principal** | **string** |  | [optional] 
+**user_id** | **string** |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

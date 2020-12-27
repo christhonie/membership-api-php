@@ -58,12 +58,13 @@ class OrgUserDTO implements ModelInterface, ArrayAccess
       */
     protected static $swaggerTypes = [
         'active' => 'bool',
+        'external_user_id' => 'string',
         'id' => 'int',
+        'name' => 'string',
         'organisation_id' => 'int',
         'organisation_name' => 'string',
         'permissions' => '\Idealogic\MembershipAPI\Model\OrgPermissionDTO[]',
-        'user_id' => 'string',
-        'user_name' => 'string',
+        'person_id' => 'string',
         'valid_from' => '\DateTime',
         'valid_to' => '\DateTime'
     ];
@@ -75,12 +76,13 @@ class OrgUserDTO implements ModelInterface, ArrayAccess
       */
     protected static $swaggerFormats = [
         'active' => null,
+        'external_user_id' => null,
         'id' => 'int64',
+        'name' => null,
         'organisation_id' => 'int64',
         'organisation_name' => null,
         'permissions' => null,
-        'user_id' => null,
-        'user_name' => null,
+        'person_id' => null,
         'valid_from' => 'date-time',
         'valid_to' => 'date-time'
     ];
@@ -113,12 +115,13 @@ class OrgUserDTO implements ModelInterface, ArrayAccess
      */
     protected static $attributeMap = [
         'active' => 'active',
+        'external_user_id' => 'externalUserId',
         'id' => 'id',
+        'name' => 'name',
         'organisation_id' => 'organisationId',
         'organisation_name' => 'organisationName',
         'permissions' => 'permissions',
-        'user_id' => 'userId',
-        'user_name' => 'userName',
+        'person_id' => 'personId',
         'valid_from' => 'validFrom',
         'valid_to' => 'validTo'
     ];
@@ -130,12 +133,13 @@ class OrgUserDTO implements ModelInterface, ArrayAccess
      */
     protected static $setters = [
         'active' => 'setActive',
+        'external_user_id' => 'setExternalUserId',
         'id' => 'setId',
+        'name' => 'setName',
         'organisation_id' => 'setOrganisationId',
         'organisation_name' => 'setOrganisationName',
         'permissions' => 'setPermissions',
-        'user_id' => 'setUserId',
-        'user_name' => 'setUserName',
+        'person_id' => 'setPersonId',
         'valid_from' => 'setValidFrom',
         'valid_to' => 'setValidTo'
     ];
@@ -147,12 +151,13 @@ class OrgUserDTO implements ModelInterface, ArrayAccess
      */
     protected static $getters = [
         'active' => 'getActive',
+        'external_user_id' => 'getExternalUserId',
         'id' => 'getId',
+        'name' => 'getName',
         'organisation_id' => 'getOrganisationId',
         'organisation_name' => 'getOrganisationName',
         'permissions' => 'getPermissions',
-        'user_id' => 'getUserId',
-        'user_name' => 'getUserName',
+        'person_id' => 'getPersonId',
         'valid_from' => 'getValidFrom',
         'valid_to' => 'getValidTo'
     ];
@@ -218,12 +223,13 @@ class OrgUserDTO implements ModelInterface, ArrayAccess
     public function __construct(array $data = null)
     {
         $this->container['active'] = isset($data['active']) ? $data['active'] : null;
+        $this->container['external_user_id'] = isset($data['external_user_id']) ? $data['external_user_id'] : null;
         $this->container['id'] = isset($data['id']) ? $data['id'] : null;
+        $this->container['name'] = isset($data['name']) ? $data['name'] : null;
         $this->container['organisation_id'] = isset($data['organisation_id']) ? $data['organisation_id'] : null;
         $this->container['organisation_name'] = isset($data['organisation_name']) ? $data['organisation_name'] : null;
         $this->container['permissions'] = isset($data['permissions']) ? $data['permissions'] : null;
-        $this->container['user_id'] = isset($data['user_id']) ? $data['user_id'] : null;
-        $this->container['user_name'] = isset($data['user_name']) ? $data['user_name'] : null;
+        $this->container['person_id'] = isset($data['person_id']) ? $data['person_id'] : null;
         $this->container['valid_from'] = isset($data['valid_from']) ? $data['valid_from'] : null;
         $this->container['valid_to'] = isset($data['valid_to']) ? $data['valid_to'] : null;
     }
@@ -237,8 +243,8 @@ class OrgUserDTO implements ModelInterface, ArrayAccess
     {
         $invalidProperties = [];
 
-        if ($this->container['user_id'] === null) {
-            $invalidProperties[] = "'user_id' can't be null";
+        if ($this->container['person_id'] === null) {
+            $invalidProperties[] = "'person_id' can't be null";
         }
         if ($this->container['valid_from'] === null) {
             $invalidProperties[] = "'valid_from' can't be null";
@@ -283,6 +289,30 @@ class OrgUserDTO implements ModelInterface, ArrayAccess
     }
 
     /**
+     * Gets external_user_id
+     *
+     * @return string
+     */
+    public function getExternalUserId()
+    {
+        return $this->container['external_user_id'];
+    }
+
+    /**
+     * Sets external_user_id
+     *
+     * @param string $external_user_id external_user_id
+     *
+     * @return $this
+     */
+    public function setExternalUserId($external_user_id)
+    {
+        $this->container['external_user_id'] = $external_user_id;
+
+        return $this;
+    }
+
+    /**
      * Gets id
      *
      * @return int
@@ -302,6 +332,30 @@ class OrgUserDTO implements ModelInterface, ArrayAccess
     public function setId($id)
     {
         $this->container['id'] = $id;
+
+        return $this;
+    }
+
+    /**
+     * Gets name
+     *
+     * @return string
+     */
+    public function getName()
+    {
+        return $this->container['name'];
+    }
+
+    /**
+     * Sets name
+     *
+     * @param string $name name
+     *
+     * @return $this
+     */
+    public function setName($name)
+    {
+        $this->container['name'] = $name;
 
         return $this;
     }
@@ -379,49 +433,25 @@ class OrgUserDTO implements ModelInterface, ArrayAccess
     }
 
     /**
-     * Gets user_id
+     * Gets person_id
      *
      * @return string
      */
-    public function getUserId()
+    public function getPersonId()
     {
-        return $this->container['user_id'];
+        return $this->container['person_id'];
     }
 
     /**
-     * Sets user_id
+     * Sets person_id
      *
-     * @param string $user_id user_id
+     * @param string $person_id person_id
      *
      * @return $this
      */
-    public function setUserId($user_id)
+    public function setPersonId($person_id)
     {
-        $this->container['user_id'] = $user_id;
-
-        return $this;
-    }
-
-    /**
-     * Gets user_name
-     *
-     * @return string
-     */
-    public function getUserName()
-    {
-        return $this->container['user_name'];
-    }
-
-    /**
-     * Sets user_name
-     *
-     * @param string $user_name user_name
-     *
-     * @return $this
-     */
-    public function setUserName($user_name)
-    {
-        $this->container['user_name'] = $user_name;
+        $this->container['person_id'] = $person_id;
 
         return $this;
     }

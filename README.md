@@ -129,8 +129,8 @@ Class | Method | HTTP request | Description
 *MembershipResourceApi* | [**createMembershipUsingPOST**](docs/Api/MembershipResourceApi.md#createmembershipusingpost) | **POST** /api/memberships | createMembership
 *MembershipResourceApi* | [**deleteMembershipUsingDELETE**](docs/Api/MembershipResourceApi.md#deletemembershipusingdelete) | **DELETE** /api/memberships/{id} | deleteMembership
 *MembershipResourceApi* | [**getAllMembershipsUsingGET**](docs/Api/MembershipResourceApi.md#getallmembershipsusingget) | **GET** /api/memberships | getAllMemberships
-*MembershipResourceApi* | [**getLinkedMembersUsingGET**](docs/Api/MembershipResourceApi.md#getlinkedmembersusingget) | **GET** /api/linkedMembers/{mainMemberId} | getLinkedMembers
-*MembershipResourceApi* | [**getMembershipStatusUsingGET**](docs/Api/MembershipResourceApi.md#getmembershipstatususingget) | **GET** /api/membershipStatus/{externalPersonId} | getMembershipStatus
+*MembershipResourceApi* | [**getLinkedMembersUsingGET**](docs/Api/MembershipResourceApi.md#getlinkedmembersusingget) | **GET** /api/memberships/linkedStatus/{externalPersonId} | getLinkedMembers
+*MembershipResourceApi* | [**getMainMemberUsingGET**](docs/Api/MembershipResourceApi.md#getmainmemberusingget) | **GET** /api/memberships/status/{externalPersonId} | getMainMember
 *MembershipResourceApi* | [**getMembershipUsingGET**](docs/Api/MembershipResourceApi.md#getmembershipusingget) | **GET** /api/memberships/{id} | getMembership
 *MembershipResourceApi* | [**updateMembershipUsingPUT**](docs/Api/MembershipResourceApi.md#updatemembershipusingput) | **PUT** /api/memberships | updateMembership
 *MembershipTypeResourceApi* | [**countMembershipTypesUsingGET**](docs/Api/MembershipTypeResourceApi.md#countmembershiptypesusingget) | **GET** /api/membership-types/count | countMembershipTypes
@@ -167,8 +167,10 @@ Class | Method | HTTP request | Description
 *OrganisationResourceApi* | [**updateOrganisationUsingPUT**](docs/Api/OrganisationResourceApi.md#updateorganisationusingput) | **PUT** /api/organisations | updateOrganisation
 *PersonResourceApi* | [**createPersonUsingPOST**](docs/Api/PersonResourceApi.md#createpersonusingpost) | **POST** /api/people | createPerson
 *PersonResourceApi* | [**deletePersonUsingDELETE**](docs/Api/PersonResourceApi.md#deletepersonusingdelete) | **DELETE** /api/people/{id} | deletePerson
-*PersonResourceApi* | [**findByIDUsingGET**](docs/Api/PersonResourceApi.md#findbyidusingget) | **GET** /api/people/findById | findByID
+*PersonResourceApi* | [**findByIDUsingGET**](docs/Api/PersonResourceApi.md#findbyidusingget) | **GET** /api/people/match | findByID
+*PersonResourceApi* | [**findMatchingUsingGET**](docs/Api/PersonResourceApi.md#findmatchingusingget) | **GET** /api/people/findById | findMatching
 *PersonResourceApi* | [**getAllPeopleUsingGET**](docs/Api/PersonResourceApi.md#getallpeopleusingget) | **GET** /api/people | getAllPeople
+*PersonResourceApi* | [**getOrgPersonUsingGET**](docs/Api/PersonResourceApi.md#getorgpersonusingget) | **GET** /api/people/org/{externalUserId} | getOrgPerson
 *PersonResourceApi* | [**getPersonUsingGET**](docs/Api/PersonResourceApi.md#getpersonusingget) | **GET** /api/people/{id} | getPerson
 *PersonResourceApi* | [**queryPersonUsingGET**](docs/Api/PersonResourceApi.md#querypersonusingget) | **GET** /api/people/query | queryPerson
 *PersonResourceApi* | [**updatePersonUsingPUT**](docs/Api/PersonResourceApi.md#updatepersonusingput) | **PUT** /api/people | updatePerson

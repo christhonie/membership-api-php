@@ -93,14 +93,15 @@ class PersonResourceApi
      * createPerson
      *
      * @param  \Idealogic\MembershipAPI\Model\PersonDTO $person_dto personDTO (required)
+     * @param  int $organisation_id organisationId (optional)
      *
      * @throws \Idealogic\MembershipAPI\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \Idealogic\MembershipAPI\Model\PersonDTO
      */
-    public function createPersonUsingPOST($person_dto)
+    public function createPersonUsingPOST($person_dto, $organisation_id = null)
     {
-        list($response) = $this->createPersonUsingPOSTWithHttpInfo($person_dto);
+        list($response) = $this->createPersonUsingPOSTWithHttpInfo($person_dto, $organisation_id);
         return $response;
     }
 
@@ -110,15 +111,16 @@ class PersonResourceApi
      * createPerson
      *
      * @param  \Idealogic\MembershipAPI\Model\PersonDTO $person_dto personDTO (required)
+     * @param  int $organisation_id organisationId (optional)
      *
      * @throws \Idealogic\MembershipAPI\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Idealogic\MembershipAPI\Model\PersonDTO, HTTP status code, HTTP response headers (array of strings)
      */
-    public function createPersonUsingPOSTWithHttpInfo($person_dto)
+    public function createPersonUsingPOSTWithHttpInfo($person_dto, $organisation_id = null)
     {
         $returnType = '\Idealogic\MembershipAPI\Model\PersonDTO';
-        $request = $this->createPersonUsingPOSTRequest($person_dto);
+        $request = $this->createPersonUsingPOSTRequest($person_dto, $organisation_id);
 
         try {
             $options = $this->createHttpClientOption();
@@ -185,13 +187,14 @@ class PersonResourceApi
      * createPerson
      *
      * @param  \Idealogic\MembershipAPI\Model\PersonDTO $person_dto personDTO (required)
+     * @param  int $organisation_id organisationId (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function createPersonUsingPOSTAsync($person_dto)
+    public function createPersonUsingPOSTAsync($person_dto, $organisation_id = null)
     {
-        return $this->createPersonUsingPOSTAsyncWithHttpInfo($person_dto)
+        return $this->createPersonUsingPOSTAsyncWithHttpInfo($person_dto, $organisation_id)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -205,14 +208,15 @@ class PersonResourceApi
      * createPerson
      *
      * @param  \Idealogic\MembershipAPI\Model\PersonDTO $person_dto personDTO (required)
+     * @param  int $organisation_id organisationId (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function createPersonUsingPOSTAsyncWithHttpInfo($person_dto)
+    public function createPersonUsingPOSTAsyncWithHttpInfo($person_dto, $organisation_id = null)
     {
         $returnType = '\Idealogic\MembershipAPI\Model\PersonDTO';
-        $request = $this->createPersonUsingPOSTRequest($person_dto);
+        $request = $this->createPersonUsingPOSTRequest($person_dto, $organisation_id);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -255,11 +259,12 @@ class PersonResourceApi
      * Create request for operation 'createPersonUsingPOST'
      *
      * @param  \Idealogic\MembershipAPI\Model\PersonDTO $person_dto personDTO (required)
+     * @param  int $organisation_id organisationId (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function createPersonUsingPOSTRequest($person_dto)
+    protected function createPersonUsingPOSTRequest($person_dto, $organisation_id = null)
     {
         // verify the required parameter 'person_dto' is set
         if ($person_dto === null || (is_array($person_dto) && count($person_dto) === 0)) {
@@ -275,6 +280,10 @@ class PersonResourceApi
         $httpBody = '';
         $multipart = false;
 
+        // query params
+        if ($organisation_id !== null) {
+            $queryParams['organisationId'] = ObjectSerializer::toQueryValue($organisation_id);
+        }
 
 
         // body params
@@ -764,7 +773,7 @@ class PersonResourceApi
             );
         }
 
-        $resourcePath = '/api/people/findById';
+        $resourcePath = '/api/people/match';
         $formParams = [];
         $queryParams = [];
         $headerParams = [];
@@ -849,10 +858,275 @@ class PersonResourceApi
     }
 
     /**
+     * Operation findMatchingUsingGET
+     *
+     * findMatching
+     *
+     * @param  \Idealogic\MembershipAPI\Model\PersonDTO $person_dto personDTO (required)
+     *
+     * @throws \Idealogic\MembershipAPI\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * @return \Idealogic\MembershipAPI\Model\PersonDTO[]
+     */
+    public function findMatchingUsingGET($person_dto)
+    {
+        list($response) = $this->findMatchingUsingGETWithHttpInfo($person_dto);
+        return $response;
+    }
+
+    /**
+     * Operation findMatchingUsingGETWithHttpInfo
+     *
+     * findMatching
+     *
+     * @param  \Idealogic\MembershipAPI\Model\PersonDTO $person_dto personDTO (required)
+     *
+     * @throws \Idealogic\MembershipAPI\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * @return array of \Idealogic\MembershipAPI\Model\PersonDTO[], HTTP status code, HTTP response headers (array of strings)
+     */
+    public function findMatchingUsingGETWithHttpInfo($person_dto)
+    {
+        $returnType = '\Idealogic\MembershipAPI\Model\PersonDTO[]';
+        $request = $this->findMatchingUsingGETRequest($person_dto);
+
+        try {
+            $options = $this->createHttpClientOption();
+            try {
+                $response = $this->client->send($request, $options);
+            } catch (RequestException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    $e->getCode(),
+                    $e->getResponse() ? $e->getResponse()->getHeaders() : null,
+                    $e->getResponse() ? $e->getResponse()->getBody()->getContents() : null
+                );
+            }
+
+            $statusCode = $response->getStatusCode();
+
+            if ($statusCode < 200 || $statusCode > 299) {
+                throw new ApiException(
+                    sprintf(
+                        '[%d] Error connecting to the API (%s)',
+                        $statusCode,
+                        $request->getUri()
+                    ),
+                    $statusCode,
+                    $response->getHeaders(),
+                    $response->getBody()
+                );
+            }
+
+            $responseBody = $response->getBody();
+            if ($returnType === '\SplFileObject') {
+                $content = $responseBody; //stream goes to serializer
+            } else {
+                $content = $responseBody->getContents();
+                if ($returnType !== 'string') {
+                    $content = json_decode($content);
+                }
+            }
+
+            return [
+                ObjectSerializer::deserialize($content, $returnType, []),
+                $response->getStatusCode(),
+                $response->getHeaders()
+            ];
+
+        } catch (ApiException $e) {
+            switch ($e->getCode()) {
+                case 200:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Idealogic\MembershipAPI\Model\PersonDTO[]',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+            }
+            throw $e;
+        }
+    }
+
+    /**
+     * Operation findMatchingUsingGETAsync
+     *
+     * findMatching
+     *
+     * @param  \Idealogic\MembershipAPI\Model\PersonDTO $person_dto personDTO (required)
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function findMatchingUsingGETAsync($person_dto)
+    {
+        return $this->findMatchingUsingGETAsyncWithHttpInfo($person_dto)
+            ->then(
+                function ($response) {
+                    return $response[0];
+                }
+            );
+    }
+
+    /**
+     * Operation findMatchingUsingGETAsyncWithHttpInfo
+     *
+     * findMatching
+     *
+     * @param  \Idealogic\MembershipAPI\Model\PersonDTO $person_dto personDTO (required)
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function findMatchingUsingGETAsyncWithHttpInfo($person_dto)
+    {
+        $returnType = '\Idealogic\MembershipAPI\Model\PersonDTO[]';
+        $request = $this->findMatchingUsingGETRequest($person_dto);
+
+        return $this->client
+            ->sendAsync($request, $this->createHttpClientOption())
+            ->then(
+                function ($response) use ($returnType) {
+                    $responseBody = $response->getBody();
+                    if ($returnType === '\SplFileObject') {
+                        $content = $responseBody; //stream goes to serializer
+                    } else {
+                        $content = $responseBody->getContents();
+                        if ($returnType !== 'string') {
+                            $content = json_decode($content);
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, $returnType, []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                },
+                function ($exception) {
+                    $response = $exception->getResponse();
+                    $statusCode = $response->getStatusCode();
+                    throw new ApiException(
+                        sprintf(
+                            '[%d] Error connecting to the API (%s)',
+                            $statusCode,
+                            $exception->getRequest()->getUri()
+                        ),
+                        $statusCode,
+                        $response->getHeaders(),
+                        $response->getBody()
+                    );
+                }
+            );
+    }
+
+    /**
+     * Create request for operation 'findMatchingUsingGET'
+     *
+     * @param  \Idealogic\MembershipAPI\Model\PersonDTO $person_dto personDTO (required)
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Psr7\Request
+     */
+    protected function findMatchingUsingGETRequest($person_dto)
+    {
+        // verify the required parameter 'person_dto' is set
+        if ($person_dto === null || (is_array($person_dto) && count($person_dto) === 0)) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $person_dto when calling findMatchingUsingGET'
+            );
+        }
+
+        $resourcePath = '/api/people/findById';
+        $formParams = [];
+        $queryParams = [];
+        $headerParams = [];
+        $httpBody = '';
+        $multipart = false;
+
+
+
+        // body params
+        $_tempBody = null;
+        if (isset($person_dto)) {
+            $_tempBody = $person_dto;
+        }
+
+        if ($multipart) {
+            $headers = $this->headerSelector->selectHeadersForMultipart(
+                ['*/*']
+            );
+        } else {
+            $headers = $this->headerSelector->selectHeaders(
+                ['*/*'],
+                []
+            );
+        }
+
+        // for model (json/xml)
+        if (isset($_tempBody)) {
+            // $_tempBody is the method argument, if present
+            $httpBody = $_tempBody;
+            
+            if($headers['Content-Type'] === 'application/json') {
+                // \stdClass has no __toString(), so we should encode it manually
+                if ($httpBody instanceof \stdClass) {
+                    $httpBody = \GuzzleHttp\json_encode($httpBody);
+                }
+                // array has no __toString(), so we should encode it manually
+                if(is_array($httpBody)) {
+                    $httpBody = \GuzzleHttp\json_encode(ObjectSerializer::sanitizeForSerialization($httpBody));
+                }
+            }
+        } elseif (count($formParams) > 0) {
+            if ($multipart) {
+                $multipartContents = [];
+                foreach ($formParams as $formParamName => $formParamValue) {
+                    $multipartContents[] = [
+                        'name' => $formParamName,
+                        'contents' => $formParamValue
+                    ];
+                }
+                // for HTTP post (form)
+                $httpBody = new MultipartStream($multipartContents);
+
+            } elseif ($headers['Content-Type'] === 'application/json') {
+                $httpBody = \GuzzleHttp\json_encode($formParams);
+
+            } else {
+                // for HTTP post (form)
+                $httpBody = \GuzzleHttp\Psr7\build_query($formParams);
+            }
+        }
+
+
+        $defaultHeaders = [];
+        if ($this->config->getUserAgent()) {
+            $defaultHeaders['User-Agent'] = $this->config->getUserAgent();
+        }
+
+        $headers = array_merge(
+            $defaultHeaders,
+            $headerParams,
+            $headers
+        );
+
+        $query = \GuzzleHttp\Psr7\build_query($queryParams);
+        return new Request(
+            'GET',
+            $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),
+            $headers,
+            $httpBody
+        );
+    }
+
+    /**
      * Operation getAllPeopleUsingGET
      *
      * getAllPeople
      *
+     * @param  int $organisation_id organisationId (optional)
      * @param  int $page Page number of the requested page (optional)
      * @param  int $size Size of a page (optional)
      * @param  string[] $sort Sorting criteria in the format: property(,asc|desc). Default sort order is ascending. Multiple sort criteria are supported. (optional)
@@ -861,9 +1135,9 @@ class PersonResourceApi
      * @throws \InvalidArgumentException
      * @return \Idealogic\MembershipAPI\Model\PersonDTO[]
      */
-    public function getAllPeopleUsingGET($page = null, $size = null, $sort = null)
+    public function getAllPeopleUsingGET($organisation_id = null, $page = null, $size = null, $sort = null)
     {
-        list($response) = $this->getAllPeopleUsingGETWithHttpInfo($page, $size, $sort);
+        list($response) = $this->getAllPeopleUsingGETWithHttpInfo($organisation_id, $page, $size, $sort);
         return $response;
     }
 
@@ -872,6 +1146,7 @@ class PersonResourceApi
      *
      * getAllPeople
      *
+     * @param  int $organisation_id organisationId (optional)
      * @param  int $page Page number of the requested page (optional)
      * @param  int $size Size of a page (optional)
      * @param  string[] $sort Sorting criteria in the format: property(,asc|desc). Default sort order is ascending. Multiple sort criteria are supported. (optional)
@@ -880,10 +1155,10 @@ class PersonResourceApi
      * @throws \InvalidArgumentException
      * @return array of \Idealogic\MembershipAPI\Model\PersonDTO[], HTTP status code, HTTP response headers (array of strings)
      */
-    public function getAllPeopleUsingGETWithHttpInfo($page = null, $size = null, $sort = null)
+    public function getAllPeopleUsingGETWithHttpInfo($organisation_id = null, $page = null, $size = null, $sort = null)
     {
         $returnType = '\Idealogic\MembershipAPI\Model\PersonDTO[]';
-        $request = $this->getAllPeopleUsingGETRequest($page, $size, $sort);
+        $request = $this->getAllPeopleUsingGETRequest($organisation_id, $page, $size, $sort);
 
         try {
             $options = $this->createHttpClientOption();
@@ -949,6 +1224,7 @@ class PersonResourceApi
      *
      * getAllPeople
      *
+     * @param  int $organisation_id organisationId (optional)
      * @param  int $page Page number of the requested page (optional)
      * @param  int $size Size of a page (optional)
      * @param  string[] $sort Sorting criteria in the format: property(,asc|desc). Default sort order is ascending. Multiple sort criteria are supported. (optional)
@@ -956,9 +1232,9 @@ class PersonResourceApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getAllPeopleUsingGETAsync($page = null, $size = null, $sort = null)
+    public function getAllPeopleUsingGETAsync($organisation_id = null, $page = null, $size = null, $sort = null)
     {
-        return $this->getAllPeopleUsingGETAsyncWithHttpInfo($page, $size, $sort)
+        return $this->getAllPeopleUsingGETAsyncWithHttpInfo($organisation_id, $page, $size, $sort)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -971,6 +1247,7 @@ class PersonResourceApi
      *
      * getAllPeople
      *
+     * @param  int $organisation_id organisationId (optional)
      * @param  int $page Page number of the requested page (optional)
      * @param  int $size Size of a page (optional)
      * @param  string[] $sort Sorting criteria in the format: property(,asc|desc). Default sort order is ascending. Multiple sort criteria are supported. (optional)
@@ -978,10 +1255,10 @@ class PersonResourceApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getAllPeopleUsingGETAsyncWithHttpInfo($page = null, $size = null, $sort = null)
+    public function getAllPeopleUsingGETAsyncWithHttpInfo($organisation_id = null, $page = null, $size = null, $sort = null)
     {
         $returnType = '\Idealogic\MembershipAPI\Model\PersonDTO[]';
-        $request = $this->getAllPeopleUsingGETRequest($page, $size, $sort);
+        $request = $this->getAllPeopleUsingGETRequest($organisation_id, $page, $size, $sort);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -1023,6 +1300,7 @@ class PersonResourceApi
     /**
      * Create request for operation 'getAllPeopleUsingGET'
      *
+     * @param  int $organisation_id organisationId (optional)
      * @param  int $page Page number of the requested page (optional)
      * @param  int $size Size of a page (optional)
      * @param  string[] $sort Sorting criteria in the format: property(,asc|desc). Default sort order is ascending. Multiple sort criteria are supported. (optional)
@@ -1030,7 +1308,7 @@ class PersonResourceApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function getAllPeopleUsingGETRequest($page = null, $size = null, $sort = null)
+    protected function getAllPeopleUsingGETRequest($organisation_id = null, $page = null, $size = null, $sort = null)
     {
 
         $resourcePath = '/api/people';
@@ -1040,6 +1318,10 @@ class PersonResourceApi
         $httpBody = '';
         $multipart = false;
 
+        // query params
+        if ($organisation_id !== null) {
+            $queryParams['organisationId'] = ObjectSerializer::toQueryValue($organisation_id);
+        }
         // query params
         if ($page !== null) {
             $queryParams['page'] = ObjectSerializer::toQueryValue($page);
@@ -1056,6 +1338,284 @@ class PersonResourceApi
             $queryParams['sort'] = ObjectSerializer::toQueryValue($sort);
         }
 
+
+        // body params
+        $_tempBody = null;
+
+        if ($multipart) {
+            $headers = $this->headerSelector->selectHeadersForMultipart(
+                ['*/*']
+            );
+        } else {
+            $headers = $this->headerSelector->selectHeaders(
+                ['*/*'],
+                []
+            );
+        }
+
+        // for model (json/xml)
+        if (isset($_tempBody)) {
+            // $_tempBody is the method argument, if present
+            $httpBody = $_tempBody;
+            
+            if($headers['Content-Type'] === 'application/json') {
+                // \stdClass has no __toString(), so we should encode it manually
+                if ($httpBody instanceof \stdClass) {
+                    $httpBody = \GuzzleHttp\json_encode($httpBody);
+                }
+                // array has no __toString(), so we should encode it manually
+                if(is_array($httpBody)) {
+                    $httpBody = \GuzzleHttp\json_encode(ObjectSerializer::sanitizeForSerialization($httpBody));
+                }
+            }
+        } elseif (count($formParams) > 0) {
+            if ($multipart) {
+                $multipartContents = [];
+                foreach ($formParams as $formParamName => $formParamValue) {
+                    $multipartContents[] = [
+                        'name' => $formParamName,
+                        'contents' => $formParamValue
+                    ];
+                }
+                // for HTTP post (form)
+                $httpBody = new MultipartStream($multipartContents);
+
+            } elseif ($headers['Content-Type'] === 'application/json') {
+                $httpBody = \GuzzleHttp\json_encode($formParams);
+
+            } else {
+                // for HTTP post (form)
+                $httpBody = \GuzzleHttp\Psr7\build_query($formParams);
+            }
+        }
+
+
+        $defaultHeaders = [];
+        if ($this->config->getUserAgent()) {
+            $defaultHeaders['User-Agent'] = $this->config->getUserAgent();
+        }
+
+        $headers = array_merge(
+            $defaultHeaders,
+            $headerParams,
+            $headers
+        );
+
+        $query = \GuzzleHttp\Psr7\build_query($queryParams);
+        return new Request(
+            'GET',
+            $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),
+            $headers,
+            $httpBody
+        );
+    }
+
+    /**
+     * Operation getOrgPersonUsingGET
+     *
+     * getOrgPerson
+     *
+     * @param  int $external_user_id externalUserId (required)
+     * @param  int $organisation_id organisationId (optional)
+     *
+     * @throws \Idealogic\MembershipAPI\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * @return \Idealogic\MembershipAPI\Model\PersonDTO
+     */
+    public function getOrgPersonUsingGET($external_user_id, $organisation_id = null)
+    {
+        list($response) = $this->getOrgPersonUsingGETWithHttpInfo($external_user_id, $organisation_id);
+        return $response;
+    }
+
+    /**
+     * Operation getOrgPersonUsingGETWithHttpInfo
+     *
+     * getOrgPerson
+     *
+     * @param  int $external_user_id externalUserId (required)
+     * @param  int $organisation_id organisationId (optional)
+     *
+     * @throws \Idealogic\MembershipAPI\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * @return array of \Idealogic\MembershipAPI\Model\PersonDTO, HTTP status code, HTTP response headers (array of strings)
+     */
+    public function getOrgPersonUsingGETWithHttpInfo($external_user_id, $organisation_id = null)
+    {
+        $returnType = '\Idealogic\MembershipAPI\Model\PersonDTO';
+        $request = $this->getOrgPersonUsingGETRequest($external_user_id, $organisation_id);
+
+        try {
+            $options = $this->createHttpClientOption();
+            try {
+                $response = $this->client->send($request, $options);
+            } catch (RequestException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    $e->getCode(),
+                    $e->getResponse() ? $e->getResponse()->getHeaders() : null,
+                    $e->getResponse() ? $e->getResponse()->getBody()->getContents() : null
+                );
+            }
+
+            $statusCode = $response->getStatusCode();
+
+            if ($statusCode < 200 || $statusCode > 299) {
+                throw new ApiException(
+                    sprintf(
+                        '[%d] Error connecting to the API (%s)',
+                        $statusCode,
+                        $request->getUri()
+                    ),
+                    $statusCode,
+                    $response->getHeaders(),
+                    $response->getBody()
+                );
+            }
+
+            $responseBody = $response->getBody();
+            if ($returnType === '\SplFileObject') {
+                $content = $responseBody; //stream goes to serializer
+            } else {
+                $content = $responseBody->getContents();
+                if ($returnType !== 'string') {
+                    $content = json_decode($content);
+                }
+            }
+
+            return [
+                ObjectSerializer::deserialize($content, $returnType, []),
+                $response->getStatusCode(),
+                $response->getHeaders()
+            ];
+
+        } catch (ApiException $e) {
+            switch ($e->getCode()) {
+                case 200:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Idealogic\MembershipAPI\Model\PersonDTO',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+            }
+            throw $e;
+        }
+    }
+
+    /**
+     * Operation getOrgPersonUsingGETAsync
+     *
+     * getOrgPerson
+     *
+     * @param  int $external_user_id externalUserId (required)
+     * @param  int $organisation_id organisationId (optional)
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function getOrgPersonUsingGETAsync($external_user_id, $organisation_id = null)
+    {
+        return $this->getOrgPersonUsingGETAsyncWithHttpInfo($external_user_id, $organisation_id)
+            ->then(
+                function ($response) {
+                    return $response[0];
+                }
+            );
+    }
+
+    /**
+     * Operation getOrgPersonUsingGETAsyncWithHttpInfo
+     *
+     * getOrgPerson
+     *
+     * @param  int $external_user_id externalUserId (required)
+     * @param  int $organisation_id organisationId (optional)
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function getOrgPersonUsingGETAsyncWithHttpInfo($external_user_id, $organisation_id = null)
+    {
+        $returnType = '\Idealogic\MembershipAPI\Model\PersonDTO';
+        $request = $this->getOrgPersonUsingGETRequest($external_user_id, $organisation_id);
+
+        return $this->client
+            ->sendAsync($request, $this->createHttpClientOption())
+            ->then(
+                function ($response) use ($returnType) {
+                    $responseBody = $response->getBody();
+                    if ($returnType === '\SplFileObject') {
+                        $content = $responseBody; //stream goes to serializer
+                    } else {
+                        $content = $responseBody->getContents();
+                        if ($returnType !== 'string') {
+                            $content = json_decode($content);
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, $returnType, []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                },
+                function ($exception) {
+                    $response = $exception->getResponse();
+                    $statusCode = $response->getStatusCode();
+                    throw new ApiException(
+                        sprintf(
+                            '[%d] Error connecting to the API (%s)',
+                            $statusCode,
+                            $exception->getRequest()->getUri()
+                        ),
+                        $statusCode,
+                        $response->getHeaders(),
+                        $response->getBody()
+                    );
+                }
+            );
+    }
+
+    /**
+     * Create request for operation 'getOrgPersonUsingGET'
+     *
+     * @param  int $external_user_id externalUserId (required)
+     * @param  int $organisation_id organisationId (optional)
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Psr7\Request
+     */
+    protected function getOrgPersonUsingGETRequest($external_user_id, $organisation_id = null)
+    {
+        // verify the required parameter 'external_user_id' is set
+        if ($external_user_id === null || (is_array($external_user_id) && count($external_user_id) === 0)) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $external_user_id when calling getOrgPersonUsingGET'
+            );
+        }
+
+        $resourcePath = '/api/people/org/{externalUserId}';
+        $formParams = [];
+        $queryParams = [];
+        $headerParams = [];
+        $httpBody = '';
+        $multipart = false;
+
+        // query params
+        if ($organisation_id !== null) {
+            $queryParams['organisationId'] = ObjectSerializer::toQueryValue($organisation_id);
+        }
+
+        // path params
+        if ($external_user_id !== null) {
+            $resourcePath = str_replace(
+                '{' . 'externalUserId' . '}',
+                ObjectSerializer::toPathValue($external_user_id),
+                $resourcePath
+            );
+        }
 
         // body params
         $_tempBody = null;
@@ -1698,14 +2258,15 @@ class PersonResourceApi
      * updatePerson
      *
      * @param  \Idealogic\MembershipAPI\Model\PersonDTO $person_dto personDTO (required)
+     * @param  int $organisation_id organisationId (optional)
      *
      * @throws \Idealogic\MembershipAPI\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \Idealogic\MembershipAPI\Model\PersonDTO
      */
-    public function updatePersonUsingPUT($person_dto)
+    public function updatePersonUsingPUT($person_dto, $organisation_id = null)
     {
-        list($response) = $this->updatePersonUsingPUTWithHttpInfo($person_dto);
+        list($response) = $this->updatePersonUsingPUTWithHttpInfo($person_dto, $organisation_id);
         return $response;
     }
 
@@ -1715,15 +2276,16 @@ class PersonResourceApi
      * updatePerson
      *
      * @param  \Idealogic\MembershipAPI\Model\PersonDTO $person_dto personDTO (required)
+     * @param  int $organisation_id organisationId (optional)
      *
      * @throws \Idealogic\MembershipAPI\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Idealogic\MembershipAPI\Model\PersonDTO, HTTP status code, HTTP response headers (array of strings)
      */
-    public function updatePersonUsingPUTWithHttpInfo($person_dto)
+    public function updatePersonUsingPUTWithHttpInfo($person_dto, $organisation_id = null)
     {
         $returnType = '\Idealogic\MembershipAPI\Model\PersonDTO';
-        $request = $this->updatePersonUsingPUTRequest($person_dto);
+        $request = $this->updatePersonUsingPUTRequest($person_dto, $organisation_id);
 
         try {
             $options = $this->createHttpClientOption();
@@ -1790,13 +2352,14 @@ class PersonResourceApi
      * updatePerson
      *
      * @param  \Idealogic\MembershipAPI\Model\PersonDTO $person_dto personDTO (required)
+     * @param  int $organisation_id organisationId (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function updatePersonUsingPUTAsync($person_dto)
+    public function updatePersonUsingPUTAsync($person_dto, $organisation_id = null)
     {
-        return $this->updatePersonUsingPUTAsyncWithHttpInfo($person_dto)
+        return $this->updatePersonUsingPUTAsyncWithHttpInfo($person_dto, $organisation_id)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -1810,14 +2373,15 @@ class PersonResourceApi
      * updatePerson
      *
      * @param  \Idealogic\MembershipAPI\Model\PersonDTO $person_dto personDTO (required)
+     * @param  int $organisation_id organisationId (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function updatePersonUsingPUTAsyncWithHttpInfo($person_dto)
+    public function updatePersonUsingPUTAsyncWithHttpInfo($person_dto, $organisation_id = null)
     {
         $returnType = '\Idealogic\MembershipAPI\Model\PersonDTO';
-        $request = $this->updatePersonUsingPUTRequest($person_dto);
+        $request = $this->updatePersonUsingPUTRequest($person_dto, $organisation_id);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -1860,11 +2424,12 @@ class PersonResourceApi
      * Create request for operation 'updatePersonUsingPUT'
      *
      * @param  \Idealogic\MembershipAPI\Model\PersonDTO $person_dto personDTO (required)
+     * @param  int $organisation_id organisationId (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function updatePersonUsingPUTRequest($person_dto)
+    protected function updatePersonUsingPUTRequest($person_dto, $organisation_id = null)
     {
         // verify the required parameter 'person_dto' is set
         if ($person_dto === null || (is_array($person_dto) && count($person_dto) === 0)) {
@@ -1880,6 +2445,10 @@ class PersonResourceApi
         $httpBody = '';
         $multipart = false;
 
+        // query params
+        if ($organisation_id !== null) {
+            $queryParams['organisationId'] = ObjectSerializer::toQueryValue($organisation_id);
+        }
 
 
         // body params

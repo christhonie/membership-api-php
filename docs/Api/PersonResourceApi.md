@@ -6,8 +6,8 @@ Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**createPersonUsingPOST**](PersonResourceApi.md#createPersonUsingPOST) | **POST** /api/people | createPerson
 [**deletePersonUsingDELETE**](PersonResourceApi.md#deletePersonUsingDELETE) | **DELETE** /api/people/{id} | deletePerson
-[**findByIDUsingGET**](PersonResourceApi.md#findByIDUsingGET) | **GET** /api/people/match | findByID
-[**findMatchingUsingGET**](PersonResourceApi.md#findMatchingUsingGET) | **GET** /api/people/findById | findMatching
+[**findByIDUsingGET**](PersonResourceApi.md#findByIDUsingGET) | **GET** /api/people/findById | findByID
+[**findMatchingUsingGET**](PersonResourceApi.md#findMatchingUsingGET) | **GET** /api/people/match | findMatching
 [**getAllPeopleUsingGET**](PersonResourceApi.md#getAllPeopleUsingGET) | **GET** /api/people | getAllPeople
 [**getOrgPersonUsingGET**](PersonResourceApi.md#getOrgPersonUsingGET) | **GET** /api/people/org/{externalUserId} | getOrgPerson
 [**getPersonUsingGET**](PersonResourceApi.md#getPersonUsingGET) | **GET** /api/people/{id} | getPerson
@@ -158,7 +158,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **findMatchingUsingGET**
-> \Idealogic\MembershipAPI\Model\PersonDTO[] findMatchingUsingGET($person_dto)
+> \Idealogic\MembershipAPI\Model\PersonDTO[] findMatchingUsingGET($person_dto, $organisation_id)
 
 findMatching
 
@@ -173,9 +173,10 @@ $apiInstance = new Idealogic\MembershipAPI\Api\PersonResourceApi(
     new GuzzleHttp\Client()
 );
 $person_dto = new \Idealogic\MembershipAPI\Model\PersonDTO(); // \Idealogic\MembershipAPI\Model\PersonDTO | personDTO
+$organisation_id = 789; // int | organisationId
 
 try {
-    $result = $apiInstance->findMatchingUsingGET($person_dto);
+    $result = $apiInstance->findMatchingUsingGET($person_dto, $organisation_id);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling PersonResourceApi->findMatchingUsingGET: ', $e->getMessage(), PHP_EOL;
@@ -188,6 +189,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **person_dto** | [**\Idealogic\MembershipAPI\Model\PersonDTO**](../Model/PersonDTO.md)| personDTO |
+ **organisation_id** | **int**| organisationId | [optional]
 
 ### Return type
 

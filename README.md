@@ -167,8 +167,8 @@ Class | Method | HTTP request | Description
 *OrganisationResourceApi* | [**updateOrganisationUsingPUT**](docs/Api/OrganisationResourceApi.md#updateorganisationusingput) | **PUT** /api/organisations | updateOrganisation
 *PersonResourceApi* | [**createPersonUsingPOST**](docs/Api/PersonResourceApi.md#createpersonusingpost) | **POST** /api/people | createPerson
 *PersonResourceApi* | [**deletePersonUsingDELETE**](docs/Api/PersonResourceApi.md#deletepersonusingdelete) | **DELETE** /api/people/{id} | deletePerson
-*PersonResourceApi* | [**findByIDUsingGET**](docs/Api/PersonResourceApi.md#findbyidusingget) | **GET** /api/people/match | findByID
-*PersonResourceApi* | [**findMatchingUsingGET**](docs/Api/PersonResourceApi.md#findmatchingusingget) | **GET** /api/people/findById | findMatching
+*PersonResourceApi* | [**findByIDUsingGET**](docs/Api/PersonResourceApi.md#findbyidusingget) | **GET** /api/people/findById | findByID
+*PersonResourceApi* | [**findMatchingUsingGET**](docs/Api/PersonResourceApi.md#findmatchingusingget) | **GET** /api/people/match | findMatching
 *PersonResourceApi* | [**getAllPeopleUsingGET**](docs/Api/PersonResourceApi.md#getallpeopleusingget) | **GET** /api/people | getAllPeople
 *PersonResourceApi* | [**getOrgPersonUsingGET**](docs/Api/PersonResourceApi.md#getorgpersonusingget) | **GET** /api/people/org/{externalUserId} | getOrgPerson
 *PersonResourceApi* | [**getPersonUsingGET**](docs/Api/PersonResourceApi.md#getpersonusingget) | **GET** /api/people/{id} | getPerson

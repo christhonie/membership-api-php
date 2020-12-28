@@ -773,7 +773,7 @@ class PersonResourceApi
             );
         }
 
-        $resourcePath = '/api/people/match';
+        $resourcePath = '/api/people/findById';
         $formParams = [];
         $queryParams = [];
         $headerParams = [];
@@ -863,14 +863,15 @@ class PersonResourceApi
      * findMatching
      *
      * @param  \Idealogic\MembershipAPI\Model\PersonDTO $person_dto personDTO (required)
+     * @param  int $organisation_id organisationId (optional)
      *
      * @throws \Idealogic\MembershipAPI\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \Idealogic\MembershipAPI\Model\PersonDTO[]
      */
-    public function findMatchingUsingGET($person_dto)
+    public function findMatchingUsingGET($person_dto, $organisation_id = null)
     {
-        list($response) = $this->findMatchingUsingGETWithHttpInfo($person_dto);
+        list($response) = $this->findMatchingUsingGETWithHttpInfo($person_dto, $organisation_id);
         return $response;
     }
 
@@ -880,15 +881,16 @@ class PersonResourceApi
      * findMatching
      *
      * @param  \Idealogic\MembershipAPI\Model\PersonDTO $person_dto personDTO (required)
+     * @param  int $organisation_id organisationId (optional)
      *
      * @throws \Idealogic\MembershipAPI\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Idealogic\MembershipAPI\Model\PersonDTO[], HTTP status code, HTTP response headers (array of strings)
      */
-    public function findMatchingUsingGETWithHttpInfo($person_dto)
+    public function findMatchingUsingGETWithHttpInfo($person_dto, $organisation_id = null)
     {
         $returnType = '\Idealogic\MembershipAPI\Model\PersonDTO[]';
-        $request = $this->findMatchingUsingGETRequest($person_dto);
+        $request = $this->findMatchingUsingGETRequest($person_dto, $organisation_id);
 
         try {
             $options = $this->createHttpClientOption();
@@ -955,13 +957,14 @@ class PersonResourceApi
      * findMatching
      *
      * @param  \Idealogic\MembershipAPI\Model\PersonDTO $person_dto personDTO (required)
+     * @param  int $organisation_id organisationId (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function findMatchingUsingGETAsync($person_dto)
+    public function findMatchingUsingGETAsync($person_dto, $organisation_id = null)
     {
-        return $this->findMatchingUsingGETAsyncWithHttpInfo($person_dto)
+        return $this->findMatchingUsingGETAsyncWithHttpInfo($person_dto, $organisation_id)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -975,14 +978,15 @@ class PersonResourceApi
      * findMatching
      *
      * @param  \Idealogic\MembershipAPI\Model\PersonDTO $person_dto personDTO (required)
+     * @param  int $organisation_id organisationId (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function findMatchingUsingGETAsyncWithHttpInfo($person_dto)
+    public function findMatchingUsingGETAsyncWithHttpInfo($person_dto, $organisation_id = null)
     {
         $returnType = '\Idealogic\MembershipAPI\Model\PersonDTO[]';
-        $request = $this->findMatchingUsingGETRequest($person_dto);
+        $request = $this->findMatchingUsingGETRequest($person_dto, $organisation_id);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -1025,11 +1029,12 @@ class PersonResourceApi
      * Create request for operation 'findMatchingUsingGET'
      *
      * @param  \Idealogic\MembershipAPI\Model\PersonDTO $person_dto personDTO (required)
+     * @param  int $organisation_id organisationId (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function findMatchingUsingGETRequest($person_dto)
+    protected function findMatchingUsingGETRequest($person_dto, $organisation_id = null)
     {
         // verify the required parameter 'person_dto' is set
         if ($person_dto === null || (is_array($person_dto) && count($person_dto) === 0)) {
@@ -1038,13 +1043,17 @@ class PersonResourceApi
             );
         }
 
-        $resourcePath = '/api/people/findById';
+        $resourcePath = '/api/people/match';
         $formParams = [];
         $queryParams = [];
         $headerParams = [];
         $httpBody = '';
         $multipart = false;
 
+        // query params
+        if ($organisation_id !== null) {
+            $queryParams['organisationId'] = ObjectSerializer::toQueryValue($organisation_id);
+        }
 
 
         // body params

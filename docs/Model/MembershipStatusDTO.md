@@ -14,6 +14,8 @@ Name | Type | Description | Notes
 **name** | **string** |  | [optional] 
 **order_id** | **int** |  | [optional] 
 **order_status** | **string** |  | [optional] 
+**period_id** | **int** |  | [optional] 
+**period_name** | **string** |  | [optional] 
 **person_id** | **int** |  | [optional] 
 **updated_details** | **bool** |  | [optional] 
 **valid_from** | [**\DateTime**](\DateTime.md) |  | [optional] 

@@ -2991,7 +2991,7 @@ class MembershipResourceApi
      *
      * @throws \Idealogic\MembershipAPI\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \Idealogic\MembershipAPI\Model\MembershipStatusDTO
+     * @return \Idealogic\MembershipAPI\Model\MembershipStatusDTO[]
      */
     public function getMainMemberUsingGET($external_person_id, $membership_type_id = null)
     {
@@ -3009,11 +3009,11 @@ class MembershipResourceApi
      *
      * @throws \Idealogic\MembershipAPI\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \Idealogic\MembershipAPI\Model\MembershipStatusDTO, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Idealogic\MembershipAPI\Model\MembershipStatusDTO[], HTTP status code, HTTP response headers (array of strings)
      */
     public function getMainMemberUsingGETWithHttpInfo($external_person_id, $membership_type_id = null)
     {
-        $returnType = '\Idealogic\MembershipAPI\Model\MembershipStatusDTO';
+        $returnType = '\Idealogic\MembershipAPI\Model\MembershipStatusDTO[]';
         $request = $this->getMainMemberUsingGETRequest($external_person_id, $membership_type_id);
 
         try {
@@ -3065,7 +3065,7 @@ class MembershipResourceApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Idealogic\MembershipAPI\Model\MembershipStatusDTO',
+                        '\Idealogic\MembershipAPI\Model\MembershipStatusDTO[]',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -3109,7 +3109,7 @@ class MembershipResourceApi
      */
     public function getMainMemberUsingGETAsyncWithHttpInfo($external_person_id, $membership_type_id = null)
     {
-        $returnType = '\Idealogic\MembershipAPI\Model\MembershipStatusDTO';
+        $returnType = '\Idealogic\MembershipAPI\Model\MembershipStatusDTO[]';
         $request = $this->getMainMemberUsingGETRequest($external_person_id, $membership_type_id);
 
         return $this->client

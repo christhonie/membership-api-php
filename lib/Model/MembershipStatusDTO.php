@@ -68,6 +68,8 @@ class MembershipStatusDTO implements ModelInterface, ArrayAccess
         'name' => 'string',
         'order_id' => 'int',
         'order_status' => 'string',
+        'period_id' => 'int',
+        'period_name' => 'string',
         'person_id' => 'int',
         'updated_details' => 'bool',
         'valid_from' => '\DateTime',
@@ -91,6 +93,8 @@ class MembershipStatusDTO implements ModelInterface, ArrayAccess
         'name' => null,
         'order_id' => 'int64',
         'order_status' => null,
+        'period_id' => 'int64',
+        'period_name' => null,
         'person_id' => 'int64',
         'updated_details' => null,
         'valid_from' => 'date',
@@ -135,6 +139,8 @@ class MembershipStatusDTO implements ModelInterface, ArrayAccess
         'name' => 'name',
         'order_id' => 'orderId',
         'order_status' => 'orderStatus',
+        'period_id' => 'periodId',
+        'period_name' => 'periodName',
         'person_id' => 'personId',
         'updated_details' => 'updatedDetails',
         'valid_from' => 'validFrom',
@@ -158,6 +164,8 @@ class MembershipStatusDTO implements ModelInterface, ArrayAccess
         'name' => 'setName',
         'order_id' => 'setOrderId',
         'order_status' => 'setOrderStatus',
+        'period_id' => 'setPeriodId',
+        'period_name' => 'setPeriodName',
         'person_id' => 'setPersonId',
         'updated_details' => 'setUpdatedDetails',
         'valid_from' => 'setValidFrom',
@@ -181,6 +189,8 @@ class MembershipStatusDTO implements ModelInterface, ArrayAccess
         'name' => 'getName',
         'order_id' => 'getOrderId',
         'order_status' => 'getOrderStatus',
+        'period_id' => 'getPeriodId',
+        'period_name' => 'getPeriodName',
         'person_id' => 'getPersonId',
         'updated_details' => 'getUpdatedDetails',
         'valid_from' => 'getValidFrom',
@@ -296,6 +306,8 @@ class MembershipStatusDTO implements ModelInterface, ArrayAccess
         $this->container['name'] = isset($data['name']) ? $data['name'] : null;
         $this->container['order_id'] = isset($data['order_id']) ? $data['order_id'] : null;
         $this->container['order_status'] = isset($data['order_status']) ? $data['order_status'] : null;
+        $this->container['period_id'] = isset($data['period_id']) ? $data['period_id'] : null;
+        $this->container['period_name'] = isset($data['period_name']) ? $data['period_name'] : null;
         $this->container['person_id'] = isset($data['person_id']) ? $data['person_id'] : null;
         $this->container['updated_details'] = isset($data['updated_details']) ? $data['updated_details'] : null;
         $this->container['valid_from'] = isset($data['valid_from']) ? $data['valid_from'] : null;
@@ -620,6 +632,54 @@ class MembershipStatusDTO implements ModelInterface, ArrayAccess
             );
         }
         $this->container['order_status'] = $order_status;
+
+        return $this;
+    }
+
+    /**
+     * Gets period_id
+     *
+     * @return int
+     */
+    public function getPeriodId()
+    {
+        return $this->container['period_id'];
+    }
+
+    /**
+     * Sets period_id
+     *
+     * @param int $period_id period_id
+     *
+     * @return $this
+     */
+    public function setPeriodId($period_id)
+    {
+        $this->container['period_id'] = $period_id;
+
+        return $this;
+    }
+
+    /**
+     * Gets period_name
+     *
+     * @return string
+     */
+    public function getPeriodName()
+    {
+        return $this->container['period_name'];
+    }
+
+    /**
+     * Sets period_name
+     *
+     * @param string $period_name period_name
+     *
+     * @return $this
+     */
+    public function setPeriodName($period_name)
+    {
+        $this->container['period_name'] = $period_name;
 
         return $this;
     }

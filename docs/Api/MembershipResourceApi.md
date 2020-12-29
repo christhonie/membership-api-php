@@ -597,7 +597,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **getMainMemberUsingGET**
-> \Idealogic\MembershipAPI\Model\MembershipStatusDTO getMainMemberUsingGET($external_person_id, $membership_type_id)
+> \Idealogic\MembershipAPI\Model\MembershipStatusDTO[] getMainMemberUsingGET($external_person_id, $membership_type_id)
 
 getMainMember
 
@@ -632,7 +632,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Idealogic\MembershipAPI\Model\MembershipStatusDTO**](../Model/MembershipStatusDTO.md)
+[**\Idealogic\MembershipAPI\Model\MembershipStatusDTO[]**](../Model/MembershipStatusDTO.md)
 
 ### Authorization
 

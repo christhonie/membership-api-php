@@ -13,15 +13,15 @@ Name | Type | Description | Notes
 **emergency_contact_name** | **string** |  | [optional] 
 **emergency_contact_number** | **string** |  | [optional] 
 **emergency_relationship** | **string** |  | [optional] 
-**first_name** | **string** |  | 
-**gender** | **string** |  | 
+**first_name** | **string** |  | [optional] 
+**gender** | **string** |  | [optional] 
 **id** | **int** |  | [optional] 
 **identity_country_code** | **string** |  | [optional] 
 **identity_country_name** | **string** |  | [optional] 
 **identity_number** | **string** |  | [optional] 
 **identity_type** | **string** |  | [optional] 
 **language** | **string** |  | [optional] 
-**last_name** | **string** |  | 
+**last_name** | **string** |  | [optional] 
 **managed_by** | [**\Idealogic\MembershipAPI\Model\PersonSummaryDTO[]**](PersonSummaryDTO.md) |  | [optional] 
 **medical_allergies** | **string** |  | [optional] 
 **medical_conditions** | **string** |  | [optional] 

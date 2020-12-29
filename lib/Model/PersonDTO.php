@@ -427,12 +427,6 @@ class PersonDTO implements ModelInterface, ArrayAccess
     {
         $invalidProperties = [];
 
-        if ($this->container['first_name'] === null) {
-            $invalidProperties[] = "'first_name' can't be null";
-        }
-        if ($this->container['gender'] === null) {
-            $invalidProperties[] = "'gender' can't be null";
-        }
         $allowedValues = $this->getGenderAllowableValues();
         if (!is_null($this->container['gender']) && !in_array($this->container['gender'], $allowedValues, true)) {
             $invalidProperties[] = sprintf(
@@ -449,9 +443,6 @@ class PersonDTO implements ModelInterface, ArrayAccess
             );
         }
 
-        if ($this->container['last_name'] === null) {
-            $invalidProperties[] = "'last_name' can't be null";
-        }
         return $invalidProperties;
     }
 
@@ -751,7 +742,7 @@ class PersonDTO implements ModelInterface, ArrayAccess
     public function setGender($gender)
     {
         $allowedValues = $this->getGenderAllowableValues();
-        if (!in_array($gender, $allowedValues, true)) {
+        if (!is_null($gender) && !in_array($gender, $allowedValues, true)) {
             throw new \InvalidArgumentException(
                 sprintf(
                     "Invalid value for 'gender', must be one of '%s'",

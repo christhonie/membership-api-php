@@ -548,7 +548,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **getLinkedMembersUsingGET**
-> \Idealogic\MembershipAPI\Model\MembershipStatusDTO[] getLinkedMembersUsingGET($external_person_id, $membership_type_name)
+> \Idealogic\MembershipAPI\Model\MembershipStatusDTO[] getLinkedMembersUsingGET($external_person_id, $membership_type_id)
 
 getLinkedMembers
 
@@ -563,10 +563,10 @@ $apiInstance = new Idealogic\MembershipAPI\Api\MembershipResourceApi(
     new GuzzleHttp\Client()
 );
 $external_person_id = 789; // int | externalPersonId
-$membership_type_name = "membership_type_name_example"; // string | membershipTypeName
+$membership_type_id = 789; // int | membershipTypeId
 
 try {
-    $result = $apiInstance->getLinkedMembersUsingGET($external_person_id, $membership_type_name);
+    $result = $apiInstance->getLinkedMembersUsingGET($external_person_id, $membership_type_id);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling MembershipResourceApi->getLinkedMembersUsingGET: ', $e->getMessage(), PHP_EOL;
@@ -579,7 +579,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **external_person_id** | **int**| externalPersonId |
- **membership_type_name** | **string**| membershipTypeName | [optional]
+ **membership_type_id** | **int**| membershipTypeId | [optional]
 
 ### Return type
 
@@ -597,7 +597,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **getMainMemberUsingGET**
-> \Idealogic\MembershipAPI\Model\MembershipStatusDTO getMainMemberUsingGET($external_person_id)
+> \Idealogic\MembershipAPI\Model\MembershipStatusDTO getMainMemberUsingGET($external_person_id, $membership_type_id)
 
 getMainMember
 
@@ -612,9 +612,10 @@ $apiInstance = new Idealogic\MembershipAPI\Api\MembershipResourceApi(
     new GuzzleHttp\Client()
 );
 $external_person_id = 789; // int | externalPersonId
+$membership_type_id = 789; // int | membershipTypeId
 
 try {
-    $result = $apiInstance->getMainMemberUsingGET($external_person_id);
+    $result = $apiInstance->getMainMemberUsingGET($external_person_id, $membership_type_id);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling MembershipResourceApi->getMainMemberUsingGET: ', $e->getMessage(), PHP_EOL;
@@ -627,6 +628,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **external_person_id** | **int**| externalPersonId |
+ **membership_type_id** | **int**| membershipTypeId | [optional]
 
 ### Return type
 

@@ -2709,15 +2709,15 @@ class MembershipResourceApi
      * getLinkedMembers
      *
      * @param  int $external_person_id externalPersonId (required)
-     * @param  string $membership_type_name membershipTypeName (optional)
+     * @param  int $membership_type_id membershipTypeId (optional)
      *
      * @throws \Idealogic\MembershipAPI\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \Idealogic\MembershipAPI\Model\MembershipStatusDTO[]
      */
-    public function getLinkedMembersUsingGET($external_person_id, $membership_type_name = null)
+    public function getLinkedMembersUsingGET($external_person_id, $membership_type_id = null)
     {
-        list($response) = $this->getLinkedMembersUsingGETWithHttpInfo($external_person_id, $membership_type_name);
+        list($response) = $this->getLinkedMembersUsingGETWithHttpInfo($external_person_id, $membership_type_id);
         return $response;
     }
 
@@ -2727,16 +2727,16 @@ class MembershipResourceApi
      * getLinkedMembers
      *
      * @param  int $external_person_id externalPersonId (required)
-     * @param  string $membership_type_name membershipTypeName (optional)
+     * @param  int $membership_type_id membershipTypeId (optional)
      *
      * @throws \Idealogic\MembershipAPI\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Idealogic\MembershipAPI\Model\MembershipStatusDTO[], HTTP status code, HTTP response headers (array of strings)
      */
-    public function getLinkedMembersUsingGETWithHttpInfo($external_person_id, $membership_type_name = null)
+    public function getLinkedMembersUsingGETWithHttpInfo($external_person_id, $membership_type_id = null)
     {
         $returnType = '\Idealogic\MembershipAPI\Model\MembershipStatusDTO[]';
-        $request = $this->getLinkedMembersUsingGETRequest($external_person_id, $membership_type_name);
+        $request = $this->getLinkedMembersUsingGETRequest($external_person_id, $membership_type_id);
 
         try {
             $options = $this->createHttpClientOption();
@@ -2803,14 +2803,14 @@ class MembershipResourceApi
      * getLinkedMembers
      *
      * @param  int $external_person_id externalPersonId (required)
-     * @param  string $membership_type_name membershipTypeName (optional)
+     * @param  int $membership_type_id membershipTypeId (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getLinkedMembersUsingGETAsync($external_person_id, $membership_type_name = null)
+    public function getLinkedMembersUsingGETAsync($external_person_id, $membership_type_id = null)
     {
-        return $this->getLinkedMembersUsingGETAsyncWithHttpInfo($external_person_id, $membership_type_name)
+        return $this->getLinkedMembersUsingGETAsyncWithHttpInfo($external_person_id, $membership_type_id)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -2824,15 +2824,15 @@ class MembershipResourceApi
      * getLinkedMembers
      *
      * @param  int $external_person_id externalPersonId (required)
-     * @param  string $membership_type_name membershipTypeName (optional)
+     * @param  int $membership_type_id membershipTypeId (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getLinkedMembersUsingGETAsyncWithHttpInfo($external_person_id, $membership_type_name = null)
+    public function getLinkedMembersUsingGETAsyncWithHttpInfo($external_person_id, $membership_type_id = null)
     {
         $returnType = '\Idealogic\MembershipAPI\Model\MembershipStatusDTO[]';
-        $request = $this->getLinkedMembersUsingGETRequest($external_person_id, $membership_type_name);
+        $request = $this->getLinkedMembersUsingGETRequest($external_person_id, $membership_type_id);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -2875,12 +2875,12 @@ class MembershipResourceApi
      * Create request for operation 'getLinkedMembersUsingGET'
      *
      * @param  int $external_person_id externalPersonId (required)
-     * @param  string $membership_type_name membershipTypeName (optional)
+     * @param  int $membership_type_id membershipTypeId (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function getLinkedMembersUsingGETRequest($external_person_id, $membership_type_name = null)
+    protected function getLinkedMembersUsingGETRequest($external_person_id, $membership_type_id = null)
     {
         // verify the required parameter 'external_person_id' is set
         if ($external_person_id === null || (is_array($external_person_id) && count($external_person_id) === 0)) {
@@ -2897,8 +2897,8 @@ class MembershipResourceApi
         $multipart = false;
 
         // query params
-        if ($membership_type_name !== null) {
-            $queryParams['membershipTypeName'] = ObjectSerializer::toQueryValue($membership_type_name);
+        if ($membership_type_id !== null) {
+            $queryParams['membershipTypeId'] = ObjectSerializer::toQueryValue($membership_type_id);
         }
 
         // path params
@@ -2987,14 +2987,15 @@ class MembershipResourceApi
      * getMainMember
      *
      * @param  int $external_person_id externalPersonId (required)
+     * @param  int $membership_type_id membershipTypeId (optional)
      *
      * @throws \Idealogic\MembershipAPI\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \Idealogic\MembershipAPI\Model\MembershipStatusDTO
      */
-    public function getMainMemberUsingGET($external_person_id)
+    public function getMainMemberUsingGET($external_person_id, $membership_type_id = null)
     {
-        list($response) = $this->getMainMemberUsingGETWithHttpInfo($external_person_id);
+        list($response) = $this->getMainMemberUsingGETWithHttpInfo($external_person_id, $membership_type_id);
         return $response;
     }
 
@@ -3004,15 +3005,16 @@ class MembershipResourceApi
      * getMainMember
      *
      * @param  int $external_person_id externalPersonId (required)
+     * @param  int $membership_type_id membershipTypeId (optional)
      *
      * @throws \Idealogic\MembershipAPI\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Idealogic\MembershipAPI\Model\MembershipStatusDTO, HTTP status code, HTTP response headers (array of strings)
      */
-    public function getMainMemberUsingGETWithHttpInfo($external_person_id)
+    public function getMainMemberUsingGETWithHttpInfo($external_person_id, $membership_type_id = null)
     {
         $returnType = '\Idealogic\MembershipAPI\Model\MembershipStatusDTO';
-        $request = $this->getMainMemberUsingGETRequest($external_person_id);
+        $request = $this->getMainMemberUsingGETRequest($external_person_id, $membership_type_id);
 
         try {
             $options = $this->createHttpClientOption();
@@ -3079,13 +3081,14 @@ class MembershipResourceApi
      * getMainMember
      *
      * @param  int $external_person_id externalPersonId (required)
+     * @param  int $membership_type_id membershipTypeId (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getMainMemberUsingGETAsync($external_person_id)
+    public function getMainMemberUsingGETAsync($external_person_id, $membership_type_id = null)
     {
-        return $this->getMainMemberUsingGETAsyncWithHttpInfo($external_person_id)
+        return $this->getMainMemberUsingGETAsyncWithHttpInfo($external_person_id, $membership_type_id)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -3099,14 +3102,15 @@ class MembershipResourceApi
      * getMainMember
      *
      * @param  int $external_person_id externalPersonId (required)
+     * @param  int $membership_type_id membershipTypeId (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getMainMemberUsingGETAsyncWithHttpInfo($external_person_id)
+    public function getMainMemberUsingGETAsyncWithHttpInfo($external_person_id, $membership_type_id = null)
     {
         $returnType = '\Idealogic\MembershipAPI\Model\MembershipStatusDTO';
-        $request = $this->getMainMemberUsingGETRequest($external_person_id);
+        $request = $this->getMainMemberUsingGETRequest($external_person_id, $membership_type_id);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -3149,11 +3153,12 @@ class MembershipResourceApi
      * Create request for operation 'getMainMemberUsingGET'
      *
      * @param  int $external_person_id externalPersonId (required)
+     * @param  int $membership_type_id membershipTypeId (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function getMainMemberUsingGETRequest($external_person_id)
+    protected function getMainMemberUsingGETRequest($external_person_id, $membership_type_id = null)
     {
         // verify the required parameter 'external_person_id' is set
         if ($external_person_id === null || (is_array($external_person_id) && count($external_person_id) === 0)) {
@@ -3169,6 +3174,10 @@ class MembershipResourceApi
         $httpBody = '';
         $multipart = false;
 
+        // query params
+        if ($membership_type_id !== null) {
+            $queryParams['membershipTypeId'] = ObjectSerializer::toQueryValue($membership_type_id);
+        }
 
         // path params
         if ($external_person_id !== null) {

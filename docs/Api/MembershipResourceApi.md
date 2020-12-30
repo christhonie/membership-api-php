@@ -7,6 +7,7 @@ Method | HTTP request | Description
 [**countMembershipsUsingGET**](MembershipResourceApi.md#countMembershipsUsingGET) | **GET** /api/memberships/count | countMemberships
 [**createMembershipUsingPOST**](MembershipResourceApi.md#createMembershipUsingPOST) | **POST** /api/memberships | createMembership
 [**deleteMembershipUsingDELETE**](MembershipResourceApi.md#deleteMembershipUsingDELETE) | **DELETE** /api/memberships/{id} | deleteMembership
+[**enrolMembershipsUsingPOST**](MembershipResourceApi.md#enrolMembershipsUsingPOST) | **POST** /api/memberships/enrol | enrolMemberships
 [**getAllMembershipsUsingGET**](MembershipResourceApi.md#getAllMembershipsUsingGET) | **GET** /api/memberships | getAllMemberships
 [**getLinkedMembersUsingGET**](MembershipResourceApi.md#getLinkedMembersUsingGET) | **GET** /api/memberships/linkedStatus/{externalPersonId} | getLinkedMembers
 [**getMainMemberUsingGET**](MembershipResourceApi.md#getMainMemberUsingGET) | **GET** /api/memberships/status/{externalPersonId} | getMainMember
@@ -320,6 +321,55 @@ No authorization required
 ### HTTP request headers
 
  - **Content-Type**: Not defined
+ - **Accept**: */*
+
+[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
+
+# **enrolMembershipsUsingPOST**
+> \Idealogic\MembershipAPI\Model\MembershipDTO[] enrolMembershipsUsingPOST($membership_dt_os, $membership_type_id)
+
+enrolMemberships
+
+### Example
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+$apiInstance = new Idealogic\MembershipAPI\Api\MembershipResourceApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client()
+);
+$membership_dt_os = array(new \Idealogic\MembershipAPI\Model\MembershipDTO()); // \Idealogic\MembershipAPI\Model\MembershipDTO[] | membershipDTOs
+$membership_type_id = 789; // int | membershipTypeId
+
+try {
+    $result = $apiInstance->enrolMembershipsUsingPOST($membership_dt_os, $membership_type_id);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling MembershipResourceApi->enrolMembershipsUsingPOST: ', $e->getMessage(), PHP_EOL;
+}
+?>
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **membership_dt_os** | [**\Idealogic\MembershipAPI\Model\MembershipDTO[]**](../Model/MembershipDTO.md)| membershipDTOs |
+ **membership_type_id** | **int**| membershipTypeId |
+
+### Return type
+
+[**\Idealogic\MembershipAPI\Model\MembershipDTO[]**](../Model/MembershipDTO.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
  - **Accept**: */*
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)

@@ -57,6 +57,7 @@ class MembershipStatusDTO implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
+        'criteria_id' => 'int',
         'date_of_birth' => '\DateTime',
         'main_member' => 'bool',
         'membership_id' => 'int',
@@ -82,6 +83,7 @@ class MembershipStatusDTO implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerFormats = [
+        'criteria_id' => 'int64',
         'date_of_birth' => 'date',
         'main_member' => null,
         'membership_id' => 'int64',
@@ -128,6 +130,7 @@ class MembershipStatusDTO implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
+        'criteria_id' => 'criteriaId',
         'date_of_birth' => 'dateOfBirth',
         'main_member' => 'mainMember',
         'membership_id' => 'membershipId',
@@ -153,6 +156,7 @@ class MembershipStatusDTO implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $setters = [
+        'criteria_id' => 'setCriteriaId',
         'date_of_birth' => 'setDateOfBirth',
         'main_member' => 'setMainMember',
         'membership_id' => 'setMembershipId',
@@ -178,6 +182,7 @@ class MembershipStatusDTO implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $getters = [
+        'criteria_id' => 'getCriteriaId',
         'date_of_birth' => 'getDateOfBirth',
         'main_member' => 'getMainMember',
         'membership_id' => 'getMembershipId',
@@ -295,6 +300,7 @@ class MembershipStatusDTO implements ModelInterface, ArrayAccess
      */
     public function __construct(array $data = null)
     {
+        $this->container['criteria_id'] = isset($data['criteria_id']) ? $data['criteria_id'] : null;
         $this->container['date_of_birth'] = isset($data['date_of_birth']) ? $data['date_of_birth'] : null;
         $this->container['main_member'] = isset($data['main_member']) ? $data['main_member'] : null;
         $this->container['membership_id'] = isset($data['membership_id']) ? $data['membership_id'] : null;
@@ -353,6 +359,30 @@ class MembershipStatusDTO implements ModelInterface, ArrayAccess
         return count($this->listInvalidProperties()) === 0;
     }
 
+
+    /**
+     * Gets criteria_id
+     *
+     * @return int
+     */
+    public function getCriteriaId()
+    {
+        return $this->container['criteria_id'];
+    }
+
+    /**
+     * Sets criteria_id
+     *
+     * @param int $criteria_id criteria_id
+     *
+     * @return $this
+     */
+    public function setCriteriaId($criteria_id)
+    {
+        $this->container['criteria_id'] = $criteria_id;
+
+        return $this;
+    }
 
     /**
      * Gets date_of_birth

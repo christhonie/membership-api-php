@@ -3,6 +3,7 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**criteria_id** | **int** |  | [optional] 
 **date_of_birth** | [**\DateTime**](\DateTime.md) |  | [optional] 
 **main_member** | **bool** |  | [optional] 
 **membership_id** | **int** |  | [optional] 

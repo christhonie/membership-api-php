@@ -128,9 +128,11 @@ Class | Method | HTTP request | Description
 *MembershipResourceApi* | [**countMembershipsUsingGET**](docs/Api/MembershipResourceApi.md#countmembershipsusingget) | **GET** /api/memberships/count | countMemberships
 *MembershipResourceApi* | [**createMembershipUsingPOST**](docs/Api/MembershipResourceApi.md#createmembershipusingpost) | **POST** /api/memberships | createMembership
 *MembershipResourceApi* | [**deleteMembershipUsingDELETE**](docs/Api/MembershipResourceApi.md#deletemembershipusingdelete) | **DELETE** /api/memberships/{id} | deleteMembership
+*MembershipResourceApi* | [**enrolMembershipsUsingPOST**](docs/Api/MembershipResourceApi.md#enrolmembershipsusingpost) | **POST** /api/memberships/enrol | enrolMemberships
 *MembershipResourceApi* | [**getAllMembershipsUsingGET**](docs/Api/MembershipResourceApi.md#getallmembershipsusingget) | **GET** /api/memberships | getAllMemberships
 *MembershipResourceApi* | [**getLinkedMembersUsingGET**](docs/Api/MembershipResourceApi.md#getlinkedmembersusingget) | **GET** /api/memberships/linkedStatus/{externalPersonId} | getLinkedMembers
 *MembershipResourceApi* | [**getMainMemberUsingGET**](docs/Api/MembershipResourceApi.md#getmainmemberusingget) | **GET** /api/memberships/status/{externalPersonId} | getMainMember
+*MembershipResourceApi* | [**getMemberStatusByLatestPeriodForMembershipTypeUsingGET**](docs/Api/MembershipResourceApi.md#getmemberstatusbylatestperiodformembershiptypeusingget) | **GET** /api/memberships/status/latestPeriod | getMemberStatusByLatestPeriodForMembershipType
 *MembershipResourceApi* | [**getMembershipUsingGET**](docs/Api/MembershipResourceApi.md#getmembershipusingget) | **GET** /api/memberships/{id} | getMembership
 *MembershipResourceApi* | [**updateMembershipUsingPUT**](docs/Api/MembershipResourceApi.md#updatemembershipusingput) | **PUT** /api/memberships | updateMembership
 *MembershipTypeResourceApi* | [**countMembershipTypesUsingGET**](docs/Api/MembershipTypeResourceApi.md#countmembershiptypesusingget) | **GET** /api/membership-types/count | countMembershipTypes
@@ -178,6 +180,7 @@ Class | Method | HTTP request | Description
 
 ## Documentation For Models
 
+ - [LatestPeriodMembershipStatusResponseDTO](docs/Model/LatestPeriodMembershipStatusResponseDTO.md)
  - [LinkedPersonDTO](docs/Model/LinkedPersonDTO.md)
  - [MembershipCriteriaDTO](docs/Model/MembershipCriteriaDTO.md)
  - [MembershipDTO](docs/Model/MembershipDTO.md)

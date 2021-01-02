@@ -11,6 +11,7 @@ Method | HTTP request | Description
 [**getAllMembershipsUsingGET**](MembershipResourceApi.md#getAllMembershipsUsingGET) | **GET** /api/memberships | getAllMemberships
 [**getLinkedMembersUsingGET**](MembershipResourceApi.md#getLinkedMembersUsingGET) | **GET** /api/memberships/linkedStatus/{externalPersonId} | getLinkedMembers
 [**getMainMemberUsingGET**](MembershipResourceApi.md#getMainMemberUsingGET) | **GET** /api/memberships/status/{externalPersonId} | getMainMember
+[**getMemberStatusByLatestPeriodForMembershipTypeUsingGET**](MembershipResourceApi.md#getMemberStatusByLatestPeriodForMembershipTypeUsingGET) | **GET** /api/memberships/status/latestPeriod | getMemberStatusByLatestPeriodForMembershipType
 [**getMembershipUsingGET**](MembershipResourceApi.md#getMembershipUsingGET) | **GET** /api/memberships/{id} | getMembership
 [**updateMembershipUsingPUT**](MembershipResourceApi.md#updateMembershipUsingPUT) | **PUT** /api/memberships | updateMembership
 
@@ -683,6 +684,57 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**\Idealogic\MembershipAPI\Model\MembershipStatusDTO[]**](../Model/MembershipStatusDTO.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: */*
+
+[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
+
+# **getMemberStatusByLatestPeriodForMembershipTypeUsingGET**
+> \Idealogic\MembershipAPI\Model\LatestPeriodMembershipStatusResponseDTO getMemberStatusByLatestPeriodForMembershipTypeUsingGET($external_user_id, $membership_type_id, $organisation_id)
+
+getMemberStatusByLatestPeriodForMembershipType
+
+### Example
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+$apiInstance = new Idealogic\MembershipAPI\Api\MembershipResourceApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client()
+);
+$external_user_id = "external_user_id_example"; // string | externalUserId
+$membership_type_id = 789; // int | membershipTypeId
+$organisation_id = 789; // int | organisationId
+
+try {
+    $result = $apiInstance->getMemberStatusByLatestPeriodForMembershipTypeUsingGET($external_user_id, $membership_type_id, $organisation_id);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling MembershipResourceApi->getMemberStatusByLatestPeriodForMembershipTypeUsingGET: ', $e->getMessage(), PHP_EOL;
+}
+?>
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **external_user_id** | **string**| externalUserId |
+ **membership_type_id** | **int**| membershipTypeId |
+ **organisation_id** | **int**| organisationId | [optional]
+
+### Return type
+
+[**\Idealogic\MembershipAPI\Model\LatestPeriodMembershipStatusResponseDTO**](../Model/LatestPeriodMembershipStatusResponseDTO.md)
 
 ### Authorization
 

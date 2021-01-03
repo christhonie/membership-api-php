@@ -57,6 +57,7 @@ class LatestPeriodMembershipStatusResponseDTO implements ModelInterface, ArrayAc
       * @var string[]
       */
     protected static $swaggerTypes = [
+        'main_member_id' => 'int',
         'memberhsip_period_name' => 'string',
         'membership_period_id' => 'int',
         'membership_type_name' => 'string',
@@ -69,6 +70,7 @@ class LatestPeriodMembershipStatusResponseDTO implements ModelInterface, ArrayAc
       * @var string[]
       */
     protected static $swaggerFormats = [
+        'main_member_id' => 'int64',
         'memberhsip_period_name' => null,
         'membership_period_id' => 'int64',
         'membership_type_name' => null,
@@ -102,6 +104,7 @@ class LatestPeriodMembershipStatusResponseDTO implements ModelInterface, ArrayAc
      * @var string[]
      */
     protected static $attributeMap = [
+        'main_member_id' => 'mainMemberId',
         'memberhsip_period_name' => 'memberhsipPeriodName',
         'membership_period_id' => 'membershipPeriodId',
         'membership_type_name' => 'membershipTypeName',
@@ -114,6 +117,7 @@ class LatestPeriodMembershipStatusResponseDTO implements ModelInterface, ArrayAc
      * @var string[]
      */
     protected static $setters = [
+        'main_member_id' => 'setMainMemberId',
         'memberhsip_period_name' => 'setMemberhsipPeriodName',
         'membership_period_id' => 'setMembershipPeriodId',
         'membership_type_name' => 'setMembershipTypeName',
@@ -126,6 +130,7 @@ class LatestPeriodMembershipStatusResponseDTO implements ModelInterface, ArrayAc
      * @var string[]
      */
     protected static $getters = [
+        'main_member_id' => 'getMainMemberId',
         'memberhsip_period_name' => 'getMemberhsipPeriodName',
         'membership_period_id' => 'getMembershipPeriodId',
         'membership_type_name' => 'getMembershipTypeName',
@@ -192,6 +197,7 @@ class LatestPeriodMembershipStatusResponseDTO implements ModelInterface, ArrayAc
      */
     public function __construct(array $data = null)
     {
+        $this->container['main_member_id'] = isset($data['main_member_id']) ? $data['main_member_id'] : null;
         $this->container['memberhsip_period_name'] = isset($data['memberhsip_period_name']) ? $data['memberhsip_period_name'] : null;
         $this->container['membership_period_id'] = isset($data['membership_period_id']) ? $data['membership_period_id'] : null;
         $this->container['membership_type_name'] = isset($data['membership_type_name']) ? $data['membership_type_name'] : null;
@@ -221,6 +227,30 @@ class LatestPeriodMembershipStatusResponseDTO implements ModelInterface, ArrayAc
         return count($this->listInvalidProperties()) === 0;
     }
 
+
+    /**
+     * Gets main_member_id
+     *
+     * @return int
+     */
+    public function getMainMemberId()
+    {
+        return $this->container['main_member_id'];
+    }
+
+    /**
+     * Sets main_member_id
+     *
+     * @param int $main_member_id main_member_id
+     *
+     * @return $this
+     */
+    public function setMainMemberId($main_member_id)
+    {
+        $this->container['main_member_id'] = $main_member_id;
+
+        return $this;
+    }
 
     /**
      * Gets memberhsip_period_name

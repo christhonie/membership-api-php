@@ -4,8 +4,8 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **main_member_id** | **int** |  | [optional] 
-**memberhsip_period_name** | **string** |  | [optional] 
 **membership_period_id** | **int** |  | [optional] 
+**membership_period_name** | **string** |  | [optional] 
 **membership_type_name** | **string** |  | [optional] 
 **status** | [**\Idealogic\MembershipAPI\Model\MembershipStatusDTO[]**](MembershipStatusDTO.md) |  | [optional] 
 

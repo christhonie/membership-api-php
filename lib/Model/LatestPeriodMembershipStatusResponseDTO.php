@@ -58,8 +58,8 @@ class LatestPeriodMembershipStatusResponseDTO implements ModelInterface, ArrayAc
       */
     protected static $swaggerTypes = [
         'main_member_id' => 'int',
-        'memberhsip_period_name' => 'string',
         'membership_period_id' => 'int',
+        'membership_period_name' => 'string',
         'membership_type_name' => 'string',
         'status' => '\Idealogic\MembershipAPI\Model\MembershipStatusDTO[]'
     ];
@@ -71,8 +71,8 @@ class LatestPeriodMembershipStatusResponseDTO implements ModelInterface, ArrayAc
       */
     protected static $swaggerFormats = [
         'main_member_id' => 'int64',
-        'memberhsip_period_name' => null,
         'membership_period_id' => 'int64',
+        'membership_period_name' => null,
         'membership_type_name' => null,
         'status' => null
     ];
@@ -105,8 +105,8 @@ class LatestPeriodMembershipStatusResponseDTO implements ModelInterface, ArrayAc
      */
     protected static $attributeMap = [
         'main_member_id' => 'mainMemberId',
-        'memberhsip_period_name' => 'memberhsipPeriodName',
         'membership_period_id' => 'membershipPeriodId',
+        'membership_period_name' => 'membershipPeriodName',
         'membership_type_name' => 'membershipTypeName',
         'status' => 'status'
     ];
@@ -118,8 +118,8 @@ class LatestPeriodMembershipStatusResponseDTO implements ModelInterface, ArrayAc
      */
     protected static $setters = [
         'main_member_id' => 'setMainMemberId',
-        'memberhsip_period_name' => 'setMemberhsipPeriodName',
         'membership_period_id' => 'setMembershipPeriodId',
+        'membership_period_name' => 'setMembershipPeriodName',
         'membership_type_name' => 'setMembershipTypeName',
         'status' => 'setStatus'
     ];
@@ -131,8 +131,8 @@ class LatestPeriodMembershipStatusResponseDTO implements ModelInterface, ArrayAc
      */
     protected static $getters = [
         'main_member_id' => 'getMainMemberId',
-        'memberhsip_period_name' => 'getMemberhsipPeriodName',
         'membership_period_id' => 'getMembershipPeriodId',
+        'membership_period_name' => 'getMembershipPeriodName',
         'membership_type_name' => 'getMembershipTypeName',
         'status' => 'getStatus'
     ];
@@ -198,8 +198,8 @@ class LatestPeriodMembershipStatusResponseDTO implements ModelInterface, ArrayAc
     public function __construct(array $data = null)
     {
         $this->container['main_member_id'] = isset($data['main_member_id']) ? $data['main_member_id'] : null;
-        $this->container['memberhsip_period_name'] = isset($data['memberhsip_period_name']) ? $data['memberhsip_period_name'] : null;
         $this->container['membership_period_id'] = isset($data['membership_period_id']) ? $data['membership_period_id'] : null;
+        $this->container['membership_period_name'] = isset($data['membership_period_name']) ? $data['membership_period_name'] : null;
         $this->container['membership_type_name'] = isset($data['membership_type_name']) ? $data['membership_type_name'] : null;
         $this->container['status'] = isset($data['status']) ? $data['status'] : null;
     }
@@ -253,30 +253,6 @@ class LatestPeriodMembershipStatusResponseDTO implements ModelInterface, ArrayAc
     }
 
     /**
-     * Gets memberhsip_period_name
-     *
-     * @return string
-     */
-    public function getMemberhsipPeriodName()
-    {
-        return $this->container['memberhsip_period_name'];
-    }
-
-    /**
-     * Sets memberhsip_period_name
-     *
-     * @param string $memberhsip_period_name memberhsip_period_name
-     *
-     * @return $this
-     */
-    public function setMemberhsipPeriodName($memberhsip_period_name)
-    {
-        $this->container['memberhsip_period_name'] = $memberhsip_period_name;
-
-        return $this;
-    }
-
-    /**
      * Gets membership_period_id
      *
      * @return int
@@ -296,6 +272,30 @@ class LatestPeriodMembershipStatusResponseDTO implements ModelInterface, ArrayAc
     public function setMembershipPeriodId($membership_period_id)
     {
         $this->container['membership_period_id'] = $membership_period_id;
+
+        return $this;
+    }
+
+    /**
+     * Gets membership_period_name
+     *
+     * @return string
+     */
+    public function getMembershipPeriodName()
+    {
+        return $this->container['membership_period_name'];
+    }
+
+    /**
+     * Sets membership_period_name
+     *
+     * @param string $membership_period_name membership_period_name
+     *
+     * @return $this
+     */
+    public function setMembershipPeriodName($membership_period_name)
+    {
+        $this->container['membership_period_name'] = $membership_period_name;
 
         return $this;
     }

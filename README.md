@@ -130,7 +130,7 @@ Class | Method | HTTP request | Description
 *MembershipResourceApi* | [**deleteMembershipUsingDELETE**](docs/Api/MembershipResourceApi.md#deletemembershipusingdelete) | **DELETE** /api/memberships/{id} | deleteMembership
 *MembershipResourceApi* | [**enrolMembershipsUsingPOST**](docs/Api/MembershipResourceApi.md#enrolmembershipsusingpost) | **POST** /api/memberships/enrol | enrolMemberships
 *MembershipResourceApi* | [**getAllMembershipsUsingGET**](docs/Api/MembershipResourceApi.md#getallmembershipsusingget) | **GET** /api/memberships | getAllMemberships
-*MembershipResourceApi* | [**getLinkedMembersUsingGET**](docs/Api/MembershipResourceApi.md#getlinkedmembersusingget) | **GET** /api/memberships/linkedStatus/{externalPersonId} | getLinkedMembers
+*MembershipResourceApi* | [**getLinkedMembersUsingGET**](docs/Api/MembershipResourceApi.md#getlinkedmembersusingget) | **GET** /api/memberships/linkedStatus/{externalUserId} | getLinkedMembers
 *MembershipResourceApi* | [**getMemberStatusByLatestPeriodForMembershipTypeUsingGET**](docs/Api/MembershipResourceApi.md#getmemberstatusbylatestperiodformembershiptypeusingget) | **GET** /api/memberships/status/latestPeriod | getMemberStatusByLatestPeriodForMembershipType
 *MembershipResourceApi* | [**getMembershipUsingGET**](docs/Api/MembershipResourceApi.md#getmembershipusingget) | **GET** /api/memberships/{id} | getMembership
 *MembershipResourceApi* | [**updateMembershipUsingPUT**](docs/Api/MembershipResourceApi.md#updatemembershipusingput) | **PUT** /api/memberships | updateMembership

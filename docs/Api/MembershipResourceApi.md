@@ -9,7 +9,7 @@ Method | HTTP request | Description
 [**deleteMembershipUsingDELETE**](MembershipResourceApi.md#deleteMembershipUsingDELETE) | **DELETE** /api/memberships/{id} | deleteMembership
 [**enrolMembershipsUsingPOST**](MembershipResourceApi.md#enrolMembershipsUsingPOST) | **POST** /api/memberships/enrol | enrolMemberships
 [**getAllMembershipsUsingGET**](MembershipResourceApi.md#getAllMembershipsUsingGET) | **GET** /api/memberships | getAllMemberships
-[**getLinkedMembersUsingGET**](MembershipResourceApi.md#getLinkedMembersUsingGET) | **GET** /api/memberships/linkedStatus/{externalPersonId} | getLinkedMembers
+[**getLinkedMembersUsingGET**](MembershipResourceApi.md#getLinkedMembersUsingGET) | **GET** /api/memberships/linkedStatus/{externalUserId} | getLinkedMembers
 [**getMemberStatusByLatestPeriodForMembershipTypeUsingGET**](MembershipResourceApi.md#getMemberStatusByLatestPeriodForMembershipTypeUsingGET) | **GET** /api/memberships/status/latestPeriod | getMemberStatusByLatestPeriodForMembershipType
 [**getMembershipUsingGET**](MembershipResourceApi.md#getMembershipUsingGET) | **GET** /api/memberships/{id} | getMembership
 [**updateMembershipUsingPUT**](MembershipResourceApi.md#updateMembershipUsingPUT) | **PUT** /api/memberships | updateMembership
@@ -596,7 +596,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **getLinkedMembersUsingGET**
-> \Idealogic\MembershipAPI\Model\MembershipStatusDTO[] getLinkedMembersUsingGET($external_person_id, $membership_type_id)
+> \Idealogic\MembershipAPI\Model\MembershipStatusDTO[] getLinkedMembersUsingGET($external_user_id, $membership_type_id)
 
 getLinkedMembers
 
@@ -610,11 +610,11 @@ $apiInstance = new Idealogic\MembershipAPI\Api\MembershipResourceApi(
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
-$external_person_id = 789; // int | externalPersonId
+$external_user_id = 789; // int | externalUserId
 $membership_type_id = 789; // int | membershipTypeId
 
 try {
-    $result = $apiInstance->getLinkedMembersUsingGET($external_person_id, $membership_type_id);
+    $result = $apiInstance->getLinkedMembersUsingGET($external_user_id, $membership_type_id);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling MembershipResourceApi->getLinkedMembersUsingGET: ', $e->getMessage(), PHP_EOL;
@@ -626,7 +626,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **external_person_id** | **int**| externalPersonId |
+ **external_user_id** | **int**| externalUserId |
  **membership_type_id** | **int**| membershipTypeId | [optional]
 
 ### Return type

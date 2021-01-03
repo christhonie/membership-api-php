@@ -131,7 +131,6 @@ Class | Method | HTTP request | Description
 *MembershipResourceApi* | [**enrolMembershipsUsingPOST**](docs/Api/MembershipResourceApi.md#enrolmembershipsusingpost) | **POST** /api/memberships/enrol | enrolMemberships
 *MembershipResourceApi* | [**getAllMembershipsUsingGET**](docs/Api/MembershipResourceApi.md#getallmembershipsusingget) | **GET** /api/memberships | getAllMemberships
 *MembershipResourceApi* | [**getLinkedMembersUsingGET**](docs/Api/MembershipResourceApi.md#getlinkedmembersusingget) | **GET** /api/memberships/linkedStatus/{externalPersonId} | getLinkedMembers
-*MembershipResourceApi* | [**getMainMemberUsingGET**](docs/Api/MembershipResourceApi.md#getmainmemberusingget) | **GET** /api/memberships/status/{externalPersonId} | getMainMember
 *MembershipResourceApi* | [**getMemberStatusByLatestPeriodForMembershipTypeUsingGET**](docs/Api/MembershipResourceApi.md#getmemberstatusbylatestperiodformembershiptypeusingget) | **GET** /api/memberships/status/latestPeriod | getMemberStatusByLatestPeriodForMembershipType
 *MembershipResourceApi* | [**getMembershipUsingGET**](docs/Api/MembershipResourceApi.md#getmembershipusingget) | **GET** /api/memberships/{id} | getMembership
 *MembershipResourceApi* | [**updateMembershipUsingPUT**](docs/Api/MembershipResourceApi.md#updatemembershipusingput) | **PUT** /api/memberships | updateMembership
@@ -184,6 +183,7 @@ Class | Method | HTTP request | Description
  - [LinkedPersonDTO](docs/Model/LinkedPersonDTO.md)
  - [MembershipCriteriaDTO](docs/Model/MembershipCriteriaDTO.md)
  - [MembershipDTO](docs/Model/MembershipDTO.md)
+ - [MembershipEnrolRequestDTO](docs/Model/MembershipEnrolRequestDTO.md)
  - [MembershipPeriodDTO](docs/Model/MembershipPeriodDTO.md)
  - [MembershipStatusDTO](docs/Model/MembershipStatusDTO.md)
  - [MembershipTypeDTO](docs/Model/MembershipTypeDTO.md)

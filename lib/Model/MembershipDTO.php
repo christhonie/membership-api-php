@@ -227,6 +227,7 @@ class MembershipDTO implements ModelInterface, ArrayAccess
     const STATUS_PENDING = 'PENDING';
     const STATUS_ACTIVE = 'ACTIVE';
     const STATUS_REVOKED = 'REVOKED';
+    const STATUS_EXPIRED = 'EXPIRED';
     
 
     
@@ -242,6 +243,7 @@ class MembershipDTO implements ModelInterface, ArrayAccess
             self::STATUS_PENDING,
             self::STATUS_ACTIVE,
             self::STATUS_REVOKED,
+            self::STATUS_EXPIRED,
         ];
     }
     

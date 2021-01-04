@@ -4,6 +4,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **criteria_id** | **int** |  | [optional] 
+**criteria_name** | **string** |  | [optional] 
 **date_of_birth** | [**\DateTime**](\DateTime.md) |  | [optional] 
 **main_member** | **bool** |  | [optional] 
 **membership_id** | **int** |  | [optional] 
@@ -13,11 +14,15 @@ Name | Type | Description | Notes
 **membership_type_name** | **string** |  | [optional] 
 **message** | **string** |  | [optional] 
 **name** | **string** |  | [optional] 
+**order_external_id** | **string** |  | [optional] 
 **order_id** | **int** |  | [optional] 
 **order_status** | **string** |  | [optional] 
 **period_id** | **int** |  | [optional] 
 **period_name** | **string** |  | [optional] 
 **person_id** | **int** |  | [optional] 
+**product_external_id** | **string** |  | [optional] 
+**product_id** | **int** |  | [optional] 
+**product_name** | **string** |  | [optional] 
 **updated_details** | **bool** |  | [optional] 
 **valid_from** | [**\DateTime**](\DateTime.md) |  | [optional] 
 **valid_to** | [**\DateTime**](\DateTime.md) |  | [optional] 

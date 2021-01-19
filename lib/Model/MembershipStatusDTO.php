@@ -77,6 +77,8 @@ class MembershipStatusDTO implements ModelInterface, ArrayAccess
         'product_external_id' => 'string',
         'product_id' => 'int',
         'product_name' => 'string',
+        'renew_period_id' => 'int',
+        'renew_period_name' => 'string',
         'updated_details' => 'bool',
         'valid_from' => '\DateTime',
         'valid_to' => '\DateTime'
@@ -108,6 +110,8 @@ class MembershipStatusDTO implements ModelInterface, ArrayAccess
         'product_external_id' => null,
         'product_id' => 'int64',
         'product_name' => null,
+        'renew_period_id' => 'int64',
+        'renew_period_name' => null,
         'updated_details' => null,
         'valid_from' => 'date',
         'valid_to' => 'date'
@@ -160,6 +164,8 @@ class MembershipStatusDTO implements ModelInterface, ArrayAccess
         'product_external_id' => 'productExternalId',
         'product_id' => 'productId',
         'product_name' => 'productName',
+        'renew_period_id' => 'renewPeriodId',
+        'renew_period_name' => 'renewPeriodName',
         'updated_details' => 'updatedDetails',
         'valid_from' => 'validFrom',
         'valid_to' => 'validTo'
@@ -191,6 +197,8 @@ class MembershipStatusDTO implements ModelInterface, ArrayAccess
         'product_external_id' => 'setProductExternalId',
         'product_id' => 'setProductId',
         'product_name' => 'setProductName',
+        'renew_period_id' => 'setRenewPeriodId',
+        'renew_period_name' => 'setRenewPeriodName',
         'updated_details' => 'setUpdatedDetails',
         'valid_from' => 'setValidFrom',
         'valid_to' => 'setValidTo'
@@ -222,6 +230,8 @@ class MembershipStatusDTO implements ModelInterface, ArrayAccess
         'product_external_id' => 'getProductExternalId',
         'product_id' => 'getProductId',
         'product_name' => 'getProductName',
+        'renew_period_id' => 'getRenewPeriodId',
+        'renew_period_name' => 'getRenewPeriodName',
         'updated_details' => 'getUpdatedDetails',
         'valid_from' => 'getValidFrom',
         'valid_to' => 'getValidTo'
@@ -347,6 +357,8 @@ class MembershipStatusDTO implements ModelInterface, ArrayAccess
         $this->container['product_external_id'] = isset($data['product_external_id']) ? $data['product_external_id'] : null;
         $this->container['product_id'] = isset($data['product_id']) ? $data['product_id'] : null;
         $this->container['product_name'] = isset($data['product_name']) ? $data['product_name'] : null;
+        $this->container['renew_period_id'] = isset($data['renew_period_id']) ? $data['renew_period_id'] : null;
+        $this->container['renew_period_name'] = isset($data['renew_period_name']) ? $data['renew_period_name'] : null;
         $this->container['updated_details'] = isset($data['updated_details']) ? $data['updated_details'] : null;
         $this->container['valid_from'] = isset($data['valid_from']) ? $data['valid_from'] : null;
         $this->container['valid_to'] = isset($data['valid_to']) ? $data['valid_to'] : null;
@@ -886,6 +898,54 @@ class MembershipStatusDTO implements ModelInterface, ArrayAccess
     public function setProductName($product_name)
     {
         $this->container['product_name'] = $product_name;
+
+        return $this;
+    }
+
+    /**
+     * Gets renew_period_id
+     *
+     * @return int
+     */
+    public function getRenewPeriodId()
+    {
+        return $this->container['renew_period_id'];
+    }
+
+    /**
+     * Sets renew_period_id
+     *
+     * @param int $renew_period_id renew_period_id
+     *
+     * @return $this
+     */
+    public function setRenewPeriodId($renew_period_id)
+    {
+        $this->container['renew_period_id'] = $renew_period_id;
+
+        return $this;
+    }
+
+    /**
+     * Gets renew_period_name
+     *
+     * @return string
+     */
+    public function getRenewPeriodName()
+    {
+        return $this->container['renew_period_name'];
+    }
+
+    /**
+     * Sets renew_period_name
+     *
+     * @param string $renew_period_name renew_period_name
+     *
+     * @return $this
+     */
+    public function setRenewPeriodName($renew_period_name)
+    {
+        $this->container['renew_period_name'] = $renew_period_name;
 
         return $this;
     }

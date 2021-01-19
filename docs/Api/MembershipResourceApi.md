@@ -326,7 +326,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **enrolMembershipsUsingPOST**
-> \Idealogic\MembershipAPI\Model\MembershipStatusDTO[] enrolMembershipsUsingPOST($membership_enrol_request_dto)
+> \Idealogic\MembershipAPI\Model\MembershipStatusDTO[] enrolMembershipsUsingPOST($membership_enrol_request_dto, $organisation_id)
 
 enrolMemberships
 
@@ -341,9 +341,10 @@ $apiInstance = new Idealogic\MembershipAPI\Api\MembershipResourceApi(
     new GuzzleHttp\Client()
 );
 $membership_enrol_request_dto = new \Idealogic\MembershipAPI\Model\MembershipEnrolRequestDTO(); // \Idealogic\MembershipAPI\Model\MembershipEnrolRequestDTO | membershipEnrolRequestDTO
+$organisation_id = 789; // int | organisationId
 
 try {
-    $result = $apiInstance->enrolMembershipsUsingPOST($membership_enrol_request_dto);
+    $result = $apiInstance->enrolMembershipsUsingPOST($membership_enrol_request_dto, $organisation_id);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling MembershipResourceApi->enrolMembershipsUsingPOST: ', $e->getMessage(), PHP_EOL;
@@ -356,6 +357,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **membership_enrol_request_dto** | [**\Idealogic\MembershipAPI\Model\MembershipEnrolRequestDTO**](../Model/MembershipEnrolRequestDTO.md)| membershipEnrolRequestDTO |
+ **organisation_id** | **int**| organisationId | [optional]
 
 ### Return type
 
@@ -596,7 +598,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **getLinkedMembersUsingGET**
-> \Idealogic\MembershipAPI\Model\MembershipStatusDTO[] getLinkedMembersUsingGET($external_user_id, $membership_type_id)
+> \Idealogic\MembershipAPI\Model\MembershipStatusDTO[] getLinkedMembersUsingGET($external_user_id, $membership_type_id, $organisation_id)
 
 getLinkedMembers
 
@@ -610,11 +612,12 @@ $apiInstance = new Idealogic\MembershipAPI\Api\MembershipResourceApi(
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
-$external_user_id = 789; // int | externalUserId
+$external_user_id = "external_user_id_example"; // string | externalUserId
 $membership_type_id = 789; // int | membershipTypeId
+$organisation_id = 789; // int | organisationId
 
 try {
-    $result = $apiInstance->getLinkedMembersUsingGET($external_user_id, $membership_type_id);
+    $result = $apiInstance->getLinkedMembersUsingGET($external_user_id, $membership_type_id, $organisation_id);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling MembershipResourceApi->getLinkedMembersUsingGET: ', $e->getMessage(), PHP_EOL;
@@ -626,8 +629,9 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **external_user_id** | **int**| externalUserId |
+ **external_user_id** | **string**| externalUserId |
  **membership_type_id** | **int**| membershipTypeId | [optional]
+ **organisation_id** | **int**| organisationId | [optional]
 
 ### Return type
 

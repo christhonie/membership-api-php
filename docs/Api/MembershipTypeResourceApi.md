@@ -13,7 +13,7 @@ Method | HTTP request | Description
 
 
 # **countMembershipTypesUsingGET**
-> int countMembershipTypesUsingGET($id_equals, $id_greater_than, $id_greater_than_or_equal, $id_in, $id_less_than, $id_less_than_or_equal, $id_not_equals, $id_specified, $name_contains, $name_does_not_contain, $name_equals, $name_in, $name_not_equals, $name_specified, $number_type_id_equals, $number_type_id_greater_than, $number_type_id_greater_than_or_equal, $number_type_id_in, $number_type_id_less_than, $number_type_id_less_than_or_equal, $number_type_id_not_equals, $number_type_id_specified, $organisation_id_equals, $organisation_id_greater_than, $organisation_id_greater_than_or_equal, $organisation_id_in, $organisation_id_less_than, $organisation_id_less_than_or_equal, $organisation_id_not_equals, $organisation_id_specified)
+> int countMembershipTypesUsingGET($id_equals, $id_greater_than, $id_greater_than_or_equal, $id_in, $id_less_than, $id_less_than_or_equal, $id_not_equals, $id_specified, $name_contains, $name_does_not_contain, $name_equals, $name_in, $name_not_equals, $name_specified, $number_type_id_equals, $number_type_id_greater_than, $number_type_id_greater_than_or_equal, $number_type_id_in, $number_type_id_less_than, $number_type_id_less_than_or_equal, $number_type_id_not_equals, $number_type_id_specified, $organisation_id)
 
 countMembershipTypes
 
@@ -49,17 +49,10 @@ $number_type_id_less_than = 56; // int |
 $number_type_id_less_than_or_equal = 56; // int | 
 $number_type_id_not_equals = 56; // int | 
 $number_type_id_specified = true; // bool | 
-$organisation_id_equals = 789; // int | 
-$organisation_id_greater_than = 789; // int | 
-$organisation_id_greater_than_or_equal = 789; // int | 
-$organisation_id_in = array(56); // int[] | 
-$organisation_id_less_than = 789; // int | 
-$organisation_id_less_than_or_equal = 789; // int | 
-$organisation_id_not_equals = 789; // int | 
-$organisation_id_specified = true; // bool | 
+$organisation_id = 789; // int | 
 
 try {
-    $result = $apiInstance->countMembershipTypesUsingGET($id_equals, $id_greater_than, $id_greater_than_or_equal, $id_in, $id_less_than, $id_less_than_or_equal, $id_not_equals, $id_specified, $name_contains, $name_does_not_contain, $name_equals, $name_in, $name_not_equals, $name_specified, $number_type_id_equals, $number_type_id_greater_than, $number_type_id_greater_than_or_equal, $number_type_id_in, $number_type_id_less_than, $number_type_id_less_than_or_equal, $number_type_id_not_equals, $number_type_id_specified, $organisation_id_equals, $organisation_id_greater_than, $organisation_id_greater_than_or_equal, $organisation_id_in, $organisation_id_less_than, $organisation_id_less_than_or_equal, $organisation_id_not_equals, $organisation_id_specified);
+    $result = $apiInstance->countMembershipTypesUsingGET($id_equals, $id_greater_than, $id_greater_than_or_equal, $id_in, $id_less_than, $id_less_than_or_equal, $id_not_equals, $id_specified, $name_contains, $name_does_not_contain, $name_equals, $name_in, $name_not_equals, $name_specified, $number_type_id_equals, $number_type_id_greater_than, $number_type_id_greater_than_or_equal, $number_type_id_in, $number_type_id_less_than, $number_type_id_less_than_or_equal, $number_type_id_not_equals, $number_type_id_specified, $organisation_id);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling MembershipTypeResourceApi->countMembershipTypesUsingGET: ', $e->getMessage(), PHP_EOL;
@@ -93,14 +86,7 @@ Name | Type | Description  | Notes
  **number_type_id_less_than_or_equal** | **int**|  | [optional]
  **number_type_id_not_equals** | **int**|  | [optional]
  **number_type_id_specified** | **bool**|  | [optional]
- **organisation_id_equals** | **int**|  | [optional]
- **organisation_id_greater_than** | **int**|  | [optional]
- **organisation_id_greater_than_or_equal** | **int**|  | [optional]
- **organisation_id_in** | [**int[]**](../Model/int.md)|  | [optional]
- **organisation_id_less_than** | **int**|  | [optional]
- **organisation_id_less_than_or_equal** | **int**|  | [optional]
- **organisation_id_not_equals** | **int**|  | [optional]
- **organisation_id_specified** | **bool**|  | [optional]
+ **organisation_id** | **int**|  | [optional]
 
 ### Return type
 
@@ -211,7 +197,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **getAllMembershipTypesUsingGET**
-> \Idealogic\MembershipAPI\Model\MembershipTypeDTO[] getAllMembershipTypesUsingGET($id_equals, $id_greater_than, $id_greater_than_or_equal, $id_in, $id_less_than, $id_less_than_or_equal, $id_not_equals, $id_specified, $name_contains, $name_does_not_contain, $name_equals, $name_in, $name_not_equals, $name_specified, $number_type_id_equals, $number_type_id_greater_than, $number_type_id_greater_than_or_equal, $number_type_id_in, $number_type_id_less_than, $number_type_id_less_than_or_equal, $number_type_id_not_equals, $number_type_id_specified, $organisation_id_equals, $organisation_id_greater_than, $organisation_id_greater_than_or_equal, $organisation_id_in, $organisation_id_less_than, $organisation_id_less_than_or_equal, $organisation_id_not_equals, $organisation_id_specified, $page, $size, $sort)
+> \Idealogic\MembershipAPI\Model\MembershipTypeDTO[] getAllMembershipTypesUsingGET($id_equals, $id_greater_than, $id_greater_than_or_equal, $id_in, $id_less_than, $id_less_than_or_equal, $id_not_equals, $id_specified, $name_contains, $name_does_not_contain, $name_equals, $name_in, $name_not_equals, $name_specified, $number_type_id_equals, $number_type_id_greater_than, $number_type_id_greater_than_or_equal, $number_type_id_in, $number_type_id_less_than, $number_type_id_less_than_or_equal, $number_type_id_not_equals, $number_type_id_specified, $organisation_id, $page, $size, $sort)
 
 getAllMembershipTypes
 
@@ -247,20 +233,13 @@ $number_type_id_less_than = 56; // int |
 $number_type_id_less_than_or_equal = 56; // int | 
 $number_type_id_not_equals = 56; // int | 
 $number_type_id_specified = true; // bool | 
-$organisation_id_equals = 789; // int | 
-$organisation_id_greater_than = 789; // int | 
-$organisation_id_greater_than_or_equal = 789; // int | 
-$organisation_id_in = array(56); // int[] | 
-$organisation_id_less_than = 789; // int | 
-$organisation_id_less_than_or_equal = 789; // int | 
-$organisation_id_not_equals = 789; // int | 
-$organisation_id_specified = true; // bool | 
+$organisation_id = 789; // int | 
 $page = 56; // int | Page number of the requested page
 $size = 56; // int | Size of a page
 $sort = array("sort_example"); // string[] | Sorting criteria in the format: property(,asc|desc). Default sort order is ascending. Multiple sort criteria are supported.
 
 try {
-    $result = $apiInstance->getAllMembershipTypesUsingGET($id_equals, $id_greater_than, $id_greater_than_or_equal, $id_in, $id_less_than, $id_less_than_or_equal, $id_not_equals, $id_specified, $name_contains, $name_does_not_contain, $name_equals, $name_in, $name_not_equals, $name_specified, $number_type_id_equals, $number_type_id_greater_than, $number_type_id_greater_than_or_equal, $number_type_id_in, $number_type_id_less_than, $number_type_id_less_than_or_equal, $number_type_id_not_equals, $number_type_id_specified, $organisation_id_equals, $organisation_id_greater_than, $organisation_id_greater_than_or_equal, $organisation_id_in, $organisation_id_less_than, $organisation_id_less_than_or_equal, $organisation_id_not_equals, $organisation_id_specified, $page, $size, $sort);
+    $result = $apiInstance->getAllMembershipTypesUsingGET($id_equals, $id_greater_than, $id_greater_than_or_equal, $id_in, $id_less_than, $id_less_than_or_equal, $id_not_equals, $id_specified, $name_contains, $name_does_not_contain, $name_equals, $name_in, $name_not_equals, $name_specified, $number_type_id_equals, $number_type_id_greater_than, $number_type_id_greater_than_or_equal, $number_type_id_in, $number_type_id_less_than, $number_type_id_less_than_or_equal, $number_type_id_not_equals, $number_type_id_specified, $organisation_id, $page, $size, $sort);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling MembershipTypeResourceApi->getAllMembershipTypesUsingGET: ', $e->getMessage(), PHP_EOL;
@@ -294,14 +273,7 @@ Name | Type | Description  | Notes
  **number_type_id_less_than_or_equal** | **int**|  | [optional]
  **number_type_id_not_equals** | **int**|  | [optional]
  **number_type_id_specified** | **bool**|  | [optional]
- **organisation_id_equals** | **int**|  | [optional]
- **organisation_id_greater_than** | **int**|  | [optional]
- **organisation_id_greater_than_or_equal** | **int**|  | [optional]
- **organisation_id_in** | [**int[]**](../Model/int.md)|  | [optional]
- **organisation_id_less_than** | **int**|  | [optional]
- **organisation_id_less_than_or_equal** | **int**|  | [optional]
- **organisation_id_not_equals** | **int**|  | [optional]
- **organisation_id_specified** | **bool**|  | [optional]
+ **organisation_id** | **int**|  | [optional]
  **page** | **int**| Page number of the requested page | [optional]
  **size** | **int**| Size of a page | [optional]
  **sort** | [**string[]**](../Model/string.md)| Sorting criteria in the format: property(,asc|desc). Default sort order is ascending. Multiple sort criteria are supported. | [optional]

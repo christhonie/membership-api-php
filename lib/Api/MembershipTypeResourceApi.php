@@ -114,22 +114,15 @@ class MembershipTypeResourceApi
      * @param  int $number_type_id_less_than_or_equal number_type_id_less_than_or_equal (optional)
      * @param  int $number_type_id_not_equals number_type_id_not_equals (optional)
      * @param  bool $number_type_id_specified number_type_id_specified (optional)
-     * @param  int $organisation_id_equals organisation_id_equals (optional)
-     * @param  int $organisation_id_greater_than organisation_id_greater_than (optional)
-     * @param  int $organisation_id_greater_than_or_equal organisation_id_greater_than_or_equal (optional)
-     * @param  int[] $organisation_id_in organisation_id_in (optional)
-     * @param  int $organisation_id_less_than organisation_id_less_than (optional)
-     * @param  int $organisation_id_less_than_or_equal organisation_id_less_than_or_equal (optional)
-     * @param  int $organisation_id_not_equals organisation_id_not_equals (optional)
-     * @param  bool $organisation_id_specified organisation_id_specified (optional)
+     * @param  int $organisation_id organisation_id (optional)
      *
      * @throws \Idealogic\MembershipAPI\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return int
      */
-    public function countMembershipTypesUsingGET($id_equals = null, $id_greater_than = null, $id_greater_than_or_equal = null, $id_in = null, $id_less_than = null, $id_less_than_or_equal = null, $id_not_equals = null, $id_specified = null, $name_contains = null, $name_does_not_contain = null, $name_equals = null, $name_in = null, $name_not_equals = null, $name_specified = null, $number_type_id_equals = null, $number_type_id_greater_than = null, $number_type_id_greater_than_or_equal = null, $number_type_id_in = null, $number_type_id_less_than = null, $number_type_id_less_than_or_equal = null, $number_type_id_not_equals = null, $number_type_id_specified = null, $organisation_id_equals = null, $organisation_id_greater_than = null, $organisation_id_greater_than_or_equal = null, $organisation_id_in = null, $organisation_id_less_than = null, $organisation_id_less_than_or_equal = null, $organisation_id_not_equals = null, $organisation_id_specified = null)
+    public function countMembershipTypesUsingGET($id_equals = null, $id_greater_than = null, $id_greater_than_or_equal = null, $id_in = null, $id_less_than = null, $id_less_than_or_equal = null, $id_not_equals = null, $id_specified = null, $name_contains = null, $name_does_not_contain = null, $name_equals = null, $name_in = null, $name_not_equals = null, $name_specified = null, $number_type_id_equals = null, $number_type_id_greater_than = null, $number_type_id_greater_than_or_equal = null, $number_type_id_in = null, $number_type_id_less_than = null, $number_type_id_less_than_or_equal = null, $number_type_id_not_equals = null, $number_type_id_specified = null, $organisation_id = null)
     {
-        list($response) = $this->countMembershipTypesUsingGETWithHttpInfo($id_equals, $id_greater_than, $id_greater_than_or_equal, $id_in, $id_less_than, $id_less_than_or_equal, $id_not_equals, $id_specified, $name_contains, $name_does_not_contain, $name_equals, $name_in, $name_not_equals, $name_specified, $number_type_id_equals, $number_type_id_greater_than, $number_type_id_greater_than_or_equal, $number_type_id_in, $number_type_id_less_than, $number_type_id_less_than_or_equal, $number_type_id_not_equals, $number_type_id_specified, $organisation_id_equals, $organisation_id_greater_than, $organisation_id_greater_than_or_equal, $organisation_id_in, $organisation_id_less_than, $organisation_id_less_than_or_equal, $organisation_id_not_equals, $organisation_id_specified);
+        list($response) = $this->countMembershipTypesUsingGETWithHttpInfo($id_equals, $id_greater_than, $id_greater_than_or_equal, $id_in, $id_less_than, $id_less_than_or_equal, $id_not_equals, $id_specified, $name_contains, $name_does_not_contain, $name_equals, $name_in, $name_not_equals, $name_specified, $number_type_id_equals, $number_type_id_greater_than, $number_type_id_greater_than_or_equal, $number_type_id_in, $number_type_id_less_than, $number_type_id_less_than_or_equal, $number_type_id_not_equals, $number_type_id_specified, $organisation_id);
         return $response;
     }
 
@@ -160,23 +153,16 @@ class MembershipTypeResourceApi
      * @param  int $number_type_id_less_than_or_equal (optional)
      * @param  int $number_type_id_not_equals (optional)
      * @param  bool $number_type_id_specified (optional)
-     * @param  int $organisation_id_equals (optional)
-     * @param  int $organisation_id_greater_than (optional)
-     * @param  int $organisation_id_greater_than_or_equal (optional)
-     * @param  int[] $organisation_id_in (optional)
-     * @param  int $organisation_id_less_than (optional)
-     * @param  int $organisation_id_less_than_or_equal (optional)
-     * @param  int $organisation_id_not_equals (optional)
-     * @param  bool $organisation_id_specified (optional)
+     * @param  int $organisation_id (optional)
      *
      * @throws \Idealogic\MembershipAPI\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of int, HTTP status code, HTTP response headers (array of strings)
      */
-    public function countMembershipTypesUsingGETWithHttpInfo($id_equals = null, $id_greater_than = null, $id_greater_than_or_equal = null, $id_in = null, $id_less_than = null, $id_less_than_or_equal = null, $id_not_equals = null, $id_specified = null, $name_contains = null, $name_does_not_contain = null, $name_equals = null, $name_in = null, $name_not_equals = null, $name_specified = null, $number_type_id_equals = null, $number_type_id_greater_than = null, $number_type_id_greater_than_or_equal = null, $number_type_id_in = null, $number_type_id_less_than = null, $number_type_id_less_than_or_equal = null, $number_type_id_not_equals = null, $number_type_id_specified = null, $organisation_id_equals = null, $organisation_id_greater_than = null, $organisation_id_greater_than_or_equal = null, $organisation_id_in = null, $organisation_id_less_than = null, $organisation_id_less_than_or_equal = null, $organisation_id_not_equals = null, $organisation_id_specified = null)
+    public function countMembershipTypesUsingGETWithHttpInfo($id_equals = null, $id_greater_than = null, $id_greater_than_or_equal = null, $id_in = null, $id_less_than = null, $id_less_than_or_equal = null, $id_not_equals = null, $id_specified = null, $name_contains = null, $name_does_not_contain = null, $name_equals = null, $name_in = null, $name_not_equals = null, $name_specified = null, $number_type_id_equals = null, $number_type_id_greater_than = null, $number_type_id_greater_than_or_equal = null, $number_type_id_in = null, $number_type_id_less_than = null, $number_type_id_less_than_or_equal = null, $number_type_id_not_equals = null, $number_type_id_specified = null, $organisation_id = null)
     {
         $returnType = 'int';
-        $request = $this->countMembershipTypesUsingGETRequest($id_equals, $id_greater_than, $id_greater_than_or_equal, $id_in, $id_less_than, $id_less_than_or_equal, $id_not_equals, $id_specified, $name_contains, $name_does_not_contain, $name_equals, $name_in, $name_not_equals, $name_specified, $number_type_id_equals, $number_type_id_greater_than, $number_type_id_greater_than_or_equal, $number_type_id_in, $number_type_id_less_than, $number_type_id_less_than_or_equal, $number_type_id_not_equals, $number_type_id_specified, $organisation_id_equals, $organisation_id_greater_than, $organisation_id_greater_than_or_equal, $organisation_id_in, $organisation_id_less_than, $organisation_id_less_than_or_equal, $organisation_id_not_equals, $organisation_id_specified);
+        $request = $this->countMembershipTypesUsingGETRequest($id_equals, $id_greater_than, $id_greater_than_or_equal, $id_in, $id_less_than, $id_less_than_or_equal, $id_not_equals, $id_specified, $name_contains, $name_does_not_contain, $name_equals, $name_in, $name_not_equals, $name_specified, $number_type_id_equals, $number_type_id_greater_than, $number_type_id_greater_than_or_equal, $number_type_id_in, $number_type_id_less_than, $number_type_id_less_than_or_equal, $number_type_id_not_equals, $number_type_id_specified, $organisation_id);
 
         try {
             $options = $this->createHttpClientOption();
@@ -264,21 +250,14 @@ class MembershipTypeResourceApi
      * @param  int $number_type_id_less_than_or_equal (optional)
      * @param  int $number_type_id_not_equals (optional)
      * @param  bool $number_type_id_specified (optional)
-     * @param  int $organisation_id_equals (optional)
-     * @param  int $organisation_id_greater_than (optional)
-     * @param  int $organisation_id_greater_than_or_equal (optional)
-     * @param  int[] $organisation_id_in (optional)
-     * @param  int $organisation_id_less_than (optional)
-     * @param  int $organisation_id_less_than_or_equal (optional)
-     * @param  int $organisation_id_not_equals (optional)
-     * @param  bool $organisation_id_specified (optional)
+     * @param  int $organisation_id (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function countMembershipTypesUsingGETAsync($id_equals = null, $id_greater_than = null, $id_greater_than_or_equal = null, $id_in = null, $id_less_than = null, $id_less_than_or_equal = null, $id_not_equals = null, $id_specified = null, $name_contains = null, $name_does_not_contain = null, $name_equals = null, $name_in = null, $name_not_equals = null, $name_specified = null, $number_type_id_equals = null, $number_type_id_greater_than = null, $number_type_id_greater_than_or_equal = null, $number_type_id_in = null, $number_type_id_less_than = null, $number_type_id_less_than_or_equal = null, $number_type_id_not_equals = null, $number_type_id_specified = null, $organisation_id_equals = null, $organisation_id_greater_than = null, $organisation_id_greater_than_or_equal = null, $organisation_id_in = null, $organisation_id_less_than = null, $organisation_id_less_than_or_equal = null, $organisation_id_not_equals = null, $organisation_id_specified = null)
+    public function countMembershipTypesUsingGETAsync($id_equals = null, $id_greater_than = null, $id_greater_than_or_equal = null, $id_in = null, $id_less_than = null, $id_less_than_or_equal = null, $id_not_equals = null, $id_specified = null, $name_contains = null, $name_does_not_contain = null, $name_equals = null, $name_in = null, $name_not_equals = null, $name_specified = null, $number_type_id_equals = null, $number_type_id_greater_than = null, $number_type_id_greater_than_or_equal = null, $number_type_id_in = null, $number_type_id_less_than = null, $number_type_id_less_than_or_equal = null, $number_type_id_not_equals = null, $number_type_id_specified = null, $organisation_id = null)
     {
-        return $this->countMembershipTypesUsingGETAsyncWithHttpInfo($id_equals, $id_greater_than, $id_greater_than_or_equal, $id_in, $id_less_than, $id_less_than_or_equal, $id_not_equals, $id_specified, $name_contains, $name_does_not_contain, $name_equals, $name_in, $name_not_equals, $name_specified, $number_type_id_equals, $number_type_id_greater_than, $number_type_id_greater_than_or_equal, $number_type_id_in, $number_type_id_less_than, $number_type_id_less_than_or_equal, $number_type_id_not_equals, $number_type_id_specified, $organisation_id_equals, $organisation_id_greater_than, $organisation_id_greater_than_or_equal, $organisation_id_in, $organisation_id_less_than, $organisation_id_less_than_or_equal, $organisation_id_not_equals, $organisation_id_specified)
+        return $this->countMembershipTypesUsingGETAsyncWithHttpInfo($id_equals, $id_greater_than, $id_greater_than_or_equal, $id_in, $id_less_than, $id_less_than_or_equal, $id_not_equals, $id_specified, $name_contains, $name_does_not_contain, $name_equals, $name_in, $name_not_equals, $name_specified, $number_type_id_equals, $number_type_id_greater_than, $number_type_id_greater_than_or_equal, $number_type_id_in, $number_type_id_less_than, $number_type_id_less_than_or_equal, $number_type_id_not_equals, $number_type_id_specified, $organisation_id)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -313,22 +292,15 @@ class MembershipTypeResourceApi
      * @param  int $number_type_id_less_than_or_equal (optional)
      * @param  int $number_type_id_not_equals (optional)
      * @param  bool $number_type_id_specified (optional)
-     * @param  int $organisation_id_equals (optional)
-     * @param  int $organisation_id_greater_than (optional)
-     * @param  int $organisation_id_greater_than_or_equal (optional)
-     * @param  int[] $organisation_id_in (optional)
-     * @param  int $organisation_id_less_than (optional)
-     * @param  int $organisation_id_less_than_or_equal (optional)
-     * @param  int $organisation_id_not_equals (optional)
-     * @param  bool $organisation_id_specified (optional)
+     * @param  int $organisation_id (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function countMembershipTypesUsingGETAsyncWithHttpInfo($id_equals = null, $id_greater_than = null, $id_greater_than_or_equal = null, $id_in = null, $id_less_than = null, $id_less_than_or_equal = null, $id_not_equals = null, $id_specified = null, $name_contains = null, $name_does_not_contain = null, $name_equals = null, $name_in = null, $name_not_equals = null, $name_specified = null, $number_type_id_equals = null, $number_type_id_greater_than = null, $number_type_id_greater_than_or_equal = null, $number_type_id_in = null, $number_type_id_less_than = null, $number_type_id_less_than_or_equal = null, $number_type_id_not_equals = null, $number_type_id_specified = null, $organisation_id_equals = null, $organisation_id_greater_than = null, $organisation_id_greater_than_or_equal = null, $organisation_id_in = null, $organisation_id_less_than = null, $organisation_id_less_than_or_equal = null, $organisation_id_not_equals = null, $organisation_id_specified = null)
+    public function countMembershipTypesUsingGETAsyncWithHttpInfo($id_equals = null, $id_greater_than = null, $id_greater_than_or_equal = null, $id_in = null, $id_less_than = null, $id_less_than_or_equal = null, $id_not_equals = null, $id_specified = null, $name_contains = null, $name_does_not_contain = null, $name_equals = null, $name_in = null, $name_not_equals = null, $name_specified = null, $number_type_id_equals = null, $number_type_id_greater_than = null, $number_type_id_greater_than_or_equal = null, $number_type_id_in = null, $number_type_id_less_than = null, $number_type_id_less_than_or_equal = null, $number_type_id_not_equals = null, $number_type_id_specified = null, $organisation_id = null)
     {
         $returnType = 'int';
-        $request = $this->countMembershipTypesUsingGETRequest($id_equals, $id_greater_than, $id_greater_than_or_equal, $id_in, $id_less_than, $id_less_than_or_equal, $id_not_equals, $id_specified, $name_contains, $name_does_not_contain, $name_equals, $name_in, $name_not_equals, $name_specified, $number_type_id_equals, $number_type_id_greater_than, $number_type_id_greater_than_or_equal, $number_type_id_in, $number_type_id_less_than, $number_type_id_less_than_or_equal, $number_type_id_not_equals, $number_type_id_specified, $organisation_id_equals, $organisation_id_greater_than, $organisation_id_greater_than_or_equal, $organisation_id_in, $organisation_id_less_than, $organisation_id_less_than_or_equal, $organisation_id_not_equals, $organisation_id_specified);
+        $request = $this->countMembershipTypesUsingGETRequest($id_equals, $id_greater_than, $id_greater_than_or_equal, $id_in, $id_less_than, $id_less_than_or_equal, $id_not_equals, $id_specified, $name_contains, $name_does_not_contain, $name_equals, $name_in, $name_not_equals, $name_specified, $number_type_id_equals, $number_type_id_greater_than, $number_type_id_greater_than_or_equal, $number_type_id_in, $number_type_id_less_than, $number_type_id_less_than_or_equal, $number_type_id_not_equals, $number_type_id_specified, $organisation_id);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -392,19 +364,12 @@ class MembershipTypeResourceApi
      * @param  int $number_type_id_less_than_or_equal (optional)
      * @param  int $number_type_id_not_equals (optional)
      * @param  bool $number_type_id_specified (optional)
-     * @param  int $organisation_id_equals (optional)
-     * @param  int $organisation_id_greater_than (optional)
-     * @param  int $organisation_id_greater_than_or_equal (optional)
-     * @param  int[] $organisation_id_in (optional)
-     * @param  int $organisation_id_less_than (optional)
-     * @param  int $organisation_id_less_than_or_equal (optional)
-     * @param  int $organisation_id_not_equals (optional)
-     * @param  bool $organisation_id_specified (optional)
+     * @param  int $organisation_id (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function countMembershipTypesUsingGETRequest($id_equals = null, $id_greater_than = null, $id_greater_than_or_equal = null, $id_in = null, $id_less_than = null, $id_less_than_or_equal = null, $id_not_equals = null, $id_specified = null, $name_contains = null, $name_does_not_contain = null, $name_equals = null, $name_in = null, $name_not_equals = null, $name_specified = null, $number_type_id_equals = null, $number_type_id_greater_than = null, $number_type_id_greater_than_or_equal = null, $number_type_id_in = null, $number_type_id_less_than = null, $number_type_id_less_than_or_equal = null, $number_type_id_not_equals = null, $number_type_id_specified = null, $organisation_id_equals = null, $organisation_id_greater_than = null, $organisation_id_greater_than_or_equal = null, $organisation_id_in = null, $organisation_id_less_than = null, $organisation_id_less_than_or_equal = null, $organisation_id_not_equals = null, $organisation_id_specified = null)
+    protected function countMembershipTypesUsingGETRequest($id_equals = null, $id_greater_than = null, $id_greater_than_or_equal = null, $id_in = null, $id_less_than = null, $id_less_than_or_equal = null, $id_not_equals = null, $id_specified = null, $name_contains = null, $name_does_not_contain = null, $name_equals = null, $name_in = null, $name_not_equals = null, $name_specified = null, $number_type_id_equals = null, $number_type_id_greater_than = null, $number_type_id_greater_than_or_equal = null, $number_type_id_in = null, $number_type_id_less_than = null, $number_type_id_less_than_or_equal = null, $number_type_id_not_equals = null, $number_type_id_specified = null, $organisation_id = null)
     {
 
         $resourcePath = '/api/membership-types/count';
@@ -512,39 +477,8 @@ class MembershipTypeResourceApi
             $queryParams['numberTypeId.specified'] = ObjectSerializer::toQueryValue($number_type_id_specified);
         }
         // query params
-        if ($organisation_id_equals !== null) {
-            $queryParams['organisationId.equals'] = ObjectSerializer::toQueryValue($organisation_id_equals);
-        }
-        // query params
-        if ($organisation_id_greater_than !== null) {
-            $queryParams['organisationId.greaterThan'] = ObjectSerializer::toQueryValue($organisation_id_greater_than);
-        }
-        // query params
-        if ($organisation_id_greater_than_or_equal !== null) {
-            $queryParams['organisationId.greaterThanOrEqual'] = ObjectSerializer::toQueryValue($organisation_id_greater_than_or_equal);
-        }
-        // query params
-        if (is_array($organisation_id_in)) {
-            $queryParams['organisationId.in'] = $organisation_id_in;
-        } else
-        if ($organisation_id_in !== null) {
-            $queryParams['organisationId.in'] = ObjectSerializer::toQueryValue($organisation_id_in);
-        }
-        // query params
-        if ($organisation_id_less_than !== null) {
-            $queryParams['organisationId.lessThan'] = ObjectSerializer::toQueryValue($organisation_id_less_than);
-        }
-        // query params
-        if ($organisation_id_less_than_or_equal !== null) {
-            $queryParams['organisationId.lessThanOrEqual'] = ObjectSerializer::toQueryValue($organisation_id_less_than_or_equal);
-        }
-        // query params
-        if ($organisation_id_not_equals !== null) {
-            $queryParams['organisationId.notEquals'] = ObjectSerializer::toQueryValue($organisation_id_not_equals);
-        }
-        // query params
-        if ($organisation_id_specified !== null) {
-            $queryParams['organisationId.specified'] = ObjectSerializer::toQueryValue($organisation_id_specified);
+        if ($organisation_id !== null) {
+            $queryParams['organisationId'] = ObjectSerializer::toQueryValue($organisation_id);
         }
 
 
@@ -1142,14 +1076,7 @@ class MembershipTypeResourceApi
      * @param  int $number_type_id_less_than_or_equal number_type_id_less_than_or_equal (optional)
      * @param  int $number_type_id_not_equals number_type_id_not_equals (optional)
      * @param  bool $number_type_id_specified number_type_id_specified (optional)
-     * @param  int $organisation_id_equals organisation_id_equals (optional)
-     * @param  int $organisation_id_greater_than organisation_id_greater_than (optional)
-     * @param  int $organisation_id_greater_than_or_equal organisation_id_greater_than_or_equal (optional)
-     * @param  int[] $organisation_id_in organisation_id_in (optional)
-     * @param  int $organisation_id_less_than organisation_id_less_than (optional)
-     * @param  int $organisation_id_less_than_or_equal organisation_id_less_than_or_equal (optional)
-     * @param  int $organisation_id_not_equals organisation_id_not_equals (optional)
-     * @param  bool $organisation_id_specified organisation_id_specified (optional)
+     * @param  int $organisation_id organisation_id (optional)
      * @param  int $page Page number of the requested page (optional)
      * @param  int $size Size of a page (optional)
      * @param  string[] $sort Sorting criteria in the format: property(,asc|desc). Default sort order is ascending. Multiple sort criteria are supported. (optional)
@@ -1158,9 +1085,9 @@ class MembershipTypeResourceApi
      * @throws \InvalidArgumentException
      * @return \Idealogic\MembershipAPI\Model\MembershipTypeDTO[]
      */
-    public function getAllMembershipTypesUsingGET($id_equals = null, $id_greater_than = null, $id_greater_than_or_equal = null, $id_in = null, $id_less_than = null, $id_less_than_or_equal = null, $id_not_equals = null, $id_specified = null, $name_contains = null, $name_does_not_contain = null, $name_equals = null, $name_in = null, $name_not_equals = null, $name_specified = null, $number_type_id_equals = null, $number_type_id_greater_than = null, $number_type_id_greater_than_or_equal = null, $number_type_id_in = null, $number_type_id_less_than = null, $number_type_id_less_than_or_equal = null, $number_type_id_not_equals = null, $number_type_id_specified = null, $organisation_id_equals = null, $organisation_id_greater_than = null, $organisation_id_greater_than_or_equal = null, $organisation_id_in = null, $organisation_id_less_than = null, $organisation_id_less_than_or_equal = null, $organisation_id_not_equals = null, $organisation_id_specified = null, $page = null, $size = null, $sort = null)
+    public function getAllMembershipTypesUsingGET($id_equals = null, $id_greater_than = null, $id_greater_than_or_equal = null, $id_in = null, $id_less_than = null, $id_less_than_or_equal = null, $id_not_equals = null, $id_specified = null, $name_contains = null, $name_does_not_contain = null, $name_equals = null, $name_in = null, $name_not_equals = null, $name_specified = null, $number_type_id_equals = null, $number_type_id_greater_than = null, $number_type_id_greater_than_or_equal = null, $number_type_id_in = null, $number_type_id_less_than = null, $number_type_id_less_than_or_equal = null, $number_type_id_not_equals = null, $number_type_id_specified = null, $organisation_id = null, $page = null, $size = null, $sort = null)
     {
-        list($response) = $this->getAllMembershipTypesUsingGETWithHttpInfo($id_equals, $id_greater_than, $id_greater_than_or_equal, $id_in, $id_less_than, $id_less_than_or_equal, $id_not_equals, $id_specified, $name_contains, $name_does_not_contain, $name_equals, $name_in, $name_not_equals, $name_specified, $number_type_id_equals, $number_type_id_greater_than, $number_type_id_greater_than_or_equal, $number_type_id_in, $number_type_id_less_than, $number_type_id_less_than_or_equal, $number_type_id_not_equals, $number_type_id_specified, $organisation_id_equals, $organisation_id_greater_than, $organisation_id_greater_than_or_equal, $organisation_id_in, $organisation_id_less_than, $organisation_id_less_than_or_equal, $organisation_id_not_equals, $organisation_id_specified, $page, $size, $sort);
+        list($response) = $this->getAllMembershipTypesUsingGETWithHttpInfo($id_equals, $id_greater_than, $id_greater_than_or_equal, $id_in, $id_less_than, $id_less_than_or_equal, $id_not_equals, $id_specified, $name_contains, $name_does_not_contain, $name_equals, $name_in, $name_not_equals, $name_specified, $number_type_id_equals, $number_type_id_greater_than, $number_type_id_greater_than_or_equal, $number_type_id_in, $number_type_id_less_than, $number_type_id_less_than_or_equal, $number_type_id_not_equals, $number_type_id_specified, $organisation_id, $page, $size, $sort);
         return $response;
     }
 
@@ -1191,14 +1118,7 @@ class MembershipTypeResourceApi
      * @param  int $number_type_id_less_than_or_equal (optional)
      * @param  int $number_type_id_not_equals (optional)
      * @param  bool $number_type_id_specified (optional)
-     * @param  int $organisation_id_equals (optional)
-     * @param  int $organisation_id_greater_than (optional)
-     * @param  int $organisation_id_greater_than_or_equal (optional)
-     * @param  int[] $organisation_id_in (optional)
-     * @param  int $organisation_id_less_than (optional)
-     * @param  int $organisation_id_less_than_or_equal (optional)
-     * @param  int $organisation_id_not_equals (optional)
-     * @param  bool $organisation_id_specified (optional)
+     * @param  int $organisation_id (optional)
      * @param  int $page Page number of the requested page (optional)
      * @param  int $size Size of a page (optional)
      * @param  string[] $sort Sorting criteria in the format: property(,asc|desc). Default sort order is ascending. Multiple sort criteria are supported. (optional)
@@ -1207,10 +1127,10 @@ class MembershipTypeResourceApi
      * @throws \InvalidArgumentException
      * @return array of \Idealogic\MembershipAPI\Model\MembershipTypeDTO[], HTTP status code, HTTP response headers (array of strings)
      */
-    public function getAllMembershipTypesUsingGETWithHttpInfo($id_equals = null, $id_greater_than = null, $id_greater_than_or_equal = null, $id_in = null, $id_less_than = null, $id_less_than_or_equal = null, $id_not_equals = null, $id_specified = null, $name_contains = null, $name_does_not_contain = null, $name_equals = null, $name_in = null, $name_not_equals = null, $name_specified = null, $number_type_id_equals = null, $number_type_id_greater_than = null, $number_type_id_greater_than_or_equal = null, $number_type_id_in = null, $number_type_id_less_than = null, $number_type_id_less_than_or_equal = null, $number_type_id_not_equals = null, $number_type_id_specified = null, $organisation_id_equals = null, $organisation_id_greater_than = null, $organisation_id_greater_than_or_equal = null, $organisation_id_in = null, $organisation_id_less_than = null, $organisation_id_less_than_or_equal = null, $organisation_id_not_equals = null, $organisation_id_specified = null, $page = null, $size = null, $sort = null)
+    public function getAllMembershipTypesUsingGETWithHttpInfo($id_equals = null, $id_greater_than = null, $id_greater_than_or_equal = null, $id_in = null, $id_less_than = null, $id_less_than_or_equal = null, $id_not_equals = null, $id_specified = null, $name_contains = null, $name_does_not_contain = null, $name_equals = null, $name_in = null, $name_not_equals = null, $name_specified = null, $number_type_id_equals = null, $number_type_id_greater_than = null, $number_type_id_greater_than_or_equal = null, $number_type_id_in = null, $number_type_id_less_than = null, $number_type_id_less_than_or_equal = null, $number_type_id_not_equals = null, $number_type_id_specified = null, $organisation_id = null, $page = null, $size = null, $sort = null)
     {
         $returnType = '\Idealogic\MembershipAPI\Model\MembershipTypeDTO[]';
-        $request = $this->getAllMembershipTypesUsingGETRequest($id_equals, $id_greater_than, $id_greater_than_or_equal, $id_in, $id_less_than, $id_less_than_or_equal, $id_not_equals, $id_specified, $name_contains, $name_does_not_contain, $name_equals, $name_in, $name_not_equals, $name_specified, $number_type_id_equals, $number_type_id_greater_than, $number_type_id_greater_than_or_equal, $number_type_id_in, $number_type_id_less_than, $number_type_id_less_than_or_equal, $number_type_id_not_equals, $number_type_id_specified, $organisation_id_equals, $organisation_id_greater_than, $organisation_id_greater_than_or_equal, $organisation_id_in, $organisation_id_less_than, $organisation_id_less_than_or_equal, $organisation_id_not_equals, $organisation_id_specified, $page, $size, $sort);
+        $request = $this->getAllMembershipTypesUsingGETRequest($id_equals, $id_greater_than, $id_greater_than_or_equal, $id_in, $id_less_than, $id_less_than_or_equal, $id_not_equals, $id_specified, $name_contains, $name_does_not_contain, $name_equals, $name_in, $name_not_equals, $name_specified, $number_type_id_equals, $number_type_id_greater_than, $number_type_id_greater_than_or_equal, $number_type_id_in, $number_type_id_less_than, $number_type_id_less_than_or_equal, $number_type_id_not_equals, $number_type_id_specified, $organisation_id, $page, $size, $sort);
 
         try {
             $options = $this->createHttpClientOption();
@@ -1298,14 +1218,7 @@ class MembershipTypeResourceApi
      * @param  int $number_type_id_less_than_or_equal (optional)
      * @param  int $number_type_id_not_equals (optional)
      * @param  bool $number_type_id_specified (optional)
-     * @param  int $organisation_id_equals (optional)
-     * @param  int $organisation_id_greater_than (optional)
-     * @param  int $organisation_id_greater_than_or_equal (optional)
-     * @param  int[] $organisation_id_in (optional)
-     * @param  int $organisation_id_less_than (optional)
-     * @param  int $organisation_id_less_than_or_equal (optional)
-     * @param  int $organisation_id_not_equals (optional)
-     * @param  bool $organisation_id_specified (optional)
+     * @param  int $organisation_id (optional)
      * @param  int $page Page number of the requested page (optional)
      * @param  int $size Size of a page (optional)
      * @param  string[] $sort Sorting criteria in the format: property(,asc|desc). Default sort order is ascending. Multiple sort criteria are supported. (optional)
@@ -1313,9 +1226,9 @@ class MembershipTypeResourceApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getAllMembershipTypesUsingGETAsync($id_equals = null, $id_greater_than = null, $id_greater_than_or_equal = null, $id_in = null, $id_less_than = null, $id_less_than_or_equal = null, $id_not_equals = null, $id_specified = null, $name_contains = null, $name_does_not_contain = null, $name_equals = null, $name_in = null, $name_not_equals = null, $name_specified = null, $number_type_id_equals = null, $number_type_id_greater_than = null, $number_type_id_greater_than_or_equal = null, $number_type_id_in = null, $number_type_id_less_than = null, $number_type_id_less_than_or_equal = null, $number_type_id_not_equals = null, $number_type_id_specified = null, $organisation_id_equals = null, $organisation_id_greater_than = null, $organisation_id_greater_than_or_equal = null, $organisation_id_in = null, $organisation_id_less_than = null, $organisation_id_less_than_or_equal = null, $organisation_id_not_equals = null, $organisation_id_specified = null, $page = null, $size = null, $sort = null)
+    public function getAllMembershipTypesUsingGETAsync($id_equals = null, $id_greater_than = null, $id_greater_than_or_equal = null, $id_in = null, $id_less_than = null, $id_less_than_or_equal = null, $id_not_equals = null, $id_specified = null, $name_contains = null, $name_does_not_contain = null, $name_equals = null, $name_in = null, $name_not_equals = null, $name_specified = null, $number_type_id_equals = null, $number_type_id_greater_than = null, $number_type_id_greater_than_or_equal = null, $number_type_id_in = null, $number_type_id_less_than = null, $number_type_id_less_than_or_equal = null, $number_type_id_not_equals = null, $number_type_id_specified = null, $organisation_id = null, $page = null, $size = null, $sort = null)
     {
-        return $this->getAllMembershipTypesUsingGETAsyncWithHttpInfo($id_equals, $id_greater_than, $id_greater_than_or_equal, $id_in, $id_less_than, $id_less_than_or_equal, $id_not_equals, $id_specified, $name_contains, $name_does_not_contain, $name_equals, $name_in, $name_not_equals, $name_specified, $number_type_id_equals, $number_type_id_greater_than, $number_type_id_greater_than_or_equal, $number_type_id_in, $number_type_id_less_than, $number_type_id_less_than_or_equal, $number_type_id_not_equals, $number_type_id_specified, $organisation_id_equals, $organisation_id_greater_than, $organisation_id_greater_than_or_equal, $organisation_id_in, $organisation_id_less_than, $organisation_id_less_than_or_equal, $organisation_id_not_equals, $organisation_id_specified, $page, $size, $sort)
+        return $this->getAllMembershipTypesUsingGETAsyncWithHttpInfo($id_equals, $id_greater_than, $id_greater_than_or_equal, $id_in, $id_less_than, $id_less_than_or_equal, $id_not_equals, $id_specified, $name_contains, $name_does_not_contain, $name_equals, $name_in, $name_not_equals, $name_specified, $number_type_id_equals, $number_type_id_greater_than, $number_type_id_greater_than_or_equal, $number_type_id_in, $number_type_id_less_than, $number_type_id_less_than_or_equal, $number_type_id_not_equals, $number_type_id_specified, $organisation_id, $page, $size, $sort)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -1350,14 +1263,7 @@ class MembershipTypeResourceApi
      * @param  int $number_type_id_less_than_or_equal (optional)
      * @param  int $number_type_id_not_equals (optional)
      * @param  bool $number_type_id_specified (optional)
-     * @param  int $organisation_id_equals (optional)
-     * @param  int $organisation_id_greater_than (optional)
-     * @param  int $organisation_id_greater_than_or_equal (optional)
-     * @param  int[] $organisation_id_in (optional)
-     * @param  int $organisation_id_less_than (optional)
-     * @param  int $organisation_id_less_than_or_equal (optional)
-     * @param  int $organisation_id_not_equals (optional)
-     * @param  bool $organisation_id_specified (optional)
+     * @param  int $organisation_id (optional)
      * @param  int $page Page number of the requested page (optional)
      * @param  int $size Size of a page (optional)
      * @param  string[] $sort Sorting criteria in the format: property(,asc|desc). Default sort order is ascending. Multiple sort criteria are supported. (optional)
@@ -1365,10 +1271,10 @@ class MembershipTypeResourceApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getAllMembershipTypesUsingGETAsyncWithHttpInfo($id_equals = null, $id_greater_than = null, $id_greater_than_or_equal = null, $id_in = null, $id_less_than = null, $id_less_than_or_equal = null, $id_not_equals = null, $id_specified = null, $name_contains = null, $name_does_not_contain = null, $name_equals = null, $name_in = null, $name_not_equals = null, $name_specified = null, $number_type_id_equals = null, $number_type_id_greater_than = null, $number_type_id_greater_than_or_equal = null, $number_type_id_in = null, $number_type_id_less_than = null, $number_type_id_less_than_or_equal = null, $number_type_id_not_equals = null, $number_type_id_specified = null, $organisation_id_equals = null, $organisation_id_greater_than = null, $organisation_id_greater_than_or_equal = null, $organisation_id_in = null, $organisation_id_less_than = null, $organisation_id_less_than_or_equal = null, $organisation_id_not_equals = null, $organisation_id_specified = null, $page = null, $size = null, $sort = null)
+    public function getAllMembershipTypesUsingGETAsyncWithHttpInfo($id_equals = null, $id_greater_than = null, $id_greater_than_or_equal = null, $id_in = null, $id_less_than = null, $id_less_than_or_equal = null, $id_not_equals = null, $id_specified = null, $name_contains = null, $name_does_not_contain = null, $name_equals = null, $name_in = null, $name_not_equals = null, $name_specified = null, $number_type_id_equals = null, $number_type_id_greater_than = null, $number_type_id_greater_than_or_equal = null, $number_type_id_in = null, $number_type_id_less_than = null, $number_type_id_less_than_or_equal = null, $number_type_id_not_equals = null, $number_type_id_specified = null, $organisation_id = null, $page = null, $size = null, $sort = null)
     {
         $returnType = '\Idealogic\MembershipAPI\Model\MembershipTypeDTO[]';
-        $request = $this->getAllMembershipTypesUsingGETRequest($id_equals, $id_greater_than, $id_greater_than_or_equal, $id_in, $id_less_than, $id_less_than_or_equal, $id_not_equals, $id_specified, $name_contains, $name_does_not_contain, $name_equals, $name_in, $name_not_equals, $name_specified, $number_type_id_equals, $number_type_id_greater_than, $number_type_id_greater_than_or_equal, $number_type_id_in, $number_type_id_less_than, $number_type_id_less_than_or_equal, $number_type_id_not_equals, $number_type_id_specified, $organisation_id_equals, $organisation_id_greater_than, $organisation_id_greater_than_or_equal, $organisation_id_in, $organisation_id_less_than, $organisation_id_less_than_or_equal, $organisation_id_not_equals, $organisation_id_specified, $page, $size, $sort);
+        $request = $this->getAllMembershipTypesUsingGETRequest($id_equals, $id_greater_than, $id_greater_than_or_equal, $id_in, $id_less_than, $id_less_than_or_equal, $id_not_equals, $id_specified, $name_contains, $name_does_not_contain, $name_equals, $name_in, $name_not_equals, $name_specified, $number_type_id_equals, $number_type_id_greater_than, $number_type_id_greater_than_or_equal, $number_type_id_in, $number_type_id_less_than, $number_type_id_less_than_or_equal, $number_type_id_not_equals, $number_type_id_specified, $organisation_id, $page, $size, $sort);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -1432,14 +1338,7 @@ class MembershipTypeResourceApi
      * @param  int $number_type_id_less_than_or_equal (optional)
      * @param  int $number_type_id_not_equals (optional)
      * @param  bool $number_type_id_specified (optional)
-     * @param  int $organisation_id_equals (optional)
-     * @param  int $organisation_id_greater_than (optional)
-     * @param  int $organisation_id_greater_than_or_equal (optional)
-     * @param  int[] $organisation_id_in (optional)
-     * @param  int $organisation_id_less_than (optional)
-     * @param  int $organisation_id_less_than_or_equal (optional)
-     * @param  int $organisation_id_not_equals (optional)
-     * @param  bool $organisation_id_specified (optional)
+     * @param  int $organisation_id (optional)
      * @param  int $page Page number of the requested page (optional)
      * @param  int $size Size of a page (optional)
      * @param  string[] $sort Sorting criteria in the format: property(,asc|desc). Default sort order is ascending. Multiple sort criteria are supported. (optional)
@@ -1447,7 +1346,7 @@ class MembershipTypeResourceApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function getAllMembershipTypesUsingGETRequest($id_equals = null, $id_greater_than = null, $id_greater_than_or_equal = null, $id_in = null, $id_less_than = null, $id_less_than_or_equal = null, $id_not_equals = null, $id_specified = null, $name_contains = null, $name_does_not_contain = null, $name_equals = null, $name_in = null, $name_not_equals = null, $name_specified = null, $number_type_id_equals = null, $number_type_id_greater_than = null, $number_type_id_greater_than_or_equal = null, $number_type_id_in = null, $number_type_id_less_than = null, $number_type_id_less_than_or_equal = null, $number_type_id_not_equals = null, $number_type_id_specified = null, $organisation_id_equals = null, $organisation_id_greater_than = null, $organisation_id_greater_than_or_equal = null, $organisation_id_in = null, $organisation_id_less_than = null, $organisation_id_less_than_or_equal = null, $organisation_id_not_equals = null, $organisation_id_specified = null, $page = null, $size = null, $sort = null)
+    protected function getAllMembershipTypesUsingGETRequest($id_equals = null, $id_greater_than = null, $id_greater_than_or_equal = null, $id_in = null, $id_less_than = null, $id_less_than_or_equal = null, $id_not_equals = null, $id_specified = null, $name_contains = null, $name_does_not_contain = null, $name_equals = null, $name_in = null, $name_not_equals = null, $name_specified = null, $number_type_id_equals = null, $number_type_id_greater_than = null, $number_type_id_greater_than_or_equal = null, $number_type_id_in = null, $number_type_id_less_than = null, $number_type_id_less_than_or_equal = null, $number_type_id_not_equals = null, $number_type_id_specified = null, $organisation_id = null, $page = null, $size = null, $sort = null)
     {
 
         $resourcePath = '/api/membership-types';
@@ -1555,39 +1454,8 @@ class MembershipTypeResourceApi
             $queryParams['numberTypeId.specified'] = ObjectSerializer::toQueryValue($number_type_id_specified);
         }
         // query params
-        if ($organisation_id_equals !== null) {
-            $queryParams['organisationId.equals'] = ObjectSerializer::toQueryValue($organisation_id_equals);
-        }
-        // query params
-        if ($organisation_id_greater_than !== null) {
-            $queryParams['organisationId.greaterThan'] = ObjectSerializer::toQueryValue($organisation_id_greater_than);
-        }
-        // query params
-        if ($organisation_id_greater_than_or_equal !== null) {
-            $queryParams['organisationId.greaterThanOrEqual'] = ObjectSerializer::toQueryValue($organisation_id_greater_than_or_equal);
-        }
-        // query params
-        if (is_array($organisation_id_in)) {
-            $queryParams['organisationId.in'] = $organisation_id_in;
-        } else
-        if ($organisation_id_in !== null) {
-            $queryParams['organisationId.in'] = ObjectSerializer::toQueryValue($organisation_id_in);
-        }
-        // query params
-        if ($organisation_id_less_than !== null) {
-            $queryParams['organisationId.lessThan'] = ObjectSerializer::toQueryValue($organisation_id_less_than);
-        }
-        // query params
-        if ($organisation_id_less_than_or_equal !== null) {
-            $queryParams['organisationId.lessThanOrEqual'] = ObjectSerializer::toQueryValue($organisation_id_less_than_or_equal);
-        }
-        // query params
-        if ($organisation_id_not_equals !== null) {
-            $queryParams['organisationId.notEquals'] = ObjectSerializer::toQueryValue($organisation_id_not_equals);
-        }
-        // query params
-        if ($organisation_id_specified !== null) {
-            $queryParams['organisationId.specified'] = ObjectSerializer::toQueryValue($organisation_id_specified);
+        if ($organisation_id !== null) {
+            $queryParams['organisationId'] = ObjectSerializer::toQueryValue($organisation_id);
         }
         // query params
         if ($page !== null) {

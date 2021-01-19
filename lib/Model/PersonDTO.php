@@ -328,6 +328,9 @@ class PersonDTO implements ModelInterface, ArrayAccess
         return self::$swaggerModelName;
     }
 
+    const ADD_MANAGED_BY_TYPE_NONE = 'NONE';
+    const ADD_MANAGED_BY_TYPE_GENERAL = 'GENERAL';
+    const ADD_MANAGED_BY_TYPE_GUARDIAN = 'GUARDIAN';
     const GENDER_UNKNOWN = 'UNKNOWN';
     const GENDER_MALE = 'MALE';
     const GENDER_FEMALE = 'FEMALE';
@@ -336,6 +339,20 @@ class PersonDTO implements ModelInterface, ArrayAccess
     const IDENTITY_TYPE_OTHER = 'OTHER';
     
 
+    
+    /**
+     * Gets allowable values of the enum
+     *
+     * @return string[]
+     */
+    public function getAddManagedByTypeAllowableValues()
+    {
+        return [
+            self::ADD_MANAGED_BY_TYPE_NONE,
+            self::ADD_MANAGED_BY_TYPE_GENERAL,
+            self::ADD_MANAGED_BY_TYPE_GUARDIAN,
+        ];
+    }
     
     /**
      * Gets allowable values of the enum
@@ -427,6 +444,14 @@ class PersonDTO implements ModelInterface, ArrayAccess
     {
         $invalidProperties = [];
 
+        $allowedValues = $this->getAddManagedByTypeAllowableValues();
+        if (!is_null($this->container['add_managed_by_type']) && !in_array($this->container['add_managed_by_type'], $allowedValues, true)) {
+            $invalidProperties[] = sprintf(
+                "invalid value for 'add_managed_by_type', must be one of '%s'",
+                implode("', '", $allowedValues)
+            );
+        }
+
         $allowedValues = $this->getGenderAllowableValues();
         if (!is_null($this->container['gender']) && !in_array($this->container['gender'], $allowedValues, true)) {
             $invalidProperties[] = sprintf(
@@ -501,6 +526,15 @@ class PersonDTO implements ModelInterface, ArrayAccess
      */
     public function setAddManagedByType($add_managed_by_type)
     {
+        $allowedValues = $this->getAddManagedByTypeAllowableValues();
+        if (!is_null($add_managed_by_type) && !in_array($add_managed_by_type, $allowedValues, true)) {
+            throw new \InvalidArgumentException(
+                sprintf(
+                    "Invalid value for 'add_managed_by_type', must be one of '%s'",
+                    implode("', '", $allowedValues)
+                )
+            );
+        }
         $this->container['add_managed_by_type'] = $add_managed_by_type;
 
         return $this;

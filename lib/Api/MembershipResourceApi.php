@@ -1634,14 +1634,15 @@ class MembershipResourceApi
      * enrolMemberships
      *
      * @param  \Idealogic\MembershipAPI\Model\MembershipEnrolRequestDTO $membership_enrol_request_dto membershipEnrolRequestDTO (required)
+     * @param  int $organisation_id organisationId (optional)
      *
      * @throws \Idealogic\MembershipAPI\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \Idealogic\MembershipAPI\Model\MembershipStatusDTO[]
      */
-    public function enrolMembershipsUsingPOST($membership_enrol_request_dto)
+    public function enrolMembershipsUsingPOST($membership_enrol_request_dto, $organisation_id = null)
     {
-        list($response) = $this->enrolMembershipsUsingPOSTWithHttpInfo($membership_enrol_request_dto);
+        list($response) = $this->enrolMembershipsUsingPOSTWithHttpInfo($membership_enrol_request_dto, $organisation_id);
         return $response;
     }
 
@@ -1651,15 +1652,16 @@ class MembershipResourceApi
      * enrolMemberships
      *
      * @param  \Idealogic\MembershipAPI\Model\MembershipEnrolRequestDTO $membership_enrol_request_dto membershipEnrolRequestDTO (required)
+     * @param  int $organisation_id organisationId (optional)
      *
      * @throws \Idealogic\MembershipAPI\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Idealogic\MembershipAPI\Model\MembershipStatusDTO[], HTTP status code, HTTP response headers (array of strings)
      */
-    public function enrolMembershipsUsingPOSTWithHttpInfo($membership_enrol_request_dto)
+    public function enrolMembershipsUsingPOSTWithHttpInfo($membership_enrol_request_dto, $organisation_id = null)
     {
         $returnType = '\Idealogic\MembershipAPI\Model\MembershipStatusDTO[]';
-        $request = $this->enrolMembershipsUsingPOSTRequest($membership_enrol_request_dto);
+        $request = $this->enrolMembershipsUsingPOSTRequest($membership_enrol_request_dto, $organisation_id);
 
         try {
             $options = $this->createHttpClientOption();
@@ -1726,13 +1728,14 @@ class MembershipResourceApi
      * enrolMemberships
      *
      * @param  \Idealogic\MembershipAPI\Model\MembershipEnrolRequestDTO $membership_enrol_request_dto membershipEnrolRequestDTO (required)
+     * @param  int $organisation_id organisationId (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function enrolMembershipsUsingPOSTAsync($membership_enrol_request_dto)
+    public function enrolMembershipsUsingPOSTAsync($membership_enrol_request_dto, $organisation_id = null)
     {
-        return $this->enrolMembershipsUsingPOSTAsyncWithHttpInfo($membership_enrol_request_dto)
+        return $this->enrolMembershipsUsingPOSTAsyncWithHttpInfo($membership_enrol_request_dto, $organisation_id)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -1746,14 +1749,15 @@ class MembershipResourceApi
      * enrolMemberships
      *
      * @param  \Idealogic\MembershipAPI\Model\MembershipEnrolRequestDTO $membership_enrol_request_dto membershipEnrolRequestDTO (required)
+     * @param  int $organisation_id organisationId (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function enrolMembershipsUsingPOSTAsyncWithHttpInfo($membership_enrol_request_dto)
+    public function enrolMembershipsUsingPOSTAsyncWithHttpInfo($membership_enrol_request_dto, $organisation_id = null)
     {
         $returnType = '\Idealogic\MembershipAPI\Model\MembershipStatusDTO[]';
-        $request = $this->enrolMembershipsUsingPOSTRequest($membership_enrol_request_dto);
+        $request = $this->enrolMembershipsUsingPOSTRequest($membership_enrol_request_dto, $organisation_id);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -1796,11 +1800,12 @@ class MembershipResourceApi
      * Create request for operation 'enrolMembershipsUsingPOST'
      *
      * @param  \Idealogic\MembershipAPI\Model\MembershipEnrolRequestDTO $membership_enrol_request_dto membershipEnrolRequestDTO (required)
+     * @param  int $organisation_id organisationId (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function enrolMembershipsUsingPOSTRequest($membership_enrol_request_dto)
+    protected function enrolMembershipsUsingPOSTRequest($membership_enrol_request_dto, $organisation_id = null)
     {
         // verify the required parameter 'membership_enrol_request_dto' is set
         if ($membership_enrol_request_dto === null || (is_array($membership_enrol_request_dto) && count($membership_enrol_request_dto) === 0)) {
@@ -1816,6 +1821,10 @@ class MembershipResourceApi
         $httpBody = '';
         $multipart = false;
 
+        // query params
+        if ($organisation_id !== null) {
+            $queryParams['organisationId'] = ObjectSerializer::toQueryValue($organisation_id);
+        }
 
 
         // body params
@@ -2972,16 +2981,17 @@ class MembershipResourceApi
      *
      * getLinkedMembers
      *
-     * @param  int $external_user_id externalUserId (required)
+     * @param  string $external_user_id externalUserId (required)
      * @param  int $membership_type_id membershipTypeId (optional)
+     * @param  int $organisation_id organisationId (optional)
      *
      * @throws \Idealogic\MembershipAPI\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \Idealogic\MembershipAPI\Model\MembershipStatusDTO[]
      */
-    public function getLinkedMembersUsingGET($external_user_id, $membership_type_id = null)
+    public function getLinkedMembersUsingGET($external_user_id, $membership_type_id = null, $organisation_id = null)
     {
-        list($response) = $this->getLinkedMembersUsingGETWithHttpInfo($external_user_id, $membership_type_id);
+        list($response) = $this->getLinkedMembersUsingGETWithHttpInfo($external_user_id, $membership_type_id, $organisation_id);
         return $response;
     }
 
@@ -2990,17 +3000,18 @@ class MembershipResourceApi
      *
      * getLinkedMembers
      *
-     * @param  int $external_user_id externalUserId (required)
+     * @param  string $external_user_id externalUserId (required)
      * @param  int $membership_type_id membershipTypeId (optional)
+     * @param  int $organisation_id organisationId (optional)
      *
      * @throws \Idealogic\MembershipAPI\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Idealogic\MembershipAPI\Model\MembershipStatusDTO[], HTTP status code, HTTP response headers (array of strings)
      */
-    public function getLinkedMembersUsingGETWithHttpInfo($external_user_id, $membership_type_id = null)
+    public function getLinkedMembersUsingGETWithHttpInfo($external_user_id, $membership_type_id = null, $organisation_id = null)
     {
         $returnType = '\Idealogic\MembershipAPI\Model\MembershipStatusDTO[]';
-        $request = $this->getLinkedMembersUsingGETRequest($external_user_id, $membership_type_id);
+        $request = $this->getLinkedMembersUsingGETRequest($external_user_id, $membership_type_id, $organisation_id);
 
         try {
             $options = $this->createHttpClientOption();
@@ -3066,15 +3077,16 @@ class MembershipResourceApi
      *
      * getLinkedMembers
      *
-     * @param  int $external_user_id externalUserId (required)
+     * @param  string $external_user_id externalUserId (required)
      * @param  int $membership_type_id membershipTypeId (optional)
+     * @param  int $organisation_id organisationId (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getLinkedMembersUsingGETAsync($external_user_id, $membership_type_id = null)
+    public function getLinkedMembersUsingGETAsync($external_user_id, $membership_type_id = null, $organisation_id = null)
     {
-        return $this->getLinkedMembersUsingGETAsyncWithHttpInfo($external_user_id, $membership_type_id)
+        return $this->getLinkedMembersUsingGETAsyncWithHttpInfo($external_user_id, $membership_type_id, $organisation_id)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -3087,16 +3099,17 @@ class MembershipResourceApi
      *
      * getLinkedMembers
      *
-     * @param  int $external_user_id externalUserId (required)
+     * @param  string $external_user_id externalUserId (required)
      * @param  int $membership_type_id membershipTypeId (optional)
+     * @param  int $organisation_id organisationId (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getLinkedMembersUsingGETAsyncWithHttpInfo($external_user_id, $membership_type_id = null)
+    public function getLinkedMembersUsingGETAsyncWithHttpInfo($external_user_id, $membership_type_id = null, $organisation_id = null)
     {
         $returnType = '\Idealogic\MembershipAPI\Model\MembershipStatusDTO[]';
-        $request = $this->getLinkedMembersUsingGETRequest($external_user_id, $membership_type_id);
+        $request = $this->getLinkedMembersUsingGETRequest($external_user_id, $membership_type_id, $organisation_id);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -3138,13 +3151,14 @@ class MembershipResourceApi
     /**
      * Create request for operation 'getLinkedMembersUsingGET'
      *
-     * @param  int $external_user_id externalUserId (required)
+     * @param  string $external_user_id externalUserId (required)
      * @param  int $membership_type_id membershipTypeId (optional)
+     * @param  int $organisation_id organisationId (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function getLinkedMembersUsingGETRequest($external_user_id, $membership_type_id = null)
+    protected function getLinkedMembersUsingGETRequest($external_user_id, $membership_type_id = null, $organisation_id = null)
     {
         // verify the required parameter 'external_user_id' is set
         if ($external_user_id === null || (is_array($external_user_id) && count($external_user_id) === 0)) {
@@ -3163,6 +3177,10 @@ class MembershipResourceApi
         // query params
         if ($membership_type_id !== null) {
             $queryParams['membershipTypeId'] = ObjectSerializer::toQueryValue($membership_type_id);
+        }
+        // query params
+        if ($organisation_id !== null) {
+            $queryParams['organisationId'] = ObjectSerializer::toQueryValue($organisation_id);
         }
 
         // path params

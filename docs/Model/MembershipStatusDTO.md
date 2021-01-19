@@ -23,6 +23,8 @@ Name | Type | Description | Notes
 **product_external_id** | **string** |  | [optional] 
 **product_id** | **int** |  | [optional] 
 **product_name** | **string** |  | [optional] 
+**renew_period_id** | **int** |  | [optional] 
+**renew_period_name** | **string** |  | [optional] 
 **updated_details** | **bool** |  | [optional] 
 **valid_from** | [**\DateTime**](\DateTime.md) |  | [optional] 
 **valid_to** | [**\DateTime**](\DateTime.md) |  | [optional] 

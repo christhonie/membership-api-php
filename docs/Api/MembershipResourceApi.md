@@ -4,6 +4,7 @@ All URIs are relative to *https://http://localhost:8080*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
+[**addMembershipOrderUsingPOST**](MembershipResourceApi.md#addMembershipOrderUsingPOST) | **POST** /api/memberships/order | addMembershipOrder
 [**countMembershipsUsingGET**](MembershipResourceApi.md#countMembershipsUsingGET) | **GET** /api/memberships/count | countMemberships
 [**createMembershipUsingPOST**](MembershipResourceApi.md#createMembershipUsingPOST) | **POST** /api/memberships | createMembership
 [**deleteMembershipUsingDELETE**](MembershipResourceApi.md#deleteMembershipUsingDELETE) | **DELETE** /api/memberships/{id} | deleteMembership
@@ -11,9 +12,59 @@ Method | HTTP request | Description
 [**getAllMembershipsUsingGET**](MembershipResourceApi.md#getAllMembershipsUsingGET) | **GET** /api/memberships | getAllMemberships
 [**getLinkedMembersUsingGET**](MembershipResourceApi.md#getLinkedMembersUsingGET) | **GET** /api/memberships/linkedStatus/{externalUserId} | getLinkedMembers
 [**getMemberStatusByLatestPeriodForMembershipTypeUsingGET**](MembershipResourceApi.md#getMemberStatusByLatestPeriodForMembershipTypeUsingGET) | **GET** /api/memberships/status/latestPeriod | getMemberStatusByLatestPeriodForMembershipType
+[**getMembershipAttachmentUsingGET**](MembershipResourceApi.md#getMembershipAttachmentUsingGET) | **GET** /api/memberships/attachment/{uuid} | getMembershipAttachment
 [**getMembershipUsingGET**](MembershipResourceApi.md#getMembershipUsingGET) | **GET** /api/memberships/{id} | getMembership
 [**updateMembershipUsingPUT**](MembershipResourceApi.md#updateMembershipUsingPUT) | **PUT** /api/memberships | updateMembership
 
+
+# **addMembershipOrderUsingPOST**
+> \Idealogic\MembershipAPI\Model\MembershipOrderStatusResponseDTO addMembershipOrderUsingPOST($membership_order, $organisation_id)
+
+addMembershipOrder
+
+### Example
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+$apiInstance = new Idealogic\MembershipAPI\Api\MembershipResourceApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client()
+);
+$membership_order = new \Idealogic\MembershipAPI\Model\MembershipOrderStatusRequestDTO(); // \Idealogic\MembershipAPI\Model\MembershipOrderStatusRequestDTO | membershipOrder
+$organisation_id = 789; // int | organisationId
+
+try {
+    $result = $apiInstance->addMembershipOrderUsingPOST($membership_order, $organisation_id);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling MembershipResourceApi->addMembershipOrderUsingPOST: ', $e->getMessage(), PHP_EOL;
+}
+?>
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **membership_order** | [**\Idealogic\MembershipAPI\Model\MembershipOrderStatusRequestDTO**](../Model/MembershipOrderStatusRequestDTO.md)| membershipOrder |
+ **organisation_id** | **int**| organisationId | [optional]
+
+### Return type
+
+[**\Idealogic\MembershipAPI\Model\MembershipOrderStatusResponseDTO**](../Model/MembershipOrderStatusResponseDTO.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: */*
+
+[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **countMembershipsUsingGET**
 > int countMembershipsUsingGET($criteria_id_equals, $criteria_id_greater_than, $criteria_id_greater_than_or_equal, $criteria_id_in, $criteria_id_less_than, $criteria_id_less_than_or_equal, $criteria_id_not_equals, $criteria_id_specified, $id_equals, $id_greater_than, $id_greater_than_or_equal, $id_in, $id_less_than, $id_less_than_or_equal, $id_not_equals, $id_specified, $membership_period_id_equals, $membership_period_id_greater_than, $membership_period_id_greater_than_or_equal, $membership_period_id_in, $membership_period_id_less_than, $membership_period_id_less_than_or_equal, $membership_period_id_not_equals, $membership_period_id_specified, $number_id_equals, $number_id_greater_than, $number_id_greater_than_or_equal, $number_id_in, $number_id_less_than, $number_id_less_than_or_equal, $number_id_not_equals, $number_id_specified, $order_id_equals, $order_id_greater_than, $order_id_greater_than_or_equal, $order_id_in, $order_id_less_than, $order_id_less_than_or_equal, $order_id_not_equals, $order_id_specified, $person_id_equals, $person_id_greater_than, $person_id_greater_than_or_equal, $person_id_in, $person_id_less_than, $person_id_less_than_or_equal, $person_id_not_equals, $person_id_specified, $status_equals, $status_in, $status_not_equals, $status_specified, $valid_from_equals, $valid_from_greater_than, $valid_from_greater_than_or_equal, $valid_from_in_0_chronology_calendar_type, $valid_from_in_0_chronology_id, $valid_from_in_0_day_of_month, $valid_from_in_0_day_of_week, $valid_from_in_0_day_of_year, $valid_from_in_0_era_value, $valid_from_in_0_leap_year, $valid_from_in_0_month, $valid_from_in_0_month_value, $valid_from_in_0_year, $valid_from_less_than, $valid_from_less_than_or_equal, $valid_from_not_equals, $valid_from_specified, $valid_to_equals, $valid_to_greater_than, $valid_to_greater_than_or_equal, $valid_to_in_0_chronology_calendar_type, $valid_to_in_0_chronology_id, $valid_to_in_0_day_of_month, $valid_to_in_0_day_of_week, $valid_to_in_0_day_of_year, $valid_to_in_0_era_value, $valid_to_in_0_leap_year, $valid_to_in_0_month, $valid_to_in_0_month_value, $valid_to_in_0_year, $valid_to_less_than, $valid_to_less_than_or_equal, $valid_to_not_equals, $valid_to_specified)
@@ -696,6 +747,55 @@ No authorization required
 
  - **Content-Type**: Not defined
  - **Accept**: */*
+
+[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
+
+# **getMembershipAttachmentUsingGET**
+> string getMembershipAttachmentUsingGET($uuid, $organisation_id)
+
+getMembershipAttachment
+
+### Example
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+$apiInstance = new Idealogic\MembershipAPI\Api\MembershipResourceApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client()
+);
+$uuid = "uuid_example"; // string | uuid
+$organisation_id = 789; // int | organisationId
+
+try {
+    $result = $apiInstance->getMembershipAttachmentUsingGET($uuid, $organisation_id);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling MembershipResourceApi->getMembershipAttachmentUsingGET: ', $e->getMessage(), PHP_EOL;
+}
+?>
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **uuid** | **string**| uuid |
+ **organisation_id** | **int**| organisationId | [optional]
+
+### Return type
+
+**string**
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/pdf
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 

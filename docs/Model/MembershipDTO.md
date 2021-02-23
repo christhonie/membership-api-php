@@ -14,6 +14,8 @@ Name | Type | Description | Notes
 **order_number** | **string** |  | [optional] 
 **person_id** | **int** | User ID in the external system | [optional] 
 **person_name** | **string** |  | [optional] 
+**product_amount** | **float** |  | [optional] 
+**product_id** | **int** |  | [optional] 
 **status** | **string** |  | 
 **valid_from** | [**\DateTime**](\DateTime.md) |  | 
 **valid_to** | [**\DateTime**](\DateTime.md) |  | [optional] 

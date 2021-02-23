@@ -68,6 +68,8 @@ class MembershipDTO implements ModelInterface, ArrayAccess
         'order_number' => 'string',
         'person_id' => 'int',
         'person_name' => 'string',
+        'product_amount' => 'float',
+        'product_id' => 'int',
         'status' => 'string',
         'valid_from' => '\DateTime',
         'valid_to' => '\DateTime'
@@ -90,6 +92,8 @@ class MembershipDTO implements ModelInterface, ArrayAccess
         'order_number' => null,
         'person_id' => 'int64',
         'person_name' => null,
+        'product_amount' => null,
+        'product_id' => 'int64',
         'status' => null,
         'valid_from' => 'date',
         'valid_to' => 'date'
@@ -133,6 +137,8 @@ class MembershipDTO implements ModelInterface, ArrayAccess
         'order_number' => 'orderNumber',
         'person_id' => 'personId',
         'person_name' => 'personName',
+        'product_amount' => 'productAmount',
+        'product_id' => 'productId',
         'status' => 'status',
         'valid_from' => 'validFrom',
         'valid_to' => 'validTo'
@@ -155,6 +161,8 @@ class MembershipDTO implements ModelInterface, ArrayAccess
         'order_number' => 'setOrderNumber',
         'person_id' => 'setPersonId',
         'person_name' => 'setPersonName',
+        'product_amount' => 'setProductAmount',
+        'product_id' => 'setProductId',
         'status' => 'setStatus',
         'valid_from' => 'setValidFrom',
         'valid_to' => 'setValidTo'
@@ -177,6 +185,8 @@ class MembershipDTO implements ModelInterface, ArrayAccess
         'order_number' => 'getOrderNumber',
         'person_id' => 'getPersonId',
         'person_name' => 'getPersonName',
+        'product_amount' => 'getProductAmount',
+        'product_id' => 'getProductId',
         'status' => 'getStatus',
         'valid_from' => 'getValidFrom',
         'valid_to' => 'getValidTo'
@@ -274,6 +284,8 @@ class MembershipDTO implements ModelInterface, ArrayAccess
         $this->container['order_number'] = isset($data['order_number']) ? $data['order_number'] : null;
         $this->container['person_id'] = isset($data['person_id']) ? $data['person_id'] : null;
         $this->container['person_name'] = isset($data['person_name']) ? $data['person_name'] : null;
+        $this->container['product_amount'] = isset($data['product_amount']) ? $data['product_amount'] : null;
+        $this->container['product_id'] = isset($data['product_id']) ? $data['product_id'] : null;
         $this->container['status'] = isset($data['status']) ? $data['status'] : null;
         $this->container['valid_from'] = isset($data['valid_from']) ? $data['valid_from'] : null;
         $this->container['valid_to'] = isset($data['valid_to']) ? $data['valid_to'] : null;
@@ -577,6 +589,54 @@ class MembershipDTO implements ModelInterface, ArrayAccess
     public function setPersonName($person_name)
     {
         $this->container['person_name'] = $person_name;
+
+        return $this;
+    }
+
+    /**
+     * Gets product_amount
+     *
+     * @return float
+     */
+    public function getProductAmount()
+    {
+        return $this->container['product_amount'];
+    }
+
+    /**
+     * Sets product_amount
+     *
+     * @param float $product_amount product_amount
+     *
+     * @return $this
+     */
+    public function setProductAmount($product_amount)
+    {
+        $this->container['product_amount'] = $product_amount;
+
+        return $this;
+    }
+
+    /**
+     * Gets product_id
+     *
+     * @return int
+     */
+    public function getProductId()
+    {
+        return $this->container['product_id'];
+    }
+
+    /**
+     * Sets product_id
+     *
+     * @param int $product_id product_id
+     *
+     * @return $this
+     */
+    public function setProductId($product_id)
+    {
+        $this->container['product_id'] = $product_id;
 
         return $this;
     }

@@ -60,6 +60,8 @@ class MembershipStatusDTO implements ModelInterface, ArrayAccess
         'criteria_id' => 'int',
         'criteria_name' => 'string',
         'date_of_birth' => '\DateTime',
+        'first_name' => 'string',
+        'last_name' => 'string',
         'main_member' => 'bool',
         'membership_id' => 'int',
         'membership_number' => 'string',
@@ -68,12 +70,15 @@ class MembershipStatusDTO implements ModelInterface, ArrayAccess
         'membership_type_name' => 'string',
         'message' => 'string',
         'name' => 'string',
+        'number_id' => 'int',
+        'number_type_id' => 'int',
         'order_external_id' => 'string',
         'order_id' => 'int',
         'order_status' => 'string',
         'period_id' => 'int',
         'period_name' => 'string',
         'person_id' => 'int',
+        'product_amount' => 'float',
         'product_external_id' => 'string',
         'product_id' => 'int',
         'product_name' => 'string',
@@ -93,6 +98,8 @@ class MembershipStatusDTO implements ModelInterface, ArrayAccess
         'criteria_id' => 'int64',
         'criteria_name' => null,
         'date_of_birth' => 'date',
+        'first_name' => null,
+        'last_name' => null,
         'main_member' => null,
         'membership_id' => 'int64',
         'membership_number' => null,
@@ -101,12 +108,15 @@ class MembershipStatusDTO implements ModelInterface, ArrayAccess
         'membership_type_name' => null,
         'message' => null,
         'name' => null,
+        'number_id' => 'int32',
+        'number_type_id' => 'int32',
         'order_external_id' => null,
         'order_id' => 'int64',
         'order_status' => null,
         'period_id' => 'int64',
         'period_name' => null,
         'person_id' => 'int64',
+        'product_amount' => null,
         'product_external_id' => null,
         'product_id' => 'int64',
         'product_name' => null,
@@ -147,6 +157,8 @@ class MembershipStatusDTO implements ModelInterface, ArrayAccess
         'criteria_id' => 'criteriaId',
         'criteria_name' => 'criteriaName',
         'date_of_birth' => 'dateOfBirth',
+        'first_name' => 'firstName',
+        'last_name' => 'lastName',
         'main_member' => 'mainMember',
         'membership_id' => 'membershipId',
         'membership_number' => 'membershipNumber',
@@ -155,12 +167,15 @@ class MembershipStatusDTO implements ModelInterface, ArrayAccess
         'membership_type_name' => 'membershipTypeName',
         'message' => 'message',
         'name' => 'name',
+        'number_id' => 'numberId',
+        'number_type_id' => 'numberTypeId',
         'order_external_id' => 'orderExternalId',
         'order_id' => 'orderId',
         'order_status' => 'orderStatus',
         'period_id' => 'periodId',
         'period_name' => 'periodName',
         'person_id' => 'personId',
+        'product_amount' => 'productAmount',
         'product_external_id' => 'productExternalId',
         'product_id' => 'productId',
         'product_name' => 'productName',
@@ -180,6 +195,8 @@ class MembershipStatusDTO implements ModelInterface, ArrayAccess
         'criteria_id' => 'setCriteriaId',
         'criteria_name' => 'setCriteriaName',
         'date_of_birth' => 'setDateOfBirth',
+        'first_name' => 'setFirstName',
+        'last_name' => 'setLastName',
         'main_member' => 'setMainMember',
         'membership_id' => 'setMembershipId',
         'membership_number' => 'setMembershipNumber',
@@ -188,12 +205,15 @@ class MembershipStatusDTO implements ModelInterface, ArrayAccess
         'membership_type_name' => 'setMembershipTypeName',
         'message' => 'setMessage',
         'name' => 'setName',
+        'number_id' => 'setNumberId',
+        'number_type_id' => 'setNumberTypeId',
         'order_external_id' => 'setOrderExternalId',
         'order_id' => 'setOrderId',
         'order_status' => 'setOrderStatus',
         'period_id' => 'setPeriodId',
         'period_name' => 'setPeriodName',
         'person_id' => 'setPersonId',
+        'product_amount' => 'setProductAmount',
         'product_external_id' => 'setProductExternalId',
         'product_id' => 'setProductId',
         'product_name' => 'setProductName',
@@ -213,6 +233,8 @@ class MembershipStatusDTO implements ModelInterface, ArrayAccess
         'criteria_id' => 'getCriteriaId',
         'criteria_name' => 'getCriteriaName',
         'date_of_birth' => 'getDateOfBirth',
+        'first_name' => 'getFirstName',
+        'last_name' => 'getLastName',
         'main_member' => 'getMainMember',
         'membership_id' => 'getMembershipId',
         'membership_number' => 'getMembershipNumber',
@@ -221,12 +243,15 @@ class MembershipStatusDTO implements ModelInterface, ArrayAccess
         'membership_type_name' => 'getMembershipTypeName',
         'message' => 'getMessage',
         'name' => 'getName',
+        'number_id' => 'getNumberId',
+        'number_type_id' => 'getNumberTypeId',
         'order_external_id' => 'getOrderExternalId',
         'order_id' => 'getOrderId',
         'order_status' => 'getOrderStatus',
         'period_id' => 'getPeriodId',
         'period_name' => 'getPeriodName',
         'person_id' => 'getPersonId',
+        'product_amount' => 'getProductAmount',
         'product_external_id' => 'getProductExternalId',
         'product_id' => 'getProductId',
         'product_name' => 'getProductName',
@@ -340,6 +365,8 @@ class MembershipStatusDTO implements ModelInterface, ArrayAccess
         $this->container['criteria_id'] = isset($data['criteria_id']) ? $data['criteria_id'] : null;
         $this->container['criteria_name'] = isset($data['criteria_name']) ? $data['criteria_name'] : null;
         $this->container['date_of_birth'] = isset($data['date_of_birth']) ? $data['date_of_birth'] : null;
+        $this->container['first_name'] = isset($data['first_name']) ? $data['first_name'] : null;
+        $this->container['last_name'] = isset($data['last_name']) ? $data['last_name'] : null;
         $this->container['main_member'] = isset($data['main_member']) ? $data['main_member'] : null;
         $this->container['membership_id'] = isset($data['membership_id']) ? $data['membership_id'] : null;
         $this->container['membership_number'] = isset($data['membership_number']) ? $data['membership_number'] : null;
@@ -348,12 +375,15 @@ class MembershipStatusDTO implements ModelInterface, ArrayAccess
         $this->container['membership_type_name'] = isset($data['membership_type_name']) ? $data['membership_type_name'] : null;
         $this->container['message'] = isset($data['message']) ? $data['message'] : null;
         $this->container['name'] = isset($data['name']) ? $data['name'] : null;
+        $this->container['number_id'] = isset($data['number_id']) ? $data['number_id'] : null;
+        $this->container['number_type_id'] = isset($data['number_type_id']) ? $data['number_type_id'] : null;
         $this->container['order_external_id'] = isset($data['order_external_id']) ? $data['order_external_id'] : null;
         $this->container['order_id'] = isset($data['order_id']) ? $data['order_id'] : null;
         $this->container['order_status'] = isset($data['order_status']) ? $data['order_status'] : null;
         $this->container['period_id'] = isset($data['period_id']) ? $data['period_id'] : null;
         $this->container['period_name'] = isset($data['period_name']) ? $data['period_name'] : null;
         $this->container['person_id'] = isset($data['person_id']) ? $data['person_id'] : null;
+        $this->container['product_amount'] = isset($data['product_amount']) ? $data['product_amount'] : null;
         $this->container['product_external_id'] = isset($data['product_external_id']) ? $data['product_external_id'] : null;
         $this->container['product_id'] = isset($data['product_id']) ? $data['product_id'] : null;
         $this->container['product_name'] = isset($data['product_name']) ? $data['product_name'] : null;
@@ -472,6 +502,54 @@ class MembershipStatusDTO implements ModelInterface, ArrayAccess
     public function setDateOfBirth($date_of_birth)
     {
         $this->container['date_of_birth'] = $date_of_birth;
+
+        return $this;
+    }
+
+    /**
+     * Gets first_name
+     *
+     * @return string
+     */
+    public function getFirstName()
+    {
+        return $this->container['first_name'];
+    }
+
+    /**
+     * Sets first_name
+     *
+     * @param string $first_name first_name
+     *
+     * @return $this
+     */
+    public function setFirstName($first_name)
+    {
+        $this->container['first_name'] = $first_name;
+
+        return $this;
+    }
+
+    /**
+     * Gets last_name
+     *
+     * @return string
+     */
+    public function getLastName()
+    {
+        return $this->container['last_name'];
+    }
+
+    /**
+     * Sets last_name
+     *
+     * @param string $last_name last_name
+     *
+     * @return $this
+     */
+    public function setLastName($last_name)
+    {
+        $this->container['last_name'] = $last_name;
 
         return $this;
     }
@@ -678,6 +756,54 @@ class MembershipStatusDTO implements ModelInterface, ArrayAccess
     }
 
     /**
+     * Gets number_id
+     *
+     * @return int
+     */
+    public function getNumberId()
+    {
+        return $this->container['number_id'];
+    }
+
+    /**
+     * Sets number_id
+     *
+     * @param int $number_id number_id
+     *
+     * @return $this
+     */
+    public function setNumberId($number_id)
+    {
+        $this->container['number_id'] = $number_id;
+
+        return $this;
+    }
+
+    /**
+     * Gets number_type_id
+     *
+     * @return int
+     */
+    public function getNumberTypeId()
+    {
+        return $this->container['number_type_id'];
+    }
+
+    /**
+     * Sets number_type_id
+     *
+     * @param int $number_type_id number_type_id
+     *
+     * @return $this
+     */
+    public function setNumberTypeId($number_type_id)
+    {
+        $this->container['number_type_id'] = $number_type_id;
+
+        return $this;
+    }
+
+    /**
      * Gets order_external_id
      *
      * @return string
@@ -826,6 +952,30 @@ class MembershipStatusDTO implements ModelInterface, ArrayAccess
     public function setPersonId($person_id)
     {
         $this->container['person_id'] = $person_id;
+
+        return $this;
+    }
+
+    /**
+     * Gets product_amount
+     *
+     * @return float
+     */
+    public function getProductAmount()
+    {
+        return $this->container['product_amount'];
+    }
+
+    /**
+     * Sets product_amount
+     *
+     * @param float $product_amount product_amount
+     *
+     * @return $this
+     */
+    public function setProductAmount($product_amount)
+    {
+        $this->container['product_amount'] = $product_amount;
 
         return $this;
     }

@@ -125,6 +125,7 @@ Class | Method | HTTP request | Description
 *MembershipPeriodResourceApi* | [**getAllMembershipPeriodsUsingGET**](docs/Api/MembershipPeriodResourceApi.md#getallmembershipperiodsusingget) | **GET** /api/membership-periods | getAllMembershipPeriods
 *MembershipPeriodResourceApi* | [**getMembershipPeriodUsingGET**](docs/Api/MembershipPeriodResourceApi.md#getmembershipperiodusingget) | **GET** /api/membership-periods/{id} | getMembershipPeriod
 *MembershipPeriodResourceApi* | [**updateMembershipPeriodUsingPUT**](docs/Api/MembershipPeriodResourceApi.md#updatemembershipperiodusingput) | **PUT** /api/membership-periods | updateMembershipPeriod
+*MembershipResourceApi* | [**addMembershipOrderUsingPOST**](docs/Api/MembershipResourceApi.md#addmembershiporderusingpost) | **POST** /api/memberships/order | addMembershipOrder
 *MembershipResourceApi* | [**countMembershipsUsingGET**](docs/Api/MembershipResourceApi.md#countmembershipsusingget) | **GET** /api/memberships/count | countMemberships
 *MembershipResourceApi* | [**createMembershipUsingPOST**](docs/Api/MembershipResourceApi.md#createmembershipusingpost) | **POST** /api/memberships | createMembership
 *MembershipResourceApi* | [**deleteMembershipUsingDELETE**](docs/Api/MembershipResourceApi.md#deletemembershipusingdelete) | **DELETE** /api/memberships/{id} | deleteMembership
@@ -132,6 +133,7 @@ Class | Method | HTTP request | Description
 *MembershipResourceApi* | [**getAllMembershipsUsingGET**](docs/Api/MembershipResourceApi.md#getallmembershipsusingget) | **GET** /api/memberships | getAllMemberships
 *MembershipResourceApi* | [**getLinkedMembersUsingGET**](docs/Api/MembershipResourceApi.md#getlinkedmembersusingget) | **GET** /api/memberships/linkedStatus/{externalUserId} | getLinkedMembers
 *MembershipResourceApi* | [**getMemberStatusByLatestPeriodForMembershipTypeUsingGET**](docs/Api/MembershipResourceApi.md#getmemberstatusbylatestperiodformembershiptypeusingget) | **GET** /api/memberships/status/latestPeriod | getMemberStatusByLatestPeriodForMembershipType
+*MembershipResourceApi* | [**getMembershipAttachmentUsingGET**](docs/Api/MembershipResourceApi.md#getmembershipattachmentusingget) | **GET** /api/memberships/attachment/{uuid} | getMembershipAttachment
 *MembershipResourceApi* | [**getMembershipUsingGET**](docs/Api/MembershipResourceApi.md#getmembershipusingget) | **GET** /api/memberships/{id} | getMembership
 *MembershipResourceApi* | [**updateMembershipUsingPUT**](docs/Api/MembershipResourceApi.md#updatemembershipusingput) | **PUT** /api/memberships | updateMembership
 *MembershipTypeResourceApi* | [**countMembershipTypesUsingGET**](docs/Api/MembershipTypeResourceApi.md#countmembershiptypesusingget) | **GET** /api/membership-types/count | countMembershipTypes
@@ -184,6 +186,9 @@ Class | Method | HTTP request | Description
  - [MembershipCriteriaDTO](docs/Model/MembershipCriteriaDTO.md)
  - [MembershipDTO](docs/Model/MembershipDTO.md)
  - [MembershipEnrolRequestDTO](docs/Model/MembershipEnrolRequestDTO.md)
+ - [MembershipOrderLineItemDTO](docs/Model/MembershipOrderLineItemDTO.md)
+ - [MembershipOrderStatusRequestDTO](docs/Model/MembershipOrderStatusRequestDTO.md)
+ - [MembershipOrderStatusResponseDTO](docs/Model/MembershipOrderStatusResponseDTO.md)
  - [MembershipPeriodDTO](docs/Model/MembershipPeriodDTO.md)
  - [MembershipStatusDTO](docs/Model/MembershipStatusDTO.md)
  - [MembershipTypeDTO](docs/Model/MembershipTypeDTO.md)

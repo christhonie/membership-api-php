@@ -1,6 +1,6 @@
 <?php
 /**
- * OrderDTO
+ * MembershipOrderStatusRequestDTO
  *
  * PHP version 5
  *
@@ -33,14 +33,14 @@ use \ArrayAccess;
 use \Idealogic\MembershipAPI\ObjectSerializer;
 
 /**
- * OrderDTO Class Doc Comment
+ * MembershipOrderStatusRequestDTO Class Doc Comment
  *
  * @category Class
  * @package  Idealogic\MembershipAPI
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
-class OrderDTO implements ModelInterface, ArrayAccess
+class MembershipOrderStatusRequestDTO implements ModelInterface, ArrayAccess
 {
     const DISCRIMINATOR = null;
 
@@ -49,7 +49,7 @@ class OrderDTO implements ModelInterface, ArrayAccess
       *
       * @var string
       */
-    protected static $swaggerModelName = 'OrderDTO';
+    protected static $swaggerModelName = 'MembershipOrderStatusRequestDTO';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -57,10 +57,10 @@ class OrderDTO implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'external_id' => 'string',
-        'id' => 'int',
-        'number' => 'string',
-        'organisation_id' => 'int',
+        'membership_details' => '\Idealogic\MembershipAPI\Model\MembershipOrderLineItemDTO[]',
+        'order_id' => 'int',
+        'order_number' => 'string',
+        'remove' => 'bool',
         'status' => 'string'
     ];
 
@@ -70,10 +70,10 @@ class OrderDTO implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerFormats = [
-        'external_id' => null,
-        'id' => 'int64',
-        'number' => null,
-        'organisation_id' => 'int64',
+        'membership_details' => null,
+        'order_id' => 'int64',
+        'order_number' => null,
+        'remove' => null,
         'status' => null
     ];
 
@@ -104,10 +104,10 @@ class OrderDTO implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'external_id' => 'externalId',
-        'id' => 'id',
-        'number' => 'number',
-        'organisation_id' => 'organisationId',
+        'membership_details' => 'membershipDetails',
+        'order_id' => 'orderId',
+        'order_number' => 'orderNumber',
+        'remove' => 'remove',
         'status' => 'status'
     ];
 
@@ -117,10 +117,10 @@ class OrderDTO implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'external_id' => 'setExternalId',
-        'id' => 'setId',
-        'number' => 'setNumber',
-        'organisation_id' => 'setOrganisationId',
+        'membership_details' => 'setMembershipDetails',
+        'order_id' => 'setOrderId',
+        'order_number' => 'setOrderNumber',
+        'remove' => 'setRemove',
         'status' => 'setStatus'
     ];
 
@@ -130,10 +130,10 @@ class OrderDTO implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'external_id' => 'getExternalId',
-        'id' => 'getId',
-        'number' => 'getNumber',
-        'organisation_id' => 'getOrganisationId',
+        'membership_details' => 'getMembershipDetails',
+        'order_id' => 'getOrderId',
+        'order_number' => 'getOrderNumber',
+        'remove' => 'getRemove',
         'status' => 'getStatus'
     ];
 
@@ -216,10 +216,10 @@ class OrderDTO implements ModelInterface, ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['external_id'] = isset($data['external_id']) ? $data['external_id'] : null;
-        $this->container['id'] = isset($data['id']) ? $data['id'] : null;
-        $this->container['number'] = isset($data['number']) ? $data['number'] : null;
-        $this->container['organisation_id'] = isset($data['organisation_id']) ? $data['organisation_id'] : null;
+        $this->container['membership_details'] = isset($data['membership_details']) ? $data['membership_details'] : null;
+        $this->container['order_id'] = isset($data['order_id']) ? $data['order_id'] : null;
+        $this->container['order_number'] = isset($data['order_number']) ? $data['order_number'] : null;
+        $this->container['remove'] = isset($data['remove']) ? $data['remove'] : null;
         $this->container['status'] = isset($data['status']) ? $data['status'] : null;
     }
 
@@ -232,31 +232,6 @@ class OrderDTO implements ModelInterface, ArrayAccess
     {
         $invalidProperties = [];
 
-        if (!is_null($this->container['external_id']) && (mb_strlen($this->container['external_id']) > 32)) {
-            $invalidProperties[] = "invalid value for 'external_id', the character length must be smaller than or equal to 32.";
-        }
-
-        if (!is_null($this->container['external_id']) && (mb_strlen($this->container['external_id']) < 0)) {
-            $invalidProperties[] = "invalid value for 'external_id', the character length must be bigger than or equal to 0.";
-        }
-
-        if ($this->container['number'] === null) {
-            $invalidProperties[] = "'number' can't be null";
-        }
-        if ((mb_strlen($this->container['number']) > 12)) {
-            $invalidProperties[] = "invalid value for 'number', the character length must be smaller than or equal to 12.";
-        }
-
-        if ((mb_strlen($this->container['number']) < 0)) {
-            $invalidProperties[] = "invalid value for 'number', the character length must be bigger than or equal to 0.";
-        }
-
-        if ($this->container['organisation_id'] === null) {
-            $invalidProperties[] = "'organisation_id' can't be null";
-        }
-        if ($this->container['status'] === null) {
-            $invalidProperties[] = "'status' can't be null";
-        }
         $allowedValues = $this->getStatusAllowableValues();
         if (!is_null($this->container['status']) && !in_array($this->container['status'], $allowedValues, true)) {
             $invalidProperties[] = sprintf(
@@ -281,111 +256,97 @@ class OrderDTO implements ModelInterface, ArrayAccess
 
 
     /**
-     * Gets external_id
+     * Gets membership_details
      *
-     * @return string
+     * @return \Idealogic\MembershipAPI\Model\MembershipOrderLineItemDTO[]
      */
-    public function getExternalId()
+    public function getMembershipDetails()
     {
-        return $this->container['external_id'];
+        return $this->container['membership_details'];
     }
 
     /**
-     * Sets external_id
+     * Sets membership_details
      *
-     * @param string $external_id Foreign key to external order module
+     * @param \Idealogic\MembershipAPI\Model\MembershipOrderLineItemDTO[] $membership_details membership_details
      *
      * @return $this
      */
-    public function setExternalId($external_id)
+    public function setMembershipDetails($membership_details)
     {
-        if (!is_null($external_id) && (mb_strlen($external_id) > 32)) {
-            throw new \InvalidArgumentException('invalid length for $external_id when calling OrderDTO., must be smaller than or equal to 32.');
-        }
-        if (!is_null($external_id) && (mb_strlen($external_id) < 0)) {
-            throw new \InvalidArgumentException('invalid length for $external_id when calling OrderDTO., must be bigger than or equal to 0.');
-        }
-
-        $this->container['external_id'] = $external_id;
+        $this->container['membership_details'] = $membership_details;
 
         return $this;
     }
 
     /**
-     * Gets id
+     * Gets order_id
      *
      * @return int
      */
-    public function getId()
+    public function getOrderId()
     {
-        return $this->container['id'];
+        return $this->container['order_id'];
     }
 
     /**
-     * Sets id
+     * Sets order_id
      *
-     * @param int $id id
+     * @param int $order_id order_id
      *
      * @return $this
      */
-    public function setId($id)
+    public function setOrderId($order_id)
     {
-        $this->container['id'] = $id;
+        $this->container['order_id'] = $order_id;
 
         return $this;
     }
 
     /**
-     * Gets number
+     * Gets order_number
      *
      * @return string
      */
-    public function getNumber()
+    public function getOrderNumber()
     {
-        return $this->container['number'];
+        return $this->container['order_number'];
     }
 
     /**
-     * Sets number
+     * Sets order_number
      *
-     * @param string $number number
+     * @param string $order_number order_number
      *
      * @return $this
      */
-    public function setNumber($number)
+    public function setOrderNumber($order_number)
     {
-        if ((mb_strlen($number) > 12)) {
-            throw new \InvalidArgumentException('invalid length for $number when calling OrderDTO., must be smaller than or equal to 12.');
-        }
-        if ((mb_strlen($number) < 0)) {
-            throw new \InvalidArgumentException('invalid length for $number when calling OrderDTO., must be bigger than or equal to 0.');
-        }
-
-        $this->container['number'] = $number;
+        $this->container['order_number'] = $order_number;
 
         return $this;
     }
 
     /**
-     * Gets organisation_id
+     * Gets remove
      *
-     * @return int
+     * @return bool
      */
-    public function getOrganisationId()
+    public function getRemove()
     {
-        return $this->container['organisation_id'];
+        return $this->container['remove'];
     }
 
     /**
-     * Sets organisation_id
+     * Sets remove
      *
-     * @param int $organisation_id organisation_id
+     * @param bool $remove remove
      *
      * @return $this
      */
-    public function setOrganisationId($organisation_id)
+    public function setRemove($remove)
     {
-        $this->container['organisation_id'] = $organisation_id;
+        $this->container['remove'] = $remove;
 
         return $this;
     }
@@ -410,7 +371,7 @@ class OrderDTO implements ModelInterface, ArrayAccess
     public function setStatus($status)
     {
         $allowedValues = $this->getStatusAllowableValues();
-        if (!in_array($status, $allowedValues, true)) {
+        if (!is_null($status) && !in_array($status, $allowedValues, true)) {
             throw new \InvalidArgumentException(
                 sprintf(
                     "Invalid value for 'status', must be one of '%s'",

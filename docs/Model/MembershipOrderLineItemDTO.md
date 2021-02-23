@@ -1,13 +1,11 @@
-# OrderDTO
+# MembershipOrderLineItemDTO
 
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**external_id** | **string** | Foreign key to external order module | [optional] 
-**id** | **int** |  | [optional] 
-**number** | **string** |  | 
-**organisation_id** | **int** |  | 
-**status** | **string** |  | 
+**member_id** | **int** |  | [optional] 
+**product_amount** | **float** |  | [optional] 
+**product_id** | **string** |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

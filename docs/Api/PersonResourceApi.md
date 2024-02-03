@@ -1,53 +1,59 @@
 # Idealogic\MembershipAPI\PersonResourceApi
 
-All URIs are relative to *https://http://localhost:8080*
+All URIs are relative to http://localhost, except if the operation defines another base path.
 
-Method | HTTP request | Description
-------------- | ------------- | -------------
-[**createPersonUsingPOST**](PersonResourceApi.md#createPersonUsingPOST) | **POST** /api/people | createPerson
-[**deletePersonUsingDELETE**](PersonResourceApi.md#deletePersonUsingDELETE) | **DELETE** /api/people/{id} | deletePerson
-[**findByIDUsingGET**](PersonResourceApi.md#findByIDUsingGET) | **GET** /api/people/findById | findByID
-[**findMatchingUsingGET**](PersonResourceApi.md#findMatchingUsingGET) | **GET** /api/people/match | findMatching
-[**getAllPeopleUsingGET**](PersonResourceApi.md#getAllPeopleUsingGET) | **GET** /api/people | getAllPeople
-[**getOrgPersonUsingGET**](PersonResourceApi.md#getOrgPersonUsingGET) | **GET** /api/people/org/{externalUserId} | getOrgPerson
-[**getPersonUsingGET**](PersonResourceApi.md#getPersonUsingGET) | **GET** /api/people/{id} | getPerson
-[**queryPersonUsingGET**](PersonResourceApi.md#queryPersonUsingGET) | **GET** /api/people/query | queryPerson
-[**updatePersonUsingPUT**](PersonResourceApi.md#updatePersonUsingPUT) | **PUT** /api/people | updatePerson
+| Method | HTTP request | Description |
+| ------------- | ------------- | ------------- |
+| [**createPerson()**](PersonResourceApi.md#createPerson) | **POST** /api/people |  |
+| [**deletePerson()**](PersonResourceApi.md#deletePerson) | **DELETE** /api/people/{id} |  |
+| [**findByID()**](PersonResourceApi.md#findByID) | **GET** /api/people/findById |  |
+| [**findByIdDetails()**](PersonResourceApi.md#findByIdDetails) | **POST** /api/people/idsearch |  |
+| [**findMatching()**](PersonResourceApi.md#findMatching) | **GET** /api/people/match |  |
+| [**getAllPeople()**](PersonResourceApi.md#getAllPeople) | **GET** /api/people |  |
+| [**getOrgPerson()**](PersonResourceApi.md#getOrgPerson) | **GET** /api/people/org/{externalUserId} |  |
+| [**getPerson()**](PersonResourceApi.md#getPerson) | **GET** /api/people/{id} |  |
+| [**queryPerson()**](PersonResourceApi.md#queryPerson) | **GET** /api/people/query |  |
+| [**updatePerson()**](PersonResourceApi.md#updatePerson) | **PUT** /api/people |  |
 
 
-# **createPersonUsingPOST**
-> \Idealogic\MembershipAPI\Model\PersonDTO createPersonUsingPOST($person_dto, $organisation_id)
+## `createPerson()`
 
-createPerson
+```php
+createPerson($person_dto, $organisation_id): \Idealogic\MembershipAPI\Model\PersonDTO
+```
+
+
 
 ### Example
+
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
+
+
 
 $apiInstance = new Idealogic\MembershipAPI\Api\PersonResourceApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
-$person_dto = new \Idealogic\MembershipAPI\Model\PersonDTO(); // \Idealogic\MembershipAPI\Model\PersonDTO | personDTO
-$organisation_id = 789; // int | organisationId
+$person_dto = new \Idealogic\MembershipAPI\Model\PersonDTO(); // \Idealogic\MembershipAPI\Model\PersonDTO
+$organisation_id = 56; // int
 
 try {
-    $result = $apiInstance->createPersonUsingPOST($person_dto, $organisation_id);
+    $result = $apiInstance->createPerson($person_dto, $organisation_id);
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling PersonResourceApi->createPersonUsingPOST: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling PersonResourceApi->createPerson: ', $e->getMessage(), PHP_EOL;
 }
-?>
 ```
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **person_dto** | [**\Idealogic\MembershipAPI\Model\PersonDTO**](../Model/PersonDTO.md)| personDTO |
- **organisation_id** | **int**| organisationId | [optional]
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **person_dto** | [**\Idealogic\MembershipAPI\Model\PersonDTO**](../Model/PersonDTO.md)|  | |
+| **organisation_id** | **int**|  | [optional] |
 
 ### Return type
 
@@ -59,41 +65,48 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
- - **Accept**: */*
+- **Content-Type**: `application/json`
+- **Accept**: `*/*`
 
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
+[[Back to README]](../../README.md)
 
-# **deletePersonUsingDELETE**
-> deletePersonUsingDELETE($id)
+## `deletePerson()`
 
-deletePerson
+```php
+deletePerson($id)
+```
+
+
 
 ### Example
+
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
+
+
 
 $apiInstance = new Idealogic\MembershipAPI\Api\PersonResourceApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
-$id = 789; // int | id
+$id = 56; // int
 
 try {
-    $apiInstance->deletePersonUsingDELETE($id);
+    $apiInstance->deletePerson($id);
 } catch (Exception $e) {
-    echo 'Exception when calling PersonResourceApi->deletePersonUsingDELETE: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling PersonResourceApi->deletePerson: ', $e->getMessage(), PHP_EOL;
 }
-?>
 ```
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **id** | **int**| id |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **id** | **int**|  | |
 
 ### Return type
 
@@ -105,42 +118,49 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: */*
+- **Content-Type**: Not defined
+- **Accept**: Not defined
 
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
+[[Back to README]](../../README.md)
 
-# **findByIDUsingGET**
-> \Idealogic\MembershipAPI\Model\PersonDTO[] findByIDUsingGET($id_number)
+## `findByID()`
 
-findByID
+```php
+findByID($id_number): \Idealogic\MembershipAPI\Model\PersonDTO[]
+```
+
+
 
 ### Example
+
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
+
+
 
 $apiInstance = new Idealogic\MembershipAPI\Api\PersonResourceApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
-$id_number = "id_number_example"; // string | idNumber
+$id_number = 'id_number_example'; // string
 
 try {
-    $result = $apiInstance->findByIDUsingGET($id_number);
+    $result = $apiInstance->findByID($id_number);
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling PersonResourceApi->findByIDUsingGET: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling PersonResourceApi->findByID: ', $e->getMessage(), PHP_EOL;
 }
-?>
 ```
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **id_number** | **string**| idNumber |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **id_number** | **string**|  | |
 
 ### Return type
 
@@ -152,44 +172,51 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: */*
+- **Content-Type**: Not defined
+- **Accept**: `*/*`
 
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
+[[Back to README]](../../README.md)
 
-# **findMatchingUsingGET**
-> \Idealogic\MembershipAPI\Model\PersonDTO[] findMatchingUsingGET($person_dto, $organisation_id)
+## `findByIdDetails()`
 
-findMatching
+```php
+findByIdDetails($person_dto, $organisation_id): \Idealogic\MembershipAPI\Model\PersonDTO[]
+```
+
+
 
 ### Example
+
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
+
+
 
 $apiInstance = new Idealogic\MembershipAPI\Api\PersonResourceApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
-$person_dto = new \Idealogic\MembershipAPI\Model\PersonDTO(); // \Idealogic\MembershipAPI\Model\PersonDTO | personDTO
-$organisation_id = 789; // int | organisationId
+$person_dto = new \Idealogic\MembershipAPI\Model\PersonDTO(); // \Idealogic\MembershipAPI\Model\PersonDTO
+$organisation_id = 56; // int
 
 try {
-    $result = $apiInstance->findMatchingUsingGET($person_dto, $organisation_id);
+    $result = $apiInstance->findByIdDetails($person_dto, $organisation_id);
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling PersonResourceApi->findMatchingUsingGET: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling PersonResourceApi->findByIdDetails: ', $e->getMessage(), PHP_EOL;
 }
-?>
 ```
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **person_dto** | [**\Idealogic\MembershipAPI\Model\PersonDTO**](../Model/PersonDTO.md)| personDTO |
- **organisation_id** | **int**| organisationId | [optional]
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **person_dto** | [**\Idealogic\MembershipAPI\Model\PersonDTO**](../Model/PersonDTO.md)|  | |
+| **organisation_id** | **int**|  | [optional] |
 
 ### Return type
 
@@ -201,48 +228,51 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: */*
+- **Content-Type**: `application/json`
+- **Accept**: `*/*`
 
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
+[[Back to README]](../../README.md)
 
-# **getAllPeopleUsingGET**
-> \Idealogic\MembershipAPI\Model\PersonDTO[] getAllPeopleUsingGET($organisation_id, $page, $size, $sort)
+## `findMatching()`
 
-getAllPeople
+```php
+findMatching($person_dto, $organisation_id): \Idealogic\MembershipAPI\Model\PersonDTO[]
+```
+
+
 
 ### Example
+
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
+
+
 
 $apiInstance = new Idealogic\MembershipAPI\Api\PersonResourceApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
-$organisation_id = 789; // int | organisationId
-$page = 56; // int | Page number of the requested page
-$size = 56; // int | Size of a page
-$sort = array("sort_example"); // string[] | Sorting criteria in the format: property(,asc|desc). Default sort order is ascending. Multiple sort criteria are supported.
+$person_dto = new \Idealogic\MembershipAPI\Model\PersonDTO(); // PersonDTO
+$organisation_id = 56; // int
 
 try {
-    $result = $apiInstance->getAllPeopleUsingGET($organisation_id, $page, $size, $sort);
+    $result = $apiInstance->findMatching($person_dto, $organisation_id);
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling PersonResourceApi->getAllPeopleUsingGET: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling PersonResourceApi->findMatching: ', $e->getMessage(), PHP_EOL;
 }
-?>
 ```
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **organisation_id** | **int**| organisationId | [optional]
- **page** | **int**| Page number of the requested page | [optional]
- **size** | **int**| Size of a page | [optional]
- **sort** | [**string[]**](../Model/string.md)| Sorting criteria in the format: property(,asc|desc). Default sort order is ascending. Multiple sort criteria are supported. | [optional]
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **person_dto** | [**PersonDTO**](../Model/.md)|  | |
+| **organisation_id** | **int**|  | [optional] |
 
 ### Return type
 
@@ -254,44 +284,107 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: */*
+- **Content-Type**: Not defined
+- **Accept**: `*/*`
 
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
+[[Back to README]](../../README.md)
 
-# **getOrgPersonUsingGET**
-> \Idealogic\MembershipAPI\Model\PersonDTO getOrgPersonUsingGET($external_user_id, $organisation_id)
+## `getAllPeople()`
 
-getOrgPerson
+```php
+getAllPeople($pageable, $organisation_id): \Idealogic\MembershipAPI\Model\PersonDTO[]
+```
+
+
 
 ### Example
+
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
+
+
 
 $apiInstance = new Idealogic\MembershipAPI\Api\PersonResourceApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
-$external_user_id = 789; // int | externalUserId
-$organisation_id = 789; // int | organisationId
+$pageable = new \Idealogic\MembershipAPI\Model\Pageable(); // Pageable
+$organisation_id = 56; // int
 
 try {
-    $result = $apiInstance->getOrgPersonUsingGET($external_user_id, $organisation_id);
+    $result = $apiInstance->getAllPeople($pageable, $organisation_id);
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling PersonResourceApi->getOrgPersonUsingGET: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling PersonResourceApi->getAllPeople: ', $e->getMessage(), PHP_EOL;
 }
-?>
 ```
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **external_user_id** | **int**| externalUserId |
- **organisation_id** | **int**| organisationId | [optional]
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **pageable** | [**Pageable**](../Model/.md)|  | |
+| **organisation_id** | **int**|  | [optional] |
+
+### Return type
+
+[**\Idealogic\MembershipAPI\Model\PersonDTO[]**](../Model/PersonDTO.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: `*/*`
+
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
+[[Back to README]](../../README.md)
+
+## `getOrgPerson()`
+
+```php
+getOrgPerson($external_user_id, $organisation_id): \Idealogic\MembershipAPI\Model\PersonDTO
+```
+
+
+
+### Example
+
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+
+
+$apiInstance = new Idealogic\MembershipAPI\Api\PersonResourceApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client()
+);
+$external_user_id = 56; // int
+$organisation_id = 56; // int
+
+try {
+    $result = $apiInstance->getOrgPerson($external_user_id, $organisation_id);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling PersonResourceApi->getOrgPerson: ', $e->getMessage(), PHP_EOL;
+}
+```
+
+### Parameters
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **external_user_id** | **int**|  | |
+| **organisation_id** | **int**|  | [optional] |
 
 ### Return type
 
@@ -303,42 +396,49 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: */*
+- **Content-Type**: Not defined
+- **Accept**: `*/*`
 
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
+[[Back to README]](../../README.md)
 
-# **getPersonUsingGET**
-> \Idealogic\MembershipAPI\Model\PersonDTO getPersonUsingGET($id)
+## `getPerson()`
 
-getPerson
+```php
+getPerson($id): \Idealogic\MembershipAPI\Model\PersonDTO
+```
+
+
 
 ### Example
+
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
+
+
 
 $apiInstance = new Idealogic\MembershipAPI\Api\PersonResourceApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
-$id = 789; // int | id
+$id = 56; // int
 
 try {
-    $result = $apiInstance->getPersonUsingGET($id);
+    $result = $apiInstance->getPerson($id);
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling PersonResourceApi->getPersonUsingGET: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling PersonResourceApi->getPerson: ', $e->getMessage(), PHP_EOL;
 }
-?>
 ```
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **id** | **int**| id |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **id** | **int**|  | |
 
 ### Return type
 
@@ -350,48 +450,51 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: */*
+- **Content-Type**: Not defined
+- **Accept**: `*/*`
 
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
+[[Back to README]](../../README.md)
 
-# **queryPersonUsingGET**
-> \Idealogic\MembershipAPI\Model\PersonDTO[] queryPersonUsingGET($q, $page, $size, $sort)
+## `queryPerson()`
 
-queryPerson
+```php
+queryPerson($q, $pageable): \Idealogic\MembershipAPI\Model\PersonDTO[]
+```
+
+
 
 ### Example
+
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
+
+
 
 $apiInstance = new Idealogic\MembershipAPI\Api\PersonResourceApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
-$q = "q_example"; // string | q
-$page = 56; // int | Page number of the requested page
-$size = 56; // int | Size of a page
-$sort = array("sort_example"); // string[] | Sorting criteria in the format: property(,asc|desc). Default sort order is ascending. Multiple sort criteria are supported.
+$q = 'q_example'; // string
+$pageable = new \Idealogic\MembershipAPI\Model\Pageable(); // Pageable
 
 try {
-    $result = $apiInstance->queryPersonUsingGET($q, $page, $size, $sort);
+    $result = $apiInstance->queryPerson($q, $pageable);
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling PersonResourceApi->queryPersonUsingGET: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling PersonResourceApi->queryPerson: ', $e->getMessage(), PHP_EOL;
 }
-?>
 ```
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **q** | **string**| q |
- **page** | **int**| Page number of the requested page | [optional]
- **size** | **int**| Size of a page | [optional]
- **sort** | [**string[]**](../Model/string.md)| Sorting criteria in the format: property(,asc|desc). Default sort order is ascending. Multiple sort criteria are supported. | [optional]
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **q** | **string**|  | |
+| **pageable** | [**Pageable**](../Model/.md)|  | |
 
 ### Return type
 
@@ -403,44 +506,51 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: */*
+- **Content-Type**: Not defined
+- **Accept**: `*/*`
 
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
+[[Back to README]](../../README.md)
 
-# **updatePersonUsingPUT**
-> \Idealogic\MembershipAPI\Model\PersonDTO updatePersonUsingPUT($person_dto, $organisation_id)
+## `updatePerson()`
 
-updatePerson
+```php
+updatePerson($person_dto, $organisation_id): \Idealogic\MembershipAPI\Model\PersonDTO
+```
+
+
 
 ### Example
+
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
+
+
 
 $apiInstance = new Idealogic\MembershipAPI\Api\PersonResourceApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
-$person_dto = new \Idealogic\MembershipAPI\Model\PersonDTO(); // \Idealogic\MembershipAPI\Model\PersonDTO | personDTO
-$organisation_id = 789; // int | organisationId
+$person_dto = new \Idealogic\MembershipAPI\Model\PersonDTO(); // \Idealogic\MembershipAPI\Model\PersonDTO
+$organisation_id = 56; // int
 
 try {
-    $result = $apiInstance->updatePersonUsingPUT($person_dto, $organisation_id);
+    $result = $apiInstance->updatePerson($person_dto, $organisation_id);
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling PersonResourceApi->updatePersonUsingPUT: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling PersonResourceApi->updatePerson: ', $e->getMessage(), PHP_EOL;
 }
-?>
 ```
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **person_dto** | [**\Idealogic\MembershipAPI\Model\PersonDTO**](../Model/PersonDTO.md)| personDTO |
- **organisation_id** | **int**| organisationId | [optional]
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **person_dto** | [**\Idealogic\MembershipAPI\Model\PersonDTO**](../Model/PersonDTO.md)|  | |
+| **organisation_id** | **int**|  | [optional] |
 
 ### Return type
 
@@ -452,8 +562,9 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
- - **Accept**: */*
+- **Content-Type**: `application/json`
+- **Accept**: `*/*`
 
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
-
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
+[[Back to README]](../../README.md)

@@ -1,55 +1,118 @@
 # Idealogic\MembershipAPI\MembershipResourceApi
 
-All URIs are relative to *https://http://localhost:8080*
+All URIs are relative to http://localhost, except if the operation defines another base path.
 
-Method | HTTP request | Description
-------------- | ------------- | -------------
-[**addMembershipOrderUsingPOST**](MembershipResourceApi.md#addMembershipOrderUsingPOST) | **POST** /api/memberships/order | addMembershipOrder
-[**countMembershipsUsingGET**](MembershipResourceApi.md#countMembershipsUsingGET) | **GET** /api/memberships/count | countMemberships
-[**createMembershipUsingPOST**](MembershipResourceApi.md#createMembershipUsingPOST) | **POST** /api/memberships | createMembership
-[**deleteMembershipUsingDELETE**](MembershipResourceApi.md#deleteMembershipUsingDELETE) | **DELETE** /api/memberships/{id} | deleteMembership
-[**enrolMembershipsUsingPOST**](MembershipResourceApi.md#enrolMembershipsUsingPOST) | **POST** /api/memberships/enrol | enrolMemberships
-[**getAllMembershipsUsingGET**](MembershipResourceApi.md#getAllMembershipsUsingGET) | **GET** /api/memberships | getAllMemberships
-[**getLinkedMembersUsingGET**](MembershipResourceApi.md#getLinkedMembersUsingGET) | **GET** /api/memberships/linkedStatus/{externalUserId} | getLinkedMembers
-[**getMemberStatusByLatestPeriodForMembershipTypeUsingGET**](MembershipResourceApi.md#getMemberStatusByLatestPeriodForMembershipTypeUsingGET) | **GET** /api/memberships/status/latestPeriod | getMemberStatusByLatestPeriodForMembershipType
-[**getMembershipAttachmentUsingGET**](MembershipResourceApi.md#getMembershipAttachmentUsingGET) | **GET** /api/memberships/attachment/{uuid} | getMembershipAttachment
-[**getMembershipUsingGET**](MembershipResourceApi.md#getMembershipUsingGET) | **GET** /api/memberships/{id} | getMembership
-[**updateMembershipUsingPUT**](MembershipResourceApi.md#updateMembershipUsingPUT) | **PUT** /api/memberships | updateMembership
+| Method | HTTP request | Description |
+| ------------- | ------------- | ------------- |
+| [**addMembership()**](MembershipResourceApi.md#addMembership) | **POST** /api/memberships/add |  |
+| [**addMembershipOrder()**](MembershipResourceApi.md#addMembershipOrder) | **POST** /api/memberships/order |  |
+| [**countMemberships()**](MembershipResourceApi.md#countMemberships) | **GET** /api/memberships/count |  |
+| [**createMembership()**](MembershipResourceApi.md#createMembership) | **POST** /api/memberships |  |
+| [**deleteMembership()**](MembershipResourceApi.md#deleteMembership) | **DELETE** /api/memberships/{id} |  |
+| [**enrolMemberships()**](MembershipResourceApi.md#enrolMemberships) | **POST** /api/memberships/enrol |  |
+| [**getAllMemberships()**](MembershipResourceApi.md#getAllMemberships) | **GET** /api/memberships |  |
+| [**getLinkedMembers()**](MembershipResourceApi.md#getLinkedMembers) | **GET** /api/memberships/linkedStatus/{externalUserId} |  |
+| [**getMemberStatusByLatestPeriodForMembershipType()**](MembershipResourceApi.md#getMemberStatusByLatestPeriodForMembershipType) | **GET** /api/memberships/status/latestPeriod |  |
+| [**getMembership()**](MembershipResourceApi.md#getMembership) | **GET** /api/memberships/{id} |  |
+| [**getMembershipAttachment()**](MembershipResourceApi.md#getMembershipAttachment) | **GET** /api/memberships/attachment/{uuid} |  |
+| [**importMembership()**](MembershipResourceApi.md#importMembership) | **PUT** /api/memberships/import |  |
+| [**updateMembership()**](MembershipResourceApi.md#updateMembership) | **PUT** /api/memberships |  |
 
 
-# **addMembershipOrderUsingPOST**
-> \Idealogic\MembershipAPI\Model\MembershipOrderStatusResponseDTO addMembershipOrderUsingPOST($membership_order, $organisation_id)
+## `addMembership()`
 
-addMembershipOrder
+```php
+addMembership($membership_add_request_dto, $organisation_id): \Idealogic\MembershipAPI\Model\MembershipAddResponseDTO
+```
+
+
 
 ### Example
+
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
+
+
 
 $apiInstance = new Idealogic\MembershipAPI\Api\MembershipResourceApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
-$membership_order = new \Idealogic\MembershipAPI\Model\MembershipOrderStatusRequestDTO(); // \Idealogic\MembershipAPI\Model\MembershipOrderStatusRequestDTO | membershipOrder
-$organisation_id = 789; // int | organisationId
+$membership_add_request_dto = new \Idealogic\MembershipAPI\Model\MembershipAddRequestDTO(); // \Idealogic\MembershipAPI\Model\MembershipAddRequestDTO
+$organisation_id = 56; // int
 
 try {
-    $result = $apiInstance->addMembershipOrderUsingPOST($membership_order, $organisation_id);
+    $result = $apiInstance->addMembership($membership_add_request_dto, $organisation_id);
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling MembershipResourceApi->addMembershipOrderUsingPOST: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling MembershipResourceApi->addMembership: ', $e->getMessage(), PHP_EOL;
 }
-?>
 ```
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **membership_order** | [**\Idealogic\MembershipAPI\Model\MembershipOrderStatusRequestDTO**](../Model/MembershipOrderStatusRequestDTO.md)| membershipOrder |
- **organisation_id** | **int**| organisationId | [optional]
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **membership_add_request_dto** | [**\Idealogic\MembershipAPI\Model\MembershipAddRequestDTO**](../Model/MembershipAddRequestDTO.md)|  | |
+| **organisation_id** | **int**|  | [optional] |
+
+### Return type
+
+[**\Idealogic\MembershipAPI\Model\MembershipAddResponseDTO**](../Model/MembershipAddResponseDTO.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: `application/json`
+- **Accept**: `*/*`
+
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
+[[Back to README]](../../README.md)
+
+## `addMembershipOrder()`
+
+```php
+addMembershipOrder($membership_order_status_request_dto, $organisation_id): \Idealogic\MembershipAPI\Model\MembershipOrderStatusResponseDTO
+```
+
+
+
+### Example
+
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+
+
+$apiInstance = new Idealogic\MembershipAPI\Api\MembershipResourceApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client()
+);
+$membership_order_status_request_dto = new \Idealogic\MembershipAPI\Model\MembershipOrderStatusRequestDTO(); // \Idealogic\MembershipAPI\Model\MembershipOrderStatusRequestDTO
+$organisation_id = 56; // int
+
+try {
+    $result = $apiInstance->addMembershipOrder($membership_order_status_request_dto, $organisation_id);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling MembershipResourceApi->addMembershipOrder: ', $e->getMessage(), PHP_EOL;
+}
+```
+
+### Parameters
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **membership_order_status_request_dto** | [**\Idealogic\MembershipAPI\Model\MembershipOrderStatusRequestDTO**](../Model/MembershipOrderStatusRequestDTO.md)|  | |
+| **organisation_id** | **int**|  | [optional] |
 
 ### Return type
 
@@ -61,212 +124,295 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
- - **Accept**: */*
+- **Content-Type**: `application/json`
+- **Accept**: `*/*`
 
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
+[[Back to README]](../../README.md)
 
-# **countMembershipsUsingGET**
-> int countMembershipsUsingGET($criteria_id_equals, $criteria_id_greater_than, $criteria_id_greater_than_or_equal, $criteria_id_in, $criteria_id_less_than, $criteria_id_less_than_or_equal, $criteria_id_not_equals, $criteria_id_specified, $id_equals, $id_greater_than, $id_greater_than_or_equal, $id_in, $id_less_than, $id_less_than_or_equal, $id_not_equals, $id_specified, $membership_period_id_equals, $membership_period_id_greater_than, $membership_period_id_greater_than_or_equal, $membership_period_id_in, $membership_period_id_less_than, $membership_period_id_less_than_or_equal, $membership_period_id_not_equals, $membership_period_id_specified, $number_id_equals, $number_id_greater_than, $number_id_greater_than_or_equal, $number_id_in, $number_id_less_than, $number_id_less_than_or_equal, $number_id_not_equals, $number_id_specified, $order_id_equals, $order_id_greater_than, $order_id_greater_than_or_equal, $order_id_in, $order_id_less_than, $order_id_less_than_or_equal, $order_id_not_equals, $order_id_specified, $person_id_equals, $person_id_greater_than, $person_id_greater_than_or_equal, $person_id_in, $person_id_less_than, $person_id_less_than_or_equal, $person_id_not_equals, $person_id_specified, $status_equals, $status_in, $status_not_equals, $status_specified, $valid_from_equals, $valid_from_greater_than, $valid_from_greater_than_or_equal, $valid_from_in_0_chronology_calendar_type, $valid_from_in_0_chronology_id, $valid_from_in_0_day_of_month, $valid_from_in_0_day_of_week, $valid_from_in_0_day_of_year, $valid_from_in_0_era_value, $valid_from_in_0_leap_year, $valid_from_in_0_month, $valid_from_in_0_month_value, $valid_from_in_0_year, $valid_from_less_than, $valid_from_less_than_or_equal, $valid_from_not_equals, $valid_from_specified, $valid_to_equals, $valid_to_greater_than, $valid_to_greater_than_or_equal, $valid_to_in_0_chronology_calendar_type, $valid_to_in_0_chronology_id, $valid_to_in_0_day_of_month, $valid_to_in_0_day_of_week, $valid_to_in_0_day_of_year, $valid_to_in_0_era_value, $valid_to_in_0_leap_year, $valid_to_in_0_month, $valid_to_in_0_month_value, $valid_to_in_0_year, $valid_to_less_than, $valid_to_less_than_or_equal, $valid_to_not_equals, $valid_to_specified)
+## `countMemberships()`
 
-countMemberships
+```php
+countMemberships($id_greater_than, $id_less_than, $id_greater_than_or_equal, $id_less_than_or_equal, $id_equals, $id_not_equals, $id_specified, $id_in, $id_not_in, $first_name_contains, $first_name_does_not_contain, $first_name_equals, $first_name_not_equals, $first_name_specified, $first_name_in, $first_name_not_in, $last_name_contains, $last_name_does_not_contain, $last_name_equals, $last_name_not_equals, $last_name_specified, $last_name_in, $last_name_not_in, $id_number_contains, $id_number_does_not_contain, $id_number_equals, $id_number_not_equals, $id_number_specified, $id_number_in, $id_number_not_in, $other_number_contains, $other_number_does_not_contain, $other_number_equals, $other_number_not_equals, $other_number_specified, $other_number_in, $other_number_not_in, $dob_greater_than, $dob_less_than, $dob_greater_than_or_equal, $dob_less_than_or_equal, $dob_equals, $dob_not_equals, $dob_specified, $dob_in, $dob_not_in, $status_equals, $status_not_equals, $status_specified, $status_in, $status_not_in, $valid_from_greater_than, $valid_from_less_than, $valid_from_greater_than_or_equal, $valid_from_less_than_or_equal, $valid_from_equals, $valid_from_not_equals, $valid_from_specified, $valid_from_in, $valid_from_not_in, $valid_to_greater_than, $valid_to_less_than, $valid_to_greater_than_or_equal, $valid_to_less_than_or_equal, $valid_to_equals, $valid_to_not_equals, $valid_to_specified, $valid_to_in, $valid_to_not_in, $person_id_greater_than, $person_id_less_than, $person_id_greater_than_or_equal, $person_id_less_than_or_equal, $person_id_equals, $person_id_not_equals, $person_id_specified, $person_id_in, $person_id_not_in, $membership_type_id_greater_than, $membership_type_id_less_than, $membership_type_id_greater_than_or_equal, $membership_type_id_less_than_or_equal, $membership_type_id_equals, $membership_type_id_not_equals, $membership_type_id_specified, $membership_type_id_in, $membership_type_id_not_in, $membership_period_id_greater_than, $membership_period_id_less_than, $membership_period_id_greater_than_or_equal, $membership_period_id_less_than_or_equal, $membership_period_id_equals, $membership_period_id_not_equals, $membership_period_id_specified, $membership_period_id_in, $membership_period_id_not_in, $criteria_id_greater_than, $criteria_id_less_than, $criteria_id_greater_than_or_equal, $criteria_id_less_than_or_equal, $criteria_id_equals, $criteria_id_not_equals, $criteria_id_specified, $criteria_id_in, $criteria_id_not_in, $order_id_greater_than, $order_id_less_than, $order_id_greater_than_or_equal, $order_id_less_than_or_equal, $order_id_equals, $order_id_not_equals, $order_id_specified, $order_id_in, $order_id_not_in, $number_id_greater_than, $number_id_less_than, $number_id_greater_than_or_equal, $number_id_less_than_or_equal, $number_id_equals, $number_id_not_equals, $number_id_specified, $number_id_in, $number_id_not_in, $distinct): int
+```
+
+
 
 ### Example
+
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
+
+
 
 $apiInstance = new Idealogic\MembershipAPI\Api\MembershipResourceApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
-$criteria_id_equals = 789; // int | 
-$criteria_id_greater_than = 789; // int | 
-$criteria_id_greater_than_or_equal = 789; // int | 
-$criteria_id_in = array(56); // int[] | 
-$criteria_id_less_than = 789; // int | 
-$criteria_id_less_than_or_equal = 789; // int | 
-$criteria_id_not_equals = 789; // int | 
-$criteria_id_specified = true; // bool | 
-$id_equals = 789; // int | 
-$id_greater_than = 789; // int | 
-$id_greater_than_or_equal = 789; // int | 
-$id_in = array(56); // int[] | 
-$id_less_than = 789; // int | 
-$id_less_than_or_equal = 789; // int | 
-$id_not_equals = 789; // int | 
-$id_specified = true; // bool | 
-$membership_period_id_equals = 789; // int | 
-$membership_period_id_greater_than = 789; // int | 
-$membership_period_id_greater_than_or_equal = 789; // int | 
-$membership_period_id_in = array(56); // int[] | 
-$membership_period_id_less_than = 789; // int | 
-$membership_period_id_less_than_or_equal = 789; // int | 
-$membership_period_id_not_equals = 789; // int | 
-$membership_period_id_specified = true; // bool | 
-$number_id_equals = 56; // int | 
-$number_id_greater_than = 56; // int | 
-$number_id_greater_than_or_equal = 56; // int | 
-$number_id_in = array(56); // int[] | 
-$number_id_less_than = 56; // int | 
-$number_id_less_than_or_equal = 56; // int | 
-$number_id_not_equals = 56; // int | 
-$number_id_specified = true; // bool | 
-$order_id_equals = 789; // int | 
-$order_id_greater_than = 789; // int | 
-$order_id_greater_than_or_equal = 789; // int | 
-$order_id_in = array(56); // int[] | 
-$order_id_less_than = 789; // int | 
-$order_id_less_than_or_equal = 789; // int | 
-$order_id_not_equals = 789; // int | 
-$order_id_specified = true; // bool | 
-$person_id_equals = 789; // int | 
-$person_id_greater_than = 789; // int | 
-$person_id_greater_than_or_equal = 789; // int | 
-$person_id_in = array(56); // int[] | 
-$person_id_less_than = 789; // int | 
-$person_id_less_than_or_equal = 789; // int | 
-$person_id_not_equals = 789; // int | 
-$person_id_specified = true; // bool | 
-$status_equals = "status_equals_example"; // string | 
-$status_in = array("status_in_example"); // string[] | 
-$status_not_equals = "status_not_equals_example"; // string | 
-$status_specified = true; // bool | 
-$valid_from_equals = new \DateTime("2013-10-20"); // \DateTime | 
-$valid_from_greater_than = new \DateTime("2013-10-20"); // \DateTime | 
-$valid_from_greater_than_or_equal = new \DateTime("2013-10-20"); // \DateTime | 
-$valid_from_in_0_chronology_calendar_type = "valid_from_in_0_chronology_calendar_type_example"; // string | 
-$valid_from_in_0_chronology_id = "valid_from_in_0_chronology_id_example"; // string | 
-$valid_from_in_0_day_of_month = 56; // int | 
-$valid_from_in_0_day_of_week = "valid_from_in_0_day_of_week_example"; // string | 
-$valid_from_in_0_day_of_year = 56; // int | 
-$valid_from_in_0_era_value = 56; // int | 
-$valid_from_in_0_leap_year = true; // bool | 
-$valid_from_in_0_month = "valid_from_in_0_month_example"; // string | 
-$valid_from_in_0_month_value = 56; // int | 
-$valid_from_in_0_year = 56; // int | 
-$valid_from_less_than = new \DateTime("2013-10-20"); // \DateTime | 
-$valid_from_less_than_or_equal = new \DateTime("2013-10-20"); // \DateTime | 
-$valid_from_not_equals = new \DateTime("2013-10-20"); // \DateTime | 
-$valid_from_specified = true; // bool | 
-$valid_to_equals = new \DateTime("2013-10-20"); // \DateTime | 
-$valid_to_greater_than = new \DateTime("2013-10-20"); // \DateTime | 
-$valid_to_greater_than_or_equal = new \DateTime("2013-10-20"); // \DateTime | 
-$valid_to_in_0_chronology_calendar_type = "valid_to_in_0_chronology_calendar_type_example"; // string | 
-$valid_to_in_0_chronology_id = "valid_to_in_0_chronology_id_example"; // string | 
-$valid_to_in_0_day_of_month = 56; // int | 
-$valid_to_in_0_day_of_week = "valid_to_in_0_day_of_week_example"; // string | 
-$valid_to_in_0_day_of_year = 56; // int | 
-$valid_to_in_0_era_value = 56; // int | 
-$valid_to_in_0_leap_year = true; // bool | 
-$valid_to_in_0_month = "valid_to_in_0_month_example"; // string | 
-$valid_to_in_0_month_value = 56; // int | 
-$valid_to_in_0_year = 56; // int | 
-$valid_to_less_than = new \DateTime("2013-10-20"); // \DateTime | 
-$valid_to_less_than_or_equal = new \DateTime("2013-10-20"); // \DateTime | 
-$valid_to_not_equals = new \DateTime("2013-10-20"); // \DateTime | 
-$valid_to_specified = true; // bool | 
+$id_greater_than = 56; // int
+$id_less_than = 56; // int
+$id_greater_than_or_equal = 56; // int
+$id_less_than_or_equal = 56; // int
+$id_equals = 56; // int
+$id_not_equals = 56; // int
+$id_specified = True; // bool
+$id_in = array(56); // int[]
+$id_not_in = array(56); // int[]
+$first_name_contains = 'first_name_contains_example'; // string
+$first_name_does_not_contain = 'first_name_does_not_contain_example'; // string
+$first_name_equals = 'first_name_equals_example'; // string
+$first_name_not_equals = 'first_name_not_equals_example'; // string
+$first_name_specified = True; // bool
+$first_name_in = array('first_name_in_example'); // string[]
+$first_name_not_in = array('first_name_not_in_example'); // string[]
+$last_name_contains = 'last_name_contains_example'; // string
+$last_name_does_not_contain = 'last_name_does_not_contain_example'; // string
+$last_name_equals = 'last_name_equals_example'; // string
+$last_name_not_equals = 'last_name_not_equals_example'; // string
+$last_name_specified = True; // bool
+$last_name_in = array('last_name_in_example'); // string[]
+$last_name_not_in = array('last_name_not_in_example'); // string[]
+$id_number_contains = 'id_number_contains_example'; // string
+$id_number_does_not_contain = 'id_number_does_not_contain_example'; // string
+$id_number_equals = 'id_number_equals_example'; // string
+$id_number_not_equals = 'id_number_not_equals_example'; // string
+$id_number_specified = True; // bool
+$id_number_in = array('id_number_in_example'); // string[]
+$id_number_not_in = array('id_number_not_in_example'); // string[]
+$other_number_contains = 'other_number_contains_example'; // string
+$other_number_does_not_contain = 'other_number_does_not_contain_example'; // string
+$other_number_equals = 'other_number_equals_example'; // string
+$other_number_not_equals = 'other_number_not_equals_example'; // string
+$other_number_specified = True; // bool
+$other_number_in = array('other_number_in_example'); // string[]
+$other_number_not_in = array('other_number_not_in_example'); // string[]
+$dob_greater_than = new \DateTime("2013-10-20T19:20:30+01:00"); // \DateTime
+$dob_less_than = new \DateTime("2013-10-20T19:20:30+01:00"); // \DateTime
+$dob_greater_than_or_equal = new \DateTime("2013-10-20T19:20:30+01:00"); // \DateTime
+$dob_less_than_or_equal = new \DateTime("2013-10-20T19:20:30+01:00"); // \DateTime
+$dob_equals = new \DateTime("2013-10-20T19:20:30+01:00"); // \DateTime
+$dob_not_equals = new \DateTime("2013-10-20T19:20:30+01:00"); // \DateTime
+$dob_specified = True; // bool
+$dob_in = array(new \DateTime("2013-10-20T19:20:30+01:00")); // \DateTime[]
+$dob_not_in = array(new \DateTime("2013-10-20T19:20:30+01:00")); // \DateTime[]
+$status_equals = 'status_equals_example'; // string
+$status_not_equals = 'status_not_equals_example'; // string
+$status_specified = True; // bool
+$status_in = array('status_in_example'); // string[]
+$status_not_in = array('status_not_in_example'); // string[]
+$valid_from_greater_than = new \DateTime("2013-10-20T19:20:30+01:00"); // \DateTime
+$valid_from_less_than = new \DateTime("2013-10-20T19:20:30+01:00"); // \DateTime
+$valid_from_greater_than_or_equal = new \DateTime("2013-10-20T19:20:30+01:00"); // \DateTime
+$valid_from_less_than_or_equal = new \DateTime("2013-10-20T19:20:30+01:00"); // \DateTime
+$valid_from_equals = new \DateTime("2013-10-20T19:20:30+01:00"); // \DateTime
+$valid_from_not_equals = new \DateTime("2013-10-20T19:20:30+01:00"); // \DateTime
+$valid_from_specified = True; // bool
+$valid_from_in = array(new \DateTime("2013-10-20T19:20:30+01:00")); // \DateTime[]
+$valid_from_not_in = array(new \DateTime("2013-10-20T19:20:30+01:00")); // \DateTime[]
+$valid_to_greater_than = new \DateTime("2013-10-20T19:20:30+01:00"); // \DateTime
+$valid_to_less_than = new \DateTime("2013-10-20T19:20:30+01:00"); // \DateTime
+$valid_to_greater_than_or_equal = new \DateTime("2013-10-20T19:20:30+01:00"); // \DateTime
+$valid_to_less_than_or_equal = new \DateTime("2013-10-20T19:20:30+01:00"); // \DateTime
+$valid_to_equals = new \DateTime("2013-10-20T19:20:30+01:00"); // \DateTime
+$valid_to_not_equals = new \DateTime("2013-10-20T19:20:30+01:00"); // \DateTime
+$valid_to_specified = True; // bool
+$valid_to_in = array(new \DateTime("2013-10-20T19:20:30+01:00")); // \DateTime[]
+$valid_to_not_in = array(new \DateTime("2013-10-20T19:20:30+01:00")); // \DateTime[]
+$person_id_greater_than = 56; // int
+$person_id_less_than = 56; // int
+$person_id_greater_than_or_equal = 56; // int
+$person_id_less_than_or_equal = 56; // int
+$person_id_equals = 56; // int
+$person_id_not_equals = 56; // int
+$person_id_specified = True; // bool
+$person_id_in = array(56); // int[]
+$person_id_not_in = array(56); // int[]
+$membership_type_id_greater_than = 56; // int
+$membership_type_id_less_than = 56; // int
+$membership_type_id_greater_than_or_equal = 56; // int
+$membership_type_id_less_than_or_equal = 56; // int
+$membership_type_id_equals = 56; // int
+$membership_type_id_not_equals = 56; // int
+$membership_type_id_specified = True; // bool
+$membership_type_id_in = array(56); // int[]
+$membership_type_id_not_in = array(56); // int[]
+$membership_period_id_greater_than = 56; // int
+$membership_period_id_less_than = 56; // int
+$membership_period_id_greater_than_or_equal = 56; // int
+$membership_period_id_less_than_or_equal = 56; // int
+$membership_period_id_equals = 56; // int
+$membership_period_id_not_equals = 56; // int
+$membership_period_id_specified = True; // bool
+$membership_period_id_in = array(56); // int[]
+$membership_period_id_not_in = array(56); // int[]
+$criteria_id_greater_than = 56; // int
+$criteria_id_less_than = 56; // int
+$criteria_id_greater_than_or_equal = 56; // int
+$criteria_id_less_than_or_equal = 56; // int
+$criteria_id_equals = 56; // int
+$criteria_id_not_equals = 56; // int
+$criteria_id_specified = True; // bool
+$criteria_id_in = array(56); // int[]
+$criteria_id_not_in = array(56); // int[]
+$order_id_greater_than = 56; // int
+$order_id_less_than = 56; // int
+$order_id_greater_than_or_equal = 56; // int
+$order_id_less_than_or_equal = 56; // int
+$order_id_equals = 56; // int
+$order_id_not_equals = 56; // int
+$order_id_specified = True; // bool
+$order_id_in = array(56); // int[]
+$order_id_not_in = array(56); // int[]
+$number_id_greater_than = 56; // int
+$number_id_less_than = 56; // int
+$number_id_greater_than_or_equal = 56; // int
+$number_id_less_than_or_equal = 56; // int
+$number_id_equals = 56; // int
+$number_id_not_equals = 56; // int
+$number_id_specified = True; // bool
+$number_id_in = array(56); // int[]
+$number_id_not_in = array(56); // int[]
+$distinct = True; // bool
 
 try {
-    $result = $apiInstance->countMembershipsUsingGET($criteria_id_equals, $criteria_id_greater_than, $criteria_id_greater_than_or_equal, $criteria_id_in, $criteria_id_less_than, $criteria_id_less_than_or_equal, $criteria_id_not_equals, $criteria_id_specified, $id_equals, $id_greater_than, $id_greater_than_or_equal, $id_in, $id_less_than, $id_less_than_or_equal, $id_not_equals, $id_specified, $membership_period_id_equals, $membership_period_id_greater_than, $membership_period_id_greater_than_or_equal, $membership_period_id_in, $membership_period_id_less_than, $membership_period_id_less_than_or_equal, $membership_period_id_not_equals, $membership_period_id_specified, $number_id_equals, $number_id_greater_than, $number_id_greater_than_or_equal, $number_id_in, $number_id_less_than, $number_id_less_than_or_equal, $number_id_not_equals, $number_id_specified, $order_id_equals, $order_id_greater_than, $order_id_greater_than_or_equal, $order_id_in, $order_id_less_than, $order_id_less_than_or_equal, $order_id_not_equals, $order_id_specified, $person_id_equals, $person_id_greater_than, $person_id_greater_than_or_equal, $person_id_in, $person_id_less_than, $person_id_less_than_or_equal, $person_id_not_equals, $person_id_specified, $status_equals, $status_in, $status_not_equals, $status_specified, $valid_from_equals, $valid_from_greater_than, $valid_from_greater_than_or_equal, $valid_from_in_0_chronology_calendar_type, $valid_from_in_0_chronology_id, $valid_from_in_0_day_of_month, $valid_from_in_0_day_of_week, $valid_from_in_0_day_of_year, $valid_from_in_0_era_value, $valid_from_in_0_leap_year, $valid_from_in_0_month, $valid_from_in_0_month_value, $valid_from_in_0_year, $valid_from_less_than, $valid_from_less_than_or_equal, $valid_from_not_equals, $valid_from_specified, $valid_to_equals, $valid_to_greater_than, $valid_to_greater_than_or_equal, $valid_to_in_0_chronology_calendar_type, $valid_to_in_0_chronology_id, $valid_to_in_0_day_of_month, $valid_to_in_0_day_of_week, $valid_to_in_0_day_of_year, $valid_to_in_0_era_value, $valid_to_in_0_leap_year, $valid_to_in_0_month, $valid_to_in_0_month_value, $valid_to_in_0_year, $valid_to_less_than, $valid_to_less_than_or_equal, $valid_to_not_equals, $valid_to_specified);
+    $result = $apiInstance->countMemberships($id_greater_than, $id_less_than, $id_greater_than_or_equal, $id_less_than_or_equal, $id_equals, $id_not_equals, $id_specified, $id_in, $id_not_in, $first_name_contains, $first_name_does_not_contain, $first_name_equals, $first_name_not_equals, $first_name_specified, $first_name_in, $first_name_not_in, $last_name_contains, $last_name_does_not_contain, $last_name_equals, $last_name_not_equals, $last_name_specified, $last_name_in, $last_name_not_in, $id_number_contains, $id_number_does_not_contain, $id_number_equals, $id_number_not_equals, $id_number_specified, $id_number_in, $id_number_not_in, $other_number_contains, $other_number_does_not_contain, $other_number_equals, $other_number_not_equals, $other_number_specified, $other_number_in, $other_number_not_in, $dob_greater_than, $dob_less_than, $dob_greater_than_or_equal, $dob_less_than_or_equal, $dob_equals, $dob_not_equals, $dob_specified, $dob_in, $dob_not_in, $status_equals, $status_not_equals, $status_specified, $status_in, $status_not_in, $valid_from_greater_than, $valid_from_less_than, $valid_from_greater_than_or_equal, $valid_from_less_than_or_equal, $valid_from_equals, $valid_from_not_equals, $valid_from_specified, $valid_from_in, $valid_from_not_in, $valid_to_greater_than, $valid_to_less_than, $valid_to_greater_than_or_equal, $valid_to_less_than_or_equal, $valid_to_equals, $valid_to_not_equals, $valid_to_specified, $valid_to_in, $valid_to_not_in, $person_id_greater_than, $person_id_less_than, $person_id_greater_than_or_equal, $person_id_less_than_or_equal, $person_id_equals, $person_id_not_equals, $person_id_specified, $person_id_in, $person_id_not_in, $membership_type_id_greater_than, $membership_type_id_less_than, $membership_type_id_greater_than_or_equal, $membership_type_id_less_than_or_equal, $membership_type_id_equals, $membership_type_id_not_equals, $membership_type_id_specified, $membership_type_id_in, $membership_type_id_not_in, $membership_period_id_greater_than, $membership_period_id_less_than, $membership_period_id_greater_than_or_equal, $membership_period_id_less_than_or_equal, $membership_period_id_equals, $membership_period_id_not_equals, $membership_period_id_specified, $membership_period_id_in, $membership_period_id_not_in, $criteria_id_greater_than, $criteria_id_less_than, $criteria_id_greater_than_or_equal, $criteria_id_less_than_or_equal, $criteria_id_equals, $criteria_id_not_equals, $criteria_id_specified, $criteria_id_in, $criteria_id_not_in, $order_id_greater_than, $order_id_less_than, $order_id_greater_than_or_equal, $order_id_less_than_or_equal, $order_id_equals, $order_id_not_equals, $order_id_specified, $order_id_in, $order_id_not_in, $number_id_greater_than, $number_id_less_than, $number_id_greater_than_or_equal, $number_id_less_than_or_equal, $number_id_equals, $number_id_not_equals, $number_id_specified, $number_id_in, $number_id_not_in, $distinct);
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling MembershipResourceApi->countMembershipsUsingGET: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling MembershipResourceApi->countMemberships: ', $e->getMessage(), PHP_EOL;
 }
-?>
 ```
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **criteria_id_equals** | **int**|  | [optional]
- **criteria_id_greater_than** | **int**|  | [optional]
- **criteria_id_greater_than_or_equal** | **int**|  | [optional]
- **criteria_id_in** | [**int[]**](../Model/int.md)|  | [optional]
- **criteria_id_less_than** | **int**|  | [optional]
- **criteria_id_less_than_or_equal** | **int**|  | [optional]
- **criteria_id_not_equals** | **int**|  | [optional]
- **criteria_id_specified** | **bool**|  | [optional]
- **id_equals** | **int**|  | [optional]
- **id_greater_than** | **int**|  | [optional]
- **id_greater_than_or_equal** | **int**|  | [optional]
- **id_in** | [**int[]**](../Model/int.md)|  | [optional]
- **id_less_than** | **int**|  | [optional]
- **id_less_than_or_equal** | **int**|  | [optional]
- **id_not_equals** | **int**|  | [optional]
- **id_specified** | **bool**|  | [optional]
- **membership_period_id_equals** | **int**|  | [optional]
- **membership_period_id_greater_than** | **int**|  | [optional]
- **membership_period_id_greater_than_or_equal** | **int**|  | [optional]
- **membership_period_id_in** | [**int[]**](../Model/int.md)|  | [optional]
- **membership_period_id_less_than** | **int**|  | [optional]
- **membership_period_id_less_than_or_equal** | **int**|  | [optional]
- **membership_period_id_not_equals** | **int**|  | [optional]
- **membership_period_id_specified** | **bool**|  | [optional]
- **number_id_equals** | **int**|  | [optional]
- **number_id_greater_than** | **int**|  | [optional]
- **number_id_greater_than_or_equal** | **int**|  | [optional]
- **number_id_in** | [**int[]**](../Model/int.md)|  | [optional]
- **number_id_less_than** | **int**|  | [optional]
- **number_id_less_than_or_equal** | **int**|  | [optional]
- **number_id_not_equals** | **int**|  | [optional]
- **number_id_specified** | **bool**|  | [optional]
- **order_id_equals** | **int**|  | [optional]
- **order_id_greater_than** | **int**|  | [optional]
- **order_id_greater_than_or_equal** | **int**|  | [optional]
- **order_id_in** | [**int[]**](../Model/int.md)|  | [optional]
- **order_id_less_than** | **int**|  | [optional]
- **order_id_less_than_or_equal** | **int**|  | [optional]
- **order_id_not_equals** | **int**|  | [optional]
- **order_id_specified** | **bool**|  | [optional]
- **person_id_equals** | **int**|  | [optional]
- **person_id_greater_than** | **int**|  | [optional]
- **person_id_greater_than_or_equal** | **int**|  | [optional]
- **person_id_in** | [**int[]**](../Model/int.md)|  | [optional]
- **person_id_less_than** | **int**|  | [optional]
- **person_id_less_than_or_equal** | **int**|  | [optional]
- **person_id_not_equals** | **int**|  | [optional]
- **person_id_specified** | **bool**|  | [optional]
- **status_equals** | **string**|  | [optional]
- **status_in** | [**string[]**](../Model/string.md)|  | [optional]
- **status_not_equals** | **string**|  | [optional]
- **status_specified** | **bool**|  | [optional]
- **valid_from_equals** | **\DateTime**|  | [optional]
- **valid_from_greater_than** | **\DateTime**|  | [optional]
- **valid_from_greater_than_or_equal** | **\DateTime**|  | [optional]
- **valid_from_in_0_chronology_calendar_type** | **string**|  | [optional]
- **valid_from_in_0_chronology_id** | **string**|  | [optional]
- **valid_from_in_0_day_of_month** | **int**|  | [optional]
- **valid_from_in_0_day_of_week** | **string**|  | [optional]
- **valid_from_in_0_day_of_year** | **int**|  | [optional]
- **valid_from_in_0_era_value** | **int**|  | [optional]
- **valid_from_in_0_leap_year** | **bool**|  | [optional]
- **valid_from_in_0_month** | **string**|  | [optional]
- **valid_from_in_0_month_value** | **int**|  | [optional]
- **valid_from_in_0_year** | **int**|  | [optional]
- **valid_from_less_than** | **\DateTime**|  | [optional]
- **valid_from_less_than_or_equal** | **\DateTime**|  | [optional]
- **valid_from_not_equals** | **\DateTime**|  | [optional]
- **valid_from_specified** | **bool**|  | [optional]
- **valid_to_equals** | **\DateTime**|  | [optional]
- **valid_to_greater_than** | **\DateTime**|  | [optional]
- **valid_to_greater_than_or_equal** | **\DateTime**|  | [optional]
- **valid_to_in_0_chronology_calendar_type** | **string**|  | [optional]
- **valid_to_in_0_chronology_id** | **string**|  | [optional]
- **valid_to_in_0_day_of_month** | **int**|  | [optional]
- **valid_to_in_0_day_of_week** | **string**|  | [optional]
- **valid_to_in_0_day_of_year** | **int**|  | [optional]
- **valid_to_in_0_era_value** | **int**|  | [optional]
- **valid_to_in_0_leap_year** | **bool**|  | [optional]
- **valid_to_in_0_month** | **string**|  | [optional]
- **valid_to_in_0_month_value** | **int**|  | [optional]
- **valid_to_in_0_year** | **int**|  | [optional]
- **valid_to_less_than** | **\DateTime**|  | [optional]
- **valid_to_less_than_or_equal** | **\DateTime**|  | [optional]
- **valid_to_not_equals** | **\DateTime**|  | [optional]
- **valid_to_specified** | **bool**|  | [optional]
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **id_greater_than** | **int**|  | [optional] |
+| **id_less_than** | **int**|  | [optional] |
+| **id_greater_than_or_equal** | **int**|  | [optional] |
+| **id_less_than_or_equal** | **int**|  | [optional] |
+| **id_equals** | **int**|  | [optional] |
+| **id_not_equals** | **int**|  | [optional] |
+| **id_specified** | **bool**|  | [optional] |
+| **id_in** | [**int[]**](../Model/int.md)|  | [optional] |
+| **id_not_in** | [**int[]**](../Model/int.md)|  | [optional] |
+| **first_name_contains** | **string**|  | [optional] |
+| **first_name_does_not_contain** | **string**|  | [optional] |
+| **first_name_equals** | **string**|  | [optional] |
+| **first_name_not_equals** | **string**|  | [optional] |
+| **first_name_specified** | **bool**|  | [optional] |
+| **first_name_in** | [**string[]**](../Model/string.md)|  | [optional] |
+| **first_name_not_in** | [**string[]**](../Model/string.md)|  | [optional] |
+| **last_name_contains** | **string**|  | [optional] |
+| **last_name_does_not_contain** | **string**|  | [optional] |
+| **last_name_equals** | **string**|  | [optional] |
+| **last_name_not_equals** | **string**|  | [optional] |
+| **last_name_specified** | **bool**|  | [optional] |
+| **last_name_in** | [**string[]**](../Model/string.md)|  | [optional] |
+| **last_name_not_in** | [**string[]**](../Model/string.md)|  | [optional] |
+| **id_number_contains** | **string**|  | [optional] |
+| **id_number_does_not_contain** | **string**|  | [optional] |
+| **id_number_equals** | **string**|  | [optional] |
+| **id_number_not_equals** | **string**|  | [optional] |
+| **id_number_specified** | **bool**|  | [optional] |
+| **id_number_in** | [**string[]**](../Model/string.md)|  | [optional] |
+| **id_number_not_in** | [**string[]**](../Model/string.md)|  | [optional] |
+| **other_number_contains** | **string**|  | [optional] |
+| **other_number_does_not_contain** | **string**|  | [optional] |
+| **other_number_equals** | **string**|  | [optional] |
+| **other_number_not_equals** | **string**|  | [optional] |
+| **other_number_specified** | **bool**|  | [optional] |
+| **other_number_in** | [**string[]**](../Model/string.md)|  | [optional] |
+| **other_number_not_in** | [**string[]**](../Model/string.md)|  | [optional] |
+| **dob_greater_than** | **\DateTime**|  | [optional] |
+| **dob_less_than** | **\DateTime**|  | [optional] |
+| **dob_greater_than_or_equal** | **\DateTime**|  | [optional] |
+| **dob_less_than_or_equal** | **\DateTime**|  | [optional] |
+| **dob_equals** | **\DateTime**|  | [optional] |
+| **dob_not_equals** | **\DateTime**|  | [optional] |
+| **dob_specified** | **bool**|  | [optional] |
+| **dob_in** | [**\DateTime[]**](../Model/\DateTime.md)|  | [optional] |
+| **dob_not_in** | [**\DateTime[]**](../Model/\DateTime.md)|  | [optional] |
+| **status_equals** | **string**|  | [optional] |
+| **status_not_equals** | **string**|  | [optional] |
+| **status_specified** | **bool**|  | [optional] |
+| **status_in** | [**string[]**](../Model/string.md)|  | [optional] |
+| **status_not_in** | [**string[]**](../Model/string.md)|  | [optional] |
+| **valid_from_greater_than** | **\DateTime**|  | [optional] |
+| **valid_from_less_than** | **\DateTime**|  | [optional] |
+| **valid_from_greater_than_or_equal** | **\DateTime**|  | [optional] |
+| **valid_from_less_than_or_equal** | **\DateTime**|  | [optional] |
+| **valid_from_equals** | **\DateTime**|  | [optional] |
+| **valid_from_not_equals** | **\DateTime**|  | [optional] |
+| **valid_from_specified** | **bool**|  | [optional] |
+| **valid_from_in** | [**\DateTime[]**](../Model/\DateTime.md)|  | [optional] |
+| **valid_from_not_in** | [**\DateTime[]**](../Model/\DateTime.md)|  | [optional] |
+| **valid_to_greater_than** | **\DateTime**|  | [optional] |
+| **valid_to_less_than** | **\DateTime**|  | [optional] |
+| **valid_to_greater_than_or_equal** | **\DateTime**|  | [optional] |
+| **valid_to_less_than_or_equal** | **\DateTime**|  | [optional] |
+| **valid_to_equals** | **\DateTime**|  | [optional] |
+| **valid_to_not_equals** | **\DateTime**|  | [optional] |
+| **valid_to_specified** | **bool**|  | [optional] |
+| **valid_to_in** | [**\DateTime[]**](../Model/\DateTime.md)|  | [optional] |
+| **valid_to_not_in** | [**\DateTime[]**](../Model/\DateTime.md)|  | [optional] |
+| **person_id_greater_than** | **int**|  | [optional] |
+| **person_id_less_than** | **int**|  | [optional] |
+| **person_id_greater_than_or_equal** | **int**|  | [optional] |
+| **person_id_less_than_or_equal** | **int**|  | [optional] |
+| **person_id_equals** | **int**|  | [optional] |
+| **person_id_not_equals** | **int**|  | [optional] |
+| **person_id_specified** | **bool**|  | [optional] |
+| **person_id_in** | [**int[]**](../Model/int.md)|  | [optional] |
+| **person_id_not_in** | [**int[]**](../Model/int.md)|  | [optional] |
+| **membership_type_id_greater_than** | **int**|  | [optional] |
+| **membership_type_id_less_than** | **int**|  | [optional] |
+| **membership_type_id_greater_than_or_equal** | **int**|  | [optional] |
+| **membership_type_id_less_than_or_equal** | **int**|  | [optional] |
+| **membership_type_id_equals** | **int**|  | [optional] |
+| **membership_type_id_not_equals** | **int**|  | [optional] |
+| **membership_type_id_specified** | **bool**|  | [optional] |
+| **membership_type_id_in** | [**int[]**](../Model/int.md)|  | [optional] |
+| **membership_type_id_not_in** | [**int[]**](../Model/int.md)|  | [optional] |
+| **membership_period_id_greater_than** | **int**|  | [optional] |
+| **membership_period_id_less_than** | **int**|  | [optional] |
+| **membership_period_id_greater_than_or_equal** | **int**|  | [optional] |
+| **membership_period_id_less_than_or_equal** | **int**|  | [optional] |
+| **membership_period_id_equals** | **int**|  | [optional] |
+| **membership_period_id_not_equals** | **int**|  | [optional] |
+| **membership_period_id_specified** | **bool**|  | [optional] |
+| **membership_period_id_in** | [**int[]**](../Model/int.md)|  | [optional] |
+| **membership_period_id_not_in** | [**int[]**](../Model/int.md)|  | [optional] |
+| **criteria_id_greater_than** | **int**|  | [optional] |
+| **criteria_id_less_than** | **int**|  | [optional] |
+| **criteria_id_greater_than_or_equal** | **int**|  | [optional] |
+| **criteria_id_less_than_or_equal** | **int**|  | [optional] |
+| **criteria_id_equals** | **int**|  | [optional] |
+| **criteria_id_not_equals** | **int**|  | [optional] |
+| **criteria_id_specified** | **bool**|  | [optional] |
+| **criteria_id_in** | [**int[]**](../Model/int.md)|  | [optional] |
+| **criteria_id_not_in** | [**int[]**](../Model/int.md)|  | [optional] |
+| **order_id_greater_than** | **int**|  | [optional] |
+| **order_id_less_than** | **int**|  | [optional] |
+| **order_id_greater_than_or_equal** | **int**|  | [optional] |
+| **order_id_less_than_or_equal** | **int**|  | [optional] |
+| **order_id_equals** | **int**|  | [optional] |
+| **order_id_not_equals** | **int**|  | [optional] |
+| **order_id_specified** | **bool**|  | [optional] |
+| **order_id_in** | [**int[]**](../Model/int.md)|  | [optional] |
+| **order_id_not_in** | [**int[]**](../Model/int.md)|  | [optional] |
+| **number_id_greater_than** | **int**|  | [optional] |
+| **number_id_less_than** | **int**|  | [optional] |
+| **number_id_greater_than_or_equal** | **int**|  | [optional] |
+| **number_id_less_than_or_equal** | **int**|  | [optional] |
+| **number_id_equals** | **int**|  | [optional] |
+| **number_id_not_equals** | **int**|  | [optional] |
+| **number_id_specified** | **bool**|  | [optional] |
+| **number_id_in** | [**int[]**](../Model/int.md)|  | [optional] |
+| **number_id_not_in** | [**int[]**](../Model/int.md)|  | [optional] |
+| **distinct** | **bool**|  | [optional] |
 
 ### Return type
 
@@ -278,42 +424,49 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: */*
+- **Content-Type**: Not defined
+- **Accept**: `*/*`
 
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
+[[Back to README]](../../README.md)
 
-# **createMembershipUsingPOST**
-> \Idealogic\MembershipAPI\Model\MembershipDTO createMembershipUsingPOST($membership_dto)
+## `createMembership()`
 
-createMembership
+```php
+createMembership($membership_dto): \Idealogic\MembershipAPI\Model\MembershipDTO
+```
+
+
 
 ### Example
+
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
+
+
 
 $apiInstance = new Idealogic\MembershipAPI\Api\MembershipResourceApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
-$membership_dto = new \Idealogic\MembershipAPI\Model\MembershipDTO(); // \Idealogic\MembershipAPI\Model\MembershipDTO | membershipDTO
+$membership_dto = new \Idealogic\MembershipAPI\Model\MembershipDTO(); // \Idealogic\MembershipAPI\Model\MembershipDTO
 
 try {
-    $result = $apiInstance->createMembershipUsingPOST($membership_dto);
+    $result = $apiInstance->createMembership($membership_dto);
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling MembershipResourceApi->createMembershipUsingPOST: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling MembershipResourceApi->createMembership: ', $e->getMessage(), PHP_EOL;
 }
-?>
 ```
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **membership_dto** | [**\Idealogic\MembershipAPI\Model\MembershipDTO**](../Model/MembershipDTO.md)| membershipDTO |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **membership_dto** | [**\Idealogic\MembershipAPI\Model\MembershipDTO**](../Model/MembershipDTO.md)|  | |
 
 ### Return type
 
@@ -325,41 +478,48 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
- - **Accept**: */*
+- **Content-Type**: `application/json`
+- **Accept**: `*/*`
 
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
+[[Back to README]](../../README.md)
 
-# **deleteMembershipUsingDELETE**
-> deleteMembershipUsingDELETE($id)
+## `deleteMembership()`
 
-deleteMembership
+```php
+deleteMembership($id)
+```
+
+
 
 ### Example
+
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
+
+
 
 $apiInstance = new Idealogic\MembershipAPI\Api\MembershipResourceApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
-$id = 789; // int | id
+$id = 56; // int
 
 try {
-    $apiInstance->deleteMembershipUsingDELETE($id);
+    $apiInstance->deleteMembership($id);
 } catch (Exception $e) {
-    echo 'Exception when calling MembershipResourceApi->deleteMembershipUsingDELETE: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling MembershipResourceApi->deleteMembership: ', $e->getMessage(), PHP_EOL;
 }
-?>
 ```
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **id** | **int**| id |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **id** | **int**|  | |
 
 ### Return type
 
@@ -371,44 +531,51 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: */*
+- **Content-Type**: Not defined
+- **Accept**: Not defined
 
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
+[[Back to README]](../../README.md)
 
-# **enrolMembershipsUsingPOST**
-> \Idealogic\MembershipAPI\Model\MembershipStatusDTO[] enrolMembershipsUsingPOST($membership_enrol_request_dto, $organisation_id)
+## `enrolMemberships()`
 
-enrolMemberships
+```php
+enrolMemberships($membership_enrol_request_dto, $organisation_id): \Idealogic\MembershipAPI\Model\MembershipStatusDTO[]
+```
+
+
 
 ### Example
+
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
+
+
 
 $apiInstance = new Idealogic\MembershipAPI\Api\MembershipResourceApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
-$membership_enrol_request_dto = new \Idealogic\MembershipAPI\Model\MembershipEnrolRequestDTO(); // \Idealogic\MembershipAPI\Model\MembershipEnrolRequestDTO | membershipEnrolRequestDTO
-$organisation_id = 789; // int | organisationId
+$membership_enrol_request_dto = new \Idealogic\MembershipAPI\Model\MembershipEnrolRequestDTO(); // \Idealogic\MembershipAPI\Model\MembershipEnrolRequestDTO
+$organisation_id = 56; // int
 
 try {
-    $result = $apiInstance->enrolMembershipsUsingPOST($membership_enrol_request_dto, $organisation_id);
+    $result = $apiInstance->enrolMemberships($membership_enrol_request_dto, $organisation_id);
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling MembershipResourceApi->enrolMembershipsUsingPOST: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling MembershipResourceApi->enrolMemberships: ', $e->getMessage(), PHP_EOL;
 }
-?>
 ```
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **membership_enrol_request_dto** | [**\Idealogic\MembershipAPI\Model\MembershipEnrolRequestDTO**](../Model/MembershipEnrolRequestDTO.md)| membershipEnrolRequestDTO |
- **organisation_id** | **int**| organisationId | [optional]
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **membership_enrol_request_dto** | [**\Idealogic\MembershipAPI\Model\MembershipEnrolRequestDTO**](../Model/MembershipEnrolRequestDTO.md)|  | |
+| **organisation_id** | **int**|  | [optional] |
 
 ### Return type
 
@@ -420,218 +587,297 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
- - **Accept**: */*
+- **Content-Type**: `application/json`
+- **Accept**: `*/*`
 
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
+[[Back to README]](../../README.md)
 
-# **getAllMembershipsUsingGET**
-> \Idealogic\MembershipAPI\Model\MembershipDTO[] getAllMembershipsUsingGET($criteria_id_equals, $criteria_id_greater_than, $criteria_id_greater_than_or_equal, $criteria_id_in, $criteria_id_less_than, $criteria_id_less_than_or_equal, $criteria_id_not_equals, $criteria_id_specified, $id_equals, $id_greater_than, $id_greater_than_or_equal, $id_in, $id_less_than, $id_less_than_or_equal, $id_not_equals, $id_specified, $membership_period_id_equals, $membership_period_id_greater_than, $membership_period_id_greater_than_or_equal, $membership_period_id_in, $membership_period_id_less_than, $membership_period_id_less_than_or_equal, $membership_period_id_not_equals, $membership_period_id_specified, $number_id_equals, $number_id_greater_than, $number_id_greater_than_or_equal, $number_id_in, $number_id_less_than, $number_id_less_than_or_equal, $number_id_not_equals, $number_id_specified, $order_id_equals, $order_id_greater_than, $order_id_greater_than_or_equal, $order_id_in, $order_id_less_than, $order_id_less_than_or_equal, $order_id_not_equals, $order_id_specified, $page, $person_id_equals, $person_id_greater_than, $person_id_greater_than_or_equal, $person_id_in, $person_id_less_than, $person_id_less_than_or_equal, $person_id_not_equals, $person_id_specified, $size, $sort, $status_equals, $status_in, $status_not_equals, $status_specified, $valid_from_equals, $valid_from_greater_than, $valid_from_greater_than_or_equal, $valid_from_in_0_chronology_calendar_type, $valid_from_in_0_chronology_id, $valid_from_in_0_day_of_month, $valid_from_in_0_day_of_week, $valid_from_in_0_day_of_year, $valid_from_in_0_era_value, $valid_from_in_0_leap_year, $valid_from_in_0_month, $valid_from_in_0_month_value, $valid_from_in_0_year, $valid_from_less_than, $valid_from_less_than_or_equal, $valid_from_not_equals, $valid_from_specified, $valid_to_equals, $valid_to_greater_than, $valid_to_greater_than_or_equal, $valid_to_in_0_chronology_calendar_type, $valid_to_in_0_chronology_id, $valid_to_in_0_day_of_month, $valid_to_in_0_day_of_week, $valid_to_in_0_day_of_year, $valid_to_in_0_era_value, $valid_to_in_0_leap_year, $valid_to_in_0_month, $valid_to_in_0_month_value, $valid_to_in_0_year, $valid_to_less_than, $valid_to_less_than_or_equal, $valid_to_not_equals, $valid_to_specified)
+## `getAllMemberships()`
 
-getAllMemberships
+```php
+getAllMemberships($pageable, $id_greater_than, $id_less_than, $id_greater_than_or_equal, $id_less_than_or_equal, $id_equals, $id_not_equals, $id_specified, $id_in, $id_not_in, $first_name_contains, $first_name_does_not_contain, $first_name_equals, $first_name_not_equals, $first_name_specified, $first_name_in, $first_name_not_in, $last_name_contains, $last_name_does_not_contain, $last_name_equals, $last_name_not_equals, $last_name_specified, $last_name_in, $last_name_not_in, $id_number_contains, $id_number_does_not_contain, $id_number_equals, $id_number_not_equals, $id_number_specified, $id_number_in, $id_number_not_in, $other_number_contains, $other_number_does_not_contain, $other_number_equals, $other_number_not_equals, $other_number_specified, $other_number_in, $other_number_not_in, $dob_greater_than, $dob_less_than, $dob_greater_than_or_equal, $dob_less_than_or_equal, $dob_equals, $dob_not_equals, $dob_specified, $dob_in, $dob_not_in, $status_equals, $status_not_equals, $status_specified, $status_in, $status_not_in, $valid_from_greater_than, $valid_from_less_than, $valid_from_greater_than_or_equal, $valid_from_less_than_or_equal, $valid_from_equals, $valid_from_not_equals, $valid_from_specified, $valid_from_in, $valid_from_not_in, $valid_to_greater_than, $valid_to_less_than, $valid_to_greater_than_or_equal, $valid_to_less_than_or_equal, $valid_to_equals, $valid_to_not_equals, $valid_to_specified, $valid_to_in, $valid_to_not_in, $person_id_greater_than, $person_id_less_than, $person_id_greater_than_or_equal, $person_id_less_than_or_equal, $person_id_equals, $person_id_not_equals, $person_id_specified, $person_id_in, $person_id_not_in, $membership_type_id_greater_than, $membership_type_id_less_than, $membership_type_id_greater_than_or_equal, $membership_type_id_less_than_or_equal, $membership_type_id_equals, $membership_type_id_not_equals, $membership_type_id_specified, $membership_type_id_in, $membership_type_id_not_in, $membership_period_id_greater_than, $membership_period_id_less_than, $membership_period_id_greater_than_or_equal, $membership_period_id_less_than_or_equal, $membership_period_id_equals, $membership_period_id_not_equals, $membership_period_id_specified, $membership_period_id_in, $membership_period_id_not_in, $criteria_id_greater_than, $criteria_id_less_than, $criteria_id_greater_than_or_equal, $criteria_id_less_than_or_equal, $criteria_id_equals, $criteria_id_not_equals, $criteria_id_specified, $criteria_id_in, $criteria_id_not_in, $order_id_greater_than, $order_id_less_than, $order_id_greater_than_or_equal, $order_id_less_than_or_equal, $order_id_equals, $order_id_not_equals, $order_id_specified, $order_id_in, $order_id_not_in, $number_id_greater_than, $number_id_less_than, $number_id_greater_than_or_equal, $number_id_less_than_or_equal, $number_id_equals, $number_id_not_equals, $number_id_specified, $number_id_in, $number_id_not_in, $distinct): \Idealogic\MembershipAPI\Model\MembershipDTO[]
+```
+
+
 
 ### Example
+
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
+
+
 
 $apiInstance = new Idealogic\MembershipAPI\Api\MembershipResourceApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
-$criteria_id_equals = 789; // int | 
-$criteria_id_greater_than = 789; // int | 
-$criteria_id_greater_than_or_equal = 789; // int | 
-$criteria_id_in = array(56); // int[] | 
-$criteria_id_less_than = 789; // int | 
-$criteria_id_less_than_or_equal = 789; // int | 
-$criteria_id_not_equals = 789; // int | 
-$criteria_id_specified = true; // bool | 
-$id_equals = 789; // int | 
-$id_greater_than = 789; // int | 
-$id_greater_than_or_equal = 789; // int | 
-$id_in = array(56); // int[] | 
-$id_less_than = 789; // int | 
-$id_less_than_or_equal = 789; // int | 
-$id_not_equals = 789; // int | 
-$id_specified = true; // bool | 
-$membership_period_id_equals = 789; // int | 
-$membership_period_id_greater_than = 789; // int | 
-$membership_period_id_greater_than_or_equal = 789; // int | 
-$membership_period_id_in = array(56); // int[] | 
-$membership_period_id_less_than = 789; // int | 
-$membership_period_id_less_than_or_equal = 789; // int | 
-$membership_period_id_not_equals = 789; // int | 
-$membership_period_id_specified = true; // bool | 
-$number_id_equals = 56; // int | 
-$number_id_greater_than = 56; // int | 
-$number_id_greater_than_or_equal = 56; // int | 
-$number_id_in = array(56); // int[] | 
-$number_id_less_than = 56; // int | 
-$number_id_less_than_or_equal = 56; // int | 
-$number_id_not_equals = 56; // int | 
-$number_id_specified = true; // bool | 
-$order_id_equals = 789; // int | 
-$order_id_greater_than = 789; // int | 
-$order_id_greater_than_or_equal = 789; // int | 
-$order_id_in = array(56); // int[] | 
-$order_id_less_than = 789; // int | 
-$order_id_less_than_or_equal = 789; // int | 
-$order_id_not_equals = 789; // int | 
-$order_id_specified = true; // bool | 
-$page = 56; // int | Page number of the requested page
-$person_id_equals = 789; // int | 
-$person_id_greater_than = 789; // int | 
-$person_id_greater_than_or_equal = 789; // int | 
-$person_id_in = array(56); // int[] | 
-$person_id_less_than = 789; // int | 
-$person_id_less_than_or_equal = 789; // int | 
-$person_id_not_equals = 789; // int | 
-$person_id_specified = true; // bool | 
-$size = 56; // int | Size of a page
-$sort = array("sort_example"); // string[] | Sorting criteria in the format: property(,asc|desc). Default sort order is ascending. Multiple sort criteria are supported.
-$status_equals = "status_equals_example"; // string | 
-$status_in = array("status_in_example"); // string[] | 
-$status_not_equals = "status_not_equals_example"; // string | 
-$status_specified = true; // bool | 
-$valid_from_equals = new \DateTime("2013-10-20"); // \DateTime | 
-$valid_from_greater_than = new \DateTime("2013-10-20"); // \DateTime | 
-$valid_from_greater_than_or_equal = new \DateTime("2013-10-20"); // \DateTime | 
-$valid_from_in_0_chronology_calendar_type = "valid_from_in_0_chronology_calendar_type_example"; // string | 
-$valid_from_in_0_chronology_id = "valid_from_in_0_chronology_id_example"; // string | 
-$valid_from_in_0_day_of_month = 56; // int | 
-$valid_from_in_0_day_of_week = "valid_from_in_0_day_of_week_example"; // string | 
-$valid_from_in_0_day_of_year = 56; // int | 
-$valid_from_in_0_era_value = 56; // int | 
-$valid_from_in_0_leap_year = true; // bool | 
-$valid_from_in_0_month = "valid_from_in_0_month_example"; // string | 
-$valid_from_in_0_month_value = 56; // int | 
-$valid_from_in_0_year = 56; // int | 
-$valid_from_less_than = new \DateTime("2013-10-20"); // \DateTime | 
-$valid_from_less_than_or_equal = new \DateTime("2013-10-20"); // \DateTime | 
-$valid_from_not_equals = new \DateTime("2013-10-20"); // \DateTime | 
-$valid_from_specified = true; // bool | 
-$valid_to_equals = new \DateTime("2013-10-20"); // \DateTime | 
-$valid_to_greater_than = new \DateTime("2013-10-20"); // \DateTime | 
-$valid_to_greater_than_or_equal = new \DateTime("2013-10-20"); // \DateTime | 
-$valid_to_in_0_chronology_calendar_type = "valid_to_in_0_chronology_calendar_type_example"; // string | 
-$valid_to_in_0_chronology_id = "valid_to_in_0_chronology_id_example"; // string | 
-$valid_to_in_0_day_of_month = 56; // int | 
-$valid_to_in_0_day_of_week = "valid_to_in_0_day_of_week_example"; // string | 
-$valid_to_in_0_day_of_year = 56; // int | 
-$valid_to_in_0_era_value = 56; // int | 
-$valid_to_in_0_leap_year = true; // bool | 
-$valid_to_in_0_month = "valid_to_in_0_month_example"; // string | 
-$valid_to_in_0_month_value = 56; // int | 
-$valid_to_in_0_year = 56; // int | 
-$valid_to_less_than = new \DateTime("2013-10-20"); // \DateTime | 
-$valid_to_less_than_or_equal = new \DateTime("2013-10-20"); // \DateTime | 
-$valid_to_not_equals = new \DateTime("2013-10-20"); // \DateTime | 
-$valid_to_specified = true; // bool | 
+$pageable = new \Idealogic\MembershipAPI\Model\Pageable(); // Pageable
+$id_greater_than = 56; // int
+$id_less_than = 56; // int
+$id_greater_than_or_equal = 56; // int
+$id_less_than_or_equal = 56; // int
+$id_equals = 56; // int
+$id_not_equals = 56; // int
+$id_specified = True; // bool
+$id_in = array(56); // int[]
+$id_not_in = array(56); // int[]
+$first_name_contains = 'first_name_contains_example'; // string
+$first_name_does_not_contain = 'first_name_does_not_contain_example'; // string
+$first_name_equals = 'first_name_equals_example'; // string
+$first_name_not_equals = 'first_name_not_equals_example'; // string
+$first_name_specified = True; // bool
+$first_name_in = array('first_name_in_example'); // string[]
+$first_name_not_in = array('first_name_not_in_example'); // string[]
+$last_name_contains = 'last_name_contains_example'; // string
+$last_name_does_not_contain = 'last_name_does_not_contain_example'; // string
+$last_name_equals = 'last_name_equals_example'; // string
+$last_name_not_equals = 'last_name_not_equals_example'; // string
+$last_name_specified = True; // bool
+$last_name_in = array('last_name_in_example'); // string[]
+$last_name_not_in = array('last_name_not_in_example'); // string[]
+$id_number_contains = 'id_number_contains_example'; // string
+$id_number_does_not_contain = 'id_number_does_not_contain_example'; // string
+$id_number_equals = 'id_number_equals_example'; // string
+$id_number_not_equals = 'id_number_not_equals_example'; // string
+$id_number_specified = True; // bool
+$id_number_in = array('id_number_in_example'); // string[]
+$id_number_not_in = array('id_number_not_in_example'); // string[]
+$other_number_contains = 'other_number_contains_example'; // string
+$other_number_does_not_contain = 'other_number_does_not_contain_example'; // string
+$other_number_equals = 'other_number_equals_example'; // string
+$other_number_not_equals = 'other_number_not_equals_example'; // string
+$other_number_specified = True; // bool
+$other_number_in = array('other_number_in_example'); // string[]
+$other_number_not_in = array('other_number_not_in_example'); // string[]
+$dob_greater_than = new \DateTime("2013-10-20T19:20:30+01:00"); // \DateTime
+$dob_less_than = new \DateTime("2013-10-20T19:20:30+01:00"); // \DateTime
+$dob_greater_than_or_equal = new \DateTime("2013-10-20T19:20:30+01:00"); // \DateTime
+$dob_less_than_or_equal = new \DateTime("2013-10-20T19:20:30+01:00"); // \DateTime
+$dob_equals = new \DateTime("2013-10-20T19:20:30+01:00"); // \DateTime
+$dob_not_equals = new \DateTime("2013-10-20T19:20:30+01:00"); // \DateTime
+$dob_specified = True; // bool
+$dob_in = array(new \DateTime("2013-10-20T19:20:30+01:00")); // \DateTime[]
+$dob_not_in = array(new \DateTime("2013-10-20T19:20:30+01:00")); // \DateTime[]
+$status_equals = 'status_equals_example'; // string
+$status_not_equals = 'status_not_equals_example'; // string
+$status_specified = True; // bool
+$status_in = array('status_in_example'); // string[]
+$status_not_in = array('status_not_in_example'); // string[]
+$valid_from_greater_than = new \DateTime("2013-10-20T19:20:30+01:00"); // \DateTime
+$valid_from_less_than = new \DateTime("2013-10-20T19:20:30+01:00"); // \DateTime
+$valid_from_greater_than_or_equal = new \DateTime("2013-10-20T19:20:30+01:00"); // \DateTime
+$valid_from_less_than_or_equal = new \DateTime("2013-10-20T19:20:30+01:00"); // \DateTime
+$valid_from_equals = new \DateTime("2013-10-20T19:20:30+01:00"); // \DateTime
+$valid_from_not_equals = new \DateTime("2013-10-20T19:20:30+01:00"); // \DateTime
+$valid_from_specified = True; // bool
+$valid_from_in = array(new \DateTime("2013-10-20T19:20:30+01:00")); // \DateTime[]
+$valid_from_not_in = array(new \DateTime("2013-10-20T19:20:30+01:00")); // \DateTime[]
+$valid_to_greater_than = new \DateTime("2013-10-20T19:20:30+01:00"); // \DateTime
+$valid_to_less_than = new \DateTime("2013-10-20T19:20:30+01:00"); // \DateTime
+$valid_to_greater_than_or_equal = new \DateTime("2013-10-20T19:20:30+01:00"); // \DateTime
+$valid_to_less_than_or_equal = new \DateTime("2013-10-20T19:20:30+01:00"); // \DateTime
+$valid_to_equals = new \DateTime("2013-10-20T19:20:30+01:00"); // \DateTime
+$valid_to_not_equals = new \DateTime("2013-10-20T19:20:30+01:00"); // \DateTime
+$valid_to_specified = True; // bool
+$valid_to_in = array(new \DateTime("2013-10-20T19:20:30+01:00")); // \DateTime[]
+$valid_to_not_in = array(new \DateTime("2013-10-20T19:20:30+01:00")); // \DateTime[]
+$person_id_greater_than = 56; // int
+$person_id_less_than = 56; // int
+$person_id_greater_than_or_equal = 56; // int
+$person_id_less_than_or_equal = 56; // int
+$person_id_equals = 56; // int
+$person_id_not_equals = 56; // int
+$person_id_specified = True; // bool
+$person_id_in = array(56); // int[]
+$person_id_not_in = array(56); // int[]
+$membership_type_id_greater_than = 56; // int
+$membership_type_id_less_than = 56; // int
+$membership_type_id_greater_than_or_equal = 56; // int
+$membership_type_id_less_than_or_equal = 56; // int
+$membership_type_id_equals = 56; // int
+$membership_type_id_not_equals = 56; // int
+$membership_type_id_specified = True; // bool
+$membership_type_id_in = array(56); // int[]
+$membership_type_id_not_in = array(56); // int[]
+$membership_period_id_greater_than = 56; // int
+$membership_period_id_less_than = 56; // int
+$membership_period_id_greater_than_or_equal = 56; // int
+$membership_period_id_less_than_or_equal = 56; // int
+$membership_period_id_equals = 56; // int
+$membership_period_id_not_equals = 56; // int
+$membership_period_id_specified = True; // bool
+$membership_period_id_in = array(56); // int[]
+$membership_period_id_not_in = array(56); // int[]
+$criteria_id_greater_than = 56; // int
+$criteria_id_less_than = 56; // int
+$criteria_id_greater_than_or_equal = 56; // int
+$criteria_id_less_than_or_equal = 56; // int
+$criteria_id_equals = 56; // int
+$criteria_id_not_equals = 56; // int
+$criteria_id_specified = True; // bool
+$criteria_id_in = array(56); // int[]
+$criteria_id_not_in = array(56); // int[]
+$order_id_greater_than = 56; // int
+$order_id_less_than = 56; // int
+$order_id_greater_than_or_equal = 56; // int
+$order_id_less_than_or_equal = 56; // int
+$order_id_equals = 56; // int
+$order_id_not_equals = 56; // int
+$order_id_specified = True; // bool
+$order_id_in = array(56); // int[]
+$order_id_not_in = array(56); // int[]
+$number_id_greater_than = 56; // int
+$number_id_less_than = 56; // int
+$number_id_greater_than_or_equal = 56; // int
+$number_id_less_than_or_equal = 56; // int
+$number_id_equals = 56; // int
+$number_id_not_equals = 56; // int
+$number_id_specified = True; // bool
+$number_id_in = array(56); // int[]
+$number_id_not_in = array(56); // int[]
+$distinct = True; // bool
 
 try {
-    $result = $apiInstance->getAllMembershipsUsingGET($criteria_id_equals, $criteria_id_greater_than, $criteria_id_greater_than_or_equal, $criteria_id_in, $criteria_id_less_than, $criteria_id_less_than_or_equal, $criteria_id_not_equals, $criteria_id_specified, $id_equals, $id_greater_than, $id_greater_than_or_equal, $id_in, $id_less_than, $id_less_than_or_equal, $id_not_equals, $id_specified, $membership_period_id_equals, $membership_period_id_greater_than, $membership_period_id_greater_than_or_equal, $membership_period_id_in, $membership_period_id_less_than, $membership_period_id_less_than_or_equal, $membership_period_id_not_equals, $membership_period_id_specified, $number_id_equals, $number_id_greater_than, $number_id_greater_than_or_equal, $number_id_in, $number_id_less_than, $number_id_less_than_or_equal, $number_id_not_equals, $number_id_specified, $order_id_equals, $order_id_greater_than, $order_id_greater_than_or_equal, $order_id_in, $order_id_less_than, $order_id_less_than_or_equal, $order_id_not_equals, $order_id_specified, $page, $person_id_equals, $person_id_greater_than, $person_id_greater_than_or_equal, $person_id_in, $person_id_less_than, $person_id_less_than_or_equal, $person_id_not_equals, $person_id_specified, $size, $sort, $status_equals, $status_in, $status_not_equals, $status_specified, $valid_from_equals, $valid_from_greater_than, $valid_from_greater_than_or_equal, $valid_from_in_0_chronology_calendar_type, $valid_from_in_0_chronology_id, $valid_from_in_0_day_of_month, $valid_from_in_0_day_of_week, $valid_from_in_0_day_of_year, $valid_from_in_0_era_value, $valid_from_in_0_leap_year, $valid_from_in_0_month, $valid_from_in_0_month_value, $valid_from_in_0_year, $valid_from_less_than, $valid_from_less_than_or_equal, $valid_from_not_equals, $valid_from_specified, $valid_to_equals, $valid_to_greater_than, $valid_to_greater_than_or_equal, $valid_to_in_0_chronology_calendar_type, $valid_to_in_0_chronology_id, $valid_to_in_0_day_of_month, $valid_to_in_0_day_of_week, $valid_to_in_0_day_of_year, $valid_to_in_0_era_value, $valid_to_in_0_leap_year, $valid_to_in_0_month, $valid_to_in_0_month_value, $valid_to_in_0_year, $valid_to_less_than, $valid_to_less_than_or_equal, $valid_to_not_equals, $valid_to_specified);
+    $result = $apiInstance->getAllMemberships($pageable, $id_greater_than, $id_less_than, $id_greater_than_or_equal, $id_less_than_or_equal, $id_equals, $id_not_equals, $id_specified, $id_in, $id_not_in, $first_name_contains, $first_name_does_not_contain, $first_name_equals, $first_name_not_equals, $first_name_specified, $first_name_in, $first_name_not_in, $last_name_contains, $last_name_does_not_contain, $last_name_equals, $last_name_not_equals, $last_name_specified, $last_name_in, $last_name_not_in, $id_number_contains, $id_number_does_not_contain, $id_number_equals, $id_number_not_equals, $id_number_specified, $id_number_in, $id_number_not_in, $other_number_contains, $other_number_does_not_contain, $other_number_equals, $other_number_not_equals, $other_number_specified, $other_number_in, $other_number_not_in, $dob_greater_than, $dob_less_than, $dob_greater_than_or_equal, $dob_less_than_or_equal, $dob_equals, $dob_not_equals, $dob_specified, $dob_in, $dob_not_in, $status_equals, $status_not_equals, $status_specified, $status_in, $status_not_in, $valid_from_greater_than, $valid_from_less_than, $valid_from_greater_than_or_equal, $valid_from_less_than_or_equal, $valid_from_equals, $valid_from_not_equals, $valid_from_specified, $valid_from_in, $valid_from_not_in, $valid_to_greater_than, $valid_to_less_than, $valid_to_greater_than_or_equal, $valid_to_less_than_or_equal, $valid_to_equals, $valid_to_not_equals, $valid_to_specified, $valid_to_in, $valid_to_not_in, $person_id_greater_than, $person_id_less_than, $person_id_greater_than_or_equal, $person_id_less_than_or_equal, $person_id_equals, $person_id_not_equals, $person_id_specified, $person_id_in, $person_id_not_in, $membership_type_id_greater_than, $membership_type_id_less_than, $membership_type_id_greater_than_or_equal, $membership_type_id_less_than_or_equal, $membership_type_id_equals, $membership_type_id_not_equals, $membership_type_id_specified, $membership_type_id_in, $membership_type_id_not_in, $membership_period_id_greater_than, $membership_period_id_less_than, $membership_period_id_greater_than_or_equal, $membership_period_id_less_than_or_equal, $membership_period_id_equals, $membership_period_id_not_equals, $membership_period_id_specified, $membership_period_id_in, $membership_period_id_not_in, $criteria_id_greater_than, $criteria_id_less_than, $criteria_id_greater_than_or_equal, $criteria_id_less_than_or_equal, $criteria_id_equals, $criteria_id_not_equals, $criteria_id_specified, $criteria_id_in, $criteria_id_not_in, $order_id_greater_than, $order_id_less_than, $order_id_greater_than_or_equal, $order_id_less_than_or_equal, $order_id_equals, $order_id_not_equals, $order_id_specified, $order_id_in, $order_id_not_in, $number_id_greater_than, $number_id_less_than, $number_id_greater_than_or_equal, $number_id_less_than_or_equal, $number_id_equals, $number_id_not_equals, $number_id_specified, $number_id_in, $number_id_not_in, $distinct);
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling MembershipResourceApi->getAllMembershipsUsingGET: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling MembershipResourceApi->getAllMemberships: ', $e->getMessage(), PHP_EOL;
 }
-?>
 ```
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **criteria_id_equals** | **int**|  | [optional]
- **criteria_id_greater_than** | **int**|  | [optional]
- **criteria_id_greater_than_or_equal** | **int**|  | [optional]
- **criteria_id_in** | [**int[]**](../Model/int.md)|  | [optional]
- **criteria_id_less_than** | **int**|  | [optional]
- **criteria_id_less_than_or_equal** | **int**|  | [optional]
- **criteria_id_not_equals** | **int**|  | [optional]
- **criteria_id_specified** | **bool**|  | [optional]
- **id_equals** | **int**|  | [optional]
- **id_greater_than** | **int**|  | [optional]
- **id_greater_than_or_equal** | **int**|  | [optional]
- **id_in** | [**int[]**](../Model/int.md)|  | [optional]
- **id_less_than** | **int**|  | [optional]
- **id_less_than_or_equal** | **int**|  | [optional]
- **id_not_equals** | **int**|  | [optional]
- **id_specified** | **bool**|  | [optional]
- **membership_period_id_equals** | **int**|  | [optional]
- **membership_period_id_greater_than** | **int**|  | [optional]
- **membership_period_id_greater_than_or_equal** | **int**|  | [optional]
- **membership_period_id_in** | [**int[]**](../Model/int.md)|  | [optional]
- **membership_period_id_less_than** | **int**|  | [optional]
- **membership_period_id_less_than_or_equal** | **int**|  | [optional]
- **membership_period_id_not_equals** | **int**|  | [optional]
- **membership_period_id_specified** | **bool**|  | [optional]
- **number_id_equals** | **int**|  | [optional]
- **number_id_greater_than** | **int**|  | [optional]
- **number_id_greater_than_or_equal** | **int**|  | [optional]
- **number_id_in** | [**int[]**](../Model/int.md)|  | [optional]
- **number_id_less_than** | **int**|  | [optional]
- **number_id_less_than_or_equal** | **int**|  | [optional]
- **number_id_not_equals** | **int**|  | [optional]
- **number_id_specified** | **bool**|  | [optional]
- **order_id_equals** | **int**|  | [optional]
- **order_id_greater_than** | **int**|  | [optional]
- **order_id_greater_than_or_equal** | **int**|  | [optional]
- **order_id_in** | [**int[]**](../Model/int.md)|  | [optional]
- **order_id_less_than** | **int**|  | [optional]
- **order_id_less_than_or_equal** | **int**|  | [optional]
- **order_id_not_equals** | **int**|  | [optional]
- **order_id_specified** | **bool**|  | [optional]
- **page** | **int**| Page number of the requested page | [optional]
- **person_id_equals** | **int**|  | [optional]
- **person_id_greater_than** | **int**|  | [optional]
- **person_id_greater_than_or_equal** | **int**|  | [optional]
- **person_id_in** | [**int[]**](../Model/int.md)|  | [optional]
- **person_id_less_than** | **int**|  | [optional]
- **person_id_less_than_or_equal** | **int**|  | [optional]
- **person_id_not_equals** | **int**|  | [optional]
- **person_id_specified** | **bool**|  | [optional]
- **size** | **int**| Size of a page | [optional]
- **sort** | [**string[]**](../Model/string.md)| Sorting criteria in the format: property(,asc|desc). Default sort order is ascending. Multiple sort criteria are supported. | [optional]
- **status_equals** | **string**|  | [optional]
- **status_in** | [**string[]**](../Model/string.md)|  | [optional]
- **status_not_equals** | **string**|  | [optional]
- **status_specified** | **bool**|  | [optional]
- **valid_from_equals** | **\DateTime**|  | [optional]
- **valid_from_greater_than** | **\DateTime**|  | [optional]
- **valid_from_greater_than_or_equal** | **\DateTime**|  | [optional]
- **valid_from_in_0_chronology_calendar_type** | **string**|  | [optional]
- **valid_from_in_0_chronology_id** | **string**|  | [optional]
- **valid_from_in_0_day_of_month** | **int**|  | [optional]
- **valid_from_in_0_day_of_week** | **string**|  | [optional]
- **valid_from_in_0_day_of_year** | **int**|  | [optional]
- **valid_from_in_0_era_value** | **int**|  | [optional]
- **valid_from_in_0_leap_year** | **bool**|  | [optional]
- **valid_from_in_0_month** | **string**|  | [optional]
- **valid_from_in_0_month_value** | **int**|  | [optional]
- **valid_from_in_0_year** | **int**|  | [optional]
- **valid_from_less_than** | **\DateTime**|  | [optional]
- **valid_from_less_than_or_equal** | **\DateTime**|  | [optional]
- **valid_from_not_equals** | **\DateTime**|  | [optional]
- **valid_from_specified** | **bool**|  | [optional]
- **valid_to_equals** | **\DateTime**|  | [optional]
- **valid_to_greater_than** | **\DateTime**|  | [optional]
- **valid_to_greater_than_or_equal** | **\DateTime**|  | [optional]
- **valid_to_in_0_chronology_calendar_type** | **string**|  | [optional]
- **valid_to_in_0_chronology_id** | **string**|  | [optional]
- **valid_to_in_0_day_of_month** | **int**|  | [optional]
- **valid_to_in_0_day_of_week** | **string**|  | [optional]
- **valid_to_in_0_day_of_year** | **int**|  | [optional]
- **valid_to_in_0_era_value** | **int**|  | [optional]
- **valid_to_in_0_leap_year** | **bool**|  | [optional]
- **valid_to_in_0_month** | **string**|  | [optional]
- **valid_to_in_0_month_value** | **int**|  | [optional]
- **valid_to_in_0_year** | **int**|  | [optional]
- **valid_to_less_than** | **\DateTime**|  | [optional]
- **valid_to_less_than_or_equal** | **\DateTime**|  | [optional]
- **valid_to_not_equals** | **\DateTime**|  | [optional]
- **valid_to_specified** | **bool**|  | [optional]
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **pageable** | [**Pageable**](../Model/.md)|  | |
+| **id_greater_than** | **int**|  | [optional] |
+| **id_less_than** | **int**|  | [optional] |
+| **id_greater_than_or_equal** | **int**|  | [optional] |
+| **id_less_than_or_equal** | **int**|  | [optional] |
+| **id_equals** | **int**|  | [optional] |
+| **id_not_equals** | **int**|  | [optional] |
+| **id_specified** | **bool**|  | [optional] |
+| **id_in** | [**int[]**](../Model/int.md)|  | [optional] |
+| **id_not_in** | [**int[]**](../Model/int.md)|  | [optional] |
+| **first_name_contains** | **string**|  | [optional] |
+| **first_name_does_not_contain** | **string**|  | [optional] |
+| **first_name_equals** | **string**|  | [optional] |
+| **first_name_not_equals** | **string**|  | [optional] |
+| **first_name_specified** | **bool**|  | [optional] |
+| **first_name_in** | [**string[]**](../Model/string.md)|  | [optional] |
+| **first_name_not_in** | [**string[]**](../Model/string.md)|  | [optional] |
+| **last_name_contains** | **string**|  | [optional] |
+| **last_name_does_not_contain** | **string**|  | [optional] |
+| **last_name_equals** | **string**|  | [optional] |
+| **last_name_not_equals** | **string**|  | [optional] |
+| **last_name_specified** | **bool**|  | [optional] |
+| **last_name_in** | [**string[]**](../Model/string.md)|  | [optional] |
+| **last_name_not_in** | [**string[]**](../Model/string.md)|  | [optional] |
+| **id_number_contains** | **string**|  | [optional] |
+| **id_number_does_not_contain** | **string**|  | [optional] |
+| **id_number_equals** | **string**|  | [optional] |
+| **id_number_not_equals** | **string**|  | [optional] |
+| **id_number_specified** | **bool**|  | [optional] |
+| **id_number_in** | [**string[]**](../Model/string.md)|  | [optional] |
+| **id_number_not_in** | [**string[]**](../Model/string.md)|  | [optional] |
+| **other_number_contains** | **string**|  | [optional] |
+| **other_number_does_not_contain** | **string**|  | [optional] |
+| **other_number_equals** | **string**|  | [optional] |
+| **other_number_not_equals** | **string**|  | [optional] |
+| **other_number_specified** | **bool**|  | [optional] |
+| **other_number_in** | [**string[]**](../Model/string.md)|  | [optional] |
+| **other_number_not_in** | [**string[]**](../Model/string.md)|  | [optional] |
+| **dob_greater_than** | **\DateTime**|  | [optional] |
+| **dob_less_than** | **\DateTime**|  | [optional] |
+| **dob_greater_than_or_equal** | **\DateTime**|  | [optional] |
+| **dob_less_than_or_equal** | **\DateTime**|  | [optional] |
+| **dob_equals** | **\DateTime**|  | [optional] |
+| **dob_not_equals** | **\DateTime**|  | [optional] |
+| **dob_specified** | **bool**|  | [optional] |
+| **dob_in** | [**\DateTime[]**](../Model/\DateTime.md)|  | [optional] |
+| **dob_not_in** | [**\DateTime[]**](../Model/\DateTime.md)|  | [optional] |
+| **status_equals** | **string**|  | [optional] |
+| **status_not_equals** | **string**|  | [optional] |
+| **status_specified** | **bool**|  | [optional] |
+| **status_in** | [**string[]**](../Model/string.md)|  | [optional] |
+| **status_not_in** | [**string[]**](../Model/string.md)|  | [optional] |
+| **valid_from_greater_than** | **\DateTime**|  | [optional] |
+| **valid_from_less_than** | **\DateTime**|  | [optional] |
+| **valid_from_greater_than_or_equal** | **\DateTime**|  | [optional] |
+| **valid_from_less_than_or_equal** | **\DateTime**|  | [optional] |
+| **valid_from_equals** | **\DateTime**|  | [optional] |
+| **valid_from_not_equals** | **\DateTime**|  | [optional] |
+| **valid_from_specified** | **bool**|  | [optional] |
+| **valid_from_in** | [**\DateTime[]**](../Model/\DateTime.md)|  | [optional] |
+| **valid_from_not_in** | [**\DateTime[]**](../Model/\DateTime.md)|  | [optional] |
+| **valid_to_greater_than** | **\DateTime**|  | [optional] |
+| **valid_to_less_than** | **\DateTime**|  | [optional] |
+| **valid_to_greater_than_or_equal** | **\DateTime**|  | [optional] |
+| **valid_to_less_than_or_equal** | **\DateTime**|  | [optional] |
+| **valid_to_equals** | **\DateTime**|  | [optional] |
+| **valid_to_not_equals** | **\DateTime**|  | [optional] |
+| **valid_to_specified** | **bool**|  | [optional] |
+| **valid_to_in** | [**\DateTime[]**](../Model/\DateTime.md)|  | [optional] |
+| **valid_to_not_in** | [**\DateTime[]**](../Model/\DateTime.md)|  | [optional] |
+| **person_id_greater_than** | **int**|  | [optional] |
+| **person_id_less_than** | **int**|  | [optional] |
+| **person_id_greater_than_or_equal** | **int**|  | [optional] |
+| **person_id_less_than_or_equal** | **int**|  | [optional] |
+| **person_id_equals** | **int**|  | [optional] |
+| **person_id_not_equals** | **int**|  | [optional] |
+| **person_id_specified** | **bool**|  | [optional] |
+| **person_id_in** | [**int[]**](../Model/int.md)|  | [optional] |
+| **person_id_not_in** | [**int[]**](../Model/int.md)|  | [optional] |
+| **membership_type_id_greater_than** | **int**|  | [optional] |
+| **membership_type_id_less_than** | **int**|  | [optional] |
+| **membership_type_id_greater_than_or_equal** | **int**|  | [optional] |
+| **membership_type_id_less_than_or_equal** | **int**|  | [optional] |
+| **membership_type_id_equals** | **int**|  | [optional] |
+| **membership_type_id_not_equals** | **int**|  | [optional] |
+| **membership_type_id_specified** | **bool**|  | [optional] |
+| **membership_type_id_in** | [**int[]**](../Model/int.md)|  | [optional] |
+| **membership_type_id_not_in** | [**int[]**](../Model/int.md)|  | [optional] |
+| **membership_period_id_greater_than** | **int**|  | [optional] |
+| **membership_period_id_less_than** | **int**|  | [optional] |
+| **membership_period_id_greater_than_or_equal** | **int**|  | [optional] |
+| **membership_period_id_less_than_or_equal** | **int**|  | [optional] |
+| **membership_period_id_equals** | **int**|  | [optional] |
+| **membership_period_id_not_equals** | **int**|  | [optional] |
+| **membership_period_id_specified** | **bool**|  | [optional] |
+| **membership_period_id_in** | [**int[]**](../Model/int.md)|  | [optional] |
+| **membership_period_id_not_in** | [**int[]**](../Model/int.md)|  | [optional] |
+| **criteria_id_greater_than** | **int**|  | [optional] |
+| **criteria_id_less_than** | **int**|  | [optional] |
+| **criteria_id_greater_than_or_equal** | **int**|  | [optional] |
+| **criteria_id_less_than_or_equal** | **int**|  | [optional] |
+| **criteria_id_equals** | **int**|  | [optional] |
+| **criteria_id_not_equals** | **int**|  | [optional] |
+| **criteria_id_specified** | **bool**|  | [optional] |
+| **criteria_id_in** | [**int[]**](../Model/int.md)|  | [optional] |
+| **criteria_id_not_in** | [**int[]**](../Model/int.md)|  | [optional] |
+| **order_id_greater_than** | **int**|  | [optional] |
+| **order_id_less_than** | **int**|  | [optional] |
+| **order_id_greater_than_or_equal** | **int**|  | [optional] |
+| **order_id_less_than_or_equal** | **int**|  | [optional] |
+| **order_id_equals** | **int**|  | [optional] |
+| **order_id_not_equals** | **int**|  | [optional] |
+| **order_id_specified** | **bool**|  | [optional] |
+| **order_id_in** | [**int[]**](../Model/int.md)|  | [optional] |
+| **order_id_not_in** | [**int[]**](../Model/int.md)|  | [optional] |
+| **number_id_greater_than** | **int**|  | [optional] |
+| **number_id_less_than** | **int**|  | [optional] |
+| **number_id_greater_than_or_equal** | **int**|  | [optional] |
+| **number_id_less_than_or_equal** | **int**|  | [optional] |
+| **number_id_equals** | **int**|  | [optional] |
+| **number_id_not_equals** | **int**|  | [optional] |
+| **number_id_specified** | **bool**|  | [optional] |
+| **number_id_in** | [**int[]**](../Model/int.md)|  | [optional] |
+| **number_id_not_in** | [**int[]**](../Model/int.md)|  | [optional] |
+| **distinct** | **bool**|  | [optional] |
 
 ### Return type
 
@@ -643,46 +889,53 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: */*
+- **Content-Type**: Not defined
+- **Accept**: `*/*`
 
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
+[[Back to README]](../../README.md)
 
-# **getLinkedMembersUsingGET**
-> \Idealogic\MembershipAPI\Model\MembershipStatusDTO[] getLinkedMembersUsingGET($external_user_id, $membership_type_id, $organisation_id)
+## `getLinkedMembers()`
 
-getLinkedMembers
+```php
+getLinkedMembers($external_user_id, $organisation_id, $membership_type_id): \Idealogic\MembershipAPI\Model\MembershipStatusDTO[]
+```
+
+
 
 ### Example
+
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
+
+
 
 $apiInstance = new Idealogic\MembershipAPI\Api\MembershipResourceApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
-$external_user_id = "external_user_id_example"; // string | externalUserId
-$membership_type_id = 789; // int | membershipTypeId
-$organisation_id = 789; // int | organisationId
+$external_user_id = 'external_user_id_example'; // string
+$organisation_id = 56; // int
+$membership_type_id = 56; // int
 
 try {
-    $result = $apiInstance->getLinkedMembersUsingGET($external_user_id, $membership_type_id, $organisation_id);
+    $result = $apiInstance->getLinkedMembers($external_user_id, $organisation_id, $membership_type_id);
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling MembershipResourceApi->getLinkedMembersUsingGET: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling MembershipResourceApi->getLinkedMembers: ', $e->getMessage(), PHP_EOL;
 }
-?>
 ```
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **external_user_id** | **string**| externalUserId |
- **membership_type_id** | **int**| membershipTypeId | [optional]
- **organisation_id** | **int**| organisationId | [optional]
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **external_user_id** | **string**|  | |
+| **organisation_id** | **int**|  | [optional] |
+| **membership_type_id** | **int**|  | [optional] |
 
 ### Return type
 
@@ -694,46 +947,53 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: */*
+- **Content-Type**: Not defined
+- **Accept**: `*/*`
 
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
+[[Back to README]](../../README.md)
 
-# **getMemberStatusByLatestPeriodForMembershipTypeUsingGET**
-> \Idealogic\MembershipAPI\Model\LatestPeriodMembershipStatusResponseDTO getMemberStatusByLatestPeriodForMembershipTypeUsingGET($external_user_id, $membership_type_id, $organisation_id)
+## `getMemberStatusByLatestPeriodForMembershipType()`
 
-getMemberStatusByLatestPeriodForMembershipType
+```php
+getMemberStatusByLatestPeriodForMembershipType($external_user_id, $membership_type_id, $organisation_id): \Idealogic\MembershipAPI\Model\LatestPeriodMembershipStatusResponseDTO
+```
+
+
 
 ### Example
+
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
+
+
 
 $apiInstance = new Idealogic\MembershipAPI\Api\MembershipResourceApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
-$external_user_id = "external_user_id_example"; // string | externalUserId
-$membership_type_id = 789; // int | membershipTypeId
-$organisation_id = 789; // int | organisationId
+$external_user_id = 'external_user_id_example'; // string
+$membership_type_id = 56; // int
+$organisation_id = 56; // int
 
 try {
-    $result = $apiInstance->getMemberStatusByLatestPeriodForMembershipTypeUsingGET($external_user_id, $membership_type_id, $organisation_id);
+    $result = $apiInstance->getMemberStatusByLatestPeriodForMembershipType($external_user_id, $membership_type_id, $organisation_id);
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling MembershipResourceApi->getMemberStatusByLatestPeriodForMembershipTypeUsingGET: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling MembershipResourceApi->getMemberStatusByLatestPeriodForMembershipType: ', $e->getMessage(), PHP_EOL;
 }
-?>
 ```
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **external_user_id** | **string**| externalUserId |
- **membership_type_id** | **int**| membershipTypeId |
- **organisation_id** | **int**| organisationId | [optional]
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **external_user_id** | **string**|  | |
+| **membership_type_id** | **int**|  | |
+| **organisation_id** | **int**|  | [optional] |
 
 ### Return type
 
@@ -745,91 +1005,49 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: */*
+- **Content-Type**: Not defined
+- **Accept**: `*/*`
 
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
+[[Back to README]](../../README.md)
 
-# **getMembershipAttachmentUsingGET**
-> string getMembershipAttachmentUsingGET($uuid, $organisation_id)
+## `getMembership()`
 
-getMembershipAttachment
+```php
+getMembership($id): \Idealogic\MembershipAPI\Model\MembershipDTO
+```
+
+
 
 ### Example
+
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
+
+
 
 $apiInstance = new Idealogic\MembershipAPI\Api\MembershipResourceApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
-$uuid = "uuid_example"; // string | uuid
-$organisation_id = 789; // int | organisationId
+$id = 56; // int
 
 try {
-    $result = $apiInstance->getMembershipAttachmentUsingGET($uuid, $organisation_id);
+    $result = $apiInstance->getMembership($id);
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling MembershipResourceApi->getMembershipAttachmentUsingGET: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling MembershipResourceApi->getMembership: ', $e->getMessage(), PHP_EOL;
 }
-?>
 ```
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **uuid** | **string**| uuid |
- **organisation_id** | **int**| organisationId | [optional]
-
-### Return type
-
-**string**
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: application/pdf
-
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
-
-# **getMembershipUsingGET**
-> \Idealogic\MembershipAPI\Model\MembershipDTO getMembershipUsingGET($id)
-
-getMembership
-
-### Example
-```php
-<?php
-require_once(__DIR__ . '/vendor/autoload.php');
-
-$apiInstance = new Idealogic\MembershipAPI\Api\MembershipResourceApi(
-    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
-    // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client()
-);
-$id = 789; // int | id
-
-try {
-    $result = $apiInstance->getMembershipUsingGET($id);
-    print_r($result);
-} catch (Exception $e) {
-    echo 'Exception when calling MembershipResourceApi->getMembershipUsingGET: ', $e->getMessage(), PHP_EOL;
-}
-?>
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **id** | **int**| id |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **id** | **int**|  | |
 
 ### Return type
 
@@ -841,42 +1059,165 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: */*
+- **Content-Type**: Not defined
+- **Accept**: `*/*`
 
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
+[[Back to README]](../../README.md)
 
-# **updateMembershipUsingPUT**
-> \Idealogic\MembershipAPI\Model\MembershipDTO updateMembershipUsingPUT($membership_dto)
+## `getMembershipAttachment()`
 
-updateMembership
+```php
+getMembershipAttachment($uuid, $organisation_id): string[]
+```
+
+
 
 ### Example
+
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
+
+
 
 $apiInstance = new Idealogic\MembershipAPI\Api\MembershipResourceApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
-$membership_dto = new \Idealogic\MembershipAPI\Model\MembershipDTO(); // \Idealogic\MembershipAPI\Model\MembershipDTO | membershipDTO
+$uuid = 'uuid_example'; // string
+$organisation_id = 56; // int
 
 try {
-    $result = $apiInstance->updateMembershipUsingPUT($membership_dto);
+    $result = $apiInstance->getMembershipAttachment($uuid, $organisation_id);
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling MembershipResourceApi->updateMembershipUsingPUT: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling MembershipResourceApi->getMembershipAttachment: ', $e->getMessage(), PHP_EOL;
 }
-?>
 ```
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **membership_dto** | [**\Idealogic\MembershipAPI\Model\MembershipDTO**](../Model/MembershipDTO.md)| membershipDTO |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **uuid** | **string**|  | |
+| **organisation_id** | **int**|  | [optional] |
+
+### Return type
+
+**string[]**
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: `application/pdf`
+
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
+[[Back to README]](../../README.md)
+
+## `importMembership()`
+
+```php
+importMembership($file, $sheet_index, $period_id, $org_id): \Idealogic\MembershipAPI\Model\MembershipAddResponseDTO[]
+```
+
+
+
+### Example
+
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+
+
+$apiInstance = new Idealogic\MembershipAPI\Api\MembershipResourceApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client()
+);
+$file = 'file_example'; // string
+$sheet_index = 56; // int
+$period_id = 56; // int
+$org_id = 56; // int
+
+try {
+    $result = $apiInstance->importMembership($file, $sheet_index, $period_id, $org_id);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling MembershipResourceApi->importMembership: ', $e->getMessage(), PHP_EOL;
+}
+```
+
+### Parameters
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **file** | **string**|  | |
+| **sheet_index** | **int**|  | |
+| **period_id** | **int**|  | |
+| **org_id** | **int**|  | [optional] |
+
+### Return type
+
+[**\Idealogic\MembershipAPI\Model\MembershipAddResponseDTO[]**](../Model/MembershipAddResponseDTO.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: `*/*`
+
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
+[[Back to README]](../../README.md)
+
+## `updateMembership()`
+
+```php
+updateMembership($membership_dto): \Idealogic\MembershipAPI\Model\MembershipDTO
+```
+
+
+
+### Example
+
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+
+
+$apiInstance = new Idealogic\MembershipAPI\Api\MembershipResourceApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client()
+);
+$membership_dto = new \Idealogic\MembershipAPI\Model\MembershipDTO(); // \Idealogic\MembershipAPI\Model\MembershipDTO
+
+try {
+    $result = $apiInstance->updateMembership($membership_dto);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling MembershipResourceApi->updateMembership: ', $e->getMessage(), PHP_EOL;
+}
+```
+
+### Parameters
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **membership_dto** | [**\Idealogic\MembershipAPI\Model\MembershipDTO**](../Model/MembershipDTO.md)|  | |
 
 ### Return type
 
@@ -888,8 +1229,9 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
- - **Accept**: */*
+- **Content-Type**: `application/json`
+- **Accept**: `*/*`
 
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
-
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
+[[Back to README]](../../README.md)

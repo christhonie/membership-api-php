@@ -1,17 +1,14 @@
-# MembershipPeriodDTO
+# # MembershipPeriodDTO
 
 ## Properties
+
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**id** | **int** |  | [optional] 
-**membership_type_id** | **int** |  | [optional] 
-**membership_type_name** | **string** |  | [optional] 
-**name** | **string** |  | 
-**number_type_id** | **int** |  | [optional] 
-**number_type_name** | **string** |  | [optional] 
-**valid_from** | [**\DateTime**](\DateTime.md) |  | 
-**valid_to** | [**\DateTime**](\DateTime.md) |  | [optional] 
+**id** | **int** |  | [optional]
+**name** | **string** |  |
+**valid_from** | **\DateTime** |  |
+**valid_to** | **\DateTime** |  | [optional]
+**membership_type** | [**\Idealogic\MembershipAPI\Model\MembershipTypeDTO**](MembershipTypeDTO.md) |  | [optional]
+**number_type** | [**\Idealogic\MembershipAPI\Model\NumberTypeDTO**](NumberTypeDTO.md) |  | [optional]
 
-[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
-
-
+[[Back to Model list]](../../README.md#models) [[Back to API list]](../../README.md#endpoints) [[Back to README]](../../README.md)

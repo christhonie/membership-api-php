@@ -1,94 +1,111 @@
 # Idealogic\MembershipAPI\OrderResourceApi
 
-All URIs are relative to *https://http://localhost:8080*
+All URIs are relative to http://localhost, except if the operation defines another base path.
 
-Method | HTTP request | Description
-------------- | ------------- | -------------
-[**countOrdersUsingGET**](OrderResourceApi.md#countOrdersUsingGET) | **GET** /api/orders/count | countOrders
-[**createOrderUsingPOST**](OrderResourceApi.md#createOrderUsingPOST) | **POST** /api/orders | createOrder
-[**deleteOrderUsingDELETE**](OrderResourceApi.md#deleteOrderUsingDELETE) | **DELETE** /api/orders/{id} | deleteOrder
-[**getAllOrdersUsingGET**](OrderResourceApi.md#getAllOrdersUsingGET) | **GET** /api/orders | getAllOrders
-[**getOrderUsingGET**](OrderResourceApi.md#getOrderUsingGET) | **GET** /api/orders/{id} | getOrder
-[**updateOrderUsingPUT**](OrderResourceApi.md#updateOrderUsingPUT) | **PUT** /api/orders | updateOrder
+| Method | HTTP request | Description |
+| ------------- | ------------- | ------------- |
+| [**countOrders()**](OrderResourceApi.md#countOrders) | **GET** /api/orders/count |  |
+| [**createOrder()**](OrderResourceApi.md#createOrder) | **POST** /api/orders |  |
+| [**deleteOrder()**](OrderResourceApi.md#deleteOrder) | **DELETE** /api/orders/{id} |  |
+| [**getAllOrders()**](OrderResourceApi.md#getAllOrders) | **GET** /api/orders |  |
+| [**getOrder()**](OrderResourceApi.md#getOrder) | **GET** /api/orders/{id} |  |
+| [**partialUpdateOrder()**](OrderResourceApi.md#partialUpdateOrder) | **PATCH** /api/orders/{id} |  |
+| [**updateOrder()**](OrderResourceApi.md#updateOrder) | **PUT** /api/orders |  |
+| [**updateOrder1()**](OrderResourceApi.md#updateOrder1) | **PUT** /api/orders/{id} |  |
 
 
-# **countOrdersUsingGET**
-> int countOrdersUsingGET($external_id_contains, $external_id_does_not_contain, $external_id_equals, $external_id_in, $external_id_not_equals, $external_id_specified, $id_equals, $id_greater_than, $id_greater_than_or_equal, $id_in, $id_less_than, $id_less_than_or_equal, $id_not_equals, $id_specified, $number_contains, $number_does_not_contain, $number_equals, $number_in, $number_not_equals, $number_specified, $status_equals, $status_in, $status_not_equals, $status_specified)
+## `countOrders()`
 
-countOrders
+```php
+countOrders($id_greater_than, $id_less_than, $id_greater_than_or_equal, $id_less_than_or_equal, $id_equals, $id_not_equals, $id_specified, $id_in, $id_not_in, $number_contains, $number_does_not_contain, $number_equals, $number_not_equals, $number_specified, $number_in, $number_not_in, $external_id_contains, $external_id_does_not_contain, $external_id_equals, $external_id_not_equals, $external_id_specified, $external_id_in, $external_id_not_in, $status_equals, $status_not_equals, $status_specified, $status_in, $status_not_in, $distinct): int
+```
+
+
 
 ### Example
+
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
+
+
 
 $apiInstance = new Idealogic\MembershipAPI\Api\OrderResourceApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
-$external_id_contains = "external_id_contains_example"; // string | 
-$external_id_does_not_contain = "external_id_does_not_contain_example"; // string | 
-$external_id_equals = "external_id_equals_example"; // string | 
-$external_id_in = array("external_id_in_example"); // string[] | 
-$external_id_not_equals = "external_id_not_equals_example"; // string | 
-$external_id_specified = true; // bool | 
-$id_equals = 789; // int | 
-$id_greater_than = 789; // int | 
-$id_greater_than_or_equal = 789; // int | 
-$id_in = array(56); // int[] | 
-$id_less_than = 789; // int | 
-$id_less_than_or_equal = 789; // int | 
-$id_not_equals = 789; // int | 
-$id_specified = true; // bool | 
-$number_contains = "number_contains_example"; // string | 
-$number_does_not_contain = "number_does_not_contain_example"; // string | 
-$number_equals = "number_equals_example"; // string | 
-$number_in = array("number_in_example"); // string[] | 
-$number_not_equals = "number_not_equals_example"; // string | 
-$number_specified = true; // bool | 
-$status_equals = "status_equals_example"; // string | 
-$status_in = array("status_in_example"); // string[] | 
-$status_not_equals = "status_not_equals_example"; // string | 
-$status_specified = true; // bool | 
+$id_greater_than = 56; // int
+$id_less_than = 56; // int
+$id_greater_than_or_equal = 56; // int
+$id_less_than_or_equal = 56; // int
+$id_equals = 56; // int
+$id_not_equals = 56; // int
+$id_specified = True; // bool
+$id_in = array(56); // int[]
+$id_not_in = array(56); // int[]
+$number_contains = 'number_contains_example'; // string
+$number_does_not_contain = 'number_does_not_contain_example'; // string
+$number_equals = 'number_equals_example'; // string
+$number_not_equals = 'number_not_equals_example'; // string
+$number_specified = True; // bool
+$number_in = array('number_in_example'); // string[]
+$number_not_in = array('number_not_in_example'); // string[]
+$external_id_contains = 'external_id_contains_example'; // string
+$external_id_does_not_contain = 'external_id_does_not_contain_example'; // string
+$external_id_equals = 'external_id_equals_example'; // string
+$external_id_not_equals = 'external_id_not_equals_example'; // string
+$external_id_specified = True; // bool
+$external_id_in = array('external_id_in_example'); // string[]
+$external_id_not_in = array('external_id_not_in_example'); // string[]
+$status_equals = 'status_equals_example'; // string
+$status_not_equals = 'status_not_equals_example'; // string
+$status_specified = True; // bool
+$status_in = array('status_in_example'); // string[]
+$status_not_in = array('status_not_in_example'); // string[]
+$distinct = True; // bool
 
 try {
-    $result = $apiInstance->countOrdersUsingGET($external_id_contains, $external_id_does_not_contain, $external_id_equals, $external_id_in, $external_id_not_equals, $external_id_specified, $id_equals, $id_greater_than, $id_greater_than_or_equal, $id_in, $id_less_than, $id_less_than_or_equal, $id_not_equals, $id_specified, $number_contains, $number_does_not_contain, $number_equals, $number_in, $number_not_equals, $number_specified, $status_equals, $status_in, $status_not_equals, $status_specified);
+    $result = $apiInstance->countOrders($id_greater_than, $id_less_than, $id_greater_than_or_equal, $id_less_than_or_equal, $id_equals, $id_not_equals, $id_specified, $id_in, $id_not_in, $number_contains, $number_does_not_contain, $number_equals, $number_not_equals, $number_specified, $number_in, $number_not_in, $external_id_contains, $external_id_does_not_contain, $external_id_equals, $external_id_not_equals, $external_id_specified, $external_id_in, $external_id_not_in, $status_equals, $status_not_equals, $status_specified, $status_in, $status_not_in, $distinct);
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling OrderResourceApi->countOrdersUsingGET: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling OrderResourceApi->countOrders: ', $e->getMessage(), PHP_EOL;
 }
-?>
 ```
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **external_id_contains** | **string**|  | [optional]
- **external_id_does_not_contain** | **string**|  | [optional]
- **external_id_equals** | **string**|  | [optional]
- **external_id_in** | [**string[]**](../Model/string.md)|  | [optional]
- **external_id_not_equals** | **string**|  | [optional]
- **external_id_specified** | **bool**|  | [optional]
- **id_equals** | **int**|  | [optional]
- **id_greater_than** | **int**|  | [optional]
- **id_greater_than_or_equal** | **int**|  | [optional]
- **id_in** | [**int[]**](../Model/int.md)|  | [optional]
- **id_less_than** | **int**|  | [optional]
- **id_less_than_or_equal** | **int**|  | [optional]
- **id_not_equals** | **int**|  | [optional]
- **id_specified** | **bool**|  | [optional]
- **number_contains** | **string**|  | [optional]
- **number_does_not_contain** | **string**|  | [optional]
- **number_equals** | **string**|  | [optional]
- **number_in** | [**string[]**](../Model/string.md)|  | [optional]
- **number_not_equals** | **string**|  | [optional]
- **number_specified** | **bool**|  | [optional]
- **status_equals** | **string**|  | [optional]
- **status_in** | [**string[]**](../Model/string.md)|  | [optional]
- **status_not_equals** | **string**|  | [optional]
- **status_specified** | **bool**|  | [optional]
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **id_greater_than** | **int**|  | [optional] |
+| **id_less_than** | **int**|  | [optional] |
+| **id_greater_than_or_equal** | **int**|  | [optional] |
+| **id_less_than_or_equal** | **int**|  | [optional] |
+| **id_equals** | **int**|  | [optional] |
+| **id_not_equals** | **int**|  | [optional] |
+| **id_specified** | **bool**|  | [optional] |
+| **id_in** | [**int[]**](../Model/int.md)|  | [optional] |
+| **id_not_in** | [**int[]**](../Model/int.md)|  | [optional] |
+| **number_contains** | **string**|  | [optional] |
+| **number_does_not_contain** | **string**|  | [optional] |
+| **number_equals** | **string**|  | [optional] |
+| **number_not_equals** | **string**|  | [optional] |
+| **number_specified** | **bool**|  | [optional] |
+| **number_in** | [**string[]**](../Model/string.md)|  | [optional] |
+| **number_not_in** | [**string[]**](../Model/string.md)|  | [optional] |
+| **external_id_contains** | **string**|  | [optional] |
+| **external_id_does_not_contain** | **string**|  | [optional] |
+| **external_id_equals** | **string**|  | [optional] |
+| **external_id_not_equals** | **string**|  | [optional] |
+| **external_id_specified** | **bool**|  | [optional] |
+| **external_id_in** | [**string[]**](../Model/string.md)|  | [optional] |
+| **external_id_not_in** | [**string[]**](../Model/string.md)|  | [optional] |
+| **status_equals** | **string**|  | [optional] |
+| **status_not_equals** | **string**|  | [optional] |
+| **status_specified** | **bool**|  | [optional] |
+| **status_in** | [**string[]**](../Model/string.md)|  | [optional] |
+| **status_not_in** | [**string[]**](../Model/string.md)|  | [optional] |
+| **distinct** | **bool**|  | [optional] |
 
 ### Return type
 
@@ -100,42 +117,49 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: */*
+- **Content-Type**: Not defined
+- **Accept**: `*/*`
 
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
+[[Back to README]](../../README.md)
 
-# **createOrderUsingPOST**
-> \Idealogic\MembershipAPI\Model\OrderDTO createOrderUsingPOST($order_dto)
+## `createOrder()`
 
-createOrder
+```php
+createOrder($order_dto): \Idealogic\MembershipAPI\Model\OrderDTO
+```
+
+
 
 ### Example
+
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
+
+
 
 $apiInstance = new Idealogic\MembershipAPI\Api\OrderResourceApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
-$order_dto = new \Idealogic\MembershipAPI\Model\OrderDTO(); // \Idealogic\MembershipAPI\Model\OrderDTO | orderDTO
+$order_dto = new \Idealogic\MembershipAPI\Model\OrderDTO(); // \Idealogic\MembershipAPI\Model\OrderDTO
 
 try {
-    $result = $apiInstance->createOrderUsingPOST($order_dto);
+    $result = $apiInstance->createOrder($order_dto);
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling OrderResourceApi->createOrderUsingPOST: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling OrderResourceApi->createOrder: ', $e->getMessage(), PHP_EOL;
 }
-?>
 ```
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **order_dto** | [**\Idealogic\MembershipAPI\Model\OrderDTO**](../Model/OrderDTO.md)| orderDTO |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **order_dto** | [**\Idealogic\MembershipAPI\Model\OrderDTO**](../Model/OrderDTO.md)|  | |
 
 ### Return type
 
@@ -147,41 +171,48 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
- - **Accept**: */*
+- **Content-Type**: `application/json`
+- **Accept**: `*/*`
 
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
+[[Back to README]](../../README.md)
 
-# **deleteOrderUsingDELETE**
-> deleteOrderUsingDELETE($id)
+## `deleteOrder()`
 
-deleteOrder
+```php
+deleteOrder($id)
+```
+
+
 
 ### Example
+
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
+
+
 
 $apiInstance = new Idealogic\MembershipAPI\Api\OrderResourceApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
-$id = 789; // int | id
+$id = 56; // int
 
 try {
-    $apiInstance->deleteOrderUsingDELETE($id);
+    $apiInstance->deleteOrder($id);
 } catch (Exception $e) {
-    echo 'Exception when calling OrderResourceApi->deleteOrderUsingDELETE: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling OrderResourceApi->deleteOrder: ', $e->getMessage(), PHP_EOL;
 }
-?>
 ```
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **id** | **int**| id |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **id** | **int**|  | |
 
 ### Return type
 
@@ -193,94 +224,107 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: */*
+- **Content-Type**: Not defined
+- **Accept**: Not defined
 
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
+[[Back to README]](../../README.md)
 
-# **getAllOrdersUsingGET**
-> \Idealogic\MembershipAPI\Model\OrderDTO[] getAllOrdersUsingGET($external_id_contains, $external_id_does_not_contain, $external_id_equals, $external_id_in, $external_id_not_equals, $external_id_specified, $id_equals, $id_greater_than, $id_greater_than_or_equal, $id_in, $id_less_than, $id_less_than_or_equal, $id_not_equals, $id_specified, $number_contains, $number_does_not_contain, $number_equals, $number_in, $number_not_equals, $number_specified, $page, $size, $sort, $status_equals, $status_in, $status_not_equals, $status_specified)
+## `getAllOrders()`
 
-getAllOrders
+```php
+getAllOrders($pageable, $id_greater_than, $id_less_than, $id_greater_than_or_equal, $id_less_than_or_equal, $id_equals, $id_not_equals, $id_specified, $id_in, $id_not_in, $number_contains, $number_does_not_contain, $number_equals, $number_not_equals, $number_specified, $number_in, $number_not_in, $external_id_contains, $external_id_does_not_contain, $external_id_equals, $external_id_not_equals, $external_id_specified, $external_id_in, $external_id_not_in, $status_equals, $status_not_equals, $status_specified, $status_in, $status_not_in, $distinct): \Idealogic\MembershipAPI\Model\OrderDTO[]
+```
+
+
 
 ### Example
+
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
+
+
 
 $apiInstance = new Idealogic\MembershipAPI\Api\OrderResourceApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
-$external_id_contains = "external_id_contains_example"; // string | 
-$external_id_does_not_contain = "external_id_does_not_contain_example"; // string | 
-$external_id_equals = "external_id_equals_example"; // string | 
-$external_id_in = array("external_id_in_example"); // string[] | 
-$external_id_not_equals = "external_id_not_equals_example"; // string | 
-$external_id_specified = true; // bool | 
-$id_equals = 789; // int | 
-$id_greater_than = 789; // int | 
-$id_greater_than_or_equal = 789; // int | 
-$id_in = array(56); // int[] | 
-$id_less_than = 789; // int | 
-$id_less_than_or_equal = 789; // int | 
-$id_not_equals = 789; // int | 
-$id_specified = true; // bool | 
-$number_contains = "number_contains_example"; // string | 
-$number_does_not_contain = "number_does_not_contain_example"; // string | 
-$number_equals = "number_equals_example"; // string | 
-$number_in = array("number_in_example"); // string[] | 
-$number_not_equals = "number_not_equals_example"; // string | 
-$number_specified = true; // bool | 
-$page = 56; // int | Page number of the requested page
-$size = 56; // int | Size of a page
-$sort = array("sort_example"); // string[] | Sorting criteria in the format: property(,asc|desc). Default sort order is ascending. Multiple sort criteria are supported.
-$status_equals = "status_equals_example"; // string | 
-$status_in = array("status_in_example"); // string[] | 
-$status_not_equals = "status_not_equals_example"; // string | 
-$status_specified = true; // bool | 
+$pageable = new \Idealogic\MembershipAPI\Model\Pageable(); // Pageable
+$id_greater_than = 56; // int
+$id_less_than = 56; // int
+$id_greater_than_or_equal = 56; // int
+$id_less_than_or_equal = 56; // int
+$id_equals = 56; // int
+$id_not_equals = 56; // int
+$id_specified = True; // bool
+$id_in = array(56); // int[]
+$id_not_in = array(56); // int[]
+$number_contains = 'number_contains_example'; // string
+$number_does_not_contain = 'number_does_not_contain_example'; // string
+$number_equals = 'number_equals_example'; // string
+$number_not_equals = 'number_not_equals_example'; // string
+$number_specified = True; // bool
+$number_in = array('number_in_example'); // string[]
+$number_not_in = array('number_not_in_example'); // string[]
+$external_id_contains = 'external_id_contains_example'; // string
+$external_id_does_not_contain = 'external_id_does_not_contain_example'; // string
+$external_id_equals = 'external_id_equals_example'; // string
+$external_id_not_equals = 'external_id_not_equals_example'; // string
+$external_id_specified = True; // bool
+$external_id_in = array('external_id_in_example'); // string[]
+$external_id_not_in = array('external_id_not_in_example'); // string[]
+$status_equals = 'status_equals_example'; // string
+$status_not_equals = 'status_not_equals_example'; // string
+$status_specified = True; // bool
+$status_in = array('status_in_example'); // string[]
+$status_not_in = array('status_not_in_example'); // string[]
+$distinct = True; // bool
 
 try {
-    $result = $apiInstance->getAllOrdersUsingGET($external_id_contains, $external_id_does_not_contain, $external_id_equals, $external_id_in, $external_id_not_equals, $external_id_specified, $id_equals, $id_greater_than, $id_greater_than_or_equal, $id_in, $id_less_than, $id_less_than_or_equal, $id_not_equals, $id_specified, $number_contains, $number_does_not_contain, $number_equals, $number_in, $number_not_equals, $number_specified, $page, $size, $sort, $status_equals, $status_in, $status_not_equals, $status_specified);
+    $result = $apiInstance->getAllOrders($pageable, $id_greater_than, $id_less_than, $id_greater_than_or_equal, $id_less_than_or_equal, $id_equals, $id_not_equals, $id_specified, $id_in, $id_not_in, $number_contains, $number_does_not_contain, $number_equals, $number_not_equals, $number_specified, $number_in, $number_not_in, $external_id_contains, $external_id_does_not_contain, $external_id_equals, $external_id_not_equals, $external_id_specified, $external_id_in, $external_id_not_in, $status_equals, $status_not_equals, $status_specified, $status_in, $status_not_in, $distinct);
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling OrderResourceApi->getAllOrdersUsingGET: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling OrderResourceApi->getAllOrders: ', $e->getMessage(), PHP_EOL;
 }
-?>
 ```
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **external_id_contains** | **string**|  | [optional]
- **external_id_does_not_contain** | **string**|  | [optional]
- **external_id_equals** | **string**|  | [optional]
- **external_id_in** | [**string[]**](../Model/string.md)|  | [optional]
- **external_id_not_equals** | **string**|  | [optional]
- **external_id_specified** | **bool**|  | [optional]
- **id_equals** | **int**|  | [optional]
- **id_greater_than** | **int**|  | [optional]
- **id_greater_than_or_equal** | **int**|  | [optional]
- **id_in** | [**int[]**](../Model/int.md)|  | [optional]
- **id_less_than** | **int**|  | [optional]
- **id_less_than_or_equal** | **int**|  | [optional]
- **id_not_equals** | **int**|  | [optional]
- **id_specified** | **bool**|  | [optional]
- **number_contains** | **string**|  | [optional]
- **number_does_not_contain** | **string**|  | [optional]
- **number_equals** | **string**|  | [optional]
- **number_in** | [**string[]**](../Model/string.md)|  | [optional]
- **number_not_equals** | **string**|  | [optional]
- **number_specified** | **bool**|  | [optional]
- **page** | **int**| Page number of the requested page | [optional]
- **size** | **int**| Size of a page | [optional]
- **sort** | [**string[]**](../Model/string.md)| Sorting criteria in the format: property(,asc|desc). Default sort order is ascending. Multiple sort criteria are supported. | [optional]
- **status_equals** | **string**|  | [optional]
- **status_in** | [**string[]**](../Model/string.md)|  | [optional]
- **status_not_equals** | **string**|  | [optional]
- **status_specified** | **bool**|  | [optional]
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **pageable** | [**Pageable**](../Model/.md)|  | |
+| **id_greater_than** | **int**|  | [optional] |
+| **id_less_than** | **int**|  | [optional] |
+| **id_greater_than_or_equal** | **int**|  | [optional] |
+| **id_less_than_or_equal** | **int**|  | [optional] |
+| **id_equals** | **int**|  | [optional] |
+| **id_not_equals** | **int**|  | [optional] |
+| **id_specified** | **bool**|  | [optional] |
+| **id_in** | [**int[]**](../Model/int.md)|  | [optional] |
+| **id_not_in** | [**int[]**](../Model/int.md)|  | [optional] |
+| **number_contains** | **string**|  | [optional] |
+| **number_does_not_contain** | **string**|  | [optional] |
+| **number_equals** | **string**|  | [optional] |
+| **number_not_equals** | **string**|  | [optional] |
+| **number_specified** | **bool**|  | [optional] |
+| **number_in** | [**string[]**](../Model/string.md)|  | [optional] |
+| **number_not_in** | [**string[]**](../Model/string.md)|  | [optional] |
+| **external_id_contains** | **string**|  | [optional] |
+| **external_id_does_not_contain** | **string**|  | [optional] |
+| **external_id_equals** | **string**|  | [optional] |
+| **external_id_not_equals** | **string**|  | [optional] |
+| **external_id_specified** | **bool**|  | [optional] |
+| **external_id_in** | [**string[]**](../Model/string.md)|  | [optional] |
+| **external_id_not_in** | [**string[]**](../Model/string.md)|  | [optional] |
+| **status_equals** | **string**|  | [optional] |
+| **status_not_equals** | **string**|  | [optional] |
+| **status_specified** | **bool**|  | [optional] |
+| **status_in** | [**string[]**](../Model/string.md)|  | [optional] |
+| **status_not_in** | [**string[]**](../Model/string.md)|  | [optional] |
+| **distinct** | **bool**|  | [optional] |
 
 ### Return type
 
@@ -292,42 +336,49 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: */*
+- **Content-Type**: Not defined
+- **Accept**: `*/*`
 
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
+[[Back to README]](../../README.md)
 
-# **getOrderUsingGET**
-> \Idealogic\MembershipAPI\Model\OrderDTO getOrderUsingGET($id)
+## `getOrder()`
 
-getOrder
+```php
+getOrder($id): \Idealogic\MembershipAPI\Model\OrderDTO
+```
+
+
 
 ### Example
+
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
+
+
 
 $apiInstance = new Idealogic\MembershipAPI\Api\OrderResourceApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
-$id = 789; // int | id
+$id = 56; // int
 
 try {
-    $result = $apiInstance->getOrderUsingGET($id);
+    $result = $apiInstance->getOrder($id);
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling OrderResourceApi->getOrderUsingGET: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling OrderResourceApi->getOrder: ', $e->getMessage(), PHP_EOL;
 }
-?>
 ```
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **id** | **int**| id |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **id** | **int**|  | |
 
 ### Return type
 
@@ -339,42 +390,51 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: */*
+- **Content-Type**: Not defined
+- **Accept**: `*/*`
 
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
+[[Back to README]](../../README.md)
 
-# **updateOrderUsingPUT**
-> \Idealogic\MembershipAPI\Model\OrderDTO updateOrderUsingPUT($order_dto)
+## `partialUpdateOrder()`
 
-updateOrder
+```php
+partialUpdateOrder($id, $order_dto): \Idealogic\MembershipAPI\Model\OrderDTO
+```
+
+
 
 ### Example
+
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
+
+
 
 $apiInstance = new Idealogic\MembershipAPI\Api\OrderResourceApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
-$order_dto = new \Idealogic\MembershipAPI\Model\OrderDTO(); // \Idealogic\MembershipAPI\Model\OrderDTO | orderDTO
+$id = 56; // int
+$order_dto = new \Idealogic\MembershipAPI\Model\OrderDTO(); // \Idealogic\MembershipAPI\Model\OrderDTO
 
 try {
-    $result = $apiInstance->updateOrderUsingPUT($order_dto);
+    $result = $apiInstance->partialUpdateOrder($id, $order_dto);
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling OrderResourceApi->updateOrderUsingPUT: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling OrderResourceApi->partialUpdateOrder: ', $e->getMessage(), PHP_EOL;
 }
-?>
 ```
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **order_dto** | [**\Idealogic\MembershipAPI\Model\OrderDTO**](../Model/OrderDTO.md)| orderDTO |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **id** | **int**|  | |
+| **order_dto** | [**\Idealogic\MembershipAPI\Model\OrderDTO**](../Model/OrderDTO.md)|  | |
 
 ### Return type
 
@@ -386,8 +446,119 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
- - **Accept**: */*
+- **Content-Type**: `application/merge-patch+json`
+- **Accept**: `*/*`
 
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
+[[Back to README]](../../README.md)
 
+## `updateOrder()`
+
+```php
+updateOrder($order_dto): \Idealogic\MembershipAPI\Model\OrderDTO
+```
+
+
+
+### Example
+
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+
+
+$apiInstance = new Idealogic\MembershipAPI\Api\OrderResourceApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client()
+);
+$order_dto = new \Idealogic\MembershipAPI\Model\OrderDTO(); // \Idealogic\MembershipAPI\Model\OrderDTO
+
+try {
+    $result = $apiInstance->updateOrder($order_dto);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling OrderResourceApi->updateOrder: ', $e->getMessage(), PHP_EOL;
+}
+```
+
+### Parameters
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **order_dto** | [**\Idealogic\MembershipAPI\Model\OrderDTO**](../Model/OrderDTO.md)|  | |
+
+### Return type
+
+[**\Idealogic\MembershipAPI\Model\OrderDTO**](../Model/OrderDTO.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: `application/json`
+- **Accept**: `*/*`
+
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
+[[Back to README]](../../README.md)
+
+## `updateOrder1()`
+
+```php
+updateOrder1($id, $order_dto): \Idealogic\MembershipAPI\Model\OrderDTO
+```
+
+
+
+### Example
+
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+
+
+$apiInstance = new Idealogic\MembershipAPI\Api\OrderResourceApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client()
+);
+$id = 56; // int
+$order_dto = new \Idealogic\MembershipAPI\Model\OrderDTO(); // \Idealogic\MembershipAPI\Model\OrderDTO
+
+try {
+    $result = $apiInstance->updateOrder1($id, $order_dto);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling OrderResourceApi->updateOrder1: ', $e->getMessage(), PHP_EOL;
+}
+```
+
+### Parameters
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **id** | **int**|  | |
+| **order_dto** | [**\Idealogic\MembershipAPI\Model\OrderDTO**](../Model/OrderDTO.md)|  | |
+
+### Return type
+
+[**\Idealogic\MembershipAPI\Model\OrderDTO**](../Model/OrderDTO.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: `application/json`
+- **Accept**: `*/*`
+
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
+[[Back to README]](../../README.md)

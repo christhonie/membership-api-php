@@ -1,14 +1,13 @@
-# MembershipOrderStatusRequestDTO
+# # MembershipOrderStatusRequestDTO
 
 ## Properties
+
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**membership_details** | [**\Idealogic\MembershipAPI\Model\MembershipOrderLineItemDTO[]**](MembershipOrderLineItemDTO.md) |  | [optional] 
-**order_id** | **int** |  | [optional] 
-**order_number** | **string** |  | [optional] 
-**remove** | **bool** |  | [optional] 
-**status** | **string** |  | [optional] 
+**remove** | **bool** |  | [optional]
+**order_id** | **int** |  | [optional]
+**order_number** | **string** |  | [optional]
+**status** | **string** |  | [optional]
+**membership_details** | [**\Idealogic\MembershipAPI\Model\MembershipOrderLineItemDTO[]**](MembershipOrderLineItemDTO.md) |  | [optional]
 
-[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
-
-
+[[Back to Model list]](../../README.md#models) [[Back to API list]](../../README.md#endpoints) [[Back to README]](../../README.md)

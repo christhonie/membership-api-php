@@ -1,25 +1,20 @@
-# MembershipDTO
+# # MembershipDTO
 
 ## Properties
+
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**criteria_id** | **int** |  | [optional] 
-**criteria_name** | **string** |  | [optional] 
-**id** | **int** |  | [optional] 
-**membership_period_id** | **int** |  | [optional] 
-**membership_period_name** | **string** |  | [optional] 
-**number_id** | **int** |  | [optional] 
-**number_number** | **string** |  | [optional] 
-**order_id** | **int** |  | [optional] 
-**order_number** | **string** |  | [optional] 
-**person_id** | **int** | User ID in the external system | [optional] 
-**person_name** | **string** |  | [optional] 
-**product_amount** | **float** |  | [optional] 
-**product_id** | **int** |  | [optional] 
-**status** | **string** |  | 
-**valid_from** | [**\DateTime**](\DateTime.md) |  | 
-**valid_to** | [**\DateTime**](\DateTime.md) |  | [optional] 
+**id** | **int** |  | [optional]
+**status** | **string** |  |
+**valid_from** | **\DateTime** |  |
+**valid_to** | **\DateTime** |  | [optional]
+**person** | [**\Idealogic\MembershipAPI\Model\PersonDTO**](PersonDTO.md) |  | [optional]
+**membership_period** | [**\Idealogic\MembershipAPI\Model\MembershipPeriodDTO**](MembershipPeriodDTO.md) |  | [optional]
+**criteria** | [**\Idealogic\MembershipAPI\Model\MembershipCriteriaDTO**](MembershipCriteriaDTO.md) |  | [optional]
+**order** | [**\Idealogic\MembershipAPI\Model\OrderDTO**](OrderDTO.md) |  | [optional]
+**number** | [**\Idealogic\MembershipAPI\Model\RaceNumberDTO**](RaceNumberDTO.md) |  | [optional]
+**product** | [**\Idealogic\MembershipAPI\Model\ProductDTO**](ProductDTO.md) |  | [optional]
+**type** | [**\Idealogic\MembershipAPI\Model\MembershipTypeDTO**](MembershipTypeDTO.md) |  | [optional]
+**membership_card_url** | **string** |  | [optional]
 
-[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
-
-
+[[Back to Model list]](../../README.md#models) [[Back to API list]](../../README.md#endpoints) [[Back to README]](../../README.md)

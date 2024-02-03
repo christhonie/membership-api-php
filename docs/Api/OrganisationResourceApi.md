@@ -1,47 +1,54 @@
 # Idealogic\MembershipAPI\OrganisationResourceApi
 
-All URIs are relative to *https://http://localhost:8080*
+All URIs are relative to http://localhost, except if the operation defines another base path.
 
-Method | HTTP request | Description
-------------- | ------------- | -------------
-[**createOrganisationUsingPOST**](OrganisationResourceApi.md#createOrganisationUsingPOST) | **POST** /api/organisations | createOrganisation
-[**deleteOrganisationUsingDELETE**](OrganisationResourceApi.md#deleteOrganisationUsingDELETE) | **DELETE** /api/organisations/{id} | deleteOrganisation
-[**getAllOrganisationsUsingGET**](OrganisationResourceApi.md#getAllOrganisationsUsingGET) | **GET** /api/organisations | getAllOrganisations
-[**getOrganisationUsingGET**](OrganisationResourceApi.md#getOrganisationUsingGET) | **GET** /api/organisations/{id} | getOrganisation
-[**updateOrganisationUsingPUT**](OrganisationResourceApi.md#updateOrganisationUsingPUT) | **PUT** /api/organisations | updateOrganisation
+| Method | HTTP request | Description |
+| ------------- | ------------- | ------------- |
+| [**createOrganisation()**](OrganisationResourceApi.md#createOrganisation) | **POST** /api/organisations |  |
+| [**deleteOrganisation()**](OrganisationResourceApi.md#deleteOrganisation) | **DELETE** /api/organisations/{id} |  |
+| [**getAllOrganisations()**](OrganisationResourceApi.md#getAllOrganisations) | **GET** /api/organisations |  |
+| [**getOrganisation()**](OrganisationResourceApi.md#getOrganisation) | **GET** /api/organisations/{id} |  |
+| [**partialUpdateOrganisation()**](OrganisationResourceApi.md#partialUpdateOrganisation) | **PATCH** /api/organisations/{id} |  |
+| [**updateOrganisation()**](OrganisationResourceApi.md#updateOrganisation) | **PUT** /api/organisations |  |
+| [**updateOrganisation1()**](OrganisationResourceApi.md#updateOrganisation1) | **PUT** /api/organisations/{id} |  |
 
 
-# **createOrganisationUsingPOST**
-> \Idealogic\MembershipAPI\Model\OrganisationDTO createOrganisationUsingPOST($organisation_dto)
+## `createOrganisation()`
 
-createOrganisation
+```php
+createOrganisation($organisation_dto): \Idealogic\MembershipAPI\Model\OrganisationDTO
+```
+
+
 
 ### Example
+
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
+
+
 
 $apiInstance = new Idealogic\MembershipAPI\Api\OrganisationResourceApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
-$organisation_dto = new \Idealogic\MembershipAPI\Model\OrganisationDTO(); // \Idealogic\MembershipAPI\Model\OrganisationDTO | organisationDTO
+$organisation_dto = new \Idealogic\MembershipAPI\Model\OrganisationDTO(); // \Idealogic\MembershipAPI\Model\OrganisationDTO
 
 try {
-    $result = $apiInstance->createOrganisationUsingPOST($organisation_dto);
+    $result = $apiInstance->createOrganisation($organisation_dto);
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling OrganisationResourceApi->createOrganisationUsingPOST: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling OrganisationResourceApi->createOrganisation: ', $e->getMessage(), PHP_EOL;
 }
-?>
 ```
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **organisation_dto** | [**\Idealogic\MembershipAPI\Model\OrganisationDTO**](../Model/OrganisationDTO.md)| organisationDTO |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **organisation_dto** | [**\Idealogic\MembershipAPI\Model\OrganisationDTO**](../Model/OrganisationDTO.md)|  | |
 
 ### Return type
 
@@ -53,41 +60,48 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
- - **Accept**: */*
+- **Content-Type**: `application/json`
+- **Accept**: `*/*`
 
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
+[[Back to README]](../../README.md)
 
-# **deleteOrganisationUsingDELETE**
-> deleteOrganisationUsingDELETE($id)
+## `deleteOrganisation()`
 
-deleteOrganisation
+```php
+deleteOrganisation($id)
+```
+
+
 
 ### Example
+
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
+
+
 
 $apiInstance = new Idealogic\MembershipAPI\Api\OrganisationResourceApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
-$id = 789; // int | id
+$id = 56; // int
 
 try {
-    $apiInstance->deleteOrganisationUsingDELETE($id);
+    $apiInstance->deleteOrganisation($id);
 } catch (Exception $e) {
-    echo 'Exception when calling OrganisationResourceApi->deleteOrganisationUsingDELETE: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling OrganisationResourceApi->deleteOrganisation: ', $e->getMessage(), PHP_EOL;
 }
-?>
 ```
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **id** | **int**| id |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **id** | **int**|  | |
 
 ### Return type
 
@@ -99,46 +113,49 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: */*
+- **Content-Type**: Not defined
+- **Accept**: Not defined
 
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
+[[Back to README]](../../README.md)
 
-# **getAllOrganisationsUsingGET**
-> \Idealogic\MembershipAPI\Model\OrganisationDTO[] getAllOrganisationsUsingGET($page, $size, $sort)
+## `getAllOrganisations()`
 
-getAllOrganisations
+```php
+getAllOrganisations($pageable): \Idealogic\MembershipAPI\Model\OrganisationDTO[]
+```
+
+
 
 ### Example
+
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
+
+
 
 $apiInstance = new Idealogic\MembershipAPI\Api\OrganisationResourceApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
-$page = 56; // int | Page number of the requested page
-$size = 56; // int | Size of a page
-$sort = array("sort_example"); // string[] | Sorting criteria in the format: property(,asc|desc). Default sort order is ascending. Multiple sort criteria are supported.
+$pageable = new \Idealogic\MembershipAPI\Model\Pageable(); // Pageable
 
 try {
-    $result = $apiInstance->getAllOrganisationsUsingGET($page, $size, $sort);
+    $result = $apiInstance->getAllOrganisations($pageable);
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling OrganisationResourceApi->getAllOrganisationsUsingGET: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling OrganisationResourceApi->getAllOrganisations: ', $e->getMessage(), PHP_EOL;
 }
-?>
 ```
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **page** | **int**| Page number of the requested page | [optional]
- **size** | **int**| Size of a page | [optional]
- **sort** | [**string[]**](../Model/string.md)| Sorting criteria in the format: property(,asc|desc). Default sort order is ascending. Multiple sort criteria are supported. | [optional]
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **pageable** | [**Pageable**](../Model/.md)|  | |
 
 ### Return type
 
@@ -150,42 +167,49 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: */*
+- **Content-Type**: Not defined
+- **Accept**: `*/*`
 
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
+[[Back to README]](../../README.md)
 
-# **getOrganisationUsingGET**
-> \Idealogic\MembershipAPI\Model\OrganisationDTO getOrganisationUsingGET($id)
+## `getOrganisation()`
 
-getOrganisation
+```php
+getOrganisation($id): \Idealogic\MembershipAPI\Model\OrganisationDTO
+```
+
+
 
 ### Example
+
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
+
+
 
 $apiInstance = new Idealogic\MembershipAPI\Api\OrganisationResourceApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
-$id = 789; // int | id
+$id = 56; // int
 
 try {
-    $result = $apiInstance->getOrganisationUsingGET($id);
+    $result = $apiInstance->getOrganisation($id);
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling OrganisationResourceApi->getOrganisationUsingGET: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling OrganisationResourceApi->getOrganisation: ', $e->getMessage(), PHP_EOL;
 }
-?>
 ```
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **id** | **int**| id |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **id** | **int**|  | |
 
 ### Return type
 
@@ -197,42 +221,51 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: */*
+- **Content-Type**: Not defined
+- **Accept**: `*/*`
 
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
+[[Back to README]](../../README.md)
 
-# **updateOrganisationUsingPUT**
-> \Idealogic\MembershipAPI\Model\OrganisationDTO updateOrganisationUsingPUT($organisation_dto)
+## `partialUpdateOrganisation()`
 
-updateOrganisation
+```php
+partialUpdateOrganisation($id, $organisation_dto): \Idealogic\MembershipAPI\Model\OrganisationDTO
+```
+
+
 
 ### Example
+
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
+
+
 
 $apiInstance = new Idealogic\MembershipAPI\Api\OrganisationResourceApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
-$organisation_dto = new \Idealogic\MembershipAPI\Model\OrganisationDTO(); // \Idealogic\MembershipAPI\Model\OrganisationDTO | organisationDTO
+$id = 56; // int
+$organisation_dto = new \Idealogic\MembershipAPI\Model\OrganisationDTO(); // \Idealogic\MembershipAPI\Model\OrganisationDTO
 
 try {
-    $result = $apiInstance->updateOrganisationUsingPUT($organisation_dto);
+    $result = $apiInstance->partialUpdateOrganisation($id, $organisation_dto);
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling OrganisationResourceApi->updateOrganisationUsingPUT: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling OrganisationResourceApi->partialUpdateOrganisation: ', $e->getMessage(), PHP_EOL;
 }
-?>
 ```
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **organisation_dto** | [**\Idealogic\MembershipAPI\Model\OrganisationDTO**](../Model/OrganisationDTO.md)| organisationDTO |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **id** | **int**|  | |
+| **organisation_dto** | [**\Idealogic\MembershipAPI\Model\OrganisationDTO**](../Model/OrganisationDTO.md)|  | |
 
 ### Return type
 
@@ -244,8 +277,119 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
- - **Accept**: */*
+- **Content-Type**: `application/merge-patch+json`
+- **Accept**: `*/*`
 
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
+[[Back to README]](../../README.md)
 
+## `updateOrganisation()`
+
+```php
+updateOrganisation($organisation_dto): \Idealogic\MembershipAPI\Model\OrganisationDTO
+```
+
+
+
+### Example
+
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+
+
+$apiInstance = new Idealogic\MembershipAPI\Api\OrganisationResourceApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client()
+);
+$organisation_dto = new \Idealogic\MembershipAPI\Model\OrganisationDTO(); // \Idealogic\MembershipAPI\Model\OrganisationDTO
+
+try {
+    $result = $apiInstance->updateOrganisation($organisation_dto);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling OrganisationResourceApi->updateOrganisation: ', $e->getMessage(), PHP_EOL;
+}
+```
+
+### Parameters
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **organisation_dto** | [**\Idealogic\MembershipAPI\Model\OrganisationDTO**](../Model/OrganisationDTO.md)|  | |
+
+### Return type
+
+[**\Idealogic\MembershipAPI\Model\OrganisationDTO**](../Model/OrganisationDTO.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: `application/json`
+- **Accept**: `*/*`
+
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
+[[Back to README]](../../README.md)
+
+## `updateOrganisation1()`
+
+```php
+updateOrganisation1($id, $organisation_dto): \Idealogic\MembershipAPI\Model\OrganisationDTO
+```
+
+
+
+### Example
+
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+
+
+$apiInstance = new Idealogic\MembershipAPI\Api\OrganisationResourceApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client()
+);
+$id = 56; // int
+$organisation_dto = new \Idealogic\MembershipAPI\Model\OrganisationDTO(); // \Idealogic\MembershipAPI\Model\OrganisationDTO
+
+try {
+    $result = $apiInstance->updateOrganisation1($id, $organisation_dto);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling OrganisationResourceApi->updateOrganisation1: ', $e->getMessage(), PHP_EOL;
+}
+```
+
+### Parameters
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **id** | **int**|  | |
+| **organisation_dto** | [**\Idealogic\MembershipAPI\Model\OrganisationDTO**](../Model/OrganisationDTO.md)|  | |
+
+### Return type
+
+[**\Idealogic\MembershipAPI\Model\OrganisationDTO**](../Model/OrganisationDTO.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: `application/json`
+- **Accept**: `*/*`
+
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
+[[Back to README]](../../README.md)

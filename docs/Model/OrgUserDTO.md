@@ -1,19 +1,17 @@
-# OrgUserDTO
+# # OrgUserDTO
 
 ## Properties
+
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**active** | **bool** |  | [optional] 
-**external_user_id** | **string** |  | [optional] 
-**id** | **int** |  | [optional] 
-**name** | **string** |  | [optional] 
-**organisation_id** | **int** |  | [optional] 
-**organisation_name** | **string** |  | [optional] 
-**permissions** | [**\Idealogic\MembershipAPI\Model\OrgPermissionDTO[]**](OrgPermissionDTO.md) |  | [optional] 
-**person_id** | **string** |  | 
-**valid_from** | [**\DateTime**](\DateTime.md) |  | 
-**valid_to** | [**\DateTime**](\DateTime.md) |  | [optional] 
+**id** | **int** |  | [optional]
+**name** | **string** |  | [optional]
+**active** | **bool** |  | [optional]
+**valid_from** | **\DateTime** |  |
+**valid_to** | **\DateTime** |  | [optional]
+**external_user_id** | **string** |  | [optional]
+**person_id** | **string** |  |
+**organisation** | [**\Idealogic\MembershipAPI\Model\OrganisationDTO**](OrganisationDTO.md) |  | [optional]
+**permissions** | [**\Idealogic\MembershipAPI\Model\OrgPermissionDTO[]**](OrgPermissionDTO.md) |  | [optional]
 
-[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
-
-
+[[Back to Model list]](../../README.md#models) [[Back to API list]](../../README.md#endpoints) [[Back to README]](../../README.md)

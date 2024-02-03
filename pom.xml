@@ -49,10 +49,10 @@
 						<invokerPackage>Idealogic\MembershipAPI</invokerPackage>
 					</configOptions>
 					<apisToGenerate>
-						LinkedPersonResource,MembershipCriteriaResource,MembershipPeriodResource,MembershipResource,MembershipTypeResource,NumberTypeResource,OrderResource,OrganisationResource,OrgPermissionResource,OrgUserResource,PersonResource -Dmodels=LinkedPersonDTO,MembershipCriteriaDTO,MembershipPeriodDTO,MembershipDTO,MembershipStatusDTO,LatestPeriodMembershipStatusResponseDTO,MembershipEnrolRequestDTO,MembershipTypeDTO,NumberTypeDTO,OrderDTO,OrganisationDTO,OrgPermissionDTO,OrgUserDTO,PersonDTO,PersonSummaryDTO,MembershipOrderStatusRequestDTO,MembershipOrderStatusResponseDTO,MembershipOrderLineItemDTO
+						LinkedPersonResource,MembershipCriteriaResource,MembershipPeriodResource,MembershipResource,MembershipTypeResource,NumberTypeResource,OrderResource,OrganisationResource,OrgPermissionResource,OrgUserResource,PersonResource
 					</apisToGenerate>
 					<modelsToGenerate>
-						LatestPeriodMembershipStatusResponseDTO,LinkedPersonDTO,MembershipCriteriaDTO,MembershipDTO,MembershipEnrolRequestDTO,MembershipOrderLineItemDTO,MembershipOrderStatusRequestDTO,MembershipOrderStatusResponseDTO,MembershipPeriodDTO,MembershipStatusDTO,MembershipTypeDTO,ModelInterface,NumberTypeDTO,OrderDTO,OrganisationDTO,OrgPermissionDTO,OrgUserDTO,PersonDTO,PersonSummaryDTO
+						LinkedPersonDTO,MembershipCriteriaDTO,MembershipPeriodDTO,MembershipDTO,MembershipStatusDTO,LatestPeriodMembershipStatusResponseDTO,MembershipEnrolRequestDTO,MembershipTypeDTO,NumberTypeDTO,OrderDTO,OrganisationDTO,OrgPermissionDTO,OrgUserDTO,PersonDTO,PersonSummaryDTO,MembershipOrderStatusRequestDTO,MembershipOrderStatusResponseDTO,MembershipOrderLineItemDTO,ModelInterface
 					</modelsToGenerate>
 				</configuration>
 				<executions>
